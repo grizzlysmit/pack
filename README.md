@@ -3,7 +3,7 @@ Pack:
 
 ## Introduction
 
-Create and maintain the `$dir/.pack_args.json` config file, and use said file to construck a `gnome-extensions pack` command line; in order to create the package used buy `gnome-shell` to install it's plugins.
+Create and maintain the `$dir/.pack_args.json` config file, and use said file to construct a `gnome-extensions pack` command line; in order to create the package used buy `gnome-shell` to install it's plugins.
 
 1. [Do actaully make the package](#do-actually-make-the-package)
 1. [Create](#create)
@@ -18,3 +18,5 @@ Create and maintain the `$dir/.pack_args.json` config file, and use said file to
 ## Do actaully make the package
 
 This acctaully makes the plugin package.
+
+Calls `gnome-extensions pack` with the arguments specified in `$dir/.pack_args.json`  to build the gnome plugin package 
