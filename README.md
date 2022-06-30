@@ -8,7 +8,7 @@ Pack:
 
 Create and maintain the `$dir/.pack_args.json` config file, and use said file to construct a `gnome-extensions pack` command line; in order to create the package used buy `gnome-shell` to install it's plugins.
 
-1. [Do actaully make the package](#do-actually-make-the-package)
+1. [Do actaully make the package](#do-actaully-make-the-package)
 1. [Create](#create)
 1. [Add](#add)
 1. [set schema](#set-schema)
