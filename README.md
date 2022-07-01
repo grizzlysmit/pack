@@ -8,7 +8,7 @@ Pack:
 
 Create and maintain the `$dir/.pack_args.json` config file, and use said file to construct a `gnome-extensions pack` command line; in order to create the package used buy `gnome-shell` to install it's plugins.
 
-1. [Do actaully make the package](#do-actaully-make-the-package)
+1. [Do: actaully make the package](#do-actaully-make-the-package)
 1. [Create](#create)
 1. [Add](#add)
 1. [set schema](#set-schema)
@@ -16,6 +16,22 @@ Create and maintain the `$dir/.pack_args.json` config file, and use said file to
 1. [set gettext-domain](#set-gettext-domain)
 1. [set out-dir](#set-out-dir)
 1. [set force](#set-force)
+1. [add-extra-sources](#add-extra-sources)
+1. [set package-dir ](#set-package-dir)
+1. [set extra-sources ](#set-extra-sources)
+1. [append extra-sources ](#append-extra-sources)
+1. [remove schema ](#remove-schema)
+1. [remove podir ](#remove-podir)
+1. [remove gettext-domain ](#remove-gettext-domain)
+1. [remove out-dir ](#remove out-dir)
+1. [remove extra-sources ](#remove-extra-sources)
+1. [get schema ](#get-schema)
+1. [get podir ](#get-podir)
+1. [get gettext-domain ](#get-gettext-domain)
+1. [get out-dir ](#get-out-dir)
+1. [get extra-sources ](#get-extra-sources)
+1. [get force ](#get-force)
+1. [get package-dir ](#get-package-dir)
 
 ## USAGE
 
@@ -48,8 +64,23 @@ Usage:
   pack.raku get package-dir <package-dir>
 ```
 
-## Do actaully make the package
+## Do: actaully make the package
 
 This acctaully makes the plugin package.
 
 Calls `gnome-extensions pack` with the arguments specified in `$dir/.pack_args.json`  to build the gnome plugin package 
+
+```sh
+pack.raku [-f|--force] do <dir>
+```
+
+e.g.
+
+```sh
+$ pack.raku --force do hplip-menu2@grizzlysmit.smit.id.au
+```
+calls:
+
+```sh
+gnome-extensions pack --schema=schemas/org.gnome.shell.extensions.hplip-menu2.gschema.xml --podir=po --gettext-domain=hplip-menu2 --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions hplip-menu2@grizzlysmit.smit.id.au
+```
