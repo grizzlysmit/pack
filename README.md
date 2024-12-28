@@ -84,3 +84,18 @@ calls:
 ```sh
 gnome-extensions pack --schema=schemas/org.gnome.shell.extensions.hplip-menu2.gschema.xml --podir=po --gettext-domain=hplip-menu2 --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions hplip-menu2@grizzlysmit.smit.id.au
 ```
+
+## Create
+
+Create a new `$dir/.pack_args.json` file it is best to create it inside the source dir of the plugin.
+
+command:
+
+```sh
+pack.raku [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] create <package-dir> [<extra-sources> ...]
+```
+
+e.g. 
+```sh
+pack.raku --schema=stylesheet.css  --gettext-domain=gravatar --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions --force create gravatar@grizzlysmit.id.au/
+```

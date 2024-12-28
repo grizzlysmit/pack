@@ -2,25 +2,25 @@ unit module Pack:ver<0.1.0>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
-my $schema;
-my $podir;
-my $gettext-domain;
-my $package-dir;
-my $out-dir;
-my $force-file;
-my @extra-sources;
-my $exitcode-val;
+my Str  $schema;
+my Str  $podir;
+my Str  $gettext-domain;
+my Str  $package-dir;
+my Str  $out-dir;
+my Bool $force-file;
+my      @extra-sources;
+my Int  $exitcode-val;
 
 sub read-file(Str $dir --> Bool) is export {
     die "file $dir/.pack_args.json does not exist" unless "$dir/.pack_args.json".IO ~~ :f;
     my $file-cont         = "$dir/.pack_args.json".IO.slurp(:utf8);
     my $data              = from-json $file-cont;
-    $schema               = %$data«schema»;
-    $podir                = %$data«podir»;
-    $gettext-domain       = %$data«gettext-domain»;
-    $package-dir          = %$data«package-dir»;
-    $out-dir              = %$data«out-dir»;
-    $force-file           = %$data«force»;
+    $schema               = %$data«schema» // Str;
+    $podir                = %$data«podir» // Str;
+    $gettext-domain       = %$data«gettext-domain» // Str;
+    $package-dir          = %$data«package-dir» // Str;
+    $out-dir              = %$data«out-dir» // Str;
+    $force-file           = %$data«force» // Bool;
     my $extra             = %$data«extra-sources»;
     @extra-sources        = @$extra;
     return True;
@@ -32,12 +32,12 @@ sub pack(Str $dir, Bool $force is copy = False --> Bool) is export {
     for @extra-sources -> $extra {
         push @cmd, "--extra-source=$extra";  
     }
-    push @cmd, "--schema=$schema" if defined $schema;
-    push @cmd, "--podir=$podir" if defined $podir;
-    push @cmd, "--gettext-domain=$gettext-domain" if defined $gettext-domain;
+    push @cmd, "--schema=$schema" with $schema;
+    push @cmd, "--podir=$podir" with $podir;
+    push @cmd, "--gettext-domain=$gettext-domain" with $gettext-domain;
     push @cmd, "--force" if $force;
-    push @cmd, "--out-dir=$out-dir" if defined $out-dir;
-    $package-dir = $dir unless defined $package-dir;
+    push @cmd, "--out-dir=$out-dir" with $out-dir;
+    $package-dir = $dir without $package-dir;
     push @cmd, "$package-dir";
     @cmd.join(' ').say;
     my Proc $res = run @cmd;
@@ -49,19 +49,33 @@ sub exitcode(--> int) is export {
     return $exitcode-val;
 }
 
-sub create-config(Str $package-dir, Str $schema, Str $podir, Str $gettext-domain, Str $out-dir, $force, @extra-sources --> Bool) is export {
-    my $data               = { extra-sources => [ |@extra-sources ],  };
-    %$data«schema»         = $schema unless $schema eq 'Null';
-    %$data«podir»          = $podir unless $podir eq 'Null';
-    %$data«gettext-domain» = $gettext-domain unless $gettext-domain eq 'Null';
-    %$data«package-dir»    = $package-dir.IO.basename unless $package-dir eq 'Null';
-    %$data«out-dir»        = $out-dir??"$out-dir".IO.absolute.IO.resolve(:completely).Str!!'Null' unless $out-dir eq 'Null';
-    %$data«force»          = $force;
-    "$package-dir/.pack_args.json".IO.spurt(to-json $data);
+sub create-config(Str:D $package-dir,
+                  Str $schema,
+                  Str $podir,
+                  Str $gettext-domain,
+                  Str $out-dir,
+                  Bool:D $force,
+                  @extra-sources --> Bool) is export {
+    my %data              = extra-sources => [ |@extra-sources ];
+    %data«schema»         = $schema with $schema;
+    %data«podir»          = $podir with $podir;
+    %data«gettext-domain» = $gettext-domain with $gettext-domain;
+    %data«package-dir»    = $package-dir.IO.basename;
+    %data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
+    %data«force»          = $force;
+    "$package-dir/.pack_args.json".IO.spurt(to-json %data);
     return True;                                                                                                                                                                                                                                    
 }
 
-sub add(Str $dir, Str $_schema, Str $_podir, Str $_gettext-domain, Str $_out-dir, Bool $_force is copy, Bool $stomp-force, Bool $stomp, @_extra-sources --> Bool) is export {
+sub add(Str $dir,
+        Str $_schema,
+        Str $_podir,
+        Str $_gettext-domain,
+        Str $_out-dir,
+        Bool $_force is copy,
+        Bool $stomp-force,
+        Bool $stomp,
+        @_extra-sources --> Bool) is export {
     read-file($dir);
     push @extra-sources, |@_extra-sources if @_extra-sources;
     if $stomp {
