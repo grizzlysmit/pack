@@ -1,0 +1,33 @@
+{
+  "support": {
+    "source": "https://github.com/grizzlysmit/pack.git",
+    "email": "grizzly@smit.id.au",
+    "bugtracker": "https://github.com/grizzlysmit/pack/issues"
+  },
+  "license": "GPL-3.0-or-later",
+  "provides": {
+    "App::pack": "bin/pack.raku",
+    "Pack": "lib/Pack.rakumod"
+  },
+  "authors": [
+    "Francis Grizzly Smit <grizzly@smit.id.au>"
+  ],
+  "version": "0.1.0",
+  "description": "A Raku program to manage the use of gnome-extensions pack, it has too many arguments this makes it easy.",
+  "test-depends": [
+    ""
+  ],
+  "name": "App::pack.raku",
+  "source-url": "https://github.com/grizzlysmit/pack.git",
+  "perl": "6.d",
+  "auth": "zef:grizzlysmit",
+  "tags": [
+    "gnome-shell",
+    "plugin",
+    "packaging",
+    "management"
+  ],
+  "depends": [
+    ""
+  ]
+}
