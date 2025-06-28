@@ -129,13 +129,23 @@ Usage:
 
 =end pod
 
-multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False --> int){
-    read-file($dir);
-    if pack($dir, $force) {
-        return 0;
-    } else {
-        die "run exited with a bad value {exitcode}";
+multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False,
+                    Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
+                            Bool :d(:quiet(:$silent)) = False, *@dirs is copy --> int){
+    @dirs.prepend($dir);
+    for @dirs -> $dir_ {
+        read-file($dir_);
+        unless pack($dir_, $silent, $force) {
+            die "run exited with a bad value {exitcode}";
+        }
+    } # for @dirs -> $dir_ #
+    unless $silent {
+        $command.say;
+        my @cmd = $command.words();
+        my Proc $res = run @cmd;
+        die "‷$command‴ returned {$res.exitcode}" unless $res.exitcode === 0;
     }
+    return 0;
 }
 
 multi sub MAIN('create',
@@ -289,15 +299,25 @@ multi sub MAIN('alias', 'add', Str $key, Str $target, Bool:D :s(:set(:$force)) =
     } 
 }
 
-multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False --> int){
-    my Str:D $dir = path($key);
-    die "could not find key: $key in db" unless $dir;
-    read-file($dir);
-    if pack($dir, $force) {
-        return 0;
-    } else {
-        die "run exited with a bad value {exitcode}";
+multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
+                    Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
+                                                        Bool :d(:quiet(:$silent)) = False, *@keys is copy --> int){
+    @keys.prepend($key);
+    for @keys -> $key_ {
+        my Str:D $dir = path($key_);
+        die "could not find key: $key_ in db" unless $dir;
+        read-file($dir);
+        unless pack($dir, $silent, $force) {
+            die "run exited with a bad value {exitcode}";
+        }
+    } # for @keys -> $key_  #
+    unless $silent {
+        $command.say;
+        my @cmd = $command.words();
+        my Proc $res = run @cmd;
+        die "‷$command‴ returned {$res.exitcode}" unless $res.exitcode === 0;
     }
+    return 0;
 }
 
 multi sub MAIN('edit', 'configs') returns Int {

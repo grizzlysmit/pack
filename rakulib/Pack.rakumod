@@ -2055,7 +2055,7 @@ sub read-file(Str $dir --> Bool) is export {
     return True;
 }
 
-sub pack(Str $dir, Bool $force is copy = False --> Bool) is export {
+sub pack(Str $dir, Bool $silent, Bool $force is copy = False --> Bool) is export {
     $force              ||= $force-file;
     my @cmd = qqww{gnome-extensions pack};
     for @extra-sources -> $extra {
@@ -2069,7 +2069,7 @@ sub pack(Str $dir, Bool $force is copy = False --> Bool) is export {
     $package-dir = $dir without $package-dir;
     $package-dir = $dir if $dir.contains('/');
     push @cmd, "$package-dir";
-    @cmd.join(' ').say;
+    (@cmd.join(' ') ~ "\n").say unless $silent;
     my Proc $res = run @cmd;
     $exitcode-val = $res.exitcode;
     return $res.exitcode == 0;
