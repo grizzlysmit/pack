@@ -615,8 +615,8 @@ footer {
 <p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions. </p><h3 id="pack"><a href="#pack" class="u" title="go to top of document">pack</a></h3>
 <pre class="pod-block-code">pack.raku --help
 
-Usage:                                                                                                                                                                                     
-  pack.raku do &lt;dir&gt;   [-f|--force]
+Usage:
+  pack.raku do &lt;dir&gt;  [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-d|--quiet|--silent]
   pack.raku create &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
   pack.raku add &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
   pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
@@ -641,11 +641,11 @@ Usage:
   pack.raku get force &lt;package-dir&gt;
   pack.raku get package-dir &lt;package-dir&gt;
   pack.raku alias add &lt;key&gt; &lt;target&gt;   [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
-  pack.raku alias do &lt;key&gt;   [-f|--force]
+  pack.raku alias do &lt;key&gt;  [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-d|--quiet|--silent]
   pack.raku edit configs
   pack.raku list keys  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
   pack.raku list all  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
-  pack.raku delete   [&lt;keys&gt; ...] [-d|--delete|--do-not-trash
+  pack.raku delete   [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
   pack.raku del   [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
   pack.raku trash   [&lt;keys&gt; ...]
   pack.raku tidy file
@@ -673,7 +673,7 @@ Usage:
   pack.raku do &lt;dir&gt; [-f|--force]
 
 </pre></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-06-03T23:45:04Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-06-28T19:16:34Z</span></div></footer>
 	</body>
 </html>
 

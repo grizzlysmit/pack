@@ -63,8 +63,8 @@ up your gnome-shell extensions.
 
 pack.raku --help
                                                                                                                                                                                            
-Usage:                                                                                                                                                                                     
-  pack.raku do <dir>   [-f|--force]
+Usage:
+  pack.raku do <dir>  [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
   pack.raku create <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
   pack.raku add <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] [-F|--stomp-force] [-S|--stomp]
   pack.raku set schema <package-dir> <schema-value>
@@ -89,11 +89,11 @@ Usage:
   pack.raku get force <package-dir>
   pack.raku get package-dir <package-dir>
   pack.raku alias add <key> <target>   [-s|--set|--force] [-c|--comment=<Str>]
-  pack.raku alias do <key>   [-f|--force]
+  pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
   pack.raku edit configs
   pack.raku list keys  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku list all  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
-  pack.raku delete   [<keys> ...] [-d|--delete|--do-not-trash
+  pack.raku delete   [<keys> ...] [-d|--delete|--do-not-trash]
   pack.raku del   [<keys> ...] [-d|--delete|--do-not-trash]
   pack.raku trash   [<keys> ...]
   pack.raku tidy file
