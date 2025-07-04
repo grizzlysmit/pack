@@ -29,7 +29,7 @@ Table of Contents
 
   * [pack.raku alias do --help](#packraku-alias-do---help)
 
-  * [pack.raku edit configs](packraku-edit-configs)
+  * [pack.raku edit configs](#packraku-edit-configs)
 
 NAME
 ====

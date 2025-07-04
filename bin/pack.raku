@@ -37,7 +37,7 @@ Table of  Contents
 =item1 L<pack.raku do --help|#packraku-do---help>
 =item1 L<pack.raku create --help|#packraku-create---help>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
-=item1 L<pack.raku edit configs|packraku-edit-configs>
+=item1 L<pack.raku edit configs|#packraku-edit-configs>
 
 
 =NAME App::pack 
