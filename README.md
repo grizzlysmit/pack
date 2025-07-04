@@ -29,6 +29,8 @@ Table of Contents
 
   * [pack.raku alias do --help](#packraku-alias-do---help)
 
+  * [pack.raku edit configs](packraku-edit-configs)
+
 NAME
 ====
 
@@ -205,6 +207,16 @@ Where
     * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
 
   * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
+
+pack.raku edit configs
+======================
+
+    pack.raku edit configs --help
+
+    Usage:
+      pack.raku edit configs
+
+Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.
 
 
 

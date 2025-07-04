@@ -37,6 +37,7 @@ Table of  Contents
 =item1 L<pack.raku do --help|#packraku-do---help>
 =item1 L<pack.raku create --help|#packraku-create---help>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
+=item1 L<pack.raku edit configs|packraku-edit-configs>
 
 
 =NAME App::pack 
@@ -379,6 +380,23 @@ multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
     }
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku edit configs
+
+=begin code
+
+pack.raku edit configs --help
+                                                                                                                                                                                           
+Usage:
+  pack.raku edit configs
+
+=end code
+
+Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.
+
+=end pod
 
 multi sub MAIN('edit', 'configs') returns Int {
    if edit-configs() {
