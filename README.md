@@ -27,11 +27,11 @@ Table of Contents
 
   * [pack.raku create --help](#packraku-create---help)
 
+  * [pack.raku alias add](#packraku-alias-add)
+
   * [pack.raku alias do --help](#packraku-alias-do---help)
 
   * [pack.raku edit configs](#packraku-edit-configs)
-
-  * [pack.raku alias add](#packraku-alias-add)
 
   * [pack.raku list keys](#packraku-list-keys)
 

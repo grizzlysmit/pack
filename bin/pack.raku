@@ -36,9 +36,9 @@ Table of Contents
 =item2 L<Motivation|#motivation>
 =item1 L<pack.raku do --help|#packraku-do---help>
 =item1 L<pack.raku create --help|#packraku-create---help>
+=item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
-=item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku list keys|#packraku-list-keys>
 =item1 L<pack.raku list all|#packraku-list-all>
 
