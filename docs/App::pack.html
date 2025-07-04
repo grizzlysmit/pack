@@ -585,6 +585,9 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#Introduction">Introduction</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Motivation">Motivation</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#pack">pack</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
 </table></div>
 </nav><div id="pack"></div><div class="subtitle"><p>A Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy.</p></div><div class="pod-body"><section name="___top"><h1 id="App::pack"><a href="#___top" class="u" title="go to top of document">App::pack</a></h1>
 <h1 id="Module_Pack"><a href="#___top" class="u" title="go to top of document">Module Pack</a></h1>
@@ -600,6 +603,9 @@ footer {
 <ul>
 <li><p><a href="#motivation">Motivation</a></p></li>
 </ul>
+<li><p><a href="#packraku-do---help">pack.raku do --help</a></p></li>
+<li><p><a href="#packraku-create---help">pack.raku create --help</a></p></li>
+<li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
 </ul>
 <section>
 <h1 id="Name"><a href="#___top" class="u" title="go to top of document">NAME</a></h1>
@@ -667,7 +673,8 @@ Usage:
   pack.raku set override GUI_EDITOR &lt;value&gt; [&lt;comment&gt;]
   pack.raku menu restore editors  [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
 
-</pre><pre class="pod-block-code">pack.raku do --help
+</pre><h1 id="pack.raku_do_--help"><a href="#pack" class="u" title="go to top of document">pack.raku do --help</a></h1>
+<pre class="pod-block-code">pack.raku do --help
 
 Usage:
   pack.raku do &lt;dir&gt; [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
@@ -686,6 +693,20 @@ Usage:
 <li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
 </ul>
 </section><section name="pod"><pre class="pod-block-code">Usage:
+  pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
+
+</pre><h1 id="pack.raku_create_--help"><a href="#pack" class="u" title="go to top of document">pack.raku create --help</a></h1>
+<p>Create the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>[&lt;extra-sources&gt; ...]</strong> A list of extra files to add to the package.</p></li>
+<li><p><strong>[-s|--schema=&lt;Str&gt;]</strong> The path to the schema file.</p></li>
+<li><p><strong>[-p|--podir=&lt;Str&gt;]</strong> The path to the po files.</p></li>
+<li><p><strong>[-g|--gettext-domain=&lt;Str&gt;]</strong> The gettext domain.</p></li>
+<li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
+<li><p><strong>[-f|--force]</strong> set the force option.</p></li>
+</ul>
+</section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
+<pre class="pod-block-code">Usage:
   pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
 
 </pre><p>Where</p><ul>
@@ -702,7 +723,7 @@ Usage:
 <li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
 </ul>
 </section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T05:04:30Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T05:47:11Z</span></div></footer>
 	</body>
 </html>
 

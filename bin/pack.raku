@@ -34,6 +34,9 @@ Table of  Contents
 =item1 L<COPYRIGHT|#copyright>
 =item1 L<Introduction|#introduction>
 =item2 L<Motivation|#motivation>
+=item1 L<pack.raku do --help|#packraku-do---help>
+=item1 L<pack.raku create --help|#packraku-create---help>
+=item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 
 
 =NAME App::pack 
@@ -117,6 +120,8 @@ Usage:
 
 =end code
 
+=head1 pack.raku do --help
+
 =begin code :lang<bash>
 
 pack.raku do --help
@@ -156,6 +161,30 @@ multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False,
     }
     return 0;
 }
+
+=begin pod
+
+=begin code :lang<bash>
+
+Usage:
+  pack.raku create <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
+
+=end code
+
+=head1 pack.raku create --help
+
+Create the C<.pack_args.json> file.
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
+=item1 B«[-s|--schema=<Str>]»  The path to the schema file.
+=item1 B«[-p|--podir=<Str>]»  The path to the po files.
+=item1 B«[-g|--gettext-domain=<Str>]»   The gettext domain.
+=item1 B«[-o|--out-dir=<Str>]»   The directory to place the package file in.
+=item1 B«[-f|--force]»   set the force option.
+
+=end pod
 
 multi sub MAIN('create',
                 Str:D $package-dir,
@@ -309,6 +338,8 @@ multi sub MAIN('alias', 'add', Str $key, Str $target, Bool:D :s(:set(:$force)) =
 }
 
 =begin pod 
+
+=head1 pack.raku alias do --help
 
 =begin code :lang<bash>
 

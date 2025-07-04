@@ -23,6 +23,12 @@ Table of Contents
 
     * [Motivation](#motivation)
 
+  * [pack.raku do --help](#packraku-do---help)
+
+  * [pack.raku create --help](#packraku-create---help)
+
+  * [pack.raku alias do --help](#packraku-alias-do---help)
+
 NAME
 ====
 
@@ -124,6 +130,9 @@ Usage:
   pack.raku menu restore editors  [<message>]  [-c|--color|--colour] [-s|--syntax]
 ```
 
+pack.raku do --help
+===================
+
 ```bash
 pack.raku do --help
 
@@ -146,6 +155,35 @@ Where
     * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
 
   * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
+
+```bash
+Usage:
+  pack.raku create <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
+```
+
+pack.raku create --help
+=======================
+
+Create the `.pack_args.json` file.
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **[<extra-sources> ...]** A list of extra files to add to the package.
+
+  * **[-s|--schema=<Str>]** The path to the schema file.
+
+  * **[-p|--podir=<Str>]** The path to the po files.
+
+  * **[-g|--gettext-domain=<Str>]** The gettext domain.
+
+  * **[-o|--out-dir=<Str>]** The directory to place the package file in.
+
+  * **[-f|--force]** set the force option.
+
+pack.raku alias do --help
+=========================
 
 ```bash
 Usage:

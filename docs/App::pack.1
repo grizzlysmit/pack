@@ -37,6 +37,18 @@ Introduction [#introduction]
 .IP \(bu 2m
 Motivation [#motivation]
 .RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku do \-\-help [#packraku-do---help]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku create \-\-help [#packraku-create---help]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku alias do \-\-help [#packraku-alias-do---help]
+.RE
 .SH "NAME"
 App::pack 
 .SH "AUTHOR"
@@ -119,6 +131,7 @@ Usage:
 
 .EE
 .RE
+.SH pack\&.raku do \-\-help
 
 .RS 4m
 .EX
@@ -160,6 +173,49 @@ the default is \fBls \-Flaghi \-\-color=always\fR this can be overriden by the v
 .IP \(bu 2m
 \fB[\-q|\-\-quiet|\-\-silent]\fR if present then all non\-error output is suppressed\&.
 .RE
+
+.RS 4m
+.EX
+Usage:
+  pack\&.raku create <package\-dir> [<extra\-sources> \&.\&.\&.] [\-s|\-\-schema=<Str>] [\-p|\-\-podir=<Str>] [\-g|\-\-gettext\-domain=<Str>] [\-o|\-\-out\-dir=<Str>] [\-f|\-\-force]
+
+
+.EE
+.RE
+.SH pack\&.raku create \-\-help
+
+Create the \&.pack_args\&.json file\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<extra\-sources> \&.\&.\&.]\fR A list of extra files to add to the package\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-schema=<Str>]\fR The path to the schema file\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-podir=<Str>]\fR The path to the po files\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-g|\-\-gettext\-domain=<Str>]\fR The gettext domain\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-o|\-\-out\-dir=<Str>]\fR The directory to place the package file in\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-f|\-\-force]\fR set the force option\&.
+.RE
+.SH pack\&.raku alias do \-\-help
 
 .RS 4m
 .EX
