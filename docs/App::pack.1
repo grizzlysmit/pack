@@ -53,6 +53,18 @@ pack\&.raku alias do \-\-help [#packraku-alias-do---help]
 .IP \(bu 2m
 pack\&.raku edit configs [#packraku-edit-configs]
 .RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku alias add [#packraku-alias-add]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku list keys [#packraku-list-keys]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku list all [#packraku-list-all]
+.RE
 .SH "NAME"
 App::pack 
 .SH "AUTHOR"
@@ -144,6 +156,8 @@ pack\&.raku do \-\-help
 Usage:
   pack\&.raku do <dir> [<dirs> \&.\&.\&.] [\-f|\-\-force] [\-c|\-\-command=<Str>] [\-q|\-\-quiet|\-\-silent]
 
+L<Table of Contents|#table\-of\-contents>
+
 
 .EE
 .RE
@@ -177,6 +191,8 @@ the default is \fBls \-Flaghi \-\-color=always\fR this can be overriden by the v
 .IP \(bu 2m
 \fB[\-q|\-\-quiet|\-\-silent]\fR if present then all non\-error output is suppressed\&.
 .RE
+
+Table of Contents [#table-of-contents]
 
 .RS 4m
 .EX
@@ -219,6 +235,40 @@ Where
 .IP \(bu 2m
 \fB[\-f|\-\-force]\fR set the force option\&.
 .RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku alias add
+
+.RS 4m
+.EX
+pack\&.raku alias add \-\-help
+
+Usage:
+  pack\&.raku alias add <key> <target>  [\-s|\-\-set|\-\-force] [\-c|\-\-comment=<Str>]
+
+
+.EE
+.RE
+.P
+Where 
+.RS 2n
+.IP \(bu 2m
+\fB<key>\fR is a faily arbitray key\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<target>\fR is a path to a directory containing a \fBgnome\-shell\fR plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-set|\-\-force]\fR if present then add the key directory pair even if it requires overwriting an existing entry\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-comment=<Str>]\fR A comment to describe the key directory pair\&.
+.RE
+
+Table of Contents [#table-of-contents]
 .SH pack\&.raku alias do \-\-help
 
 .RS 4m
@@ -259,6 +309,8 @@ the default is \fBls \-Flaghi \-\-color=always\fR this can be overriden by the v
 .IP \(bu 2m
 \fB[\-q|\-\-quiet|\-\-silent]\fR if present then all non\-error output is suppressed\&.
 .RE
+
+Table of Contents [#table-of-contents]
 .SH pack\&.raku edit configs
 
 .RS 4m
@@ -273,4 +325,98 @@ Usage:
 .RE
 .P
 Open all configuration files for editing, avoid for expert use only and there are better ways, mostly\&.
+
+Table of Contents [#Table-of-Contents]
+.SH pack\&.raku list keys
+
+.RS 4m
+.EX
+pack\&.raku list keys \-\-help
+
+Usage:
+  pack\&.raku list keys [<prefix>]  [\-c|\-\-color|\-\-colour] [\-s|\-\-syntax] [\-l|\-\-page\-length[=Int]] [\-p|\-\-pattern=<Str>] [\-e|\-\-ecma\-pattern=<Str>]
+
+
+.EE
+.RE
+.P
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<prefix>]\fR If present then search for keys starting with the string value\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-color|\-\-colour]\fR If present then show with ANSI colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-syntax]\fR If present will override colour setting and dispaly with syntax highlighted colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-l|\-\-page\-length[=Int]]\fR Set the page length before headers are reshown\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-pattern=<Str>]\fR A raku regex to use to search for the matching keys\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-e|\-\-ecma\-pattern=<Str>]\fR A ECMA262Regex regex to use to search for the matching keys\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB:\fR uses a imperfect library to convert the EMCA262Regex to a raku one\&.
+.RE
+
+List all or a subset of the keys avaiable\&.
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku list all
+
+.RS 4m
+.EX
+pack\&.raku list all \-\-help
+
+Usage:
+  pack\&.raku list all [<prefix>]  [\-c|\-\-color|\-\-colour] [\-s|\-\-syntax] [\-l|\-\-page\-length[=Int]] [\-p|\-\-pattern=<Str>] [\-e|\-\-ecma\-pattern=<Str>]
+
+
+.EE
+.RE
+.P
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<prefix>]\fR If present then search for keys, directories or comments starting with the string value\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-color|\-\-colour]\fR If present then show with ANSI colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-syntax]\fR If present will override colour setting and dispaly with syntax highlighted colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-l|\-\-page\-length[=Int]]\fR Set the page length before headers are reshown\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-pattern=<Str>]\fR A raku regex to use to search for the matching keys, directories or comments\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-e|\-\-ecma\-pattern=<Str>]\fR A ECMA262Regex regex to use to search for the matching keys, directories or comments\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB:\fR uses a imperfect library to convert the EMCA262Regex to a raku one\&.
+.RE
+
+List all or a subset of the keys avaiable\&.
+
+Table of Contents [#table-of-contents]
 

@@ -22,7 +22,7 @@ use Pack;
 
 =begin head2
 
-Table of  Contents
+Table of Contents
 
 =end head2
 
@@ -38,6 +38,9 @@ Table of  Contents
 =item1 L<pack.raku create --help|#packraku-create---help>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
+=item1 L<pack.raku alias add|#packraku-alias-add>
+=item1 L<pack.raku list keys|#packraku-list-keys>
+=item1 L<pack.raku list all|#packraku-list-all>
 
 
 =NAME App::pack 
@@ -130,6 +133,8 @@ pack.raku do --help
 Usage:
   pack.raku do <dir> [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
 
+L<Table of Contents|#table-of-contents>
+
 =end code
 
 Where
@@ -140,6 +145,8 @@ Where
 =item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 =item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
 =item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
+
+L<Table of Contents|#table-of-contents>
 
 
 =end pod
@@ -184,6 +191,8 @@ Where
 =item1 B«[-g|--gettext-domain=<Str>]»   The gettext domain.
 =item1 B«[-o|--out-dir=<Str>]»   The directory to place the package file in.
 =item1 B«[-f|--force]»   set the force option.
+
+L<Table of Contents|#table-of-contents>
 
 =end pod
 
@@ -330,6 +339,29 @@ multi sub MAIN('get', 'package-dir', Str $package-dir --> int){
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku alias add
+
+=begin code :lang<bash>
+
+pack.raku alias add --help
+
+Usage:
+  pack.raku alias add <key> <target>  [-s|--set|--force] [-c|--comment=<Str>]
+
+=end code
+
+Where 
+=item1 B«<key>»  is a faily arbitray key.
+=item1 B«<target>»  is a path to a directory containing a B<gnome-shell> plugin.
+=item1 B«[-s|--set|--force]»     if present then add the key directory pair even if it requires overwriting an existing entry.
+=item1 B«[-c|--comment=<Str>]»   A comment to describe the key directory pair.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('alias', 'add', Str $key, Str $target, Bool:D :s(:set(:$force)) = False, Str :c(:$comment) = Str --> int){
     if add-path($key, $target, $force, $comment) {
        exit 0;
@@ -357,6 +389,8 @@ Where
 =item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 =item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
 =item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
+
+L<Table of Contents|#table-of-contents>
 
 =end pod
 
@@ -396,6 +430,8 @@ Usage:
 
 Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.
 
+L<Table of Contents|#Table-of-Contents>
+
 =end pod
 
 multi sub MAIN('edit', 'configs') returns Int {
@@ -405,6 +441,34 @@ multi sub MAIN('edit', 'configs') returns Int {
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku list keys
+
+=begin code :lang<bash>
+
+pack.raku list keys --help
+
+Usage:
+  pack.raku list keys [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Where
+=item1 B«[<prefix>]»  If present then search for keys starting with the string value.
+=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»  If present will override colour setting and dispaly with syntax highlighted colours.
+=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are reshown.
+=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys.
+=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys.
+=item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
+
+List all or a subset of the keys avaiable.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'keys', Str $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
@@ -426,6 +490,34 @@ multi sub MAIN('list', 'keys', Str $prefix = '',
        exit 1;
     } 
 }
+
+=begin pod
+
+=head1 pack.raku list all
+
+=begin code :lang<bash>
+
+pack.raku list all --help
+
+Usage:
+  pack.raku list all [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Where
+=item1 B«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
+=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»  If present will override colour setting and dispaly with syntax highlighted colours.
+=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are reshown.
+=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
+=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+=item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
+
+List all or a subset of the keys avaiable.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'all', Str:D $prefix = '', Bool:D :c(:color(:$colour)) = False,
                     Bool:D :s(:$syntax) = False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str,

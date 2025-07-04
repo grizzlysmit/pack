@@ -587,8 +587,11 @@ footer {
  <tr class="toc-level-3"><td class="toc-text"><a href="#pack">pack</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
 </table></div>
 </nav><div id="pack"></div><div class="subtitle"><p>A Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy.</p></div><div class="pod-body"><section name="___top"><h1 id="App::pack"><a href="#___top" class="u" title="go to top of document">App::pack</a></h1>
 <h1 id="Module_Pack"><a href="#___top" class="u" title="go to top of document">Module Pack</a></h1>
@@ -608,6 +611,9 @@ footer {
 <li><p><a href="#packraku-create---help">pack.raku create --help</a></p></li>
 <li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
 <li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p></li>
+<li><p><a href="#packraku-alias-add">pack.raku alias add</a></p></li>
+<li><p><a href="#packraku-list-keys">pack.raku list keys</a></p></li>
+<li><p><a href="#packraku-list-all">pack.raku list all</a></p></li>
 </ul>
 <section>
 <h1 id="Name"><a href="#___top" class="u" title="go to top of document">NAME</a></h1>
@@ -681,6 +687,8 @@ Usage:
 Usage:
   pack.raku do &lt;dir&gt; [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
 
+L&lt;Table of Contents|#table-of-contents&gt;
+
 </pre><p>Where</p><ul>
 <li><p>dir is a directory containing a <strong>gnome-shell</strong> plugin</p></li>
 <ul>
@@ -694,7 +702,7 @@ Usage:
 </ul>
 <li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
 </ul>
-</section><section name="pod"><pre class="pod-block-code">Usage:
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><pre class="pod-block-code">Usage:
   pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
 
 </pre><h1 id="pack.raku_create_--help"><a href="#pack" class="u" title="go to top of document">pack.raku create --help</a></h1>
@@ -707,7 +715,19 @@ Usage:
 <li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
 <li><p><strong>[-f|--force]</strong> set the force option.</p></li>
 </ul>
-</section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack" class="u" title="go to top of document">pack.raku alias add</a></h1>
+<pre class="pod-block-code">pack.raku alias add --help
+
+Usage:
+  pack.raku alias add &lt;key&gt; &lt;target&gt;  [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
+
+</pre><p>Where </p><ul>
+<li><p><strong>&lt;key&gt;</strong> is a faily arbitray key.</p></li>
+<li><p><strong>&lt;target&gt;</strong> is a path to a directory containing a <strong>gnome-shell</strong> plugin.</p></li>
+<li><p><strong>[-s|--set|--force]</strong> if present then add the key directory pair even if it requires overwriting an existing entry.</p></li>
+<li><p><strong>[-c|--comment=&lt;Str&gt;]</strong> A comment to describe the key directory pair.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
 <pre class="pod-block-code">Usage:
   pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
 
@@ -724,14 +744,48 @@ Usage:
 </ul>
 <li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
 </ul>
-</section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack" class="u" title="go to top of document">pack.raku edit configs</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
 
 Usage:
   pack.raku edit configs
 
-</pre><p>Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.</p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T06:08:07Z</span></div></footer>
+</pre><p>Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.</p><p><a href="#Table-of-Contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_keys"><a href="#pack" class="u" title="go to top of document">pack.raku list keys</a></h1>
+<pre class="pod-block-code">pack.raku list keys --help
+
+Usage:
+  pack.raku list keys [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and dispaly with syntax highlighted colours.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are reshown.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys.</p></li>
+<ul>
+<li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
+</ul>
+</ul>
+<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_all"><a href="#pack" class="u" title="go to top of document">pack.raku list all</a></h1>
+<pre class="pod-block-code">pack.raku list all --help
+
+Usage:
+  pack.raku list all [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys, directories or comments starting with the string value.</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and dispaly with syntax highlighted colours.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are reshown.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
+<ul>
+<li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
+</ul>
+</ul>
+<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T07:34:09Z</span></div></footer>
 	</body>
 </html>
 
