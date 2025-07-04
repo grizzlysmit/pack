@@ -95,19 +95,19 @@ pack\&.raku remove podir [#packraku-remove-podir]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku remove gettext\-domain [#packraku-remove-gettext-domain]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku remove out\-dir [#packraku-remove-out-dir]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku remove extra\-sources [#packraku-remove-extra-sources]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku get schema [#packraku-get-schema]
 .RE
 .RS 2n
 .IP \(bu 2m
@@ -653,6 +653,94 @@ Usage:
 .RE
 .P
 Remove the value of podir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku remove gettext\-domain
+
+.RS 4m
+.EX
+pack\&.raku remove gettext\-domain \-\-help
+
+Usage:
+  pack\&.raku remove gettext\-domain <package\-dir>
+
+
+.EE
+.RE
+.P
+Remove the value of gettext\-domain in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku remove out\-dir
+
+.RS 4m
+.EX
+pack\&.raku remove out\-dir \-\-help
+
+Usage:
+  pack\&.raku remove out\-dir <package\-dir>
+
+
+.EE
+.RE
+.P
+Remove the value of out\-dir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku remove extra\-sources
+
+.RS 4m
+.EX
+pack\&.raku remove extra\-sources \-\-help
+
+Usage:
+  pack\&.raku remove extra\-sources <package\-dir>
+
+
+.EE
+.RE
+.P
+Truncate the value of extra\-sources in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku get schema
+
+.RS 4m
+.EX
+pack\&.raku get schema \-\-help
+
+Usage:
+  pack\&.raku get schema <package\-dir>
+
+
+.EE
+.RE
+.P
+Get the value of schema in \fB<package\-dir>/\&.pack_args\&.json\fR
 
 Where
 .RS 2n

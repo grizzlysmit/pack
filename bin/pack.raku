@@ -48,10 +48,10 @@ Table of Contents
 =item1 L<pack.raku append extra-sources|#packraku-append-extra-sources>
 =item1 L<pack.raku remove schema|#packraku-remove-schema>
 =item1 L<pack.raku remove podir|#packraku-remove-podir>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
+=item1 L<pack.raku remove gettext-domain|#packraku-remove-gettext-domain>
+=item1 L<pack.raku remove out-dir|#packraku-remove-out-dir>
+=item1 L<pack.raku remove extra-sources|#packraku-remove-extra-sources>
+=item1 L<pack.raku get schema|#packraku-get-schema>
 =item1 L<placeholder|#placeholder>
 =item1 L<placeholder|#placeholder>
 =item1 L<placeholder|#placeholder>
@@ -594,20 +594,108 @@ multi sub MAIN('remove', 'podir', Str $package-dir --> int){
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku remove gettext-domain
+
+=begin code :lang<bash>
+
+pack.raku remove gettext-domain --help
+
+Usage:
+  pack.raku remove gettext-domain <package-dir>
+
+=end code
+
+Remove the value of gettext-domain in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('remove', 'gettext-domain', Str $package-dir --> int){
     die "Error: unkown" unless remove($package-dir, 'gettext-domain');
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku remove out-dir
+
+=begin code :lang<bash>
+
+pack.raku remove out-dir --help
+
+Usage:
+  pack.raku remove out-dir <package-dir>
+
+=end code
+
+Remove the value of out-dir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('remove', 'out-dir', Str $package-dir --> int){
     die "Error: unkown" unless remove($package-dir, 'out-dir');
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku remove extra-sources
+
+=begin code :lang<bash>
+
+pack.raku remove extra-sources --help
+
+Usage:
+  pack.raku remove extra-sources <package-dir>
+
+=end code
+
+Truncate the value of extra-sources in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('remove', 'extra-sources', Str $package-dir --> int){
     die "Error: unkown" unless remove($package-dir, 'extra-sources');
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku get schema
+
+=begin code :lang<bash>
+
+pack.raku get schema --help
+
+Usage:
+  pack.raku get schema <package-dir>
+
+=end code
+
+Get the value of schema in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('get', 'schema', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'schema');

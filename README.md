@@ -51,13 +51,13 @@ Table of Contents
 
   * [pack.raku remove podir](#packraku-remove-podir)
 
-  * [placeholder](#placeholder)
+  * [pack.raku remove gettext-domain](#packraku-remove-gettext-domain)
 
-  * [placeholder](#placeholder)
+  * [pack.raku remove out-dir](#packraku-remove-out-dir)
 
-  * [placeholder](#placeholder)
+  * [pack.raku remove extra-sources](#packraku-remove-extra-sources)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get schema](#packraku-get-schema)
 
   * [placeholder](#placeholder)
 
@@ -485,6 +485,78 @@ Usage:
 ```
 
 Remove the value of podir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku remove gettext-domain
+===============================
+
+```bash
+pack.raku remove gettext-domain --help
+
+Usage:
+  pack.raku remove gettext-domain <package-dir>
+```
+
+Remove the value of gettext-domain in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku remove out-dir
+========================
+
+```bash
+pack.raku remove out-dir --help
+
+Usage:
+  pack.raku remove out-dir <package-dir>
+```
+
+Remove the value of out-dir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku remove extra-sources
+==============================
+
+```bash
+pack.raku remove extra-sources --help
+
+Usage:
+  pack.raku remove extra-sources <package-dir>
+```
+
+Truncate the value of extra-sources in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku get schema
+====================
+
+```bash
+pack.raku get schema --help
+
+Usage:
+  pack.raku get schema <package-dir>
+```
+
+Get the value of schema in **<package-dir>/.pack_args.json**
 
 Where
 

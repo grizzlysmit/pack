@@ -599,6 +599,10 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_append_extra-sources">pack.raku append extra-sources</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_schema">pack.raku remove schema</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_podir">pack.raku remove podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_gettext-domain">pack.raku remove gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_out-dir">pack.raku remove out-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_extra-sources">pack.raku remove extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_schema">pack.raku get schema</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
@@ -633,10 +637,10 @@ footer {
 <li><p><a href="#packraku-append-extra-sources">pack.raku append extra-sources</a></p></li>
 <li><p><a href="#packraku-remove-schema">pack.raku remove schema</a></p></li>
 <li><p><a href="#packraku-remove-podir">pack.raku remove podir</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#packraku-remove-gettext-domain">pack.raku remove gettext-domain</a></p></li>
+<li><p><a href="#packraku-remove-out-dir">pack.raku remove out-dir</a></p></li>
+<li><p><a href="#packraku-remove-extra-sources">pack.raku remove extra-sources</a></p></li>
+<li><p><a href="#packraku-get-schema">pack.raku get schema</a></p></li>
 <li><p><a href="#placeholder">placeholder</a></p></li>
 <li><p><a href="#placeholder">placeholder</a></p></li>
 <li><p><a href="#placeholder">placeholder</a></p></li>
@@ -879,6 +883,42 @@ Usage:
 </pre><p>Remove the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
 <li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
 </ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_gettext-domain"><a href="#pack" class="u" title="go to top of document">pack.raku remove gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku remove gettext-domain --help
+
+Usage:
+  pack.raku remove gettext-domain &lt;package-dir&gt;
+
+</pre><p>Remove the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku remove out-dir</a></h1>
+<pre class="pod-block-code">pack.raku remove out-dir --help
+
+Usage:
+  pack.raku remove out-dir &lt;package-dir&gt;
+
+</pre><p>Remove the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku remove extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku remove extra-sources --help
+
+Usage:
+  pack.raku remove extra-sources &lt;package-dir&gt;
+
+</pre><p>Truncate the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_schema"><a href="#pack" class="u" title="go to top of document">pack.raku get schema</a></h1>
+<pre class="pod-block-code">pack.raku get schema --help
+
+Usage:
+  pack.raku get schema &lt;package-dir&gt;
+
+</pre><p>Get the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack" class="u" title="go to top of document">pack.raku alias add</a></h1>
 <pre class="pod-block-code">pack.raku alias add --help
 
@@ -949,7 +989,7 @@ Usage:
 </ul>
 </ul>
 <p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T15:53:21Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T16:09:42Z</span></div></footer>
 	</body>
 </html>
 
