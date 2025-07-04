@@ -600,7 +600,6 @@ footer {
 <ul>
 <li><p><a href="#motivation">Motivation</a></p></li>
 </ul>
-<li><p><a href="#fix">Fix</a></p></li>
 </ul>
 <section>
 <h1 id="Name"><a href="#___top" class="u" title="go to top of document">NAME</a></h1>
@@ -616,7 +615,7 @@ footer {
 <pre class="pod-block-code">pack.raku --help
 
 Usage:
-  pack.raku do &lt;dir&gt;  [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-d|--quiet|--silent]
+  pack.raku do &lt;dir&gt;  [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
   pack.raku create &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
   pack.raku add &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
   pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
@@ -641,7 +640,7 @@ Usage:
   pack.raku get force &lt;package-dir&gt;
   pack.raku get package-dir &lt;package-dir&gt;
   pack.raku alias add &lt;key&gt; &lt;target&gt;   [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
-  pack.raku alias do &lt;key&gt;  [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-d|--quiet|--silent]
+  pack.raku alias do &lt;key&gt;  [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
   pack.raku edit configs
   pack.raku list keys  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
   pack.raku list all  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
@@ -669,11 +668,41 @@ Usage:
   pack.raku menu restore editors  [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
 
 </pre><pre class="pod-block-code">pack.raku do --help
-Usage:
-  pack.raku do &lt;dir&gt; [-f|--force]
 
-</pre></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-06-28T19:16:34Z</span></div></footer>
+Usage:
+  pack.raku do &lt;dir&gt; [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+
+</pre><p>Where</p><ul>
+<li><p>dir is a directory containing a <strong>gnome-shell</strong> plugin</p></li>
+<ul>
+<li><p>assumes that the directory contains a <code>.pack_args.json</code> file which containes all the arguments for <strong>gnome-extensions pack</strong>.</p></li>
+</ul>
+<li><p><strong>[dirs ...]</strong> a list of aditional directories containing <strong>gnome-shell</strong> plugins same as dir.</p></li>
+<li><p><strong>[-f|--force]</strong> overrides the force parameter in every <code>.pack_args.json</code>.</p></li>
+<li><p><strong>[-c|--command=&lt;Str&gt;]</strong> overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.</p></li>
+<ul>
+<li><p>the default is <strong>ls -Flaghi --color=always</strong> this can be overriden by the value of the <strong>LS_CMD</strong> environment variable but the command-line value overrides both.</p></li>
+</ul>
+<li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
+</ul>
+</section><section name="pod"><pre class="pod-block-code">Usage:
+  pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+
+</pre><p>Where</p><ul>
+<li><p>key is a key pointing to a directory in the directory database containing a <strong>gnome-shell</strong> plugin</p></li>
+<ul>
+<li><p>assumes that the directory contains a <code>.pack_args.json</code> file which containes all the arguments for <strong>gnome-extensions pack</strong>.</p></li>
+</ul>
+<li><p><strong>[keys ...]</strong> a list of aditional keys pointing to directories in the directory database containing <strong>gnome-shell</strong> plugins same as key.</p></li>
+<li><p><strong>[-f|--force]</strong> overrides the force parameter in every <code>.pack_args.json</code>.</p></li>
+<li><p><strong>[-c|--command=&lt;Str&gt;]</strong> overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.</p></li>
+<ul>
+<li><p>the default is <strong>ls -Flaghi --color=always</strong> this can be overriden by the value of the <strong>LS_CMD</strong> environment variable but the command-line value overrides both.</p></li>
+</ul>
+<li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
+</ul>
+</section>		</div>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T05:04:30Z</span></div></footer>
 	</body>
 </html>
 

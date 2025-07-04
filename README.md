@@ -23,8 +23,6 @@ Table of Contents
 
     * [Motivation](#motivation)
 
-  * [Fix](#fix)
-
 NAME
 ====
 
@@ -73,7 +71,7 @@ The command **gnome-extensions pack** has too many arguments this takes care of 
 pack.raku --help
 
 Usage:
-  pack.raku do <dir>  [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
+  pack.raku do <dir>  [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
   pack.raku create <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
   pack.raku add <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] [-F|--stomp-force] [-S|--stomp]
   pack.raku set schema <package-dir> <schema-value>
@@ -98,7 +96,7 @@ Usage:
   pack.raku get force <package-dir>
   pack.raku get package-dir <package-dir>
   pack.raku alias add <key> <target>   [-s|--set|--force] [-c|--comment=<Str>]
-  pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
+  pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
   pack.raku edit configs
   pack.raku list keys  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku list all  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
@@ -128,9 +126,47 @@ Usage:
 
 ```bash
 pack.raku do --help
+
 Usage:
-  pack.raku do <dir> [-f|--force]
+  pack.raku do <dir> [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
 ```
+
+Where
+
+  * dir is a directory containing a **gnome-shell** plugin
+
+    * assumes that the directory contains a `.pack_args.json` file which containes all the arguments for **gnome-extensions pack**.
+
+  * **[dirs ...]** a list of aditional directories containing **gnome-shell** plugins same as dir.
+
+  * **[-f|--force]** overrides the force parameter in every `.pack_args.json`.
+
+  * **[-c|--command=<Str>]** overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+
+    * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
+
+  * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
+
+```bash
+Usage:
+  pack.raku alias do <key> [<keys> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
+```
+
+Where
+
+  * key is a key pointing to a directory in the directory database containing a **gnome-shell** plugin
+
+    * assumes that the directory contains a `.pack_args.json` file which containes all the arguments for **gnome-extensions pack**.
+
+  * **[keys ...]** a list of aditional keys pointing to directories in the directory database containing **gnome-shell** plugins same as key.
+
+  * **[-f|--force]** overrides the force parameter in every `.pack_args.json`.
+
+  * **[-c|--command=<Str>]** overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+
+    * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
+
+  * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
 
 
 

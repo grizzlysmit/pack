@@ -34,7 +34,6 @@ Table of  Contents
 =item1 L<COPYRIGHT|#copyright>
 =item1 L<Introduction|#introduction>
 =item2 L<Motivation|#motivation>
-=item1 L<Fix|#fix>
 
 
 =NAME App::pack 
@@ -64,7 +63,7 @@ up your gnome-shell extensions.
 pack.raku --help
                                                                                                                                                                                            
 Usage:
-  pack.raku do <dir>  [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
+  pack.raku do <dir>  [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
   pack.raku create <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
   pack.raku add <package-dir>  [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] [-F|--stomp-force] [-S|--stomp]
   pack.raku set schema <package-dir> <schema-value>
@@ -89,7 +88,7 @@ Usage:
   pack.raku get force <package-dir>
   pack.raku get package-dir <package-dir>
   pack.raku alias add <key> <target>   [-s|--set|--force] [-c|--comment=<Str>]
-  pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-d|--quiet|--silent]
+  pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
   pack.raku edit configs
   pack.raku list keys  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku list all  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
@@ -121,17 +120,27 @@ Usage:
 =begin code :lang<bash>
 
 pack.raku do --help
+                                                                                                                                                                                           
 Usage:
-  pack.raku do <dir> [-f|--force]
+  pack.raku do <dir> [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
 
 =end code
+
+Where
+=item1 dir   is a directory containing a B<gnome-shell> plugin
+=item2 assumes that the directory contains a C<.pack_args.json> file which containes all the arguments for B<gnome-extensions pack>.
+=item1 B<[dirs ...]>  a list of aditional directories containing B<gnome-shell> plugins same as dir.
+=item1 B<[-f|--force]>   overrides the force parameter in every C<.pack_args.json>.
+=item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+=item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
+=item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
 
 
 =end pod
 
 multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False,
                     Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
-                            Bool :d(:quiet(:$silent)) = False, *@dirs is copy --> int){
+                            Bool :q(:quiet(:$silent)) = False, *@dirs is copy --> int){
     @dirs.prepend($dir);
     for @dirs -> $dir_ {
         read-file($dir_);
@@ -299,9 +308,29 @@ multi sub MAIN('alias', 'add', Str $key, Str $target, Bool:D :s(:set(:$force)) =
     } 
 }
 
+=begin pod 
+
+=begin code :lang<bash>
+
+Usage:
+  pack.raku alias do <key> [<keys> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
+
+=end code
+
+Where
+=item1 key   is a key pointing to a directory in the directory database containing a B<gnome-shell> plugin
+=item2 assumes that the directory contains a C<.pack_args.json> file which containes all the arguments for B<gnome-extensions pack>.
+=item1 B<[keys ...]>  a list of aditional keys pointing to directories in the directory database containing B<gnome-shell> plugins same as key.
+=item1 B<[-f|--force]>   overrides the force parameter in every C<.pack_args.json>.
+=item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+=item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
+=item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
+
+=end pod
+
 multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
                     Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
-                                                        Bool :d(:quiet(:$silent)) = False, *@keys is copy --> int){
+                                                        Bool :q(:quiet(:$silent)) = False, *@keys is copy --> int){
     @keys.prepend($key);
     for @keys -> $key_ {
         my Str:D $dir = path($key_);
