@@ -36,6 +36,28 @@ Table of Contents
 =item2 L<Motivation|#motivation>
 =item1 L<pack.raku do --help|#packraku-do---help>
 =item1 L<pack.raku create --help|#packraku-create---help>
+=item1 L<pack.raku add|#packraku-add>
+=item1 L<pack.raku set schema|#packraku-set-schema>
+=item1 L<pack.raku set podir|#packraku-set-podir>
+=item1 L<pack.raku set gettext-domain|#packraku-set-gettext-domain>
+=item1 L<pack.raku set out-dir|#packraku-set-out-dir>
+=item1 L<pack.raku set force|#packraku-set-force>
+=item1 L<pack.raku add-extra-sources|#packraku-add-extra-sources>
+=item1 L<pack.raku set package-dir|#packraku-set-package-dir>
+=item1 L<pack.raku set extra-sources|#packraku-set-extra-sources>
+=item1 L<pack.raku append extra-sources|#packraku-append-extra-sources>
+=item1 L<pack.raku remove schema|#packraku-remove-schema>
+=item1 L<pack.raku remove podir|#packraku-remove-podir>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
@@ -172,14 +194,14 @@ multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False,
 
 =begin pod
 
+=head1 pack.raku create --help
+
 =begin code :lang<bash>
 
 Usage:
   pack.raku create <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
 
 =end code
-
-=head1 pack.raku create --help
 
 Create the C<.pack_args.json> file.
 
@@ -212,6 +234,36 @@ multi sub MAIN('create',
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku add
+
+=begin code :lang<bash>
+
+pack.raku add --help
+
+Usage:
+  pack.raku add <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] [-F|--stomp-force] [-S|--stomp]
+
+=end code
+
+Modifiy add to the C<.pack_args.json> file.
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
+=item1 B«[-s|--schema=<Str>]»  The path to the schema file.
+=item1 B«[-p|--podir=<Str>]»  The path to the po files.
+=item1 B«[-g|--gettext-domain=<Str>]»   The gettext domain.
+=item1 B«[-o|--out-dir=<Str>]»   The directory to place the package file in.
+=item1 B«[-f|--force]»   set the force option.
+=item1 B«[-F|--stomp-force]»   If present then the value of --force wins regradless.
+=item1 B«[-S|--stomp]»     If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('add',
                 Str $package-dir,
                 Str :s(:$schema) = 'Null',
@@ -234,55 +286,308 @@ multi sub MAIN('add',
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku set schema
+
+=begin code :lang<bash>
+
+pack.raku set schema --help
+
+Usage:
+  pack.raku set schema <package-dir> <schema-value>
+
+=end code
+
+Set the value of schema in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»   Directory containing plugin.
+=item1 B«<schema-value>»  new value of schema.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'schema', Str $package-dir, Str $schema-value --> int){
     die "Error: unkown" unless add($package-dir, $schema-value, 'Null', 'Null', 'Null', False, False, False, ());
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku set podir
+
+=begin code :lang<bash>
+
+pack.raku set podir --help
+
+Usage:
+  pack.raku set podir <package-dir> <podir-value>
+
+=end code
+
+Set the value of podir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«<podir-value>»  new value of podir.
+=item2 podir is the path of the directory containing the po files.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('set', 'podir', Str $package-dir, Str $podir-value --> int){
     die "Error: unkown" unless add($package-dir, 'Null', $podir-value, 'Null', 'Null', False, False, False, ());
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku set gettext-domain
+
+=begin code :lang<bash>
+
+pack.raku set gettext-domain --help
+
+Usage:
+  pack.raku set gettext-domain <package-dir> <gettext-domain-value>
+
+=end code
+
+Set the value of gettext-domain in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«<gettext-domain-value>»  new value of gettext-domain.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'gettext-domain', Str $package-dir, Str $gettext-domain-value --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', $gettext-domain-value, 'Null', False, False, False, ());
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku set out-dir
+
+=begin code :lang<bash>
+
+pack.raku set out-dir --help
+
+Usage:
+  pack.raku set out-dir <package-dir> <out-dir-value>
+
+=end code
+
+Set the value of out-dir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«<out-dir-value>»  new value of out-dir.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('set', 'out-dir', Str $package-dir, Str $out-dir-value --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', $out-dir-value, False, False, False, ());
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku set force
+
+=begin code :lang<bash>
+
+pack.raku set force --help
+
+Usage:
+  pack.raku set force <package-dir> <force-value>
+
+=end code
+
+Set the value of force in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«<force-value>»  new value of force.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'force', Str $package-dir, Bool $force-value --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', $force-value, True, False, ());
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku add-extra-sources
+
+=begin code :lang<bash>
+
+pack.raku add-extra-sources --help
+
+Usage:
+  pack.raku add-extra-sources <package-dir> [<extra-sources> ...]
+
+=end code
+
+Add to the value of extra-sources in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«[<extra-sources> ...]»  additional extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('add-extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, False, @extra-sources);
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku set package-dir
+
+=begin code :lang<bash>
+
+pack.raku set package-dir --help
+
+Usage:
+  pack.raku set package-dir <package-dir> <package-dir-value>
+
+=end code
+
+Set the value of package-dir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«<package-dir-value>»  new value of package-dir.
+=item2 probably useless as B«<package-dir>» and B«<package-dir-value>» are to be expected to be the same generally, but if needed it's here.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'package-dir', Str $package-dir, Str $package-dir-value --> int){
     die "Error: unkown" unless set-package-dir($package-dir, $package-dir-value);
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku set extra-sources
+
+=begin code :lang<bash>
+
+pack.raku set extra-sources --help
+
+Usage:
+  pack.raku set extra-sources <package-dir> [<extra-sources> ...]
+
+=end code
+
+Set the value of extra-sources in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«[<extra-sources> ...]»  new value of extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('set', 'extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, True, @extra-sources);
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku append extra-sources
+
+=begin code :lang<bash>
+
+pack.raku append extra-sources --help
+
+Usage:
+  pack.raku append extra-sources <package-dir> [<extra-sources> ...]
+
+=end code
+
+Append B«[<extra-sources> ...]» to the value of extra-sources in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+=item1 B«[<extra-sources> ...]»  value to append to extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('append', 'extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, False, @extra-sources);
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku remove schema
+
+=begin code :lang<bash>
+
+pack.raku remove schema --help
+
+Usage:
+  pack.raku remove schema <package-dir>
+
+=end code
+
+Remove the value of schema in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('remove', 'schema', Str $package-dir --> int){
     die "Error: unkown" unless remove($package-dir, 'schema');
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku remove podir
+
+=begin code :lang<bash>
+
+pack.raku remove podir --help
+
+Usage:
+  pack.raku remove podir <package-dir>
+
+=end code
+
+Remove the value of podir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('remove', 'podir', Str $package-dir --> int){
     die "Error: unkown" unless remove($package-dir, 'podir');

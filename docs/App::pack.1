@@ -47,6 +47,90 @@ pack\&.raku create \-\-help [#packraku-create---help]
 .RE
 .RS 2n
 .IP \(bu 2m
+pack\&.raku add [#packraku-add]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set schema [#packraku-set-schema]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set podir [#packraku-set-podir]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set gettext\-domain [#packraku-set-gettext-domain]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set out\-dir [#packraku-set-out-dir]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set force [#packraku-set-force]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku add\-extra\-sources [#packraku-add-extra-sources]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set package\-dir [#packraku-set-package-dir]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku set extra\-sources [#packraku-set-extra-sources]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku append extra\-sources [#packraku-append-extra-sources]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku remove schema [#packraku-remove-schema]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku remove podir [#packraku-remove-podir]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
+placeholder [#placeholder]
+.RE
+.RS 2n
+.IP \(bu 2m
 pack\&.raku alias add [#packraku-alias-add]
 .RE
 .RS 2n
@@ -193,6 +277,7 @@ the default is \fBls \-Flaghi \-\-color=always\fR this can be overriden by the v
 .RE
 
 Table of Contents [#table-of-contents]
+.SH pack\&.raku create \-\-help
 
 .RS 4m
 .EX
@@ -202,8 +287,7 @@ Usage:
 
 .EE
 .RE
-.SH pack\&.raku create \-\-help
-
+.P
 Create the \&.pack_args\&.json file\&.
 
 Where
@@ -234,6 +318,346 @@ Where
 .RS 2n
 .IP \(bu 2m
 \fB[\-f|\-\-force]\fR set the force option\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku add
+
+.RS 4m
+.EX
+pack\&.raku add \-\-help
+
+Usage:
+  pack\&.raku add <package\-dir> [<extra\-sources> \&.\&.\&.] [\-s|\-\-schema=<Str>] [\-p|\-\-podir=<Str>] [\-g|\-\-gettext\-domain=<Str>] [\-o|\-\-out\-dir=<Str>] [\-f|\-\-force] [\-F|\-\-stomp\-force] [\-S|\-\-stomp]
+
+
+.EE
+.RE
+.P
+Modifiy add to the \&.pack_args\&.json file\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<extra\-sources> \&.\&.\&.]\fR A list of extra files to add to the package\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-schema=<Str>]\fR The path to the schema file\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-podir=<Str>]\fR The path to the po files\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-g|\-\-gettext\-domain=<Str>]\fR The gettext domain\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-o|\-\-out\-dir=<Str>]\fR The directory to place the package file in\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-f|\-\-force]\fR set the force option\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-F|\-\-stomp\-force]\fR If present then the value of \-\-force wins regradless\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-S|\-\-stomp]\fR If present then @extra\-sources stomps on whatever was before otherwise they are spliced together\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set schema
+
+.RS 4m
+.EX
+pack\&.raku set schema \-\-help
+
+Usage:
+  pack\&.raku set schema <package\-dir> <schema\-value>
+
+
+.EE
+.RE
+.P
+Set the value of schema in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<schema\-value>\fR new value of schema\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set podir
+
+.RS 4m
+.EX
+pack\&.raku set podir \-\-help
+
+Usage:
+  pack\&.raku set podir <package\-dir> <podir\-value>
+
+
+.EE
+.RE
+.P
+Set the value of podir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<podir\-value>\fR new value of podir\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+podir is the path of the directory containing the po files\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set gettext\-domain
+
+.RS 4m
+.EX
+pack\&.raku set gettext\-domain \-\-help
+
+Usage:
+  pack\&.raku set gettext\-domain <package\-dir> <gettext\-domain\-value>
+
+
+.EE
+.RE
+.P
+Set the value of gettext\-domain in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<gettext\-domain\-value>\fR new value of gettext\-domain\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set out\-dir
+
+.RS 4m
+.EX
+pack\&.raku set out\-dir \-\-help
+
+Usage:
+  pack\&.raku set out\-dir <package\-dir> <out\-dir\-value>
+
+
+.EE
+.RE
+.P
+Set the value of out\-dir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<out\-dir\-value>\fR new value of out\-dir\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set force
+
+.RS 4m
+.EX
+pack\&.raku set force \-\-help
+
+Usage:
+  pack\&.raku set force <package\-dir> <force\-value>
+
+
+.EE
+.RE
+.P
+Set the value of force in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<force\-value>\fR new value of force\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku add\-extra\-sources
+
+.RS 4m
+.EX
+pack\&.raku add\-extra\-sources \-\-help
+
+Usage:
+  pack\&.raku add\-extra\-sources <package\-dir> [<extra\-sources> \&.\&.\&.]
+
+
+.EE
+.RE
+.P
+Add to the value of extra\-sources in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<extra\-sources> \&.\&.\&.]\fR additional extra\-sources\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set package\-dir
+
+.RS 4m
+.EX
+pack\&.raku set package\-dir \-\-help
+
+Usage:
+  pack\&.raku set package\-dir <package\-dir> <package\-dir\-value>
+
+
+.EE
+.RE
+.P
+Set the value of package\-dir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir\-value>\fR new value of package\-dir\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+probably useless as \fB<package\-dir>\fR and \fB<package\-dir\-value>\fR are to be expected to be the same generally, but if needed it's here\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set extra\-sources
+
+.RS 4m
+.EX
+pack\&.raku set extra\-sources \-\-help
+
+Usage:
+  pack\&.raku set extra\-sources <package\-dir> [<extra\-sources> \&.\&.\&.]
+
+
+.EE
+.RE
+.P
+Set the value of extra\-sources in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<extra\-sources> \&.\&.\&.]\fR new value of extra\-sources\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku append extra\-sources
+
+.RS 4m
+.EX
+pack\&.raku append extra\-sources \-\-help
+
+Usage:
+  pack\&.raku append extra\-sources <package\-dir> [<extra\-sources> \&.\&.\&.]
+
+
+.EE
+.RE
+.P
+Append \fB[<extra\-sources> \&.\&.\&.]\fR to the value of extra\-sources in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<extra\-sources> \&.\&.\&.]\fR value to append to extra\-sources\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku remove schema
+
+.RS 4m
+.EX
+pack\&.raku remove schema \-\-help
+
+Usage:
+  pack\&.raku remove schema <package\-dir>
+
+
+.EE
+.RE
+.P
+Remove the value of schema in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku remove podir
+
+.RS 4m
+.EX
+pack\&.raku remove podir \-\-help
+
+Usage:
+  pack\&.raku remove podir <package\-dir>
+
+
+.EE
+.RE
+.P
+Remove the value of podir in \fB<package\-dir>/\&.pack_args\&.json\fR
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<package\-dir>\fR Directory containing plugin\&.
 .RE
 
 Table of Contents [#table-of-contents]

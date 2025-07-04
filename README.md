@@ -27,6 +27,48 @@ Table of Contents
 
   * [pack.raku create --help](#packraku-create---help)
 
+  * [pack.raku add](#packraku-add)
+
+  * [pack.raku set schema](#packraku-set-schema)
+
+  * [pack.raku set podir](#packraku-set-podir)
+
+  * [pack.raku set gettext-domain](#packraku-set-gettext-domain)
+
+  * [pack.raku set out-dir](#packraku-set-out-dir)
+
+  * [pack.raku set force](#packraku-set-force)
+
+  * [pack.raku add-extra-sources](#packraku-add-extra-sources)
+
+  * [pack.raku set package-dir](#packraku-set-package-dir)
+
+  * [pack.raku set extra-sources](#packraku-set-extra-sources)
+
+  * [pack.raku append extra-sources](#packraku-append-extra-sources)
+
+  * [pack.raku remove schema](#packraku-remove-schema)
+
+  * [pack.raku remove podir](#packraku-remove-podir)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
   * [pack.raku alias add](#packraku-alias-add)
 
   * [pack.raku alias do --help](#packraku-alias-do---help)
@@ -168,13 +210,13 @@ Where
 
 [Table of Contents](#table-of-contents)
 
+pack.raku create --help
+=======================
+
 ```bash
 Usage:
   pack.raku create <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force]
 ```
-
-pack.raku create --help
-=======================
 
 Create the `.pack_args.json` file.
 
@@ -193,6 +235,260 @@ Where
   * **[-o|--out-dir=<Str>]** The directory to place the package file in.
 
   * **[-f|--force]** set the force option.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku add
+=============
+
+```bash
+pack.raku add --help
+
+Usage:
+  pack.raku add <package-dir> [<extra-sources> ...] [-s|--schema=<Str>] [-p|--podir=<Str>] [-g|--gettext-domain=<Str>] [-o|--out-dir=<Str>] [-f|--force] [-F|--stomp-force] [-S|--stomp]
+```
+
+Modifiy add to the `.pack_args.json` file.
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **[<extra-sources> ...]** A list of extra files to add to the package.
+
+  * **[-s|--schema=<Str>]** The path to the schema file.
+
+  * **[-p|--podir=<Str>]** The path to the po files.
+
+  * **[-g|--gettext-domain=<Str>]** The gettext domain.
+
+  * **[-o|--out-dir=<Str>]** The directory to place the package file in.
+
+  * **[-f|--force]** set the force option.
+
+  * **[-F|--stomp-force]** If present then the value of --force wins regradless.
+
+  * **[-S|--stomp]** If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set schema
+====================
+
+```bash
+pack.raku set schema --help
+
+Usage:
+  pack.raku set schema <package-dir> <schema-value>
+```
+
+Set the value of schema in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<schema-value>** new value of schema.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set podir
+===================
+
+```bash
+pack.raku set podir --help
+
+Usage:
+  pack.raku set podir <package-dir> <podir-value>
+```
+
+Set the value of podir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<podir-value>** new value of podir.
+
+    * podir is the path of the directory containing the po files.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set gettext-domain
+============================
+
+```bash
+pack.raku set gettext-domain --help
+
+Usage:
+  pack.raku set gettext-domain <package-dir> <gettext-domain-value>
+```
+
+Set the value of gettext-domain in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<gettext-domain-value>** new value of gettext-domain.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set out-dir
+=====================
+
+```bash
+pack.raku set out-dir --help
+
+Usage:
+  pack.raku set out-dir <package-dir> <out-dir-value>
+```
+
+Set the value of out-dir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<out-dir-value>** new value of out-dir.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set force
+===================
+
+```bash
+pack.raku set force --help
+
+Usage:
+  pack.raku set force <package-dir> <force-value>
+```
+
+Set the value of force in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<force-value>** new value of force.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku add-extra-sources
+===========================
+
+```bash
+pack.raku add-extra-sources --help
+
+Usage:
+  pack.raku add-extra-sources <package-dir> [<extra-sources> ...]
+```
+
+Add to the value of extra-sources in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **[<extra-sources> ...]** additional extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set package-dir
+=========================
+
+```bash
+pack.raku set package-dir --help
+
+Usage:
+  pack.raku set package-dir <package-dir> <package-dir-value>
+```
+
+Set the value of package-dir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **<package-dir-value>** new value of package-dir.
+
+    * probably useless as **<package-dir>** and **<package-dir-value>** are to be expected to be the same generally, but if needed it's here.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set extra-sources
+===========================
+
+```bash
+pack.raku set extra-sources --help
+
+Usage:
+  pack.raku set extra-sources <package-dir> [<extra-sources> ...]
+```
+
+Set the value of extra-sources in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **[<extra-sources> ...]** new value of extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku append extra-sources
+==============================
+
+```bash
+pack.raku append extra-sources --help
+
+Usage:
+  pack.raku append extra-sources <package-dir> [<extra-sources> ...]
+```
+
+Append **[<extra-sources> ...]** to the value of extra-sources in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+  * **[<extra-sources> ...]** value to append to extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku remove schema
+=======================
+
+```bash
+pack.raku remove schema --help
+
+Usage:
+  pack.raku remove schema <package-dir>
+```
+
+Remove the value of schema in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku remove podir
+======================
+
+```bash
+pack.raku remove podir --help
+
+Usage:
+  pack.raku remove podir <package-dir>
+```
+
+Remove the value of podir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 

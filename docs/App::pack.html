@@ -587,6 +587,18 @@ footer {
  <tr class="toc-level-3"><td class="toc-text"><a href="#pack">pack</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_add">pack.raku add</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_schema">pack.raku set schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_podir">pack.raku set podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_gettext-domain">pack.raku set gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_out-dir">pack.raku set out-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_force">pack.raku set force</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_add-extra-sources">pack.raku add-extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_package-dir">pack.raku set package-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_set_extra-sources">pack.raku set extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_append_extra-sources">pack.raku append extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_schema">pack.raku remove schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_podir">pack.raku remove podir</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
@@ -609,6 +621,27 @@ footer {
 </ul>
 <li><p><a href="#packraku-do---help">pack.raku do --help</a></p></li>
 <li><p><a href="#packraku-create---help">pack.raku create --help</a></p></li>
+<li><p><a href="#packraku-add">pack.raku add</a></p></li>
+<li><p><a href="#packraku-set-schema">pack.raku set schema</a></p></li>
+<li><p><a href="#packraku-set-podir">pack.raku set podir</a></p></li>
+<li><p><a href="#packraku-set-gettext-domain">pack.raku set gettext-domain</a></p></li>
+<li><p><a href="#packraku-set-out-dir">pack.raku set out-dir</a></p></li>
+<li><p><a href="#packraku-set-force">pack.raku set force</a></p></li>
+<li><p><a href="#packraku-add-extra-sources">pack.raku add-extra-sources</a></p></li>
+<li><p><a href="#packraku-set-package-dir">pack.raku set package-dir</a></p></li>
+<li><p><a href="#packraku-set-extra-sources">pack.raku set extra-sources</a></p></li>
+<li><p><a href="#packraku-append-extra-sources">pack.raku append extra-sources</a></p></li>
+<li><p><a href="#packraku-remove-schema">pack.raku remove schema</a></p></li>
+<li><p><a href="#packraku-remove-podir">pack.raku remove podir</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
 <li><p><a href="#packraku-alias-add">pack.raku alias add</a></p></li>
 <li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
 <li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p></li>
@@ -702,11 +735,11 @@ L&lt;Table of Contents|#table-of-contents&gt;
 </ul>
 <li><p><strong>[-q|--quiet|--silent]</strong> if present then all non-error output is suppressed.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><pre class="pod-block-code">Usage:
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_create_--help"><a href="#pack" class="u" title="go to top of document">pack.raku create --help</a></h1>
+<pre class="pod-block-code">Usage:
   pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
 
-</pre><h1 id="pack.raku_create_--help"><a href="#pack" class="u" title="go to top of document">pack.raku create --help</a></h1>
-<p>Create the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
+</pre><p>Create the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
 <li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
 <li><p><strong>[&lt;extra-sources&gt; ...]</strong> A list of extra files to add to the package.</p></li>
 <li><p><strong>[-s|--schema=&lt;Str&gt;]</strong> The path to the schema file.</p></li>
@@ -714,6 +747,137 @@ L&lt;Table of Contents|#table-of-contents&gt;
 <li><p><strong>[-g|--gettext-domain=&lt;Str&gt;]</strong> The gettext domain.</p></li>
 <li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
 <li><p><strong>[-f|--force]</strong> set the force option.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add"><a href="#pack" class="u" title="go to top of document">pack.raku add</a></h1>
+<pre class="pod-block-code">pack.raku add --help
+
+Usage:
+  pack.raku add &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
+
+</pre><p>Modifiy add to the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>[&lt;extra-sources&gt; ...]</strong> A list of extra files to add to the package.</p></li>
+<li><p><strong>[-s|--schema=&lt;Str&gt;]</strong> The path to the schema file.</p></li>
+<li><p><strong>[-p|--podir=&lt;Str&gt;]</strong> The path to the po files.</p></li>
+<li><p><strong>[-g|--gettext-domain=&lt;Str&gt;]</strong> The gettext domain.</p></li>
+<li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
+<li><p><strong>[-f|--force]</strong> set the force option.</p></li>
+<li><p><strong>[-F|--stomp-force]</strong> If present then the value of --force wins regradless.</p></li>
+<li><p><strong>[-S|--stomp]</strong> If present then @extra-sources stomps on whatever was before otherwise they are spliced together.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_schema"><a href="#pack" class="u" title="go to top of document">pack.raku set schema</a></h1>
+<pre class="pod-block-code">pack.raku set schema --help
+
+Usage:
+  pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
+
+</pre><p>Set the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;schema-value&gt;</strong> new value of schema.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_podir"><a href="#pack" class="u" title="go to top of document">pack.raku set podir</a></h1>
+<pre class="pod-block-code">pack.raku set podir --help
+
+Usage:
+  pack.raku set podir &lt;package-dir&gt; &lt;podir-value&gt;
+
+</pre><p>Set the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;podir-value&gt;</strong> new value of podir.</p></li>
+<ul>
+<li><p>podir is the path of the directory containing the po files.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_gettext-domain"><a href="#pack" class="u" title="go to top of document">pack.raku set gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku set gettext-domain --help
+
+Usage:
+  pack.raku set gettext-domain &lt;package-dir&gt; &lt;gettext-domain-value&gt;
+
+</pre><p>Set the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;gettext-domain-value&gt;</strong> new value of gettext-domain.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku set out-dir</a></h1>
+<pre class="pod-block-code">pack.raku set out-dir --help
+
+Usage:
+  pack.raku set out-dir &lt;package-dir&gt; &lt;out-dir-value&gt;
+
+</pre><p>Set the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;out-dir-value&gt;</strong> new value of out-dir.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_force"><a href="#pack" class="u" title="go to top of document">pack.raku set force</a></h1>
+<pre class="pod-block-code">pack.raku set force --help
+
+Usage:
+  pack.raku set force &lt;package-dir&gt; &lt;force-value&gt;
+
+</pre><p>Set the value of force in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;force-value&gt;</strong> new value of force.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add-extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku add-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku add-extra-sources --help
+
+Usage:
+  pack.raku add-extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+
+</pre><p>Add to the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>[&lt;extra-sources&gt; ...]</strong> additional extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_package-dir"><a href="#pack" class="u" title="go to top of document">pack.raku set package-dir</a></h1>
+<pre class="pod-block-code">pack.raku set package-dir --help
+
+Usage:
+  pack.raku set package-dir &lt;package-dir&gt; &lt;package-dir-value&gt;
+
+</pre><p>Set the value of package-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>&lt;package-dir-value&gt;</strong> new value of package-dir.</p></li>
+<ul>
+<li><p>probably useless as <strong>&lt;package-dir&gt;</strong> and <strong>&lt;package-dir-value&gt;</strong> are to be expected to be the same generally, but if needed it's here.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku set extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku set extra-sources --help
+
+Usage:
+  pack.raku set extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+
+</pre><p>Set the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>[&lt;extra-sources&gt; ...]</strong> new value of extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_append_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku append extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku append extra-sources --help
+
+Usage:
+  pack.raku append extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+
+</pre><p>Append <strong>[&lt;extra-sources&gt; ...]</strong> to the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><strong>[&lt;extra-sources&gt; ...]</strong> value to append to extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_schema"><a href="#pack" class="u" title="go to top of document">pack.raku remove schema</a></h1>
+<pre class="pod-block-code">pack.raku remove schema --help
+
+Usage:
+  pack.raku remove schema &lt;package-dir&gt;
+
+</pre><p>Remove the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_podir"><a href="#pack" class="u" title="go to top of document">pack.raku remove podir</a></h1>
+<pre class="pod-block-code">pack.raku remove podir --help
+
+Usage:
+  pack.raku remove podir &lt;package-dir&gt;
+
+</pre><p>Remove the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack" class="u" title="go to top of document">pack.raku alias add</a></h1>
 <pre class="pod-block-code">pack.raku alias add --help
@@ -785,7 +949,7 @@ Usage:
 </ul>
 </ul>
 <p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T07:44:56Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T15:53:21Z</span></div></footer>
 	</body>
 </html>
 
