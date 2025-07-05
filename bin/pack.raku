@@ -112,6 +112,8 @@ This is a Raku program to manage the use of B<gnome-extensions pack>, it has too
 The command B<gnome-extensions pack> has too many arguments this takes care of that making it easier to package
 up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
+L<Table of Contents|#table-of-contents>
+
 =head3 pack
 
 =begin code :lang<bash>
@@ -173,6 +175,8 @@ Usage:
 
 =end code
 
+L<Table of Contents|#table-of-contents>
+
 =head1 pack.raku do --help
 
 =begin code :lang<bash>
@@ -182,9 +186,9 @@ pack.raku do --help
 Usage:
   pack.raku do <dir> [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
 
-L<Table of Contents|#table-of-contents>
-
 =end code
+
+L<Table of Contents|#table-of-contents>
 
 Where
 =item1 dir   is a directory containing a B<gnome-shell> plugin

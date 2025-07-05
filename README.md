@@ -178,6 +178,8 @@ Motivation
 
 The command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
+[Table of Contents](#table-of-contents)
+
 ### pack
 
 ```bash
@@ -237,6 +239,8 @@ Usage:
   pack.raku menu restore editors  [<message>]  [-c|--color|--colour] [-s|--syntax]
 ```
 
+[Table of Contents](#table-of-contents)
+
 pack.raku do --help
 ===================
 
@@ -245,9 +249,9 @@ pack.raku do --help
 
 Usage:
   pack.raku do <dir> [<dirs> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
-
-L<Table of Contents|#table-of-contents>
 ```
+
+[Table of Contents](#table-of-contents)
 
 Where
 
