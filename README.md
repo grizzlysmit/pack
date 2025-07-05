@@ -59,15 +59,15 @@ Table of Contents
 
   * [pack.raku get schema](#packraku-get-schema)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get podir](#packraku-get-podir)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get gettext-domain](#packraku-get-gettext-domain)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get out-dir](#packraku-get-out-dir)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get extra-sources](#packraku-get-extra-sources)
 
-  * [placeholder](#placeholder)
+  * [pack.raku get force](#packraku-get-force)
 
   * [pack.raku alias add](#packraku-alias-add)
 
@@ -78,6 +78,53 @@ Table of Contents
   * [pack.raku list keys](#packraku-list-keys)
 
   * [pack.raku list all](#packraku-list-all)
+
+  * [pack.raku delete](#packraku-delete)
+
+  * [pack.raku del](#packraku-del)
+
+  * [pack.raku trash](#packraku-trash)
+
+  * [pack.raku tidy file](#packraku-tidy-file)
+
+  * [pack.raku comment](#packraku-comment)
+
+  * [pack.raku list trash](#packraku-list-trash)
+
+  * [pack.raku empty trash](#packraku-empty-trash)
+
+  * [pack.raku undelete](#packraku-undelete)
+
+  * [pack.raku show stats](#packraku-show-stats)
+
+  * [pack.raku show statistics](#packraku-show-statistics)
+
+  * [pack.raku backup db](#packraku-backup-db)
+
+  * [pack.raku restore db](#packraku-restore-db)
+
+  * [pack.raku menu restore db](#packraku-menu-restore-db)
+
+  * [pack.raku list db backups](#packraku-list-db-backups)
+
+Editor functions/methods
+------------------------
+
+  * [pack.raku list editors](#packraku-list-editors)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
+
+  * [placeholder](#placeholder)
 
 NAME
 ====
@@ -166,7 +213,7 @@ Usage:
   pack.raku undelete   [<keys> ...]
   pack.raku show stats  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku show statistics  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
-  pack.raku backup db    [-w|--win-format|--use-windows-formating]
+  pack.raku backup db    [-w|--win-format|--use-windows-formatting]
   pack.raku restore db  [<restore-from>]
   pack.raku menu restore db  [<message>]  [-c|--color|--colour] [-s|--syntax]
   pack.raku list db backups  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
@@ -564,6 +611,98 @@ Where
 
 [Table of Contents](#table-of-contents)
 
+pack.raku get podir
+===================
+
+```bash
+pack.raku get podir --help
+
+Usage:
+  pack.raku get podir <package-dir>
+```
+
+Get the value of podir in **<package-dir>/.pack_args.json**
+
+  * **NB: podir is the path to the directory containing the po files.**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku get gettext-domain
+============================
+
+```bash
+pack.raku get gettext-domain --help
+
+Usage:
+  pack.raku get gettext-domain <package-dir>
+```
+
+Get the value of gettext-domain in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku get out-dir
+=====================
+
+```bash
+pack.raku get out-dir --help
+
+Usage:
+  pack.raku get out-dir <package-dir>
+```
+
+Get the value of out-dir in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku get extra-sources
+===========================
+
+```bash
+pack.raku get extra-sources --help
+
+Usage:
+  pack.raku get extra-sources <package-dir>
+```
+
+Get the value of extra-sources in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku get force
+===================
+
+```bash
+pack.raku get force --help
+
+Usage:
+  pack.raku get force <package-dir>
+```
+
+Get the value of force in **<package-dir>/.pack_args.json**
+
+Where
+
+  * **<package-dir>** Directory containing plugin.
+
+[Table of Contents](#table-of-contents)
+
 pack.raku alias add
 ===================
 
@@ -640,15 +779,15 @@ Where
 
   * **[-c|--color|--colour]** If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and dispaly with syntax highlighted colours.
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-l|--page-length[=Int]]** Set the page length before headers are reshown.
+  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
 
-  * **[-p|--pattern=<Str>]** A raku regex to use to search for the matching keys.
+  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
 
   * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys.
 
-    * **NB:** uses a imperfect library to convert the EMCA262Regex to a raku one.
+    * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.** 
 
 List all or a subset of the keys avaiable.
 
@@ -664,15 +803,17 @@ Usage:
   pack.raku list all [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
 ```
 
+List the keys in the database.
+
 Where
 
   * **[<prefix>]** If present then search for keys, directories or comments starting with the string value.
 
   * **[-c|--color|--colour]** If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and dispaly with syntax highlighted colours.
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-l|--page-length[=Int]]** Set the page length before headers are reshown.
+  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
 
   * **[-p|--pattern=<Str>]** A raku regex to use to search for the matching keys, directories or comments.
 
@@ -681,6 +822,362 @@ Where
     * **NB:** uses a imperfect library to convert the EMCA262Regex to a raku one.
 
 List all or a subset of the keys avaiable.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku delete
+================
+
+```bash
+pack.raku delete --help
+
+Usage:
+  pack.raku delete [<keys> ...] [-d|--delete|--do-not-trash]
+```
+
+Delete the specified key/directory paths from the database.
+
+Where
+
+  * **[<keys> ...]** the keys of the key/directory pairs that you want to delete.
+
+  * **[-d|--delete|--do-not-trash]** If true then actually delete otherwise trash.
+
+    * Trash means keep record but commented out.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku del
+=============
+
+```bash
+pack.raku delete --help
+
+Usage:
+  pack.raku del [<keys> ...] [-d|--delete|--do-not-trash]
+```
+
+Delete the specified key/directory paths from the database.
+
+  * **NB: alias for delete**
+
+Where
+
+  * **[<keys> ...]** the keys of the key/directory pairs that you want to delete.
+
+  * **[-d|--delete|--do-not-trash]** If true then actually delete otherwise trash.
+
+    * Trash means keep record but commented out.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku trash
+===============
+
+```bash
+pack.raku delete --help
+
+Usage:
+  pack.raku delete [<keys> ...]
+```
+
+Trash the specified key/directory paths from the database.
+
+Where
+
+  * **[<keys> ...]** the keys of the key/directory pairs that you want to trash.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku tidy file
+===================
+
+```bash
+pack.raku tidy file --help
+
+Usage:
+  pack.raku tidy file
+```
+
+Tidy up the database file.
+
+  * Pointless really just for when your feeling OCD.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku comment
+=================
+
+```bash
+pack.raku comment --help
+
+Usage:
+  pack.raku comment <key> <comment>  [-k|--kind=<Str where \{ ... } >]
+```
+
+Add a comment to an entry.
+
+  * **<key>** The key of the record to add the comment to.
+
+  * **<comment>** The comment.
+
+  * **[-k|--kind=<Str where \{ ... } >]** The kind of record to add the comment to.
+
+    * the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').
+
+    * default value is 'normal'.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku list trash
+====================
+
+```bash
+pack.raku list trash --help
+
+Usage:
+  pack.raku list trash [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+List the trashed keys in the database.
+
+Where
+
+  * **[<prefix>]** If present then search for keys, directories or comments starting with the string value.
+
+  * **[-c|--color|--colour]** If present then show with ANSI colours.
+
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+
+  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
+
+  * **[-p|--pattern=<Str>]** A raku regex to use to search for the matching keys, directories or comments.
+
+  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+
+    * **NB:** uses a imperfect library to convert the EMCA262Regex to a raku one.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku empty trash
+=====================
+
+```bash
+pack.raku empty trash --help
+
+Usage:
+  pack.raku empty trash
+```
+
+Delete all trashed/commented records.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku undelete
+==================
+
+```bash
+pack.raku undelete --help
+
+Usage:
+  pack.raku undelete [<keys> ...]
+```
+
+Undelete the specified keys.
+
+  * **[<keys> ...]** The keys of the records to undelete.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku show stats
+====================
+
+```bash
+pack.raku show stats --help
+
+Usage:
+  pack.raku show stats [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+Show the stats for the database.
+
+Where
+
+  * **[<prefix>]** If present then search for keys starting with the string value.
+
+  * **[-c|--color|--colour]** If present then show with ANSI colours.
+
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+
+  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+
+  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+
+    * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
+
+    * **NB: pattern and ecma-pattern search by the quantity keys, note the values.**
+
+[Table of Contents](#table-of-contents)
+
+pack.raku show statistics
+=========================
+
+```bash
+pack.raku show stats --help
+
+Usage:
+  pack.raku show statistics [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+Show the statistics for the database.
+
+  * **alias for show stats.**
+
+Where
+
+  * **[<prefix>]** If present then search for keys starting with the string value.
+
+  * **[-c|--color|--colour]** If present then show with ANSI colours.
+
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+
+  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+
+  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+
+    * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
+
+    * **NB: pattern and ecma-pattern search by the quantity keys, note the values.**
+
+[Table of Contents](#table-of-contents)
+
+pack.raku backup db
+===================
+
+```bash
+pack.raku backup db --help
+
+Usage:
+  pack.raku backup db  [-w|--win-format|--use-windows-formatting]
+```
+
+Backup the db file.
+
+  * **[-w|--win-format|--use-windows-formatting]** Use windows compatible file names for the backup file.
+
+    * **NB:** The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku restore db
+====================
+
+```bash
+pack.raku restore db --help
+
+Usage:
+  pack.raku restore db [<restore-from>]
+```
+
+Restore the db file from backup restore-from.
+
+Where
+
+  * **[<restore-from>]** A path to a restore file.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku menu restore db
+=========================
+
+```bash
+pack.raku menu restore db --help
+
+Usage:
+  pack.raku menu restore db [<message>]  [-c|--color|--colour] [-s|--syntax]
+```
+
+Use a text menu to present options for database file restore
+
+  * **[<message>]** A message to display above the menu (currently not used in colour and syntax modes).
+
+  * **[-c|--color|--colour]** Use ANSI colour mode.
+
+  * **[-s|--syntax]** Use ANSI colour mode with syntax highlighting.
+
+    * **NB:** looks like:
+
+```bash
+pack.raku menu restore db "testing one two three" 
+testing one two three
+         0	.rw-rw-r-- 394.0B grizzlysmit grizzlysmit 2025-06-02T07:49:56.429315+10:00 pack.p_ck.2025-06-02T00:02:07.886302+10:00
+         1	.rw-rw-r-- 495.0B grizzlysmit grizzlysmit 2025-07-05T09:30:11.002659+10:00 pack.p_ck.2025-07-05T09:30:47.997666+10:00
+         2	cancel
+use cancel, bye, bye bye, quit, q, or 2 to quit
+choose a candidate 0..2 =:> q
+```
+
+in ascii/UTF-8 mode.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku list db backups
+=========================
+
+```bash
+pack.raku list db backups --help
+
+Usage:
+  pack.raku list db backups [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+List the db backups in the standard directory.
+
+Where
+
+  * **[<prefix>]** List only those whose name starts with prefix (case insensitive).
+
+  * **[-c|--color|--colour] [-s|--syntax]** List in colour..
+
+  * **[-s|--syntax]** List in syntax highlighted colour.
+
+  * **[-l|--page-length[=Int]]** List in pages of length $page-length.
+
+  * **[-p|--pattern=<Str>]** List only those matching this Raku regex.
+
+  * **[-e|--ecma-pattern=<Str>]** List only those matching this EMCA262Regex regex.
+
+  * **The EMCA262Regex library doesn't support ignore case well.** .
+
+[Table of Contents](#table-of-contents)
+
+pack.raku list editors
+======================
+
+```bash
+pack.raku list editors --help
+
+Usage:
+  pack.raku list editors  [-f|--prefix=<Str>] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+List the contents of the db file.
+
+Where
+
+  * **[<prefix>]** List only those whose name starts with prefix (case insensitive).
+
+  * **[-c|--color|--colour] [-s|--syntax]** List in colour..
+
+  * **[-s|--syntax]** List in syntax highlighted colour.
+
+  * **[-l|--page-length[=Int]]** List in pages of length $page-length.
+
+  * **[-p|--pattern=<Str>]** List only those matching this Raku regex.
+
+  * **[-e|--ecma-pattern=<Str>]** List only those matching this EMCA262Regex regex.
+
+  * **The EMCA262Regex library doesn't support ignore case well.** .
 
 [Table of Contents](#table-of-contents)
 

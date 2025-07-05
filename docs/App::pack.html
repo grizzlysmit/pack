@@ -580,6 +580,7 @@ footer {
 <tr class="toc-level-1"><td class="toc-text"><a href="#App::pack">App::pack</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Module_Pack">Module Pack</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Table_of_Contents">Table of Contents</a></td></tr>
+ <tr class="toc-level-2"><td class="toc-text"><a href="#Editor_functions/methods">Editor functions/methods</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Name">Name</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Copyright">Copyright</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Introduction">Introduction</a></td></tr>
@@ -603,11 +604,31 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_out-dir">pack.raku remove out-dir</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_remove_extra-sources">pack.raku remove extra-sources</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_schema">pack.raku get schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_podir">pack.raku get podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_gettext-domain">pack.raku get gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_out-dir">pack.raku get out-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_extra-sources">pack.raku get extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_force">pack.raku get force</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_delete">pack.raku delete</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_del">pack.raku del</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_trash">pack.raku trash</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_tidy_file">pack.raku tidy file</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_comment">pack.raku comment</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_trash">pack.raku list trash</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_empty_trash">pack.raku empty trash</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_undelete">pack.raku undelete</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_show_stats">pack.raku show stats</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_show_statistics">pack.raku show statistics</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_backup_db">pack.raku backup db</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_restore_db">pack.raku restore db</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_menu_restore_db">pack.raku menu restore db</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_db_backups">pack.raku list db backups</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_editors">pack.raku list editors</a></td></tr>
 </table></div>
 </nav><div id="pack"></div><div class="subtitle"><p>A Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy.</p></div><div class="pod-body"><section name="___top"><h1 id="App::pack"><a href="#___top" class="u" title="go to top of document">App::pack</a></h1>
 <h1 id="Module_Pack"><a href="#___top" class="u" title="go to top of document">Module Pack</a></h1>
@@ -641,16 +662,41 @@ footer {
 <li><p><a href="#packraku-remove-out-dir">pack.raku remove out-dir</a></p></li>
 <li><p><a href="#packraku-remove-extra-sources">pack.raku remove extra-sources</a></p></li>
 <li><p><a href="#packraku-get-schema">pack.raku get schema</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
-<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#packraku-get-podir">pack.raku get podir</a></p></li>
+<li><p><a href="#packraku-get-gettext-domain">pack.raku get gettext-domain</a></p></li>
+<li><p><a href="#packraku-get-out-dir">pack.raku get out-dir</a></p></li>
+<li><p><a href="#packraku-get-extra-sources">pack.raku get extra-sources</a></p></li>
+<li><p><a href="#packraku-get-force">pack.raku get force</a></p></li>
 <li><p><a href="#packraku-alias-add">pack.raku alias add</a></p></li>
 <li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
 <li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p></li>
 <li><p><a href="#packraku-list-keys">pack.raku list keys</a></p></li>
 <li><p><a href="#packraku-list-all">pack.raku list all</a></p></li>
+<li><p><a href="#packraku-delete">pack.raku delete</a></p></li>
+<li><p><a href="#packraku-del">pack.raku del</a></p></li>
+<li><p><a href="#packraku-trash">pack.raku trash</a></p></li>
+<li><p><a href="#packraku-tidy-file">pack.raku tidy file</a></p></li>
+<li><p><a href="#packraku-comment">pack.raku comment</a></p></li>
+<li><p><a href="#packraku-list-trash">pack.raku list trash</a></p></li>
+<li><p><a href="#packraku-empty-trash">pack.raku empty trash</a></p></li>
+<li><p><a href="#packraku-undelete">pack.raku undelete</a></p></li>
+<li><p><a href="#packraku-show-stats">pack.raku show stats</a></p></li>
+<li><p><a href="#packraku-show-statistics">pack.raku show statistics</a></p></li>
+<li><p><a href="#packraku-backup-db">pack.raku backup db</a></p></li>
+<li><p><a href="#packraku-restore-db">pack.raku restore db</a></p></li>
+<li><p><a href="#packraku-menu-restore-db">pack.raku menu restore db</a></p></li>
+<li><p><a href="#packraku-list-db-backups">pack.raku list db backups</a></p></li>
+</ul>
+<h2 id="Editor_functions/methods"><a href="#___top" class="u" title="go to top of document">Editor functions/methods</a></h2>
+<ul>
+<li><p><a href="#packraku-list-editors">pack.raku list editors</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
+<li><p><a href="#placeholder">placeholder</a></p></li>
 </ul>
 <section>
 <h1 id="Name"><a href="#___top" class="u" title="go to top of document">NAME</a></h1>
@@ -705,7 +751,7 @@ Usage:
   pack.raku undelete   [&lt;keys&gt; ...]
   pack.raku show stats  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
   pack.raku show statistics  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
-  pack.raku backup db    [-w|--win-format|--use-windows-formating]
+  pack.raku backup db    [-w|--win-format|--use-windows-formatting]
   pack.raku restore db  [&lt;restore-from&gt;]
   pack.raku menu restore db  [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
   pack.raku list db backups  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
@@ -919,6 +965,54 @@ Usage:
 </pre><p>Get the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
 <li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
 </ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_podir"><a href="#pack" class="u" title="go to top of document">pack.raku get podir</a></h1>
+<pre class="pod-block-code">pack.raku get podir --help
+
+Usage:
+  pack.raku get podir &lt;package-dir&gt;
+
+</pre><p>Get the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><ul>
+<li><p><strong>NB: podir is the path to the directory containing the po files.</strong></p></li>
+</ul>
+<p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_gettext-domain"><a href="#pack" class="u" title="go to top of document">pack.raku get gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku get gettext-domain --help
+
+Usage:
+  pack.raku get gettext-domain &lt;package-dir&gt;
+
+</pre><p>Get the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku get out-dir</a></h1>
+<pre class="pod-block-code">pack.raku get out-dir --help
+
+Usage:
+  pack.raku get out-dir &lt;package-dir&gt;
+
+</pre><p>Get the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku get extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku get extra-sources --help
+
+Usage:
+  pack.raku get extra-sources &lt;package-dir&gt;
+
+</pre><p>Get the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_force"><a href="#pack" class="u" title="go to top of document">pack.raku get force</a></h1>
+<pre class="pod-block-code">pack.raku get force --help
+
+Usage:
+  pack.raku get force &lt;package-dir&gt;
+
+</pre><p>Get the value of force in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
+<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+</ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack" class="u" title="go to top of document">pack.raku alias add</a></h1>
 <pre class="pod-block-code">pack.raku alias add --help
 
@@ -963,12 +1057,12 @@ Usage:
 </pre><p>Where</p><ul>
 <li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
 <li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and dispaly with syntax highlighted colours.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are reshown.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
 <li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys.</p></li>
 <ul>
-<li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
+<li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong> </p></li>
 </ul>
 </ul>
 <p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_all"><a href="#pack" class="u" title="go to top of document">pack.raku list all</a></h1>
@@ -977,19 +1071,223 @@ Usage:
 Usage:
   pack.raku list all [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
-</pre><p>Where</p><ul>
+</pre><p>List the keys in the database.</p><p>Where</p><ul>
 <li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys, directories or comments starting with the string value.</p></li>
 <li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and dispaly with syntax highlighted colours.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are reshown.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
 <li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys, directories or comments.</p></li>
 <li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
 <ul>
 <li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
 </ul>
 </ul>
-<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-04T16:09:42Z</span></div></footer>
+<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_delete"><a href="#pack" class="u" title="go to top of document">pack.raku delete</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku delete [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+
+</pre><p>Delete the specified key/directory paths from the database.</p><p>Where</p><ul>
+<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to delete.</p></li>
+<li><p><strong>[-d|--delete|--do-not-trash]</strong> If true then actually delete otherwise trash.</p></li>
+<ul>
+<li><p>Trash means keep record but commented out.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_del"><a href="#pack" class="u" title="go to top of document">pack.raku del</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku del [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+
+</pre><p>Delete the specified key/directory paths from the database.</p><ul>
+<li><p><strong>NB: alias for delete</strong></p></li>
+</ul>
+<p>Where</p><ul>
+<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to delete.</p></li>
+<li><p><strong>[-d|--delete|--do-not-trash]</strong> If true then actually delete otherwise trash.</p></li>
+<ul>
+<li><p>Trash means keep record but commented out.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_trash"><a href="#pack" class="u" title="go to top of document">pack.raku trash</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku delete [&lt;keys&gt; ...]
+
+</pre><p>Trash the specified key/directory paths from the database.</p><p>Where</p><ul>
+<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to trash.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_tidy_file"><a href="#pack" class="u" title="go to top of document">pack.raku tidy file</a></h1>
+<pre class="pod-block-code">pack.raku tidy file --help
+
+Usage:
+  pack.raku tidy file
+
+</pre><p>Tidy up the database file.</p><ul>
+<li><p>Pointless really just for when your feeling OCD.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_comment"><a href="#pack" class="u" title="go to top of document">pack.raku comment</a></h1>
+<pre class="pod-block-code">pack.raku comment --help
+
+Usage:
+  pack.raku comment &lt;key&gt; &lt;comment&gt;  [-k|--kind=&lt;Str where \{ ... } &gt;]
+
+</pre><p>Add a comment to an entry.</p><ul>
+<li><p><strong>&lt;key&gt;</strong> The key of the record to add the comment to.</p></li>
+<li><p><strong>&lt;comment&gt;</strong> The comment.</p></li>
+<li><p><strong>[-k|--kind=&lt;Str where \{ ... } &gt;]</strong> The kind of record to add the comment to.</p></li>
+<ul>
+<li><p>the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').</p></li>
+<li><p>default value is 'normal'.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_trash"><a href="#pack" class="u" title="go to top of document">pack.raku list trash</a></h1>
+<pre class="pod-block-code">pack.raku list trash --help
+
+Usage:
+  pack.raku list trash [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>List the trashed keys in the database.</p><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys, directories or comments starting with the string value.</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
+<ul>
+<li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_empty_trash"><a href="#pack" class="u" title="go to top of document">pack.raku empty trash</a></h1>
+<pre class="pod-block-code">pack.raku empty trash --help
+
+Usage:
+  pack.raku empty trash
+
+</pre><p>Delete all trashed/commented records.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_undelete"><a href="#pack" class="u" title="go to top of document">pack.raku undelete</a></h1>
+<pre class="pod-block-code">pack.raku undelete --help
+
+Usage:
+  pack.raku undelete [&lt;keys&gt; ...]
+
+</pre><p>Undelete the specified keys.</p><ul>
+<li><p><strong>[&lt;keys&gt; ...]</strong> The keys of the records to undelete.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_show_stats"><a href="#pack" class="u" title="go to top of document">pack.raku show stats</a></h1>
+<pre class="pod-block-code">pack.raku show stats --help
+
+Usage:
+  pack.raku show stats [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>Show the stats for the database.</p><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<ul>
+<li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_show_statistics"><a href="#pack" class="u" title="go to top of document">pack.raku show statistics</a></h1>
+<pre class="pod-block-code">pack.raku show stats --help
+
+Usage:
+  pack.raku show statistics [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>Show the statistics for the database.</p><ul>
+<li><p><strong>alias for show stats.</strong></p></li>
+</ul>
+<p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
+<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<ul>
+<li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_backup_db"><a href="#pack" class="u" title="go to top of document">pack.raku backup db</a></h1>
+<pre class="pod-block-code">pack.raku backup db --help
+
+Usage:
+  pack.raku backup db  [-w|--win-format|--use-windows-formatting]
+
+</pre><p>Backup the db file.</p><ul>
+<li><p><strong>[-w|--win-format|--use-windows-formatting]</strong> Use windows compatible file names for the backup file.</p></li>
+<ul>
+<li><p><strong>NB:</strong> The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_restore_db"><a href="#pack" class="u" title="go to top of document">pack.raku restore db</a></h1>
+<pre class="pod-block-code">pack.raku restore db --help
+
+Usage:
+  pack.raku restore db [&lt;restore-from&gt;]
+
+</pre><p>Restore the db file from backup restore-from.</p><p>Where</p><ul>
+<li><p><strong>[&lt;restore-from&gt;]</strong> A path to a restore file.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_menu_restore_db"><a href="#pack" class="u" title="go to top of document">pack.raku menu restore db</a></h1>
+<pre class="pod-block-code">pack.raku menu restore db --help
+
+Usage:
+  pack.raku menu restore db [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
+
+</pre><p>Use a text menu to present options for database file restore</p><ul>
+<li><p><strong>[&lt;message&gt;]</strong> A message to display above the menu (currently not used in colour and syntax modes).</p></li>
+<li><p><strong>[-c|--color|--colour]</strong> Use ANSI colour mode.</p></li>
+<li><p><strong>[-s|--syntax]</strong> Use ANSI colour mode with syntax highlighting.</p></li>
+<ul>
+<li><p><strong>NB:</strong> looks like:</p></li>
+</ul>
+</ul>
+<pre class="pod-block-code">pack.raku menu restore db &quot;testing one two three&quot; 
+testing one two three
+         0	.rw-rw-r-- 394.0B grizzlysmit grizzlysmit 2025-06-02T07:49:56.429315+10:00 pack.p_ck.2025-06-02T00:02:07.886302+10:00
+         1	.rw-rw-r-- 495.0B grizzlysmit grizzlysmit 2025-07-05T09:30:11.002659+10:00 pack.p_ck.2025-07-05T09:30:47.997666+10:00
+         2	cancel
+use cancel, bye, bye bye, quit, q, or 2 to quit
+choose a candidate 0..2 =:&gt; q
+
+</pre><p>in ascii/UTF-8 mode.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_db_backups"><a href="#pack" class="u" title="go to top of document">pack.raku list db backups</a></h1>
+<pre class="pod-block-code">pack.raku list db backups --help
+
+Usage:
+  pack.raku list db backups [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>List the db backups in the standard directory.</p><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> List only those whose name starts with prefix (case insensitive).</p></li>
+<li><p><strong>[-c|--color|--colour] [-s|--syntax]</strong> List in colour..</p></li>
+<li><p><strong>[-s|--syntax]</strong> List in syntax highlighted colour.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> List in pages of length $page-length.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> List only those matching this Raku regex.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> List only those matching this EMCA262Regex regex.</p></li>
+<li><p><strong>The EMCA262Regex library doesn't support ignore case well.</strong> .</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_editors"><a href="#pack" class="u" title="go to top of document">pack.raku list editors</a></h1>
+<pre class="pod-block-code">pack.raku list editors --help
+
+Usage:
+  pack.raku list editors  [-f|--prefix=&lt;Str&gt;] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+
+</pre><p>List the contents of the db file.</p><p>Where</p><ul>
+<li><p><strong>[&lt;prefix&gt;]</strong> List only those whose name starts with prefix (case insensitive).</p></li>
+<li><p><strong>[-c|--color|--colour] [-s|--syntax]</strong> List in colour..</p></li>
+<li><p><strong>[-s|--syntax]</strong> List in syntax highlighted colour.</p></li>
+<li><p><strong>[-l|--page-length[=Int]]</strong> List in pages of length $page-length.</p></li>
+<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> List only those matching this Raku regex.</p></li>
+<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> List only those matching this EMCA262Regex regex.</p></li>
+<li><p><strong>The EMCA262Regex library doesn't support ignore case well.</strong> .</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-05T01:39:26Z</span></div></footer>
 	</body>
 </html>
 

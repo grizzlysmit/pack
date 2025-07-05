@@ -52,17 +52,40 @@ Table of Contents
 =item1 L<pack.raku remove out-dir|#packraku-remove-out-dir>
 =item1 L<pack.raku remove extra-sources|#packraku-remove-extra-sources>
 =item1 L<pack.raku get schema|#packraku-get-schema>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
+=item1 L<pack.raku get podir|#packraku-get-podir>
+=item1 L<pack.raku get gettext-domain|#packraku-get-gettext-domain>
+=item1 L<pack.raku get out-dir|#packraku-get-out-dir>
+=item1 L<pack.raku get extra-sources|#packraku-get-extra-sources>
+=item1 L<pack.raku get force|#packraku-get-force>
 
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
 =item1 L<pack.raku list keys|#packraku-list-keys>
 =item1 L<pack.raku list all|#packraku-list-all>
+=item1 L<pack.raku delete|#packraku-delete>
+=item1 L<pack.raku del|#packraku-del>
+=item1 L<pack.raku trash|#packraku-trash>
+=item1 L<pack.raku tidy file|#packraku-tidy-file>
+=item1 L<pack.raku comment|#packraku-comment>
+=item1 L<pack.raku list trash|#packraku-list-trash>
+=item1 L<pack.raku empty trash|#packraku-empty-trash>
+=item1 L<pack.raku undelete|#packraku-undelete>
+=item1 L<pack.raku show stats|#packraku-show-stats>
+=item1 L<pack.raku show statistics|#packraku-show-statistics>
+=item1 L<pack.raku backup db|#packraku-backup-db>
+=item1 L<pack.raku restore db|#packraku-restore-db>
+=item1 L<pack.raku menu restore db|#packraku-menu-restore-db>
+=item1 L<pack.raku list db backups|#packraku-list-db-backups>
+=head2 Editor functions/methods
+=item1 L<pack.raku list editors|#packraku-list-editors>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
+=item1 L<placeholder|#placeholder>
 
 
 =NAME App::pack 
@@ -131,7 +154,7 @@ Usage:
   pack.raku undelete   [<keys> ...]
   pack.raku show stats  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku show statistics  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
-  pack.raku backup db    [-w|--win-format|--use-windows-formating]
+  pack.raku backup db    [-w|--win-format|--use-windows-formatting]
   pack.raku restore db  [<restore-from>]
   pack.raku menu restore db  [<message>]  [-c|--color|--colour] [-s|--syntax]
   pack.raku list db backups  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
@@ -702,25 +725,136 @@ multi sub MAIN('get', 'schema', Str $package-dir --> int){
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku get podir
+
+=begin code :lang<bash>
+
+pack.raku get podir --help
+
+Usage:
+  pack.raku get podir <package-dir>
+
+=end code
+
+Get the value of podir in B«<package-dir>/.pack_args.json»
+=item1 B«NB: podir is the path to the directory containing the po files.»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('get', 'podir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'podir');
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku get gettext-domain
+
+=begin code :lang<bash>
+
+pack.raku get gettext-domain --help
+
+Usage:
+  pack.raku get gettext-domain <package-dir>
+
+=end code
+
+Get the value of gettext-domain in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('get', 'gettext-domain', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'gettext-domain');
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku get out-dir
+
+=begin code :lang<bash>
+
+pack.raku get out-dir --help
+
+Usage:
+  pack.raku get out-dir <package-dir>
+
+=end code
+
+Get the value of out-dir in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('get', 'out-dir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'out-dir');
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku get extra-sources
+
+=begin code :lang<bash>
+
+pack.raku get extra-sources --help
+
+Usage:
+  pack.raku get extra-sources <package-dir>
+
+=end code
+
+Get the value of extra-sources in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('get', 'extra-sources', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'extra-sources');
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku get force
+
+=begin code :lang<bash>
+
+pack.raku get force --help
+
+Usage:
+  pack.raku get force <package-dir>
+
+=end code
+
+Get the value of force in B«<package-dir>/.pack_args.json»
+
+Where
+=item1 B«<package-dir>»  Directory containing plugin.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('get', 'force', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'force');
@@ -851,11 +985,11 @@ Usage:
 Where
 =item1 B«[<prefix>]»  If present then search for keys starting with the string value.
 =item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»  If present will override colour setting and dispaly with syntax highlighted colours.
-=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are reshown.
-=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys.
+=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
+=item1 B«[-p|--pattern=<Str>]»  A Raku regex to use to search for the matching keys.
 =item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys.
-=item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
+=item2 B<NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.> 
 
 List all or a subset of the keys avaiable.
 
@@ -897,11 +1031,13 @@ Usage:
 
 =end code
 
+List the keys in the database.
+
 Where
 =item1 B«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
 =item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»  If present will override colour setting and dispaly with syntax highlighted colours.
-=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are reshown.
+=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
 =item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
 =item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
 =item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
@@ -932,6 +1068,30 @@ multi sub MAIN('list', 'all', Str:D $prefix = '', Bool:D :c(:color(:$colour)) = 
                     Bool:D :s(:$syntax) = False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str,
                                                                 Str :e(:$ecma-pattern) = Str) returns Int »»»
 
+=begin pod
+
+=head1 pack.raku delete
+
+=begin code :lang<bash>
+
+pack.raku delete --help
+
+Usage:
+  pack.raku delete [<keys> ...] [-d|--delete|--do-not-trash]
+
+=end code
+
+Delete the specified key/directory paths from the database.
+
+Where
+=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
+=item1 B«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
+=item2 Trash means keep record but commented out.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('delete', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -941,6 +1101,31 @@ multi sub MAIN('delete', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) ret
     }
     exit $result;
 }
+
+=begin pod
+
+=head1 pack.raku del
+
+=begin code :lang<bash>
+
+pack.raku delete --help
+
+Usage:
+  pack.raku del [<keys> ...] [-d|--delete|--do-not-trash]
+
+=end code
+
+Delete the specified key/directory paths from the database.
+=item1 B«NB: alias for delete»
+
+Where
+=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
+=item1 B«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
+=item2 Trash means keep record but commented out.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('del', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) returns Int {
     my Int:D $result = 0;
@@ -952,6 +1137,28 @@ multi sub MAIN('del', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) return
     exit $result;
 }
 
+=begin pod
+
+=head1 pack.raku trash
+
+=begin code :lang<bash>
+
+pack.raku delete --help
+
+Usage:
+  pack.raku delete [<keys> ...]
+
+=end code
+
+Trash the specified key/directory paths from the database.
+
+Where
+=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to trash.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('trash', *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -962,6 +1169,26 @@ multi sub MAIN('trash', *@keys) returns Int {
     exit $result;
 }
 
+=begin pod
+
+=head1 pack.raku tidy file
+
+=begin code :lang<bash>
+
+pack.raku tidy file --help
+
+Usage:
+  pack.raku tidy file
+
+=end code
+
+Tidy up the database file.
+=item1 Pointless really just for when your feeling OCD.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('tidy', 'file') returns Int {
    if tidy-file() {
        exit 0;
@@ -969,6 +1196,30 @@ multi sub MAIN('tidy', 'file') returns Int {
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku comment
+
+=begin code :lang<bash>
+
+pack.raku comment --help
+
+Usage:
+  pack.raku comment <key> <comment>  [-k|--kind=<Str where \{ ... } >]
+
+=end code
+
+Add a comment to an entry.
+=item1 B«<key>»                              The key of the record to add the comment to.
+=item1 B«<comment>»                          The comment.
+=item1 B«[-k|--kind=<Str where \{ ... } >]»  The kind of record to add the comment to.
+=item2 the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').
+=item2 default value is 'normal'.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('comment',
                     Str:D $key,
@@ -982,6 +1233,34 @@ multi sub MAIN('comment',
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku list trash
+
+=begin code :lang<bash>
+
+pack.raku list trash --help
+
+Usage:
+  pack.raku list trash [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+List the trashed keys in the database.
+
+Where
+=item1 B«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
+=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
+=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
+=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+=item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'trash', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
@@ -1004,6 +1283,25 @@ multi sub MAIN('list', 'trash', Str:D $prefix = '',
    } 
 }
 
+=begin pod
+
+=head1 pack.raku empty trash
+
+=begin code :lang<bash>
+
+pack.raku empty trash --help
+
+Usage:
+  pack.raku empty trash
+
+=end code
+
+Delete all trashed/commented records.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('empty', 'trash') returns Int {
    if empty-trash() {
        exit 0;
@@ -1011,6 +1309,26 @@ multi sub MAIN('empty', 'trash') returns Int {
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku undelete
+
+=begin code :lang<bash>
+
+pack.raku undelete --help
+
+Usage:
+  pack.raku undelete [<keys> ...]
+
+=end code
+
+Undelete the specified keys.
+=item1 B«[<keys> ...]» The keys of the records to undelete.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('undelete', *@keys) returns Int {
     my Int:D $result = 0;
@@ -1021,6 +1339,34 @@ multi sub MAIN('undelete', *@keys) returns Int {
     }
     exit $result;
 }
+
+=begin pod
+
+=head1 pack.raku show stats
+
+=begin code :lang<bash>
+
+pack.raku show stats --help
+
+Usage:
+  pack.raku show stats [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Show the stats for the database.
+
+Where
+=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
+=item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('show', 'stats', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
@@ -1042,6 +1388,35 @@ multi sub MAIN('show', 'stats', Str:D $prefix = '',
     } 
 } # multi sub MAIN('stats', Bool:D :c(:color(:$colour)) = False, Bool:D :s(:$syntax) = False) returns Int #
 
+=begin pod
+
+=head1 pack.raku show statistics
+
+=begin code :lang<bash>
+
+pack.raku show stats --help
+
+Usage:
+  pack.raku show statistics [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Show the statistics for the database.
+=item1 B«alias for show stats.»
+
+Where
+=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
+=item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('show', 'statistics', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -1062,13 +1437,56 @@ multi sub MAIN('show', 'statistics', Str:D $prefix = '',
     } 
 } # multi sub MAIN('statistics', Bool:D :c(:color(:$colour)) = False, Bool:D :s(:$syntax) = False) returns Int #
 
-multi sub MAIN('backup', 'db', Bool:D :w(:win-format(:$use-windows-formating)) = False --> Bool) {
-    if backup-db-file($use-windows-formating) {
+=begin pod
+
+=head1 pack.raku backup db
+
+=begin code :lang<bash>
+
+pack.raku backup db --help
+
+Usage:
+  pack.raku backup db  [-w|--win-format|--use-windows-formatting]
+
+=end code
+
+Backup the db file.
+=item1 B«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
+=item2 B«NB:» The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('backup', 'db', Bool:D :w(:win-format(:$use-windows-formatting)) = False --> Bool) {
+    if backup-db-file($use-windows-formatting) {
         exit 0;
     } else {
         die "Error: backup failed!!!";
     }
 }
+
+=begin pod
+
+=head1 pack.raku restore db
+
+=begin code :lang<bash>
+
+pack.raku restore db --help
+
+Usage:
+  pack.raku restore db [<restore-from>]
+
+=end code
+
+Restore the db file from backup restore-from.
+
+Where
+=item1 B«[<restore-from>]» A path to a restore file.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('restore', 'db', Str $restore-from = Str --> Bool) {
     my IO::Path $_restore-from;
@@ -1082,6 +1500,44 @@ multi sub MAIN('restore', 'db', Str $restore-from = Str --> Bool) {
     }
 }
 
+=begin pod
+
+=head1 pack.raku menu restore db
+
+=begin code :lang<bash>
+
+pack.raku menu restore db --help
+
+Usage:
+  pack.raku menu restore db [<message>]  [-c|--color|--colour] [-s|--syntax]
+
+=end code
+
+Use a text menu to present options for database file restore
+
+=item1 B«[<message>]»           A message to display above the menu (currently not used in colour and syntax modes).
+=item1 B«[-c|--color|--colour]» Use ANSI colour mode.
+=item1 B«[-s|--syntax]»         Use ANSI colour mode with syntax highlighting.
+=item2 B«NB:» looks like:
+
+=begin code :lang<bash>
+
+pack.raku menu restore db "testing one two three" 
+testing one two three
+         0	.rw-rw-r-- 394.0B grizzlysmit grizzlysmit 2025-06-02T07:49:56.429315+10:00 pack.p_ck.2025-06-02T00:02:07.886302+10:00
+         1	.rw-rw-r-- 495.0B grizzlysmit grizzlysmit 2025-07-05T09:30:11.002659+10:00 pack.p_ck.2025-07-05T09:30:47.997666+10:00
+         2	cancel
+use cancel, bye, bye bye, quit, q, or 2 to quit
+choose a candidate 0..2 =:> q
+
+=end code
+in ascii/UTF-8 mode.
+
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('menu', 'restore', 'db',
                 Str:D $message = '',
                 Bool:D :c(:color(:$colour)) = False,
@@ -1092,6 +1548,34 @@ multi sub MAIN('menu', 'restore', 'db',
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku list db backups
+
+=begin code :lang<bash>
+
+pack.raku list db backups --help
+
+Usage:
+  pack.raku list db backups [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+List the db backups in the standard directory.
+
+Where
+=item1 B«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
+=item1 B«[-c|--color|--colour] [-s|--syntax]» List in colour..
+=item1 B«[-s|--syntax]»                       List in syntax highlighted colour.
+=item1 B«[-l|--page-length[=Int]]»            List in pages of length $page-length.
+=item1 B«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
+=item1 B«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
+=item1 B«The EMCA262Regex library doesn't support ignore case well.» .
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'db', 'backups', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
@@ -1123,6 +1607,34 @@ multi sub MAIN('list', 'db', 'backups', Str:D $prefix = '',
     #********************************#
     ##################################
 #»»»
+
+=begin pod
+
+=head1 pack.raku list editors
+
+=begin code :lang<bash>
+
+pack.raku list editors --help
+
+Usage:
+  pack.raku list editors  [-f|--prefix=<Str>] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+List the contents of the db file.
+
+Where
+=item1 B«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
+=item1 B«[-c|--color|--colour] [-s|--syntax]» List in colour..
+=item1 B«[-s|--syntax]»                       List in syntax highlighted colour.
+=item1 B«[-l|--page-length[=Int]]»            List in pages of length $page-length.
+=item1 B«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
+=item1 B«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
+=item1 B«The EMCA262Regex library doesn't support ignore case well.» .
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'editors', Str:D :f(:$prefix) = '',
                                Bool:D :c(:color(:$colour)) = False,
