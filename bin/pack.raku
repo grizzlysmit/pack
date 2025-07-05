@@ -80,13 +80,16 @@ Table of Contents
 =item1 L<pack.raku list db backups|#packraku-list-db-backups>
 =head1 Editor functions/methods
 =item1 L<pack.raku list editors|#packraku-list-editors>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
-=item1 L<placeholder|#placeholder>
+=item1 L<pack.raku editors stats|#packraku-editors-stats>
+=item1 L<pack.raku list editors backups|#packraku-list-editors-backups>
+=item1 L<pack.raku backup editors|#packraku-backup-editors>
+=item1 L<pack.raku restore editors|#packraku-restore-editors>
+=item1 L<pack.raku set editor|#packraku-set-editor>
+=item1 L<pack.raku set override GUI_EDITOR|#packraku-set-override-GUI_EDITOR>
+=item1 L<pack.raku menu restore editors|#packraku-menu-restore-editors>
+=head1 USAGE stuff
+=item1 L<pack.raku USAGE|#packraku-USAGE>
+=item1 L<multi sub GENERATE-USAGE|#multi-sub-GENERATE-USAGE>
 
 
 =NAME App::pack 
@@ -1480,7 +1483,7 @@ Usage:
 
 =end code
 
-Restore the db file from backup restore-from.
+Restore the db file from restore-from.
 
 Where
 =item1 B«[<restore-from>]» A path to a restore file.
@@ -1633,6 +1636,20 @@ Where
 =item1 B«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
 =item1 B«The EMCA262Regex library doesn't support ignore case well.» .
 
+=begin code :lang<bash>
+
+pack.raku list editors
+                         
+Editors | Actual Editor  
+=========================
+gedit   |                
+gvim    |             *  
+kate    |                
+xemacs  |                
+=========================
+
+=end code
+
 L<Table of Contents|#table-of-contents>
 
 =end pod
@@ -1658,6 +1675,51 @@ multi sub MAIN('list', 'editors', Str:D :f(:$prefix) = '',
    } 
 }
 
+=begin pod
+
+=head1 pack.raku editors stats
+
+=begin code :lang<bash>
+
+pack.raku editors stats --help
+
+Usage:
+  pack.raku editors stats [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Show the statistics for the editors database.
+
+Where
+=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
+=item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
+
+=begin code :lang<bash>
+
+pack.raku editors stats
+                                          
+Variable               |   Value          
+==========================================
+$editor                |            gvim  
+$override-GUI_EDITOR   |            True  
+%*ENV<EDITOR>          |    /usr/bin/vim  
+%*ENV<VISUAL>          |    /usr/bin/vim  
+%*ENV«GUI_EDITOR»      |   /usr/bin/gvim  
+@default-editors       |      [ "gvim" ]  
+@override-gui_editor   |          [True]  
+==========================================
+
+=end code
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('editors', 'stats', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -1678,6 +1740,59 @@ multi sub MAIN('editors', 'stats', Str:D $prefix = '',
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku list editors backups
+
+=begin code :lang<bash>
+
+pack.raku list editors backups --help
+
+Usage:
+  pack.raku list editors backups [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+
+=end code
+
+Show the statistics for the editors database.
+
+Where
+=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
+=item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
+
+=begin code :lang<bash>
+
+pack.raku list editors backups
+                                                                                                                     
+Permissions Size   User        Group       Date Modified                    Backup                                   
+=====================================================================================================================
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T00:23:41.634625+10:00 editors.2023-12-11T01:24:20              
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:15:51.038790+10:00 editors.2023-12-11T21:16:28.034522+11:00 
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:58:20.835630+10:00 editors.2023-12-11T21:58:57.832862+11:00 
+.rw-rw-r--  833.0B grizzlysmit grizzlysmit 2023-12-11T22:21:21.450694+10:00 editors.2023-12-11T23:21:58.449520+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-11T22:31:34.183842+10:00 editors.2023-12-11T23:32:11.181779+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-12T20:59:45.479111+10:00 editors.2023-12-12T22:00:22.468348+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T07:25:06.941870+10:00 editors.2023-12-30T08:25:43.939760+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T12:36:10.532847+10:00 editors.2023-12-30T13:36:47.532341+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T15:36:43.791920+10:00 editors.2023-12-31T16:37:20.781525+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T16:59:08.910346+10:00 editors.2023-12-31T17:59:45.906433+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T17:10:53.742754+10:00 editors.2023-12-31T18:11:30.735343+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-02T22:56:24.817173+10:00 editors.2024-01-02T23:57:01.808884+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:40:03.140891+10:00 editors.2024-01-04T03:40:40.002896+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:41:03.757027+10:00 editors.2024-01-04T03:41:40.749044+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:47:47.097922+10:00 editors.2024-01-04T03:48:24.025215+11:00 
+=====================================================================================================================
+
+=end code
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('list', 'editors', 'backups', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
@@ -1700,6 +1815,27 @@ multi sub MAIN('list', 'editors', 'backups', Str:D $prefix = '',
     } 
 }
 
+=begin pod
+
+=head1 pack.raku backup editors
+
+=begin code :lang<bash>
+
+pack.raku backup editors --help
+
+Usage:
+  pack.raku backup editors  [-w|--use-windows-formatting]
+
+=end code
+
+Backup the editors db file.
+=item1 B«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
+=item2 B«NB:» The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('backup', 'editors', Bool:D :w(:$use-windows-formatting) = False) returns Int {
    if backup-editors($use-windows-formatting) {
        exit 0;
@@ -1707,6 +1843,28 @@ multi sub MAIN('backup', 'editors', Bool:D :w(:$use-windows-formatting) = False)
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku restore editors
+
+=begin code :lang<bash>
+
+pack.raku restore editors --help
+
+Usage:
+  pack.raku restore editors <restore-from>
+
+=end code
+
+Restore the editors db file from restore-from.
+
+Where
+=item1 B«[<restore-from>]» A path to a restore file.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('restore', 'editors', Str:D $restore-from) returns Int {
    if restore-editors($restore-from.IO) {
@@ -1716,6 +1874,29 @@ multi sub MAIN('restore', 'editors', Str:D $restore-from) returns Int {
    } 
 }
 
+=begin pod
+
+=head1 pack.raku set editor
+
+=begin code :lang<bash>
+
+pack.raku set editor --help
+
+Usage:
+  pack.raku set editor <editor> [<comment>]
+
+=end code
+
+Set the default editor to use.
+
+Where
+=item1 B«<editor>»    The editor to make default.
+=item1 B«[<comment>]» A comment to put against the editor.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'editor', Str:D $editor, Str $comment = Str) returns Int {
    if set-editor($editor, $comment) {
        exit 0;
@@ -1724,6 +1905,29 @@ multi sub MAIN('set', 'editor', Str:D $editor, Str $comment = Str) returns Int {
    } 
 }
 
+=begin pod
+
+=head1 pack.raku set override GUI_EDITOR
+
+=begin code :lang<bash>
+
+pack.raku set override GUI_EDITOR --help
+
+Usage:
+  pack.raku set override GUI_EDITOR <value> [<comment>]
+
+=end code
+
+Set the value of the override-GUI_EDITOR parameter 
+
+Where
+=item1 B«<value>»     The value of the parameter (True or False).
+=item1 B«[<comment>]» A comment to place against the parameter.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('set', 'override', 'GUI_EDITOR', Bool:D $value, Str $comment = Str) returns Int {
    if set-override-GUI_EDITOR($value, $comment) {
        exit 0;
@@ -1731,6 +1935,30 @@ multi sub MAIN('set', 'override', 'GUI_EDITOR', Bool:D $value, Str $comment = St
        exit 1;
    } 
 }
+
+=begin pod
+
+=head1 pack.raku menu restore editors
+
+=begin code :lang<bash>
+
+pack.raku menu restore editors --help
+
+Usage:
+  pack.raku menu restore editors [<message>]  [-c|--color|--colour] [-s|--syntax]
+
+=end code
+
+Restore the editors db using a menu of backups from the standard directory.
+
+Where
+=item1 B«[<message>]»           A message to display above the menu only works in monochrome version.
+=item1 B«[-c|--color|--colour]» Use ANSI colour mode.
+=item1 B«[-s|--syntax]»         Use ANSI colour mode and syntax highlighting.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub MAIN('menu', 'restore', 'editors', Str:D $message = '', Bool:D :c(:color(:$colour)) = False, Bool:D :s(:$syntax) = False) returns Int {
    if backups-menu-restore-editors($colour, $syntax, $message) {
@@ -1748,10 +1976,62 @@ multi sub MAIN('menu', 'restore', 'editors', Str:D $message = '', Bool:D :c(:col
     ***********************************************************
 #»»»
 
+=begin pod
+
+=head1 pack.raku USAGE
+
+=begin code :lang<bash>
+
+pack.raku USAGE [-n|--nocolor|--nocolour]
+
+=end code
+
+Shows the USAGE  without this method purpose is to implement the coloured usage.
+
+Where
+=item1 B«[-n|--nocolor|--nocolour]» Show the usage in monochrome.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 sub USAGE(Bool:D :n(:nocolor(:$nocolour)) = False, *%named-args, *@args --> Int) {
     say-coloured($*USAGE, False, %named-args, @args);
     exit 0;
 }
+
+=begin pod
+
+=head1 multi sub GENERATE-USAGE
+
+=begin code :lang<raku>
+
+multi sub GENERATE-USAGE(&main, |capture --> Int) {
+    my @capture = |(capture.list);
+    my @_capture;
+    if @capture && @capture[0] eq 'help' {
+        @_capture = |@capture[1 .. *];
+    } else {
+        @_capture = |@capture;
+    }
+    my %capture = |(capture.hash);
+    if %capture«nocolour» || %capture«nocolor» || %capture«n» {
+        say-coloured($*USAGE, True, |%capture, |@_capture);
+    } else {
+        #dd @capture;
+        say-coloured($*USAGE, False, |%capture, |@_capture);
+        #&*GENERATE-USAGE(&main, |capture)
+    }
+    exit 0;
+}
+
+=end code
+
+Does the real work generating the colored usage.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
 
 multi sub GENERATE-USAGE(&main, |capture --> Int) {
     my @capture = |(capture.list);

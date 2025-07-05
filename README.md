@@ -115,19 +115,26 @@ Editor functions/methods
 
   * [pack.raku list editors](#packraku-list-editors)
 
-  * [placeholder](#placeholder)
+  * [pack.raku editors stats](#packraku-editors-stats)
 
-  * [placeholder](#placeholder)
+  * [pack.raku list editors backups](#packraku-list-editors-backups)
 
-  * [placeholder](#placeholder)
+  * [pack.raku backup editors](#packraku-backup-editors)
 
-  * [placeholder](#placeholder)
+  * [pack.raku restore editors](#packraku-restore-editors)
 
-  * [placeholder](#placeholder)
+  * [pack.raku set editor](#packraku-set-editor)
 
-  * [placeholder](#placeholder)
+  * [pack.raku set override GUI_EDITOR](#packraku-set-override-GUI_EDITOR)
 
-  * [placeholder](#placeholder)
+  * [pack.raku menu restore editors](#packraku-menu-restore-editors)
+
+USAGE stuff
+===========
+
+  * [pack.raku USAGE](#packraku-USAGE)
+
+  * [multi sub GENERATE-USAGE](#multi-sub-GENERATE-USAGE)
 
 NAME
 ====
@@ -1082,7 +1089,7 @@ Usage:
   pack.raku restore db [<restore-from>]
 ```
 
-Restore the db file from backup restore-from.
+Restore the db file from restore-from.
 
 Where
 
@@ -1181,6 +1188,257 @@ Where
   * **[-e|--ecma-pattern=<Str>]** List only those matching this EMCA262Regex regex.
 
   * **The EMCA262Regex library doesn't support ignore case well.** .
+
+```bash
+pack.raku list editors
+
+Editors | Actual Editor  
+=========================
+gedit   |                
+gvim    |             *  
+kate    |                
+xemacs  |                
+=========================
+```
+
+[Table of Contents](#table-of-contents)
+
+pack.raku editors stats
+=======================
+
+```bash
+pack.raku editors stats --help
+
+Usage:
+  pack.raku editors stats [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+Show the statistics for the editors database.
+
+Where
+
+  * **[<prefix>]** If present then search for keys starting with the string value.
+
+  * **[-c|--color|--colour]** If present then show with ANSI colours.
+
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+
+  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+
+  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+
+    * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
+
+    * **NB: pattern and ecma-pattern search by the quantity keys, note the values.**
+
+```bash
+pack.raku editors stats
+
+Variable               |   Value          
+==========================================
+$editor                |            gvim  
+$override-GUI_EDITOR   |            True  
+%*ENV<EDITOR>          |    /usr/bin/vim  
+%*ENV<VISUAL>          |    /usr/bin/vim  
+%*ENV«GUI_EDITOR»      |   /usr/bin/gvim  
+@default-editors       |      [ "gvim" ]  
+@override-gui_editor   |          [True]  
+==========================================
+```
+
+[Table of Contents](#table-of-contents)
+
+pack.raku list editors backups
+==============================
+
+```bash
+pack.raku list editors backups --help
+
+Usage:
+  pack.raku list editors backups [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
+```
+
+Show the statistics for the editors database.
+
+Where
+
+  * **[<prefix>]** If present then search for keys starting with the string value.
+
+  * **[-c|--color|--colour]** If present then show with ANSI colours.
+
+  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+
+  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+
+  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+
+    * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
+
+    * **NB: pattern and ecma-pattern search by the quantity keys, note the values.**
+
+```bash
+pack.raku list editors backups
+
+Permissions Size   User        Group       Date Modified                    Backup                                   
+=====================================================================================================================
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T00:23:41.634625+10:00 editors.2023-12-11T01:24:20              
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:15:51.038790+10:00 editors.2023-12-11T21:16:28.034522+11:00 
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:58:20.835630+10:00 editors.2023-12-11T21:58:57.832862+11:00 
+.rw-rw-r--  833.0B grizzlysmit grizzlysmit 2023-12-11T22:21:21.450694+10:00 editors.2023-12-11T23:21:58.449520+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-11T22:31:34.183842+10:00 editors.2023-12-11T23:32:11.181779+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-12T20:59:45.479111+10:00 editors.2023-12-12T22:00:22.468348+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T07:25:06.941870+10:00 editors.2023-12-30T08:25:43.939760+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T12:36:10.532847+10:00 editors.2023-12-30T13:36:47.532341+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T15:36:43.791920+10:00 editors.2023-12-31T16:37:20.781525+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T16:59:08.910346+10:00 editors.2023-12-31T17:59:45.906433+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T17:10:53.742754+10:00 editors.2023-12-31T18:11:30.735343+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-02T22:56:24.817173+10:00 editors.2024-01-02T23:57:01.808884+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:40:03.140891+10:00 editors.2024-01-04T03:40:40.002896+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:41:03.757027+10:00 editors.2024-01-04T03:41:40.749044+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:47:47.097922+10:00 editors.2024-01-04T03:48:24.025215+11:00 
+=====================================================================================================================
+```
+
+[Table of Contents](#table-of-contents)
+
+pack.raku backup editors
+========================
+
+```bash
+pack.raku backup editors --help
+
+Usage:
+  pack.raku backup editors  [-w|--use-windows-formatting]
+```
+
+Backup the editors db file.
+
+  * **[-w|--win-format|--use-windows-formatting]** Use windows compatible file names for the backup file.
+
+    * **NB:** The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku restore editors
+=========================
+
+```bash
+pack.raku restore editors --help
+
+Usage:
+  pack.raku restore editors <restore-from>
+```
+
+Restore the editors db file from restore-from.
+
+Where
+
+  * **[<restore-from>]** A path to a restore file.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set editor
+====================
+
+```bash
+pack.raku set editor --help
+
+Usage:
+  pack.raku set editor <editor> [<comment>]
+```
+
+Set the default editor to use.
+
+Where
+
+  * **<editor>** The editor to make default.
+
+  * **[<comment>]** A comment to put against the editor.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku set override GUI_EDITOR
+=================================
+
+```bash
+pack.raku set override GUI_EDITOR --help
+
+Usage:
+  pack.raku set override GUI_EDITOR <value> [<comment>]
+```
+
+Set the value of the override-GUI_EDITOR parameter 
+
+Where
+
+  * **<value>** The value of the parameter (True or False).
+
+  * **[<comment>]** A comment to place against the parameter.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku menu restore editors
+==============================
+
+```bash
+pack.raku menu restore editors --help
+
+Usage:
+  pack.raku menu restore editors [<message>]  [-c|--color|--colour] [-s|--syntax]
+```
+
+Restore the editors db using a menu of backups from the standard directory.
+
+Where
+
+  * **[<message>]** A message to display above the menu only works in monochrome version.
+
+  * **[-c|--color|--colour]** Use ANSI colour mode.
+
+  * **[-s|--syntax]** Use ANSI colour mode and syntax highlighting.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku USAGE
+===============
+
+```bash
+pack.raku USAGE [-n|--nocolor|--nocolour]
+```
+
+Shows the USAGE without this method purpose is to implement the coloured usage.
+
+Where
+
+  * **[-n|--nocolor|--nocolour]** Show the usage in monochrome.
+
+[Table of Contents](#table-of-contents)
+
+multi sub GENERATE-USAGE
+========================
+
+```raku
+multi sub GENERATE-USAGE(&main, |capture --> Int) {
+    my @capture = |(capture.list);
+    my @_capture;
+    if @capture && @capture[0] eq 'help' {
+        @_capture = |@capture[1 .. *];
+    } else {
+        @_capture = |@capture;
+    }
+    my %capture = |(capture.hash);
+    if %capture«nocolour» || %capture«nocolor» || %capture«n» {
+        say-coloured($*USAGE, True, |%capture, |@_capture);
+    } else {
+        #dd @capture;
+        say-coloured($*USAGE, False, |%capture, |@_capture);
+        #&*GENERATE-USAGE(&main, |capture)
+    }
+    exit 0;
+}
+```
+
+Does the real work generating the colored usage.
 
 [Table of Contents](#table-of-contents)
 

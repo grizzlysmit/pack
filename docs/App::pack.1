@@ -213,31 +213,40 @@ pack\&.raku list editors [#packraku-list-editors]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku editors stats [#packraku-editors-stats]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku list editors backups [#packraku-list-editors-backups]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku backup editors [#packraku-backup-editors]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku restore editors [#packraku-restore-editors]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku set editor [#packraku-set-editor]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku set override GUI_EDITOR [#packraku-set-override-GUI_EDITOR]
 .RE
 .RS 2n
 .IP \(bu 2m
-placeholder [#placeholder]
+pack\&.raku menu restore editors [#packraku-menu-restore-editors]
+.RE
+.SH USAGE stuff
+.RS 2n
+.IP \(bu 2m
+pack\&.raku USAGE [#packraku-USAGE]
+.RE
+.RS 2n
+.IP \(bu 2m
+multi sub GENERATE\-USAGE [#multi-sub-GENERATE-USAGE]
 .RE
 .SH "NAME"
 App::pack 
@@ -1494,7 +1503,7 @@ Usage:
 .EE
 .RE
 .P
-Restore the db file from backup restore\-from\&.
+Restore the db file from restore\-from\&.
 
 Where
 .RS 2n
@@ -1641,6 +1650,337 @@ Where
 .IP \(bu 2m
 \fBThe EMCA262Regex library doesn't support ignore case well\&.\fR \&.
 .RE
+
+.RS 4m
+.EX
+pack\&.raku list editors
+
+Editors | Actual Editor  
+=========================
+gedit   |                
+gvim    |             *  
+kate    |                
+xemacs  |                
+=========================
+
+
+.EE
+.RE
+.P
+Table of Contents [#table-of-contents]
+.SH pack\&.raku editors stats
+
+.RS 4m
+.EX
+pack\&.raku editors stats \-\-help
+
+Usage:
+  pack\&.raku editors stats [<prefix>]  [\-c|\-\-color|\-\-colour] [\-s|\-\-syntax] [\-l|\-\-page\-length[=Int]] [\-p|\-\-pattern=<Str>] [\-e|\-\-ecma\-pattern=<Str>]
+
+
+.EE
+.RE
+.P
+Show the statistics for the editors database\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<prefix>]\fR If present then search for keys starting with the string value\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-color|\-\-colour]\fR If present then show with ANSI colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-syntax]\fR If present will override colour setting and display with syntax highlighted colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-pattern=<Str>]\fR A Raku regex to use to search for the matching keys\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-e|\-\-ecma\-pattern=<Str>]\fR A ECMA262Regex regex to use to search for the matching keys\&.\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB: uses a imperfect library to convert the EMCA262Regex to a Raku one\&.\fR
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB: pattern and ecma\-pattern search by the quantity keys, note the values\&.\fR
+.RE
+
+.RS 4m
+.EX
+pack\&.raku editors stats
+
+Variable               |   Value          
+==========================================
+$editor                |            gvim  
+$override\-GUI_EDITOR   |            True  
+%*ENV<EDITOR>          |    /usr/bin/vim  
+%*ENV<VISUAL>          |    /usr/bin/vim  
+%*ENV«GUI_EDITOR»      |   /usr/bin/gvim  
+@default\-editors       |      [ "gvim" ]  
+@override\-gui_editor   |          [True]  
+==========================================
+
+
+.EE
+.RE
+.P
+Table of Contents [#table-of-contents]
+.SH pack\&.raku list editors backups
+
+.RS 4m
+.EX
+pack\&.raku list editors backups \-\-help
+
+Usage:
+  pack\&.raku list editors backups [<prefix>]  [\-c|\-\-color|\-\-colour] [\-s|\-\-syntax] [\-l|\-\-page\-length[=Int]] [\-p|\-\-pattern=<Str>] [\-e|\-\-ecma\-pattern=<Str>]
+
+
+.EE
+.RE
+.P
+Show the statistics for the editors database\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<prefix>]\fR If present then search for keys starting with the string value\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-color|\-\-colour]\fR If present then show with ANSI colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-syntax]\fR If present will override colour setting and display with syntax highlighted colours\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-p|\-\-pattern=<Str>]\fR A Raku regex to use to search for the matching keys\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-e|\-\-ecma\-pattern=<Str>]\fR A ECMA262Regex regex to use to search for the matching keys\&.\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB: uses a imperfect library to convert the EMCA262Regex to a Raku one\&.\fR
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB: pattern and ecma\-pattern search by the quantity keys, note the values\&.\fR
+.RE
+
+.RS 4m
+.EX
+pack\&.raku list editors backups
+
+Permissions Size   User        Group       Date Modified                    Backup                                   
+=====================================================================================================================
+\&.rw\-rw\-r\-\-  802\&.0B grizzlysmit grizzlysmit 2023\-12\-11T00:23:41\&.634625+10:00 editors\&.2023\-12\-11T01:24:20              
+\&.rw\-rw\-r\-\-  802\&.0B grizzlysmit grizzlysmit 2023\-12\-11T20:15:51\&.038790+10:00 editors\&.2023\-12\-11T21:16:28\&.034522+11:00 
+\&.rw\-rw\-r\-\-  802\&.0B grizzlysmit grizzlysmit 2023\-12\-11T20:58:20\&.835630+10:00 editors\&.2023\-12\-11T21:58:57\&.832862+11:00 
+\&.rw\-rw\-r\-\-  833\&.0B grizzlysmit grizzlysmit 2023\-12\-11T22:21:21\&.450694+10:00 editors\&.2023\-12\-11T23:21:58\&.449520+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-11T22:31:34\&.183842+10:00 editors\&.2023\-12\-11T23:32:11\&.181779+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-12T20:59:45\&.479111+10:00 editors\&.2023\-12\-12T22:00:22\&.468348+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-30T07:25:06\&.941870+10:00 editors\&.2023\-12\-30T08:25:43\&.939760+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-30T12:36:10\&.532847+10:00 editors\&.2023\-12\-30T13:36:47\&.532341+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-31T15:36:43\&.791920+10:00 editors\&.2023\-12\-31T16:37:20\&.781525+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-31T16:59:08\&.910346+10:00 editors\&.2023\-12\-31T17:59:45\&.906433+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2023\-12\-31T17:10:53\&.742754+10:00 editors\&.2023\-12\-31T18:11:30\&.735343+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2024\-01\-02T22:56:24\&.817173+10:00 editors\&.2024\-01\-02T23:57:01\&.808884+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2024\-01\-04T02:40:03\&.140891+10:00 editors\&.2024\-01\-04T03:40:40\&.002896+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2024\-01\-04T02:41:03\&.757027+10:00 editors\&.2024\-01\-04T03:41:40\&.749044+11:00 
+\&.rw\-rw\-r\-\-  820\&.0B grizzlysmit grizzlysmit 2024\-01\-04T02:47:47\&.097922+10:00 editors\&.2024\-01\-04T03:48:24\&.025215+11:00 
+=====================================================================================================================
+
+
+.EE
+.RE
+.P
+Table of Contents [#table-of-contents]
+.SH pack\&.raku backup editors
+
+.RS 4m
+.EX
+pack\&.raku backup editors \-\-help
+
+Usage:
+  pack\&.raku backup editors  [\-w|\-\-use\-windows\-formatting]
+
+
+.EE
+.RE
+.P
+Backup the editors db file\&.
+.RS 2n
+.IP \(bu 2m
+\fB[\-w|\-\-win\-format|\-\-use\-windows\-formatting]\fR Use windows compatible file names for the backup file\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fBNB:\fR The backup file looks like editors\&.2025\-06\-02T00:02:07\&.886302+10:00 normally but if you use this option then it will be like editors\&.2025\-07\-05T09\&.29\&.03·560644+10\&.00 as : is a special char in windows filename names\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku restore editors
+
+.RS 4m
+.EX
+pack\&.raku restore editors \-\-help
+
+Usage:
+  pack\&.raku restore editors <restore\-from>
+
+
+.EE
+.RE
+.P
+Restore the editors db file from restore\-from\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<restore\-from>]\fR A path to a restore file\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set editor
+
+.RS 4m
+.EX
+pack\&.raku set editor \-\-help
+
+Usage:
+  pack\&.raku set editor <editor> [<comment>]
+
+
+.EE
+.RE
+.P
+Set the default editor to use\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<editor>\fR The editor to make default\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<comment>]\fR A comment to put against the editor\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku set override GUI_EDITOR
+
+.RS 4m
+.EX
+pack\&.raku set override GUI_EDITOR \-\-help
+
+Usage:
+  pack\&.raku set override GUI_EDITOR <value> [<comment>]
+
+
+.EE
+.RE
+.P
+Set the value of the override\-GUI_EDITOR parameter 
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB<value>\fR The value of the parameter (True or False)\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[<comment>]\fR A comment to place against the parameter\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku menu restore editors
+
+.RS 4m
+.EX
+pack\&.raku menu restore editors \-\-help
+
+Usage:
+  pack\&.raku menu restore editors [<message>]  [\-c|\-\-color|\-\-colour] [\-s|\-\-syntax]
+
+
+.EE
+.RE
+.P
+Restore the editors db using a menu of backups from the standard directory\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[<message>]\fR A message to display above the menu only works in monochrome version\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-c|\-\-color|\-\-colour]\fR Use ANSI colour mode\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+\fB[\-s|\-\-syntax]\fR Use ANSI colour mode and syntax highlighting\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku USAGE
+
+.RS 4m
+.EX
+pack\&.raku USAGE [\-n|\-\-nocolor|\-\-nocolour]
+
+
+.EE
+.RE
+.P
+Shows the USAGE without this method purpose is to implement the coloured usage\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+\fB[\-n|\-\-nocolor|\-\-nocolour]\fR Show the usage in monochrome\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH multi sub GENERATE\-USAGE
+
+.RS 4m
+.EX
+multi sub GENERATE\-USAGE(&main, |capture \-\-> Int) {
+    my @capture = |(capture\&.list);
+    my @_capture;
+    if @capture && @capture[0] eq 'help' {
+        @_capture = |@capture[1 \&.\&. *];
+    } else {
+        @_capture = |@capture;
+    }
+    my %capture = |(capture\&.hash);
+    if %capture«nocolour» || %capture«nocolor» || %capture«n» {
+        say\-coloured($*USAGE, True, |%capture, |@_capture);
+    } else {
+        #dd @capture;
+        say\-coloured($*USAGE, False, |%capture, |@_capture);
+        #&*GENERATE\-USAGE(&main, |capture)
+    }
+    exit 0;
+}
+
+
+.EE
+.RE
+.P
+Does the real work generating the colored usage\&.
 
 Table of Contents [#table-of-contents]
 
