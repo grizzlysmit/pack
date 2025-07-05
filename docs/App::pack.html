@@ -809,13 +809,13 @@ L&lt;Table of Contents|#table-of-contents&gt;
   pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
 
 </pre><p>Create the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><strong>[&lt;extra-sources&gt; ...]</strong> A list of extra files to add to the package.</p></li>
-<li><p><strong>[-s|--schema=&lt;Str&gt;]</strong> The path to the schema file.</p></li>
-<li><p><strong>[-p|--podir=&lt;Str&gt;]</strong> The path to the po files.</p></li>
-<li><p><strong>[-g|--gettext-domain=&lt;Str&gt;]</strong> The gettext domain.</p></li>
-<li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
-<li><p><strong>[-f|--force]</strong> set the force option.</p></li>
+<li><p><code>[-s|--schema=&lt;Str&gt;]</code> The path to the schema file.</p></li>
+<li><p><code>[-p|--podir=&lt;Str&gt;]</code> The path to the po files.</p></li>
+<li><p><code>[-g|--gettext-domain=&lt;Str&gt;]</code> The gettext domain.</p></li>
+<li><p><code>[-o|--out-dir=&lt;Str&gt;]</code> The directory to place the package file in.</p></li>
+<li><p><code>[-f|--force]</code> set the force option.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add"><a href="#pack" class="u" title="go to top of document">pack.raku add</a></h1>
 <pre class="pod-block-code">pack.raku add --help
@@ -824,15 +824,15 @@ Usage:
   pack.raku add &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
 
 </pre><p>Modifiy add to the <code>.pack_args.json</code> file.</p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><strong>[&lt;extra-sources&gt; ...]</strong> A list of extra files to add to the package.</p></li>
-<li><p><strong>[-s|--schema=&lt;Str&gt;]</strong> The path to the schema file.</p></li>
-<li><p><strong>[-p|--podir=&lt;Str&gt;]</strong> The path to the po files.</p></li>
-<li><p><strong>[-g|--gettext-domain=&lt;Str&gt;]</strong> The gettext domain.</p></li>
-<li><p><strong>[-o|--out-dir=&lt;Str&gt;]</strong> The directory to place the package file in.</p></li>
-<li><p><strong>[-f|--force]</strong> set the force option.</p></li>
-<li><p><strong>[-F|--stomp-force]</strong> If present then the value of --force wins regradless.</p></li>
-<li><p><strong>[-S|--stomp]</strong> If present then @extra-sources stomps on whatever was before otherwise they are spliced together.</p></li>
+<li><p><code>[-s|--schema=&lt;Str&gt;]</code> The path to the schema file.</p></li>
+<li><p><code>[-p|--podir=&lt;Str&gt;]</code> The path to the po files.</p></li>
+<li><p><code>[-g|--gettext-domain=&lt;Str&gt;]</code> The gettext domain.</p></li>
+<li><p><code>[-o|--out-dir=&lt;Str&gt;]</code> The directory to place the package file in.</p></li>
+<li><p><code>[-f|--force]</code> set the force option.</p></li>
+<li><p><code>[-F|--stomp-force]</code> If present then the value of --force wins regradless.</p></li>
+<li><p><code>[-S|--stomp]</code> If present then @extra-sources stomps on whatever was before otherwise they are spliced together.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_schema"><a href="#pack" class="u" title="go to top of document">pack.raku set schema</a></h1>
 <pre class="pod-block-code">pack.raku set schema --help
@@ -841,8 +841,8 @@ Usage:
   pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
 
 </pre><p>Set the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;schema-value&gt;</strong> new value of schema.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;schema-value&gt;</code> new value of schema.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_podir"><a href="#pack" class="u" title="go to top of document">pack.raku set podir</a></h1>
 <pre class="pod-block-code">pack.raku set podir --help
@@ -851,8 +851,8 @@ Usage:
   pack.raku set podir &lt;package-dir&gt; &lt;podir-value&gt;
 
 </pre><p>Set the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;podir-value&gt;</strong> new value of podir.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;podir-value&gt;</code> new value of podir.</p></li>
 <ul>
 <li><p>podir is the path of the directory containing the po files.</p></li>
 </ul>
@@ -864,8 +864,8 @@ Usage:
   pack.raku set gettext-domain &lt;package-dir&gt; &lt;gettext-domain-value&gt;
 
 </pre><p>Set the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;gettext-domain-value&gt;</strong> new value of gettext-domain.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;gettext-domain-value&gt;</code> new value of gettext-domain.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku set out-dir</a></h1>
 <pre class="pod-block-code">pack.raku set out-dir --help
@@ -874,8 +874,8 @@ Usage:
   pack.raku set out-dir &lt;package-dir&gt; &lt;out-dir-value&gt;
 
 </pre><p>Set the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;out-dir-value&gt;</strong> new value of out-dir.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;out-dir-value&gt;</code> new value of out-dir.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_force"><a href="#pack" class="u" title="go to top of document">pack.raku set force</a></h1>
 <pre class="pod-block-code">pack.raku set force --help
@@ -884,8 +884,8 @@ Usage:
   pack.raku set force &lt;package-dir&gt; &lt;force-value&gt;
 
 </pre><p>Set the value of force in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;force-value&gt;</strong> new value of force.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;force-value&gt;</code> new value of force.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add-extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku add-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku add-extra-sources --help
@@ -894,8 +894,8 @@ Usage:
   pack.raku add-extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
 
 </pre><p>Add to the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>[&lt;extra-sources&gt; ...]</strong> additional extra-sources.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> additional extra-sources.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_package-dir"><a href="#pack" class="u" title="go to top of document">pack.raku set package-dir</a></h1>
 <pre class="pod-block-code">pack.raku set package-dir --help
@@ -904,8 +904,8 @@ Usage:
   pack.raku set package-dir &lt;package-dir&gt; &lt;package-dir-value&gt;
 
 </pre><p>Set the value of package-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>&lt;package-dir-value&gt;</strong> new value of package-dir.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir-value&gt;</code> new value of package-dir.</p></li>
 <ul>
 <li><p>probably useless as <strong>&lt;package-dir&gt;</strong> and <strong>&lt;package-dir-value&gt;</strong> are to be expected to be the same generally, but if needed it's here.</p></li>
 </ul>
@@ -917,8 +917,8 @@ Usage:
   pack.raku set extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
 
 </pre><p>Set the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>[&lt;extra-sources&gt; ...]</strong> new value of extra-sources.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> new value of extra-sources.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_append_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku append extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku append extra-sources --help
@@ -927,8 +927,8 @@ Usage:
   pack.raku append extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
 
 </pre><p>Append <strong>[&lt;extra-sources&gt; ...]</strong> to the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
-<li><p><strong>[&lt;extra-sources&gt; ...]</strong> value to append to extra-sources.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> value to append to extra-sources.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_schema"><a href="#pack" class="u" title="go to top of document">pack.raku remove schema</a></h1>
 <pre class="pod-block-code">pack.raku remove schema --help
@@ -937,7 +937,7 @@ Usage:
   pack.raku remove schema &lt;package-dir&gt;
 
 </pre><p>Remove the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_podir"><a href="#pack" class="u" title="go to top of document">pack.raku remove podir</a></h1>
 <pre class="pod-block-code">pack.raku remove podir --help
@@ -946,7 +946,7 @@ Usage:
   pack.raku remove podir &lt;package-dir&gt;
 
 </pre><p>Remove the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_gettext-domain"><a href="#pack" class="u" title="go to top of document">pack.raku remove gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku remove gettext-domain --help
@@ -955,7 +955,7 @@ Usage:
   pack.raku remove gettext-domain &lt;package-dir&gt;
 
 </pre><p>Remove the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku remove out-dir</a></h1>
 <pre class="pod-block-code">pack.raku remove out-dir --help
@@ -964,7 +964,7 @@ Usage:
   pack.raku remove out-dir &lt;package-dir&gt;
 
 </pre><p>Remove the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku remove extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku remove extra-sources --help
@@ -973,7 +973,7 @@ Usage:
   pack.raku remove extra-sources &lt;package-dir&gt;
 
 </pre><p>Truncate the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_schema"><a href="#pack" class="u" title="go to top of document">pack.raku get schema</a></h1>
 <pre class="pod-block-code">pack.raku get schema --help
@@ -982,7 +982,7 @@ Usage:
   pack.raku get schema &lt;package-dir&gt;
 
 </pre><p>Get the value of schema in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_podir"><a href="#pack" class="u" title="go to top of document">pack.raku get podir</a></h1>
 <pre class="pod-block-code">pack.raku get podir --help
@@ -991,10 +991,10 @@ Usage:
   pack.raku get podir &lt;package-dir&gt;
 
 </pre><p>Get the value of podir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><ul>
-<li><p><strong>NB: podir is the path to the directory containing the po files.</strong></p></li>
+<li><p><code>NB: podir is the path to the directory containing the po files.</code></p></li>
 </ul>
 <p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_gettext-domain"><a href="#pack" class="u" title="go to top of document">pack.raku get gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku get gettext-domain --help
@@ -1003,7 +1003,7 @@ Usage:
   pack.raku get gettext-domain &lt;package-dir&gt;
 
 </pre><p>Get the value of gettext-domain in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_out-dir"><a href="#pack" class="u" title="go to top of document">pack.raku get out-dir</a></h1>
 <pre class="pod-block-code">pack.raku get out-dir --help
@@ -1012,7 +1012,7 @@ Usage:
   pack.raku get out-dir &lt;package-dir&gt;
 
 </pre><p>Get the value of out-dir in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_extra-sources"><a href="#pack" class="u" title="go to top of document">pack.raku get extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku get extra-sources --help
@@ -1021,7 +1021,7 @@ Usage:
   pack.raku get extra-sources &lt;package-dir&gt;
 
 </pre><p>Get the value of extra-sources in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_force"><a href="#pack" class="u" title="go to top of document">pack.raku get force</a></h1>
 <pre class="pod-block-code">pack.raku get force --help
@@ -1030,7 +1030,7 @@ Usage:
   pack.raku get force &lt;package-dir&gt;
 
 </pre><p>Get the value of force in <strong>&lt;package-dir&gt;/.pack_args.json</strong></p><p>Where</p><ul>
-<li><p><strong>&lt;package-dir&gt;</strong> Directory containing plugin.</p></li>
+<li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack" class="u" title="go to top of document">pack.raku alias add</a></h1>
 <pre class="pod-block-code">pack.raku alias add --help
@@ -1039,10 +1039,10 @@ Usage:
   pack.raku alias add &lt;key&gt; &lt;target&gt;  [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
 
 </pre><p>Where </p><ul>
-<li><p><strong>&lt;key&gt;</strong> is a faily arbitray key.</p></li>
-<li><p><strong>&lt;target&gt;</strong> is a path to a directory containing a <strong>gnome-shell</strong> plugin.</p></li>
-<li><p><strong>[-s|--set|--force]</strong> if present then add the key directory pair even if it requires overwriting an existing entry.</p></li>
-<li><p><strong>[-c|--comment=&lt;Str&gt;]</strong> A comment to describe the key directory pair.</p></li>
+<li><p><code>&lt;key&gt;</code> is a faily arbitray key.</p></li>
+<li><p><code>&lt;target&gt;</code> is a path to a directory containing a <strong>gnome-shell</strong> plugin.</p></li>
+<li><p><code>[-s|--set|--force]</code> if present then add the key directory pair even if it requires overwriting an existing entry.</p></li>
+<li><p><code>[-c|--comment=&lt;Str&gt;]</code> A comment to describe the key directory pair.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
 <pre class="pod-block-code">Usage:
@@ -1074,12 +1074,12 @@ Usage:
   pack.raku list keys [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys.</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys.</p></li>
 <ul>
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong> </p></li>
 </ul>
@@ -1091,12 +1091,12 @@ Usage:
   pack.raku list all [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>List the keys in the database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys, directories or comments starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys, directories or comments.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys, directories or comments starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A raku regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
 <ul>
 <li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
 </ul>
@@ -1108,8 +1108,8 @@ Usage:
   pack.raku delete [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
 
 </pre><p>Delete the specified key/directory paths from the database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to delete.</p></li>
-<li><p><strong>[-d|--delete|--do-not-trash]</strong> If true then actually delete otherwise trash.</p></li>
+<li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to delete.</p></li>
+<li><p><code>[-d|--delete|--do-not-trash]</code> If true then actually delete otherwise trash.</p></li>
 <ul>
 <li><p>Trash means keep record but commented out.</p></li>
 </ul>
@@ -1121,11 +1121,11 @@ Usage:
   pack.raku del [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
 
 </pre><p>Delete the specified key/directory paths from the database.</p><ul>
-<li><p><strong>NB: alias for delete</strong></p></li>
+<li><p><code>NB: alias for delete</code></p></li>
 </ul>
 <p>Where</p><ul>
-<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to delete.</p></li>
-<li><p><strong>[-d|--delete|--do-not-trash]</strong> If true then actually delete otherwise trash.</p></li>
+<li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to delete.</p></li>
+<li><p><code>[-d|--delete|--do-not-trash]</code> If true then actually delete otherwise trash.</p></li>
 <ul>
 <li><p>Trash means keep record but commented out.</p></li>
 </ul>
@@ -1137,7 +1137,7 @@ Usage:
   pack.raku delete [&lt;keys&gt; ...]
 
 </pre><p>Trash the specified key/directory paths from the database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;keys&gt; ...]</strong> the keys of the key/directory pairs that you want to trash.</p></li>
+<li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to trash.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_tidy_file"><a href="#pack" class="u" title="go to top of document">pack.raku tidy file</a></h1>
 <pre class="pod-block-code">pack.raku tidy file --help
@@ -1155,9 +1155,9 @@ Usage:
   pack.raku comment &lt;key&gt; &lt;comment&gt;  [-k|--kind=&lt;Str where \{ ... } &gt;]
 
 </pre><p>Add a comment to an entry.</p><ul>
-<li><p><strong>&lt;key&gt;</strong> The key of the record to add the comment to.</p></li>
-<li><p><strong>&lt;comment&gt;</strong> The comment.</p></li>
-<li><p><strong>[-k|--kind=&lt;Str where \{ ... } &gt;]</strong> The kind of record to add the comment to.</p></li>
+<li><p><code>&lt;key&gt;</code> The key of the record to add the comment to.</p></li>
+<li><p><code>&lt;comment&gt;</code> The comment.</p></li>
+<li><p><code>[-k|--kind=&lt;Str where \{ ... } &gt;]</code> The kind of record to add the comment to.</p></li>
 <ul>
 <li><p>the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').</p></li>
 <li><p>default value is 'normal'.</p></li>
@@ -1170,12 +1170,12 @@ Usage:
   pack.raku list trash [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>List the trashed keys in the database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys, directories or comments starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> Set the page length before headers are re-shown.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A raku regex to use to search for the matching keys, directories or comments.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys, directories or comments starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A raku regex to use to search for the matching keys, directories or comments.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p></li>
 <ul>
 <li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
 </ul>
@@ -1193,7 +1193,7 @@ Usage:
   pack.raku undelete [&lt;keys&gt; ...]
 
 </pre><p>Undelete the specified keys.</p><ul>
-<li><p><strong>[&lt;keys&gt; ...]</strong> The keys of the records to undelete.</p></li>
+<li><p><code>[&lt;keys&gt; ...]</code> The keys of the records to undelete.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_show_stats"><a href="#pack" class="u" title="go to top of document">pack.raku show stats</a></h1>
 <pre class="pod-block-code">pack.raku show stats --help
@@ -1202,11 +1202,11 @@ Usage:
   pack.raku show stats [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>Show the stats for the database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p></li>
 <ul>
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
@@ -1219,14 +1219,14 @@ Usage:
   pack.raku show statistics [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>Show the statistics for the database.</p><ul>
-<li><p><strong>alias for show stats.</strong></p></li>
+<li><p><code>alias for show stats.</code></p></li>
 </ul>
 <p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p></li>
 <ul>
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
@@ -1239,7 +1239,7 @@ Usage:
   pack.raku backup db  [-w|--win-format|--use-windows-formatting]
 
 </pre><p>Backup the db file.</p><ul>
-<li><p><strong>[-w|--win-format|--use-windows-formatting]</strong> Use windows compatible file names for the backup file.</p></li>
+<li><p><code>[-w|--win-format|--use-windows-formatting]</code> Use windows compatible file names for the backup file.</p></li>
 <ul>
 <li><p><strong>NB:</strong> The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p></li>
 </ul>
@@ -1251,7 +1251,7 @@ Usage:
   pack.raku restore db [&lt;restore-from&gt;]
 
 </pre><p>Restore the db file from restore-from.</p><p>Where</p><ul>
-<li><p><strong>[&lt;restore-from&gt;]</strong> A path to a restore file.</p></li>
+<li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_menu_restore_db"><a href="#pack" class="u" title="go to top of document">pack.raku menu restore db</a></h1>
 <pre class="pod-block-code">pack.raku menu restore db --help
@@ -1260,9 +1260,9 @@ Usage:
   pack.raku menu restore db [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
 
 </pre><p>Use a text menu to present options for database file restore</p><ul>
-<li><p><strong>[&lt;message&gt;]</strong> A message to display above the menu (currently not used in colour and syntax modes).</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> Use ANSI colour mode.</p></li>
-<li><p><strong>[-s|--syntax]</strong> Use ANSI colour mode with syntax highlighting.</p></li>
+<li><p><code>[&lt;message&gt;]</code> A message to display above the menu (currently not used in colour and syntax modes).</p></li>
+<li><p><code>[-c|--color|--colour]</code> Use ANSI colour mode.</p></li>
+<li><p><code>[-s|--syntax]</code> Use ANSI colour mode with syntax highlighting.</p></li>
 <ul>
 <li><p><strong>NB:</strong> looks like:</p></li>
 </ul>
@@ -1282,13 +1282,13 @@ Usage:
   pack.raku list db backups [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>List the db backups in the standard directory.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> List only those whose name starts with prefix (case insensitive).</p></li>
-<li><p><strong>[-c|--color|--colour] [-s|--syntax]</strong> List in colour..</p></li>
-<li><p><strong>[-s|--syntax]</strong> List in syntax highlighted colour.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> List in pages of length $page-length.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> List only those matching this Raku regex.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> List only those matching this EMCA262Regex regex.</p></li>
-<li><p><strong>The EMCA262Regex library doesn't support ignore case well.</strong> .</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> List only those whose name starts with prefix (case insensitive).</p></li>
+<li><p><code>[-c|--color|--colour] [-s|--syntax]</code> List in colour..</p></li>
+<li><p><code>[-s|--syntax]</code> List in syntax highlighted colour.</p></li>
+<li><p><code>[-l|--page-length[=Int]]</code> List in pages of length $page-length.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> List only those matching this Raku regex.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> List only those matching this EMCA262Regex regex.</p></li>
+<li><p><code>The EMCA262Regex library doesn't support ignore case well.</code> .</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_editors"><a href="#pack" class="u" title="go to top of document">pack.raku list editors</a></h1>
 <pre class="pod-block-code">pack.raku list editors --help
@@ -1297,13 +1297,13 @@ Usage:
   pack.raku list editors  [-f|--prefix=&lt;Str&gt;] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>List the contents of the db file.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> List only those whose name starts with prefix (case insensitive).</p></li>
-<li><p><strong>[-c|--color|--colour] [-s|--syntax]</strong> List in colour..</p></li>
-<li><p><strong>[-s|--syntax]</strong> List in syntax highlighted colour.</p></li>
-<li><p><strong>[-l|--page-length[=Int]]</strong> List in pages of length $page-length.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> List only those matching this Raku regex.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> List only those matching this EMCA262Regex regex.</p></li>
-<li><p><strong>The EMCA262Regex library doesn't support ignore case well.</strong> .</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> List only those whose name starts with prefix (case insensitive).</p></li>
+<li><p><code>[-c|--color|--colour] [-s|--syntax]</code> List in colour..</p></li>
+<li><p><code>[-s|--syntax]</code> List in syntax highlighted colour.</p></li>
+<li><p><code>[-l|--page-length[=Int]]</code> List in pages of length $page-length.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> List only those matching this Raku regex.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> List only those matching this EMCA262Regex regex.</p></li>
+<li><p><code>The EMCA262Regex library doesn't support ignore case well.</code> .</p></li>
 </ul>
 <pre class="pod-block-code">pack.raku list editors
 
@@ -1322,11 +1322,11 @@ Usage:
   pack.raku editors stats [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>Show the statistics for the editors database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p></li>
 <ul>
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
@@ -1352,11 +1352,11 @@ Usage:
   pack.raku list editors backups [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
 
 </pre><p>Show the statistics for the editors database.</p><p>Where</p><ul>
-<li><p><strong>[&lt;prefix&gt;]</strong> If present then search for keys starting with the string value.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> If present then show with ANSI colours.</p></li>
-<li><p><strong>[-s|--syntax]</strong> If present will override colour setting and display with syntax highlighted colours.</p></li>
-<li><p><strong>[-p|--pattern=&lt;Str&gt;]</strong> A Raku regex to use to search for the matching keys.</p></li>
-<li><p><strong>[-e|--ecma-pattern=&lt;Str&gt;]</strong> A ECMA262Regex regex to use to search for the matching keys..</p></li>
+<li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p></li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p></li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p></li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p></li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p></li>
 <ul>
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p></li>
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
@@ -1390,7 +1390,7 @@ Usage:
   pack.raku backup editors  [-w|--use-windows-formatting]
 
 </pre><p>Backup the editors db file.</p><ul>
-<li><p><strong>[-w|--win-format|--use-windows-formatting]</strong> Use windows compatible file names for the backup file.</p></li>
+<li><p><code>[-w|--win-format|--use-windows-formatting]</code> Use windows compatible file names for the backup file.</p></li>
 <ul>
 <li><p><strong>NB:</strong> The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p></li>
 </ul>
@@ -1402,7 +1402,7 @@ Usage:
   pack.raku restore editors &lt;restore-from&gt;
 
 </pre><p>Restore the editors db file from restore-from.</p><p>Where</p><ul>
-<li><p><strong>[&lt;restore-from&gt;]</strong> A path to a restore file.</p></li>
+<li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_editor"><a href="#pack" class="u" title="go to top of document">pack.raku set editor</a></h1>
 <pre class="pod-block-code">pack.raku set editor --help
@@ -1411,8 +1411,8 @@ Usage:
   pack.raku set editor &lt;editor&gt; [&lt;comment&gt;]
 
 </pre><p>Set the default editor to use.</p><p>Where</p><ul>
-<li><p><strong>&lt;editor&gt;</strong> The editor to make default.</p></li>
-<li><p><strong>[&lt;comment&gt;]</strong> A comment to put against the editor.</p></li>
+<li><p><code>&lt;editor&gt;</code> The editor to make default.</p></li>
+<li><p><code>[&lt;comment&gt;]</code> A comment to put against the editor.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_override_GUI_EDITOR"><a href="#pack" class="u" title="go to top of document">pack.raku set override GUI_EDITOR</a></h1>
 <pre class="pod-block-code">pack.raku set override GUI_EDITOR --help
@@ -1421,8 +1421,8 @@ Usage:
   pack.raku set override GUI_EDITOR &lt;value&gt; [&lt;comment&gt;]
 
 </pre><p>Set the value of the override-GUI_EDITOR parameter </p><p>Where</p><ul>
-<li><p><strong>&lt;value&gt;</strong> The value of the parameter (True or False).</p></li>
-<li><p><strong>[&lt;comment&gt;]</strong> A comment to place against the parameter.</p></li>
+<li><p><code>&lt;value&gt;</code> The value of the parameter (True or False).</p></li>
+<li><p><code>[&lt;comment&gt;]</code> A comment to place against the parameter.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_menu_restore_editors"><a href="#pack" class="u" title="go to top of document">pack.raku menu restore editors</a></h1>
 <pre class="pod-block-code">pack.raku menu restore editors --help
@@ -1431,15 +1431,15 @@ Usage:
   pack.raku menu restore editors [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
 
 </pre><p>Restore the editors db using a menu of backups from the standard directory.</p><p>Where</p><ul>
-<li><p><strong>[&lt;message&gt;]</strong> A message to display above the menu only works in monochrome version.</p></li>
-<li><p><strong>[-c|--color|--colour]</strong> Use ANSI colour mode.</p></li>
-<li><p><strong>[-s|--syntax]</strong> Use ANSI colour mode and syntax highlighting.</p></li>
+<li><p><code>[&lt;message&gt;]</code> A message to display above the menu only works in monochrome version.</p></li>
+<li><p><code>[-c|--color|--colour]</code> Use ANSI colour mode.</p></li>
+<li><p><code>[-s|--syntax]</code> Use ANSI colour mode and syntax highlighting.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_USAGE"><a href="#pack" class="u" title="go to top of document">pack.raku USAGE</a></h1>
 <pre class="pod-block-code">pack.raku USAGE [-n|--nocolor|--nocolour]
 
 </pre><p>Shows the USAGE without this method purpose is to implement the coloured usage.</p><p>Where</p><ul>
-<li><p><strong>[-n|--nocolor|--nocolour]</strong> Show the usage in monochrome.</p></li>
+<li><p><code>[-n|--nocolor|--nocolour]</code> Show the usage in monochrome.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="multi_sub_GENERATE-USAGE"><a href="#pack" class="u" title="go to top of document">multi sub GENERATE-USAGE</a></h1>
 <pre class="pod-block-code">multi sub GENERATE-USAGE(&amp;main, |capture --&gt; Int) {
@@ -1462,7 +1462,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-05T05:14:27Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-05T07:15:17Z</span></div></footer>
 	</body>
 </html>
 

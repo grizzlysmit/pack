@@ -279,19 +279,19 @@ Create the `.pack_args.json` file.
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
   * **[<extra-sources> ...]** A list of extra files to add to the package.
 
-  * **[-s|--schema=<Str>]** The path to the schema file.
+  * `[-s|--schema=<Str>]` The path to the schema file.
 
-  * **[-p|--podir=<Str>]** The path to the po files.
+  * `[-p|--podir=<Str>]` The path to the po files.
 
-  * **[-g|--gettext-domain=<Str>]** The gettext domain.
+  * `[-g|--gettext-domain=<Str>]` The gettext domain.
 
-  * **[-o|--out-dir=<Str>]** The directory to place the package file in.
+  * `[-o|--out-dir=<Str>]` The directory to place the package file in.
 
-  * **[-f|--force]** set the force option.
+  * `[-f|--force]` set the force option.
 
 [Table of Contents](#table-of-contents)
 
@@ -309,23 +309,23 @@ Modifiy add to the `.pack_args.json` file.
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
   * **[<extra-sources> ...]** A list of extra files to add to the package.
 
-  * **[-s|--schema=<Str>]** The path to the schema file.
+  * `[-s|--schema=<Str>]` The path to the schema file.
 
-  * **[-p|--podir=<Str>]** The path to the po files.
+  * `[-p|--podir=<Str>]` The path to the po files.
 
-  * **[-g|--gettext-domain=<Str>]** The gettext domain.
+  * `[-g|--gettext-domain=<Str>]` The gettext domain.
 
-  * **[-o|--out-dir=<Str>]** The directory to place the package file in.
+  * `[-o|--out-dir=<Str>]` The directory to place the package file in.
 
-  * **[-f|--force]** set the force option.
+  * `[-f|--force]` set the force option.
 
-  * **[-F|--stomp-force]** If present then the value of --force wins regradless.
+  * `[-F|--stomp-force]` If present then the value of --force wins regradless.
 
-  * **[-S|--stomp]** If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
+  * `[-S|--stomp]` If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
 
 [Table of Contents](#table-of-contents)
 
@@ -343,9 +343,9 @@ Set the value of schema in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<schema-value>** new value of schema.
+  * `<schema-value>` new value of schema.
 
 [Table of Contents](#table-of-contents)
 
@@ -363,9 +363,9 @@ Set the value of podir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<podir-value>** new value of podir.
+  * `<podir-value>` new value of podir.
 
     * podir is the path of the directory containing the po files.
 
@@ -385,9 +385,9 @@ Set the value of gettext-domain in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<gettext-domain-value>** new value of gettext-domain.
+  * `<gettext-domain-value>` new value of gettext-domain.
 
 [Table of Contents](#table-of-contents)
 
@@ -405,9 +405,9 @@ Set the value of out-dir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<out-dir-value>** new value of out-dir.
+  * `<out-dir-value>` new value of out-dir.
 
 [Table of Contents](#table-of-contents)
 
@@ -425,9 +425,9 @@ Set the value of force in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<force-value>** new value of force.
+  * `<force-value>` new value of force.
 
 [Table of Contents](#table-of-contents)
 
@@ -445,9 +445,9 @@ Add to the value of extra-sources in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **[<extra-sources> ...]** additional extra-sources.
+  * `[<extra-sources> ...]` additional extra-sources.
 
 [Table of Contents](#table-of-contents)
 
@@ -465,9 +465,9 @@ Set the value of package-dir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **<package-dir-value>** new value of package-dir.
+  * `<package-dir-value>` new value of package-dir.
 
     * probably useless as **<package-dir>** and **<package-dir-value>** are to be expected to be the same generally, but if needed it's here.
 
@@ -487,9 +487,9 @@ Set the value of extra-sources in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **[<extra-sources> ...]** new value of extra-sources.
+  * `[<extra-sources> ...]` new value of extra-sources.
 
 [Table of Contents](#table-of-contents)
 
@@ -507,9 +507,9 @@ Append **[<extra-sources> ...]** to the value of extra-sources in **<package-dir
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
-  * **[<extra-sources> ...]** value to append to extra-sources.
+  * `[<extra-sources> ...]` value to append to extra-sources.
 
 [Table of Contents](#table-of-contents)
 
@@ -527,7 +527,7 @@ Remove the value of schema in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -545,7 +545,7 @@ Remove the value of podir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -563,7 +563,7 @@ Remove the value of gettext-domain in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -581,7 +581,7 @@ Remove the value of out-dir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -599,7 +599,7 @@ Truncate the value of extra-sources in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -617,7 +617,7 @@ Get the value of schema in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -633,11 +633,11 @@ Usage:
 
 Get the value of podir in **<package-dir>/.pack_args.json**
 
-  * **NB: podir is the path to the directory containing the po files.**
+  * `NB: podir is the path to the directory containing the po files.`
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -655,7 +655,7 @@ Get the value of gettext-domain in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -673,7 +673,7 @@ Get the value of out-dir in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -691,7 +691,7 @@ Get the value of extra-sources in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -709,7 +709,7 @@ Get the value of force in **<package-dir>/.pack_args.json**
 
 Where
 
-  * **<package-dir>** Directory containing plugin.
+  * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
 
@@ -725,13 +725,13 @@ Usage:
 
 Where 
 
-  * **<key>** is a faily arbitray key.
+  * `<key>` is a faily arbitray key.
 
-  * **<target>** is a path to a directory containing a **gnome-shell** plugin.
+  * `<target>` is a path to a directory containing a **gnome-shell** plugin.
 
-  * **[-s|--set|--force]** if present then add the key directory pair even if it requires overwriting an existing entry.
+  * `[-s|--set|--force]` if present then add the key directory pair even if it requires overwriting an existing entry.
 
-  * **[-c|--comment=<Str>]** A comment to describe the key directory pair.
+  * `[-c|--comment=<Str>]` A comment to describe the key directory pair.
 
 [Table of Contents](#table-of-contents)
 
@@ -785,17 +785,17 @@ Usage:
 
 Where
 
-  * **[<prefix>]** If present then search for keys starting with the string value.
+  * `[<prefix>]` If present then search for keys starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
+  * `[-l|--page-length[=Int]]` Set the page length before headers are re-shown.
 
-  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+  * `[-p|--pattern=<Str>]` A Raku regex to use to search for the matching keys.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys.
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys.
 
     * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.** 
 
@@ -817,17 +817,17 @@ List the keys in the database.
 
 Where
 
-  * **[<prefix>]** If present then search for keys, directories or comments starting with the string value.
+  * `[<prefix>]` If present then search for keys, directories or comments starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
+  * `[-l|--page-length[=Int]]` Set the page length before headers are re-shown.
 
-  * **[-p|--pattern=<Str>]** A raku regex to use to search for the matching keys, directories or comments.
+  * `[-p|--pattern=<Str>]` A raku regex to use to search for the matching keys, directories or comments.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys, directories or comments.
 
     * **NB:** uses a imperfect library to convert the EMCA262Regex to a raku one.
 
@@ -849,9 +849,9 @@ Delete the specified key/directory paths from the database.
 
 Where
 
-  * **[<keys> ...]** the keys of the key/directory pairs that you want to delete.
+  * `[<keys> ...]` the keys of the key/directory pairs that you want to delete.
 
-  * **[-d|--delete|--do-not-trash]** If true then actually delete otherwise trash.
+  * `[-d|--delete|--do-not-trash]` If true then actually delete otherwise trash.
 
     * Trash means keep record but commented out.
 
@@ -869,13 +869,13 @@ Usage:
 
 Delete the specified key/directory paths from the database.
 
-  * **NB: alias for delete**
+  * `NB: alias for delete`
 
 Where
 
-  * **[<keys> ...]** the keys of the key/directory pairs that you want to delete.
+  * `[<keys> ...]` the keys of the key/directory pairs that you want to delete.
 
-  * **[-d|--delete|--do-not-trash]** If true then actually delete otherwise trash.
+  * `[-d|--delete|--do-not-trash]` If true then actually delete otherwise trash.
 
     * Trash means keep record but commented out.
 
@@ -895,7 +895,7 @@ Trash the specified key/directory paths from the database.
 
 Where
 
-  * **[<keys> ...]** the keys of the key/directory pairs that you want to trash.
+  * `[<keys> ...]` the keys of the key/directory pairs that you want to trash.
 
 [Table of Contents](#table-of-contents)
 
@@ -927,11 +927,11 @@ Usage:
 
 Add a comment to an entry.
 
-  * **<key>** The key of the record to add the comment to.
+  * `<key>` The key of the record to add the comment to.
 
-  * **<comment>** The comment.
+  * `<comment>` The comment.
 
-  * **[-k|--kind=<Str where \{ ... } >]** The kind of record to add the comment to.
+  * `[-k|--kind=<Str where \{ ... } >]` The kind of record to add the comment to.
 
     * the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').
 
@@ -953,17 +953,17 @@ List the trashed keys in the database.
 
 Where
 
-  * **[<prefix>]** If present then search for keys, directories or comments starting with the string value.
+  * `[<prefix>]` If present then search for keys, directories or comments starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-l|--page-length[=Int]]** Set the page length before headers are re-shown.
+  * `[-l|--page-length[=Int]]` Set the page length before headers are re-shown.
 
-  * **[-p|--pattern=<Str>]** A raku regex to use to search for the matching keys, directories or comments.
+  * `[-p|--pattern=<Str>]` A raku regex to use to search for the matching keys, directories or comments.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys, directories or comments.
 
     * **NB:** uses a imperfect library to convert the EMCA262Regex to a raku one.
 
@@ -995,7 +995,7 @@ Usage:
 
 Undelete the specified keys.
 
-  * **[<keys> ...]** The keys of the records to undelete.
+  * `[<keys> ...]` The keys of the records to undelete.
 
 [Table of Contents](#table-of-contents)
 
@@ -1013,15 +1013,15 @@ Show the stats for the database.
 
 Where
 
-  * **[<prefix>]** If present then search for keys starting with the string value.
+  * `[<prefix>]` If present then search for keys starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+  * `[-p|--pattern=<Str>]` A Raku regex to use to search for the matching keys.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys..
 
     * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
 
@@ -1041,19 +1041,19 @@ Usage:
 
 Show the statistics for the database.
 
-  * **alias for show stats.**
+  * `alias for show stats.`
 
 Where
 
-  * **[<prefix>]** If present then search for keys starting with the string value.
+  * `[<prefix>]` If present then search for keys starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+  * `[-p|--pattern=<Str>]` A Raku regex to use to search for the matching keys.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys..
 
     * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
 
@@ -1073,7 +1073,7 @@ Usage:
 
 Backup the db file.
 
-  * **[-w|--win-format|--use-windows-formatting]** Use windows compatible file names for the backup file.
+  * `[-w|--win-format|--use-windows-formatting]` Use windows compatible file names for the backup file.
 
     * **NB:** The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
 
@@ -1093,7 +1093,7 @@ Restore the db file from restore-from.
 
 Where
 
-  * **[<restore-from>]** A path to a restore file.
+  * `[<restore-from>]` A path to a restore file.
 
 [Table of Contents](#table-of-contents)
 
@@ -1109,11 +1109,11 @@ Usage:
 
 Use a text menu to present options for database file restore
 
-  * **[<message>]** A message to display above the menu (currently not used in colour and syntax modes).
+  * `[<message>]` A message to display above the menu (currently not used in colour and syntax modes).
 
-  * **[-c|--color|--colour]** Use ANSI colour mode.
+  * `[-c|--color|--colour]` Use ANSI colour mode.
 
-  * **[-s|--syntax]** Use ANSI colour mode with syntax highlighting.
+  * `[-s|--syntax]` Use ANSI colour mode with syntax highlighting.
 
     * **NB:** looks like:
 
@@ -1145,19 +1145,19 @@ List the db backups in the standard directory.
 
 Where
 
-  * **[<prefix>]** List only those whose name starts with prefix (case insensitive).
+  * `[<prefix>]` List only those whose name starts with prefix (case insensitive).
 
-  * **[-c|--color|--colour] [-s|--syntax]** List in colour..
+  * `[-c|--color|--colour] [-s|--syntax]` List in colour..
 
-  * **[-s|--syntax]** List in syntax highlighted colour.
+  * `[-s|--syntax]` List in syntax highlighted colour.
 
-  * **[-l|--page-length[=Int]]** List in pages of length $page-length.
+  * `[-l|--page-length[=Int]]` List in pages of length $page-length.
 
-  * **[-p|--pattern=<Str>]** List only those matching this Raku regex.
+  * `[-p|--pattern=<Str>]` List only those matching this Raku regex.
 
-  * **[-e|--ecma-pattern=<Str>]** List only those matching this EMCA262Regex regex.
+  * `[-e|--ecma-pattern=<Str>]` List only those matching this EMCA262Regex regex.
 
-  * **The EMCA262Regex library doesn't support ignore case well.** .
+  * `The EMCA262Regex library doesn't support ignore case well.` .
 
 [Table of Contents](#table-of-contents)
 
@@ -1175,19 +1175,19 @@ List the contents of the db file.
 
 Where
 
-  * **[<prefix>]** List only those whose name starts with prefix (case insensitive).
+  * `[<prefix>]` List only those whose name starts with prefix (case insensitive).
 
-  * **[-c|--color|--colour] [-s|--syntax]** List in colour..
+  * `[-c|--color|--colour] [-s|--syntax]` List in colour..
 
-  * **[-s|--syntax]** List in syntax highlighted colour.
+  * `[-s|--syntax]` List in syntax highlighted colour.
 
-  * **[-l|--page-length[=Int]]** List in pages of length $page-length.
+  * `[-l|--page-length[=Int]]` List in pages of length $page-length.
 
-  * **[-p|--pattern=<Str>]** List only those matching this Raku regex.
+  * `[-p|--pattern=<Str>]` List only those matching this Raku regex.
 
-  * **[-e|--ecma-pattern=<Str>]** List only those matching this EMCA262Regex regex.
+  * `[-e|--ecma-pattern=<Str>]` List only those matching this EMCA262Regex regex.
 
-  * **The EMCA262Regex library doesn't support ignore case well.** .
+  * `The EMCA262Regex library doesn't support ignore case well.` .
 
 ```bash
 pack.raku list editors
@@ -1217,15 +1217,15 @@ Show the statistics for the editors database.
 
 Where
 
-  * **[<prefix>]** If present then search for keys starting with the string value.
+  * `[<prefix>]` If present then search for keys starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+  * `[-p|--pattern=<Str>]` A Raku regex to use to search for the matching keys.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys..
 
     * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
 
@@ -1262,15 +1262,15 @@ Show the statistics for the editors database.
 
 Where
 
-  * **[<prefix>]** If present then search for keys starting with the string value.
+  * `[<prefix>]` If present then search for keys starting with the string value.
 
-  * **[-c|--color|--colour]** If present then show with ANSI colours.
+  * `[-c|--color|--colour]` If present then show with ANSI colours.
 
-  * **[-s|--syntax]** If present will override colour setting and display with syntax highlighted colours.
+  * `[-s|--syntax]` If present will override colour setting and display with syntax highlighted colours.
 
-  * **[-p|--pattern=<Str>]** A Raku regex to use to search for the matching keys.
+  * `[-p|--pattern=<Str>]` A Raku regex to use to search for the matching keys.
 
-  * **[-e|--ecma-pattern=<Str>]** A ECMA262Regex regex to use to search for the matching keys..
+  * `[-e|--ecma-pattern=<Str>]` A ECMA262Regex regex to use to search for the matching keys..
 
     * **NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.**
 
@@ -1313,7 +1313,7 @@ Usage:
 
 Backup the editors db file.
 
-  * **[-w|--win-format|--use-windows-formatting]** Use windows compatible file names for the backup file.
+  * `[-w|--win-format|--use-windows-formatting]` Use windows compatible file names for the backup file.
 
     * **NB:** The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
 
@@ -1333,7 +1333,7 @@ Restore the editors db file from restore-from.
 
 Where
 
-  * **[<restore-from>]** A path to a restore file.
+  * `[<restore-from>]` A path to a restore file.
 
 [Table of Contents](#table-of-contents)
 
@@ -1351,9 +1351,9 @@ Set the default editor to use.
 
 Where
 
-  * **<editor>** The editor to make default.
+  * `<editor>` The editor to make default.
 
-  * **[<comment>]** A comment to put against the editor.
+  * `[<comment>]` A comment to put against the editor.
 
 [Table of Contents](#table-of-contents)
 
@@ -1371,9 +1371,9 @@ Set the value of the override-GUI_EDITOR parameter
 
 Where
 
-  * **<value>** The value of the parameter (True or False).
+  * `<value>` The value of the parameter (True or False).
 
-  * **[<comment>]** A comment to place against the parameter.
+  * `[<comment>]` A comment to place against the parameter.
 
 [Table of Contents](#table-of-contents)
 
@@ -1391,11 +1391,11 @@ Restore the editors db using a menu of backups from the standard directory.
 
 Where
 
-  * **[<message>]** A message to display above the menu only works in monochrome version.
+  * `[<message>]` A message to display above the menu only works in monochrome version.
 
-  * **[-c|--color|--colour]** Use ANSI colour mode.
+  * `[-c|--color|--colour]` Use ANSI colour mode.
 
-  * **[-s|--syntax]** Use ANSI colour mode and syntax highlighting.
+  * `[-s|--syntax]` Use ANSI colour mode and syntax highlighting.
 
 [Table of Contents](#table-of-contents)
 
@@ -1410,7 +1410,7 @@ Shows the USAGE without this method purpose is to implement the coloured usage.
 
 Where
 
-  * **[-n|--nocolor|--nocolour]** Show the usage in monochrome.
+  * `[-n|--nocolor|--nocolour]` Show the usage in monochrome.
 
 [Table of Contents](#table-of-contents)
 

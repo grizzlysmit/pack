@@ -233,13 +233,13 @@ Usage:
 Create the C<.pack_args.json> file.
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 =item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
-=item1 B«[-s|--schema=<Str>]»  The path to the schema file.
-=item1 B«[-p|--podir=<Str>]»  The path to the po files.
-=item1 B«[-g|--gettext-domain=<Str>]»   The gettext domain.
-=item1 B«[-o|--out-dir=<Str>]»   The directory to place the package file in.
-=item1 B«[-f|--force]»   set the force option.
+=item1 C«[-s|--schema=<Str>]»  The path to the schema file.
+=item1 C«[-p|--podir=<Str>]»  The path to the po files.
+=item1 C«[-g|--gettext-domain=<Str>]»   The gettext domain.
+=item1 C«[-o|--out-dir=<Str>]»   The directory to place the package file in.
+=item1 C«[-f|--force]»   set the force option.
 
 L<Table of Contents|#table-of-contents>
 
@@ -277,15 +277,15 @@ Usage:
 Modifiy add to the C<.pack_args.json> file.
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 =item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
-=item1 B«[-s|--schema=<Str>]»  The path to the schema file.
-=item1 B«[-p|--podir=<Str>]»  The path to the po files.
-=item1 B«[-g|--gettext-domain=<Str>]»   The gettext domain.
-=item1 B«[-o|--out-dir=<Str>]»   The directory to place the package file in.
-=item1 B«[-f|--force]»   set the force option.
-=item1 B«[-F|--stomp-force]»   If present then the value of --force wins regradless.
-=item1 B«[-S|--stomp]»     If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
+=item1 C«[-s|--schema=<Str>]»  The path to the schema file.
+=item1 C«[-p|--podir=<Str>]»  The path to the po files.
+=item1 C«[-g|--gettext-domain=<Str>]»   The gettext domain.
+=item1 C«[-o|--out-dir=<Str>]»   The directory to place the package file in.
+=item1 C«[-f|--force]»   set the force option.
+=item1 C«[-F|--stomp-force]»   If present then the value of --force wins regradless.
+=item1 C«[-S|--stomp]»     If present then @extra-sources stomps on whatever was before otherwise they are spliced together.
 
 L<Table of Contents|#table-of-contents>
 
@@ -329,8 +329,8 @@ Usage:
 Set the value of schema in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»   Directory containing plugin.
-=item1 B«<schema-value>»  new value of schema.
+=item1 C«<package-dir>»   Directory containing plugin.
+=item1 C«<schema-value>»  new value of schema.
 
 L<Table of Contents|#table-of-contents>
 
@@ -357,8 +357,8 @@ Usage:
 Set the value of podir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«<podir-value>»  new value of podir.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«<podir-value>»  new value of podir.
 =item2 podir is the path of the directory containing the po files.
 
 L<Table of Contents|#table-of-contents>
@@ -386,8 +386,8 @@ Usage:
 Set the value of gettext-domain in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«<gettext-domain-value>»  new value of gettext-domain.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«<gettext-domain-value>»  new value of gettext-domain.
 
 L<Table of Contents|#table-of-contents>
 
@@ -414,8 +414,8 @@ Usage:
 Set the value of out-dir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«<out-dir-value>»  new value of out-dir.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«<out-dir-value>»  new value of out-dir.
 
 L<Table of Contents|#table-of-contents>
 
@@ -442,8 +442,8 @@ Usage:
 Set the value of force in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«<force-value>»  new value of force.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«<force-value>»  new value of force.
 
 L<Table of Contents|#table-of-contents>
 
@@ -470,8 +470,8 @@ Usage:
 Add to the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«[<extra-sources> ...]»  additional extra-sources.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«[<extra-sources> ...]»  additional extra-sources.
 
 L<Table of Contents|#table-of-contents>
 
@@ -498,8 +498,8 @@ Usage:
 Set the value of package-dir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«<package-dir-value>»  new value of package-dir.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir-value>»  new value of package-dir.
 =item2 probably useless as B«<package-dir>» and B«<package-dir-value>» are to be expected to be the same generally, but if needed it's here.
 
 L<Table of Contents|#table-of-contents>
@@ -527,8 +527,8 @@ Usage:
 Set the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«[<extra-sources> ...]»  new value of extra-sources.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«[<extra-sources> ...]»  new value of extra-sources.
 
 L<Table of Contents|#table-of-contents>
 
@@ -555,8 +555,8 @@ Usage:
 Append B«[<extra-sources> ...]» to the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
-=item1 B«[<extra-sources> ...]»  value to append to extra-sources.
+=item1 C«<package-dir>»  Directory containing plugin.
+=item1 C«[<extra-sources> ...]»  value to append to extra-sources.
 
 L<Table of Contents|#table-of-contents>
 
@@ -583,7 +583,7 @@ Usage:
 Remove the value of schema in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -610,7 +610,7 @@ Usage:
 Remove the value of podir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -637,7 +637,7 @@ Usage:
 Remove the value of gettext-domain in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -664,7 +664,7 @@ Usage:
 Remove the value of out-dir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -691,7 +691,7 @@ Usage:
 Truncate the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -718,7 +718,7 @@ Usage:
 Get the value of schema in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -743,10 +743,10 @@ Usage:
 =end code
 
 Get the value of podir in B«<package-dir>/.pack_args.json»
-=item1 B«NB: podir is the path to the directory containing the po files.»
+=item1 C«NB: podir is the path to the directory containing the po files.»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -773,7 +773,7 @@ Usage:
 Get the value of gettext-domain in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -800,7 +800,7 @@ Usage:
 Get the value of out-dir in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -827,7 +827,7 @@ Usage:
 Get the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -854,7 +854,7 @@ Usage:
 Get the value of force in B«<package-dir>/.pack_args.json»
 
 Where
-=item1 B«<package-dir>»  Directory containing plugin.
+=item1 C«<package-dir>»  Directory containing plugin.
 
 L<Table of Contents|#table-of-contents>
 
@@ -884,10 +884,10 @@ Usage:
 =end code
 
 Where 
-=item1 B«<key>»  is a faily arbitray key.
-=item1 B«<target>»  is a path to a directory containing a B<gnome-shell> plugin.
-=item1 B«[-s|--set|--force]»     if present then add the key directory pair even if it requires overwriting an existing entry.
-=item1 B«[-c|--comment=<Str>]»   A comment to describe the key directory pair.
+=item1 C«<key>»  is a faily arbitray key.
+=item1 C«<target>»  is a path to a directory containing a B<gnome-shell> plugin.
+=item1 C«[-s|--set|--force]»     if present then add the key directory pair even if it requires overwriting an existing entry.
+=item1 C«[-c|--comment=<Str>]»   A comment to describe the key directory pair.
 
 L<Table of Contents|#table-of-contents>
 
@@ -987,12 +987,12 @@ Usage:
 =end code
 
 Where
-=item1 B«[<prefix>]»  If present then search for keys starting with the string value.
-=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
-=item1 B«[-p|--pattern=<Str>]»  A Raku regex to use to search for the matching keys.
-=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys.
+=item1 C«[<prefix>]»  If present then search for keys starting with the string value.
+=item1 C«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
+=item1 C«[-p|--pattern=<Str>]»  A Raku regex to use to search for the matching keys.
+=item1 C«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys.
 =item2 B<NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.> 
 
 List all or a subset of the keys avaiable.
@@ -1038,12 +1038,12 @@ Usage:
 List the keys in the database.
 
 Where
-=item1 B«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
-=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
-=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
-=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+=item1 C«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
+=item1 C«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
+=item1 C«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
+=item1 C«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
 =item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
 
 List all or a subset of the keys avaiable.
@@ -1088,8 +1088,8 @@ Usage:
 Delete the specified key/directory paths from the database.
 
 Where
-=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
-=item1 B«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
+=item1 C«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
+=item1 C«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
 =item2 Trash means keep record but commented out.
 
 L<Table of Contents|#table-of-contents>
@@ -1120,11 +1120,11 @@ Usage:
 =end code
 
 Delete the specified key/directory paths from the database.
-=item1 B«NB: alias for delete»
+=item1 C«NB: alias for delete»
 
 Where
-=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
-=item1 B«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
+=item1 C«[<keys> ...]»  the keys of the key/directory pairs that you want to delete.
+=item1 C«[-d|--delete|--do-not-trash]» If true then actually delete otherwise trash.
 =item2 Trash means keep record but commented out.
 
 L<Table of Contents|#table-of-contents>
@@ -1157,7 +1157,7 @@ Usage:
 Trash the specified key/directory paths from the database.
 
 Where
-=item1 B«[<keys> ...]»  the keys of the key/directory pairs that you want to trash.
+=item1 C«[<keys> ...]»  the keys of the key/directory pairs that you want to trash.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1215,9 +1215,9 @@ Usage:
 =end code
 
 Add a comment to an entry.
-=item1 B«<key>»                              The key of the record to add the comment to.
-=item1 B«<comment>»                          The comment.
-=item1 B«[-k|--kind=<Str where \{ ... } >]»  The kind of record to add the comment to.
+=item1 C«<key>»                              The key of the record to add the comment to.
+=item1 C«<comment>»                          The comment.
+=item1 C«[-k|--kind=<Str where \{ ... } >]»  The kind of record to add the comment to.
 =item2 the possible values of $kind are one of ('neither', 'normal', 'commented', 'both').
 =item2 default value is 'normal'.
 
@@ -1254,12 +1254,12 @@ Usage:
 List the trashed keys in the database.
 
 Where
-=item1 B«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
-=item1 B«[-c|--color|--colour]»  If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
-=item1 B«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
-=item1 B«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
+=item1 C«[<prefix>]»  If present then search for keys, directories or comments starting with the string value.
+=item1 C«[-c|--color|--colour]»  If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»  If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-l|--page-length[=Int]]»  Set the page length before headers are re-shown.
+=item1 C«[-p|--pattern=<Str>]»  A raku regex to use to search for the matching keys, directories or comments.
+=item1 C«[-e|--ecma-pattern=<Str>]»  A ECMA262Regex regex to use to search for the matching keys, directories or comments.
 =item2 B<NB:> uses a imperfect library to convert the EMCA262Regex to a raku one.
 
 L<Table of Contents|#table-of-contents>
@@ -1328,7 +1328,7 @@ Usage:
 =end code
 
 Undelete the specified keys.
-=item1 B«[<keys> ...]» The keys of the records to undelete.
+=item1 C«[<keys> ...]» The keys of the records to undelete.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1360,11 +1360,11 @@ Usage:
 Show the stats for the database.
 
 Where
-=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
-=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
-=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item1 C«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 C«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 C«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
 =item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
 =item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
 
@@ -1406,14 +1406,14 @@ Usage:
 =end code
 
 Show the statistics for the database.
-=item1 B«alias for show stats.»
+=item1 C«alias for show stats.»
 
 Where
-=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
-=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
-=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item1 C«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 C«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 C«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
 =item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
 =item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
 
@@ -1455,7 +1455,7 @@ Usage:
 =end code
 
 Backup the db file.
-=item1 B«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
+=item1 C«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
 =item2 B«NB:» The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
 
 L<Table of Contents|#table-of-contents>
@@ -1486,7 +1486,7 @@ Usage:
 Restore the db file from restore-from.
 
 Where
-=item1 B«[<restore-from>]» A path to a restore file.
+=item1 C«[<restore-from>]» A path to a restore file.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1519,9 +1519,9 @@ Usage:
 
 Use a text menu to present options for database file restore
 
-=item1 B«[<message>]»           A message to display above the menu (currently not used in colour and syntax modes).
-=item1 B«[-c|--color|--colour]» Use ANSI colour mode.
-=item1 B«[-s|--syntax]»         Use ANSI colour mode with syntax highlighting.
+=item1 C«[<message>]»           A message to display above the menu (currently not used in colour and syntax modes).
+=item1 C«[-c|--color|--colour]» Use ANSI colour mode.
+=item1 C«[-s|--syntax]»         Use ANSI colour mode with syntax highlighting.
 =item2 B«NB:» looks like:
 
 =begin code :lang<bash>
@@ -1569,13 +1569,13 @@ Usage:
 List the db backups in the standard directory.
 
 Where
-=item1 B«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
-=item1 B«[-c|--color|--colour] [-s|--syntax]» List in colour..
-=item1 B«[-s|--syntax]»                       List in syntax highlighted colour.
-=item1 B«[-l|--page-length[=Int]]»            List in pages of length $page-length.
-=item1 B«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
-=item1 B«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
-=item1 B«The EMCA262Regex library doesn't support ignore case well.» .
+=item1 C«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
+=item1 C«[-c|--color|--colour] [-s|--syntax]» List in colour..
+=item1 C«[-s|--syntax]»                       List in syntax highlighted colour.
+=item1 C«[-l|--page-length[=Int]]»            List in pages of length $page-length.
+=item1 C«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
+=item1 C«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
+=item1 C«The EMCA262Regex library doesn't support ignore case well.» .
 
 L<Table of Contents|#table-of-contents>
 
@@ -1628,13 +1628,13 @@ Usage:
 List the contents of the db file.
 
 Where
-=item1 B«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
-=item1 B«[-c|--color|--colour] [-s|--syntax]» List in colour..
-=item1 B«[-s|--syntax]»                       List in syntax highlighted colour.
-=item1 B«[-l|--page-length[=Int]]»            List in pages of length $page-length.
-=item1 B«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
-=item1 B«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
-=item1 B«The EMCA262Regex library doesn't support ignore case well.» .
+=item1 C«[<prefix>]»                          List only those whose name starts with prefix (case insensitive).
+=item1 C«[-c|--color|--colour] [-s|--syntax]» List in colour..
+=item1 C«[-s|--syntax]»                       List in syntax highlighted colour.
+=item1 C«[-l|--page-length[=Int]]»            List in pages of length $page-length.
+=item1 C«[-p|--pattern=<Str>]»                List only those matching this Raku regex.
+=item1 C«[-e|--ecma-pattern=<Str>]»           List only those matching this EMCA262Regex regex.
+=item1 C«The EMCA262Regex library doesn't support ignore case well.» .
 
 =begin code :lang<bash>
 
@@ -1691,11 +1691,11 @@ Usage:
 Show the statistics for the editors database.
 
 Where
-=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
-=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
-=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item1 C«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 C«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 C«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
 =item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
 =item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
 
@@ -1757,11 +1757,11 @@ Usage:
 Show the statistics for the editors database.
 
 Where
-=item1 B«[<prefix>]»                If present then search for keys starting with the string value.
-=item1 B«[-c|--color|--colour]»     If present then show with ANSI colours.
-=item1 B«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
-=item1 B«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
-=item1 B«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
+=item1 C«[<prefix>]»                If present then search for keys starting with the string value.
+=item1 C«[-c|--color|--colour]»     If present then show with ANSI colours.
+=item1 C«[-s|--syntax]»             If present will override colour setting and display with syntax highlighted colours.
+=item1 C«[-p|--pattern=<Str>]»      A Raku regex to use to search for the matching keys.
+=item1 C«[-e|--ecma-pattern=<Str>]» A ECMA262Regex regex to use to search for the matching keys..
 =item2 B«NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.»
 =item2 B«NB: pattern and ecma-pattern search by the quantity keys, note the values.»
 
@@ -1829,7 +1829,7 @@ Usage:
 =end code
 
 Backup the editors db file.
-=item1 B«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
+=item1 C«[-w|--win-format|--use-windows-formatting]» Use windows compatible file names for the backup file.
 =item2 B«NB:» The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.
 
 L<Table of Contents|#table-of-contents>
@@ -1860,7 +1860,7 @@ Usage:
 Restore the editors db file from restore-from.
 
 Where
-=item1 B«[<restore-from>]» A path to a restore file.
+=item1 C«[<restore-from>]» A path to a restore file.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1890,8 +1890,8 @@ Usage:
 Set the default editor to use.
 
 Where
-=item1 B«<editor>»    The editor to make default.
-=item1 B«[<comment>]» A comment to put against the editor.
+=item1 C«<editor>»    The editor to make default.
+=item1 C«[<comment>]» A comment to put against the editor.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1921,8 +1921,8 @@ Usage:
 Set the value of the override-GUI_EDITOR parameter 
 
 Where
-=item1 B«<value>»     The value of the parameter (True or False).
-=item1 B«[<comment>]» A comment to place against the parameter.
+=item1 C«<value>»     The value of the parameter (True or False).
+=item1 C«[<comment>]» A comment to place against the parameter.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1952,9 +1952,9 @@ Usage:
 Restore the editors db using a menu of backups from the standard directory.
 
 Where
-=item1 B«[<message>]»           A message to display above the menu only works in monochrome version.
-=item1 B«[-c|--color|--colour]» Use ANSI colour mode.
-=item1 B«[-s|--syntax]»         Use ANSI colour mode and syntax highlighting.
+=item1 C«[<message>]»           A message to display above the menu only works in monochrome version.
+=item1 C«[-c|--color|--colour]» Use ANSI colour mode.
+=item1 C«[-s|--syntax]»         Use ANSI colour mode and syntax highlighting.
 
 L<Table of Contents|#table-of-contents>
 
@@ -1989,7 +1989,7 @@ pack.raku USAGE [-n|--nocolor|--nocolour]
 Shows the USAGE  without this method purpose is to implement the coloured usage.
 
 Where
-=item1 B«[-n|--nocolor|--nocolour]» Show the usage in monochrome.
+=item1 C«[-n|--nocolor|--nocolour]» Show the usage in monochrome.
 
 L<Table of Contents|#table-of-contents>
 
