@@ -332,7 +332,7 @@ Usage:
 
 =end code
 
-Set the value of schema in B«<package-dir>/.pack_args.json»
+Set the value of schema in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»   Directory containing plugin.
@@ -360,7 +360,7 @@ Usage:
 
 =end code
 
-Set the value of podir in B«<package-dir>/.pack_args.json»
+Set the value of podir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -389,7 +389,7 @@ Usage:
 
 =end code
 
-Set the value of gettext-domain in B«<package-dir>/.pack_args.json»
+Set the value of gettext-domain in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -417,7 +417,7 @@ Usage:
 
 =end code
 
-Set the value of out-dir in B«<package-dir>/.pack_args.json»
+Set the value of out-dir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -445,7 +445,7 @@ Usage:
 
 =end code
 
-Set the value of force in B«<package-dir>/.pack_args.json»
+Set the value of force in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -473,7 +473,7 @@ Usage:
 
 =end code
 
-Add to the value of extra-sources in B«<package-dir>/.pack_args.json»
+Add to the value of extra-sources in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -501,12 +501,12 @@ Usage:
 
 =end code
 
-Set the value of package-dir in B«<package-dir>/.pack_args.json»
+Set the value of package-dir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
 =item1 C«<package-dir-value>»  new value of package-dir.
-=item2 probably useless as B«<package-dir>» and B«<package-dir-value>» are to be expected to be the same generally, but if needed it's here.
+=item2 probably useless as C«<package-dir>» and C«<package-dir-value>» are to be expected to be the same generally, but if needed it's here.
 
 L<Table of Contents|#table-of-contents>
 
@@ -530,7 +530,7 @@ Usage:
 
 =end code
 
-Set the value of extra-sources in B«<package-dir>/.pack_args.json»
+Set the value of extra-sources in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -558,7 +558,7 @@ Usage:
 
 =end code
 
-Append C«[<extra-sources> ...]» to the value of extra-sources in B«<package-dir>/.pack_args.json»
+Append C«[<extra-sources> ...]» to the value of extra-sources in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -586,7 +586,7 @@ Usage:
 
 =end code
 
-Remove the value of schema in B«<package-dir>/.pack_args.json»
+Remove the value of schema in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -613,7 +613,7 @@ Usage:
 
 =end code
 
-Remove the value of podir in B«<package-dir>/.pack_args.json»
+Remove the value of podir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -640,7 +640,7 @@ Usage:
 
 =end code
 
-Remove the value of gettext-domain in B«<package-dir>/.pack_args.json»
+Remove the value of gettext-domain in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -667,7 +667,7 @@ Usage:
 
 =end code
 
-Remove the value of out-dir in B«<package-dir>/.pack_args.json»
+Remove the value of out-dir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -694,7 +694,7 @@ Usage:
 
 =end code
 
-Truncate the value of extra-sources in B«<package-dir>/.pack_args.json»
+Truncate the value of extra-sources in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -721,7 +721,7 @@ Usage:
 
 =end code
 
-Get the value of schema in B«<package-dir>/.pack_args.json»
+Get the value of schema in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -748,7 +748,7 @@ Usage:
 
 =end code
 
-Get the value of podir in B«<package-dir>/.pack_args.json»
+Get the value of podir in C«<package-dir>/.pack_args.json»
 =item1 C«NB: podir is the path to the directory containing the po files.»
 
 Where
@@ -776,7 +776,7 @@ Usage:
 
 =end code
 
-Get the value of gettext-domain in B«<package-dir>/.pack_args.json»
+Get the value of gettext-domain in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -803,7 +803,7 @@ Usage:
 
 =end code
 
-Get the value of out-dir in B«<package-dir>/.pack_args.json»
+Get the value of out-dir in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -830,7 +830,7 @@ Usage:
 
 =end code
 
-Get the value of extra-sources in B«<package-dir>/.pack_args.json»
+Get the value of extra-sources in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
@@ -857,7 +857,7 @@ Usage:
 
 =end code
 
-Get the value of force in B«<package-dir>/.pack_args.json»
+Get the value of force in C«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.

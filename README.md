@@ -347,7 +347,7 @@ Usage:
   pack.raku set schema <package-dir> <schema-value>
 ```
 
-Set the value of schema in **<package-dir>/.pack_args.json**
+Set the value of schema in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -367,7 +367,7 @@ Usage:
   pack.raku set podir <package-dir> <podir-value>
 ```
 
-Set the value of podir in **<package-dir>/.pack_args.json**
+Set the value of podir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -389,7 +389,7 @@ Usage:
   pack.raku set gettext-domain <package-dir> <gettext-domain-value>
 ```
 
-Set the value of gettext-domain in **<package-dir>/.pack_args.json**
+Set the value of gettext-domain in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -409,7 +409,7 @@ Usage:
   pack.raku set out-dir <package-dir> <out-dir-value>
 ```
 
-Set the value of out-dir in **<package-dir>/.pack_args.json**
+Set the value of out-dir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -429,7 +429,7 @@ Usage:
   pack.raku set force <package-dir> <force-value>
 ```
 
-Set the value of force in **<package-dir>/.pack_args.json**
+Set the value of force in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -449,7 +449,7 @@ Usage:
   pack.raku add-extra-sources <package-dir> [<extra-sources> ...]
 ```
 
-Add to the value of extra-sources in **<package-dir>/.pack_args.json**
+Add to the value of extra-sources in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -469,7 +469,7 @@ Usage:
   pack.raku set package-dir <package-dir> <package-dir-value>
 ```
 
-Set the value of package-dir in **<package-dir>/.pack_args.json**
+Set the value of package-dir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -477,7 +477,7 @@ Where
 
   * `<package-dir-value>` new value of package-dir.
 
-    * probably useless as **<package-dir>** and **<package-dir-value>** are to be expected to be the same generally, but if needed it's here.
+    * probably useless as `<package-dir>` and `<package-dir-value>` are to be expected to be the same generally, but if needed it's here.
 
 [Table of Contents](#table-of-contents)
 
@@ -491,7 +491,7 @@ Usage:
   pack.raku set extra-sources <package-dir> [<extra-sources> ...]
 ```
 
-Set the value of extra-sources in **<package-dir>/.pack_args.json**
+Set the value of extra-sources in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -511,7 +511,7 @@ Usage:
   pack.raku append extra-sources <package-dir> [<extra-sources> ...]
 ```
 
-Append `[<extra-sources> ...]` to the value of extra-sources in **<package-dir>/.pack_args.json**
+Append `[<extra-sources> ...]` to the value of extra-sources in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -531,7 +531,7 @@ Usage:
   pack.raku remove schema <package-dir>
 ```
 
-Remove the value of schema in **<package-dir>/.pack_args.json**
+Remove the value of schema in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -549,7 +549,7 @@ Usage:
   pack.raku remove podir <package-dir>
 ```
 
-Remove the value of podir in **<package-dir>/.pack_args.json**
+Remove the value of podir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -567,7 +567,7 @@ Usage:
   pack.raku remove gettext-domain <package-dir>
 ```
 
-Remove the value of gettext-domain in **<package-dir>/.pack_args.json**
+Remove the value of gettext-domain in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -585,7 +585,7 @@ Usage:
   pack.raku remove out-dir <package-dir>
 ```
 
-Remove the value of out-dir in **<package-dir>/.pack_args.json**
+Remove the value of out-dir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -603,7 +603,7 @@ Usage:
   pack.raku remove extra-sources <package-dir>
 ```
 
-Truncate the value of extra-sources in **<package-dir>/.pack_args.json**
+Truncate the value of extra-sources in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -621,7 +621,7 @@ Usage:
   pack.raku get schema <package-dir>
 ```
 
-Get the value of schema in **<package-dir>/.pack_args.json**
+Get the value of schema in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -639,7 +639,7 @@ Usage:
   pack.raku get podir <package-dir>
 ```
 
-Get the value of podir in **<package-dir>/.pack_args.json**
+Get the value of podir in `<package-dir>/.pack_args.json`
 
   * `NB: podir is the path to the directory containing the po files.`
 
@@ -659,7 +659,7 @@ Usage:
   pack.raku get gettext-domain <package-dir>
 ```
 
-Get the value of gettext-domain in **<package-dir>/.pack_args.json**
+Get the value of gettext-domain in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -677,7 +677,7 @@ Usage:
   pack.raku get out-dir <package-dir>
 ```
 
-Get the value of out-dir in **<package-dir>/.pack_args.json**
+Get the value of out-dir in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -695,7 +695,7 @@ Usage:
   pack.raku get extra-sources <package-dir>
 ```
 
-Get the value of extra-sources in **<package-dir>/.pack_args.json**
+Get the value of extra-sources in `<package-dir>/.pack_args.json`
 
 Where
 
@@ -713,7 +713,7 @@ Usage:
   pack.raku get force <package-dir>
 ```
 
-Get the value of force in **<package-dir>/.pack_args.json**
+Get the value of force in `<package-dir>/.pack_args.json`
 
 Where
 
