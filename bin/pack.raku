@@ -34,7 +34,8 @@ Table of Contents
 =item1 L<COPYRIGHT|#copyright>
 =item1 L<Introduction|#introduction>
 =item2 L<Motivation|#motivation>
-=item2 L<Pack|#pack>
+=item1 L<Pack|#pack>
+=item1 L<pack.raku --help|#pack>
 =item1 L<pack.raku do --help|#packraku-do---help>
 =item1 L<pack.raku create --help|#packraku-create---help>
 =item1 L<pack.raku add|#packraku-add>

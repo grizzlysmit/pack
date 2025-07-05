@@ -23,6 +23,10 @@ Table of Contents
 
     * [Motivation](#motivation)
 
+  * [Pack](#pack)
+
+  * [pack.raku --help](#pack)
+
   * [pack.raku do --help](#packraku-do---help)
 
   * [pack.raku create --help](#packraku-create---help)
