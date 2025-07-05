@@ -58,6 +58,7 @@ Table of Contents
 =item1 L<pack.raku get extra-sources|#packraku-get-extra-sources>
 =item1 L<pack.raku get force|#packraku-get-force>
 
+=head1 key => directory methods
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
@@ -77,7 +78,7 @@ Table of Contents
 =item1 L<pack.raku restore db|#packraku-restore-db>
 =item1 L<pack.raku menu restore db|#packraku-menu-restore-db>
 =item1 L<pack.raku list db backups|#packraku-list-db-backups>
-=head2 Editor functions/methods
+=head1 Editor functions/methods
 =item1 L<pack.raku list editors|#packraku-list-editors>
 =item1 L<placeholder|#placeholder>
 =item1 L<placeholder|#placeholder>
@@ -92,7 +93,7 @@ Table of Contents
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
 =VERSION v0.1.0
 =TITLE pack
-=SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
+=SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy; at the expense of setting up a configuration file once, and there are methods for that.
 
 =COPYRIGHT
 GPL V3.0+ L<LICENSE|https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE>

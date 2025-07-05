@@ -69,6 +69,9 @@ Table of Contents
 
   * [pack.raku get force](#packraku-get-force)
 
+key => directory methods
+========================
+
   * [pack.raku alias add](#packraku-alias-add)
 
   * [pack.raku alias do --help](#packraku-alias-do---help)
@@ -108,7 +111,7 @@ Table of Contents
   * [pack.raku list db backups](#packraku-list-db-backups)
 
 Editor functions/methods
-------------------------
+========================
 
   * [pack.raku list editors](#packraku-list-editors)
 
@@ -149,7 +152,7 @@ pack
 SUBTITLE
 ========
 
-A Raku program to manage the use of **gnome-extensions pack**, it has too many arguments this makes it easy.
+A Raku program to manage the use of **gnome-extensions pack**, it has too many arguments this makes it easy; at the expense of setting up a configuration file once, and there are methods for that.
 
 COPYRIGHT
 =========
