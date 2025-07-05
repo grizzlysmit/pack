@@ -503,7 +503,7 @@ Usage:
   pack.raku append extra-sources <package-dir> [<extra-sources> ...]
 ```
 
-Append **[<extra-sources> ...]** to the value of extra-sources in **<package-dir>/.pack_args.json**
+Append `[<extra-sources> ...]` to the value of extra-sources in **<package-dir>/.pack_args.json**
 
 Where
 

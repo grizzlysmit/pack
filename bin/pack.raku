@@ -552,7 +552,7 @@ Usage:
 
 =end code
 
-Append B«[<extra-sources> ...]» to the value of extra-sources in B«<package-dir>/.pack_args.json»
+Append C«[<extra-sources> ...]» to the value of extra-sources in B«<package-dir>/.pack_args.json»
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
