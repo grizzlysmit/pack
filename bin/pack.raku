@@ -93,7 +93,7 @@ Table of Contents
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
 =VERSION v0.1.0
 =TITLE pack
-=SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy; at the expense of setting up a configuration file once, and there are methods for that.
+=SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
 =COPYRIGHT
 GPL V3.0+ L<LICENSE|https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE>
@@ -107,7 +107,7 @@ This is a Raku program to manage the use of B<gnome-extensions pack>, it has too
 =head2 Motivation
 
 The command B<gnome-extensions pack> has too many arguments this takes care of that making it easier to package
-up your gnome-shell extensions. 
+up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
 =head3 pack
 

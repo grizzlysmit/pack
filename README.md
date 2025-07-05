@@ -152,7 +152,7 @@ pack
 SUBTITLE
 ========
 
-A Raku program to manage the use of **gnome-extensions pack**, it has too many arguments this makes it easy; at the expense of setting up a configuration file once, and there are methods for that.
+A Raku program to manage the use of **gnome-extensions pack**, it has too many arguments this makes it easy.
 
 COPYRIGHT
 =========
@@ -169,7 +169,7 @@ This is a Raku program to manage the use of **gnome-extensions pack**, it has to
 Motivation
 ----------
 
-The command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions. 
+The command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
 ### pack
 
