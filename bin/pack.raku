@@ -189,11 +189,11 @@ L<Table of Contents|#table-of-contents>
 Where
 =item1 dir   is a directory containing a B<gnome-shell> plugin
 =item2 assumes that the directory contains a C<.pack_args.json> file which containes all the arguments for B<gnome-extensions pack>.
-=item1 B<[dirs ...]>  a list of aditional directories containing B<gnome-shell> plugins same as dir.
-=item1 B<[-f|--force]>   overrides the force parameter in every C<.pack_args.json>.
-=item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+=item1 C«[dirs ...]»  a list of aditional directories containing B<gnome-shell> plugins same as dir.
+=item1 C«[-f|--force]»   overrides the force parameter in every C<.pack_args.json>.
+=item1 C«[-c|--command=<Str>]»  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 =item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
-=item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
+=item1 C«[-q|--quiet|--silent]»   if  present then all non-error output is suppressed.
 
 L<Table of Contents|#table-of-contents>
 
@@ -234,7 +234,7 @@ Create the C<.pack_args.json> file.
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
-=item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
+=item1 C«[<extra-sources> ...]»  A list of extra files to add to the package.
 =item1 C«[-s|--schema=<Str>]»  The path to the schema file.
 =item1 C«[-p|--podir=<Str>]»  The path to the po files.
 =item1 C«[-g|--gettext-domain=<Str>]»   The gettext domain.
@@ -278,7 +278,7 @@ Modifiy add to the C<.pack_args.json> file.
 
 Where
 =item1 C«<package-dir>»  Directory containing plugin.
-=item1 B<[<extra-sources> ...]>  A list of extra files to add to the package.
+=item1 C«[<extra-sources> ...]»  A list of extra files to add to the package.
 =item1 C«[-s|--schema=<Str>]»  The path to the schema file.
 =item1 C«[-p|--podir=<Str>]»  The path to the po files.
 =item1 C«[-g|--gettext-domain=<Str>]»   The gettext domain.
@@ -915,11 +915,11 @@ Usage:
 Where
 =item1 key   is a key pointing to a directory in the directory database containing a B<gnome-shell> plugin
 =item2 assumes that the directory contains a C<.pack_args.json> file which containes all the arguments for B<gnome-extensions pack>.
-=item1 B<[keys ...]>  a list of aditional keys pointing to directories in the directory database containing B<gnome-shell> plugins same as key.
-=item1 B<[-f|--force]>   overrides the force parameter in every C<.pack_args.json>.
-=item1 B<[-c|--command=<Str>]>  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+=item1 C«[keys ...]»  a list of aditional keys pointing to directories in the directory database containing B<gnome-shell> plugins same as key.
+=item1 C«[-f|--force]»   overrides the force parameter in every C<.pack_args.json>.
+=item1 C«[-c|--command=<Str>]»  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 =item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
-=item1 B<[-q|--quiet|--silent]>   if  present then all non-error output is suppressed.
+=item1 C«[-q|--quiet|--silent]»   if  present then all non-error output is suppressed.
 
 L<Table of Contents|#table-of-contents>
 

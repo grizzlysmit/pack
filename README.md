@@ -255,15 +255,15 @@ Where
 
     * assumes that the directory contains a `.pack_args.json` file which containes all the arguments for **gnome-extensions pack**.
 
-  * **[dirs ...]** a list of aditional directories containing **gnome-shell** plugins same as dir.
+  * `[dirs ...]` a list of aditional directories containing **gnome-shell** plugins same as dir.
 
-  * **[-f|--force]** overrides the force parameter in every `.pack_args.json`.
+  * `[-f|--force]` overrides the force parameter in every `.pack_args.json`.
 
-  * **[-c|--command=<Str>]** overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+  * `[-c|--command=<Str>]` overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 
     * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
 
-  * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
+  * `[-q|--quiet|--silent]` if present then all non-error output is suppressed.
 
 [Table of Contents](#table-of-contents)
 
@@ -281,7 +281,7 @@ Where
 
   * `<package-dir>` Directory containing plugin.
 
-  * **[<extra-sources> ...]** A list of extra files to add to the package.
+  * `[<extra-sources> ...]` A list of extra files to add to the package.
 
   * `[-s|--schema=<Str>]` The path to the schema file.
 
@@ -311,7 +311,7 @@ Where
 
   * `<package-dir>` Directory containing plugin.
 
-  * **[<extra-sources> ...]** A list of extra files to add to the package.
+  * `[<extra-sources> ...]` A list of extra files to add to the package.
 
   * `[-s|--schema=<Str>]` The path to the schema file.
 
@@ -749,15 +749,15 @@ Where
 
     * assumes that the directory contains a `.pack_args.json` file which containes all the arguments for **gnome-extensions pack**.
 
-  * **[keys ...]** a list of aditional keys pointing to directories in the directory database containing **gnome-shell** plugins same as key.
+  * `[keys ...]` a list of aditional keys pointing to directories in the directory database containing **gnome-shell** plugins same as key.
 
-  * **[-f|--force]** overrides the force parameter in every `.pack_args.json`.
+  * `[-f|--force]` overrides the force parameter in every `.pack_args.json`.
 
-  * **[-c|--command=<Str>]** overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
+  * `[-c|--command=<Str>]` overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
 
     * the default is **ls -Flaghi --color=always** this can be overriden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
 
-  * **[-q|--quiet|--silent]** if present then all non-error output is suppressed.
+  * `[-q|--quiet|--silent]` if present then all non-error output is suppressed.
 
 [Table of Contents](#table-of-contents)
 
