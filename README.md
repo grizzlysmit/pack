@@ -21,7 +21,8 @@ Table of Contents
 
   * [Introduction](#introduction)
 
-    * [Motivation](#motivation)
+[Motivation](#motivation)
+=========================
 
   * [pack.raku do --help](#packraku-do---help)
 
