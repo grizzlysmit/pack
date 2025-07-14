@@ -157,7 +157,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.19
+v0.1.20
 
 TITLE
 =====
@@ -828,7 +828,7 @@ Where
 Recommended Usage
 -----------------
 
-It is recommended that you use the following command line to get pretty much everything in your start plugin
+It is recommended that you use the following command line to get pretty much everything in you could desire in the starting point of your plugin/extension.
 
 ```bash
 pack.raku plugin new <key> --prefs --schema-file --podirs --force
