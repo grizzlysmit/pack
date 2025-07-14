@@ -157,7 +157,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.18
+v0.1.19
 
 TITLE
 =====
@@ -791,7 +791,7 @@ Where
 
     * This is the only mandatory parameter.
 
-      * **All the following parameters can be left out and the program will prompt for them.**
+      * **All the following 6 parameters can be left out and the program will prompt for them.**
 
       * And it is recommended to leave `--template` to be prompted for as this can be tricky to do manually.
 

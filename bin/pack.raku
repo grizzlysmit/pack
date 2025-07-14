@@ -98,7 +98,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.18
+=VERSION v0.1.19
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -973,7 +973,7 @@ Create a new plugin using C«gnome-extensions create» and move it to a developm
 Where
 =item1 C«<key>»                      A key which will be used to select the extension you wish to work with.
 =item2                                 This is the only mandatory parameter.
-=item3                                    B«All the following parameters can be left out and the program will prompt for them.»
+=item3                                    B«All the following 6 parameters can be left out and the program will prompt for them.»
 =item3                                    And it is recommended to leave C«--template» to be prompted for as this can be tricky to do manually.
 =item1 C«[--uuid=<Str>]»             The unique identifier of the new extension.
 =item1 C«[--name=<Str>]»             The user-visible name of the new extension.
