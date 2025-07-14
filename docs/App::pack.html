@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.0" />
+<meta name="version" value="v0.1.16" />
 <style>.comment {
   color: #666; }
 
@@ -613,6 +613,7 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_get_force">pack.raku get force</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_plugin_new_--help">pack.raku plugin new --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
@@ -685,6 +686,7 @@ footer {
 <ul>
 <li><p><a href="#packraku-alias-add">pack.raku alias add</a></p></li>
 <li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
+<li><p><a href="#packraku-plugin-new---help">pack.raku plugin new---help</a></p></li>
 <li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p></li>
 <li><p><a href="#packraku-list-keys">pack.raku list keys</a></p></li>
 <li><p><a href="#packraku-list-all">pack.raku list all</a></p></li>
@@ -1060,6 +1062,38 @@ Usage:
 <li><p>the default is <strong>ls -Flaghi --color=always</strong> this can be overriden by the value of the <strong>LS_CMD</strong> environment variable but the command-line value overrides both.</p></li>
 </ul>
 <li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_new_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin new --help</a></h1>
+<pre class="pod-block-code">pack.raku plugin new --help
+
+Usage:
+  pack.raku plugin new &lt;key&gt;  [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [-f|--force] [-s|--silent] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]
+
+</pre><p>Make a new plugin/extension for gnome-shell Create a new plugin using <code>gnome-extensions create</code> and move it to a development area and set it up for <code>pack.raku alias do</code> etc.</p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> A key which will be used to select the extension you wish to work with.</p></li>
+<ul>
+<li><p>This is the only mandatory parameter.</p></li>
+<ul>
+<li><p>All the following parameters can be left out and the program will prompt for them.</p></li>
+<li><p>And it is recommended to leave <code>--template</code> to be prompted for as this can be tricky to do manually.</p></li>
+</ul>
+</ul>
+<li><p><code>[--uuid=&lt;Str&gt;]</code> The unique identifier of the new extension.</p></li>
+<li><p><code>[--name=&lt;Str&gt;]</code> The user-visible name of the new extension.</p></li>
+<li><p><code>[--description=&lt;Str&gt;]</code> A short description of what the extension does.</p></li>
+<li><p><code>[--gettext-domain=&lt;Str&gt;]</code> The gettext domain used by the extension.</p></li>
+<li><p><code>[--settings-schema=&lt;Str&gt;]</code> The GSettings schema used by the extension.</p></li>
+<li><p><code>[--template=&lt;Str&gt;]</code> The template to use for the new extension.</p></li>
+<ul>
+<li><p>The following parameters will not be prompted for.</p></li>
+</ul>
+<li><p><code>[--prefs]</code> Include prefs.js template.</p></li>
+<li><p><code>[--schema-file]</code> Add a schema file by name of <code>schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml</code>.</p></li>
+<li><p><code>[--podirs]</code> Add a po directory with gettext files preloaded; plus a <code>compile.sh</code> script to build and update the gettext files.</p></li>
+<li><p><code>[-f|--force]</code> Add the force parameter to the <code>.pack_args.json</code> file.</p></li>
+<li><p><code>[-s|--silent]</code> Don't print out the steps taken defaults to <code>False</code>.</p></li>
+<li><p><code>[-l|--dev-lang=&lt;Str&gt;]</code> The language of the default <code>*.po</code> file to generate this should be the language the strings are in in the original source defaults to <strong>en</strong>.</p></li>
+<li><p><code>[-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]</code> The directory to develop the plugin from; defaults to the current dir.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
@@ -1462,7 +1496,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-05T08:05:52Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-14T09:13:10Z</span></div></footer>
 	</body>
 </html>
 

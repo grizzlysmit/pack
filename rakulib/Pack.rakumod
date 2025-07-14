@@ -1,10 +1,12 @@
-unit module Pack:ver<0.1.0>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.16>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
 use Terminal::ANSI::OO :t;
 use Terminal::WCWidth;
 use Terminal::Width;
+use IO::Prompt;
+use File::Path::Copy;
 use Gzz::Text::Utils;
 use Syntax::Highlighters;
 use GUI::Editors;
@@ -2191,3 +2193,200 @@ sub get(Str $package-dir, Str $name --> Bool) is export {
     }
     return True;                                                                                                                                                                                                                                    
 }
+
+sub get-multi-line-value(Str:D $prompt --> Str) is export {
+    my Str $result = '';
+    my Str $input;
+    my Str $last;
+    $prompt.say;
+    "terminate with two empty lines.".say;
+    my Int:D $cnt = 0;
+    repeat {
+        $cnt++;
+        $last  = $input;
+        $input = prompt "$cnt> ";
+        $input = $input.chomp with $input;
+        $result ~= "$input\n" unless $input eq '' && $last eq '';
+    } until $input eq '' && $last eq '';
+    return $result.trim;
+} # sub get-multi-line-value(Str:D $prompt --> Str) is export #
+
+sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $description is copy,
+                Str $gettext-domain is copy, Str $settings-schema is copy, Str $template,
+                Bool:D $prefs is copy, Bool:D $schema-file, Bool:D $podirs, Bool:D $force,
+                Str:D $home, Str:D $xdg_config_home, Bool:D $silent, Str:D $dev-lang,
+                Str:D $dev-dir --> Bool:D) is export {
+    my Str:D $extensions = $xdg_config_home ~ '/gnome-shell/extensions';
+    without $uuid {
+        while !$uuid {
+            $uuid = prompt "uuid: ";
+            "Please supply a valid unique identifier".say  unless $uuid;
+        }
+    }
+    without $name {
+        my Str $name_;
+        with $uuid {
+            $name_ = $uuid.substr(0, $uuid.index('@'));
+        }
+        my Str $input;
+        while !$name {
+            $input = prompt "name: $name_? hit enter to accept or type in new value followed by enter.";
+            with $input {
+                $input = $input.chomp;
+                if $input eq '' {
+                    $name = $name_;
+                } elsif $input {
+                    $name = $input;
+                }
+            }
+            "Please supply a valid name".say  unless $name;
+        }
+    }
+    without $description {
+        while !$description {
+            $description = get-multi-line-value("Please enter a multi line description!");
+            "Please supply a valid description".say unless $description;
+        }
+    }
+    without $gettext-domain {
+        my Str $gettext-domain_;
+        with $name {
+            $gettext-domain_ = $name;
+        }
+        my Str $input;
+        while !$gettext-domain {
+            $input = prompt "name: $gettext-domain_? hit enter to accept or type in new value followed by enter.";
+            with $input {
+                $input = $input.chomp;
+                if $input eq '' {
+                    $gettext-domain = $gettext-domain_;
+                } elsif $input {
+                    $gettext-domain = $input;
+                }
+            }
+            "Please supply a valid gettext-domain".say  unless $gettext-domain;
+        }
+    }
+    without $settings-schema {
+        my Str $settings-schema_;
+        with $name {
+            $settings-schema_ = $name;
+        } orwith $gettext-domain {
+            $settings-schema_ = $gettext-domain;
+        }
+        my Str $input;
+        while !$name {
+            $input = prompt "name: $settings-schema_? hit enter to accept or type in new value followed by enter.";
+            with $input {
+                $input = $input.chomp;
+                if $input eq '' {
+                    $settings-schema = $settings-schema_;
+                } elsif $input {
+                    $settings-schema = $input;
+                }
+            }
+            "Please supply a valid settings-schema".say  unless $settings-schema;
+        }
+    }
+    my @cmd = qqww[gnome-extensions create];
+    push @cmd, "--uuid=$uuid" if $uuid;
+    push @cmd, "--name=$name" if $name;
+    if $description {
+        $description ~~ s:g/\n/\\n/;
+        push @cmd, qq[--description="$description"];
+    }
+    push @cmd, "--gettext-domain=$gettext-domain" if $gettext-domain;
+    push @cmd, "--settings-schema=$settings-schema" if $settings-schema;
+    push @cmd, "--template='$template'" with $template;
+    push @cmd, "--prefs" if $prefs;
+    push @cmd, "--interactive" without $template;
+    push @cmd, "--quiet"; # don't complain when editor cannot find plugin #
+    @cmd.join(' ').say unless $silent;
+    my Proc $res = run @cmd;
+    $exitcode-val = $res.exitcode;
+    if $res.exitcode == 0 {
+        my $path = "$xdg_config_home/gnome-shell/extensions/$uuid";
+        if $path.IO ~~ :d {
+            if copypath($path.IO, $dev-dir.IO) {
+                "copypath Success".say;
+                if add-path($key, "$dev-dir/$uuid", False, $description) {
+                    qq[key: $key => "$dev-dir/$uuid" added successfully].say;
+                } else {
+                    qq[key: $key => "$dev-dir/$uuid" Failed to add].say;
+                } 
+                my @extra-sources;
+                my Str $schema = Str;
+                if $schema-file {
+                    my IO::Path $sc = $dev-dir.IO.add($uuid).add('schemas').resolve;
+                    $sc.mkdir;
+                    $schema = "org.gnome.shell.extensions.{$gettext-domain}.gschema.xml";
+                    my Str:D $data = qq[<schemalist gettext-domain="$gettext-domain">\n    <enum id="org.gnome.shell.extensions.{$gettext-domain}.area">\n        <value value="0" nick="left"/>\n        <value value="1" nick="center"/>\n        <value value="2" nick="right"/>\n    </enum>\n    <schema path="/org/gnome/shell/extensions/$gettext-domain/" id="org.gnome.shell.extensions.$gettext-domain">\n        <key name="area" enum="org.gnome.shell.extensions.{$gettext-domain}.area">\n            <default>'left'</default>\n            <summary>The panel area to place the button.</summary>\n        </key>\n        <key type="i" name="position">\n            <default>0</default>\n            <summary>The position in the area.</summary>\n            <description>The position to place the button in the area 0 to 25.</description>\n        </key>\n    </schema>\n</schemalist>];
+                    $sc = $sc.add($schema).resolve;
+                    $sc.spurt($data); 
+                    $sc.chmod(0b110_110_100);
+                } # if $schema-file #
+                my Str $podir = Str;
+                if $podirs {
+                    $podir = 'po';
+                    $dev-dir.IO.add($uuid).add($podir).resolve.mkdir;
+                    my Str:D $data = qq«#!/bin/bash
+
+glib-compile-schemas schemas
+
+DIR="po"
+SUFFIX="po"
+
+xgettext --from-code='utf-8' -k_ -kN_ -o \$DIR/{$gettext-domain}.pot prefs.js extension.js
+
+if ! [ -x "\$DIR"/{$dev-lang}.\$SUFFIX ]
+then
+    msginit --input=po/{$gettext-domain}.pot --output-file=po/{$dev-lang}.po --no-translator
+else
+    for file in "\$DIR"/*.\$SUFFIX 
+    do
+        msgmerge --previous --update po/\$file po/{$gettext-domain}.pot
+    done
+fi
+
+for file in "\$DIR"/*.\$SUFFIX
+do 
+	lingua=\$\{file%.*}
+	lingua=\$\{lingua#*/}
+	msgfmt \$file
+	mkdir locale/\$lingua/LC_MESSAGES -p
+	mv messages.mo locale/\$lingua/LC_MESSAGES/{$gettext-domain}.mo
+done
+»;
+                    my IO::Path $path_ = $dev-dir.IO.add($uuid).resolve.add('compile.sh');
+                    $path_.spurt($data);
+                    $path_.chmod(0b111_111_101);
+                    my @rem = qqww[bash -c];
+                    push @rem, qq[cd '{$path_.dirname}' && ./compile.sh];
+                    my Proc $r = run @rem;
+                } # if $podirs #
+                if create-config($dev-dir.IO.add($uuid).resolve.path, $schema, $podir,
+                                 $gettext-domain, $dev-dir, $force, @extra-sources) {
+                    ".pack_args.json created".say;
+                } else {
+                    ".pack_args.json creation Failed".say;
+                }
+                if prunepath($path.IO) {
+                    "removed directory".say;
+                } else {
+                    "could not remove directory".say;
+                }
+            } else { # if copypath($path.IO, $dev-dir.IO) #
+                "copy failed".say;
+            }
+        } else { # if $path.IO ~~ :d #
+            "$path does not exist or is not a directory".say;
+        }
+        return True;
+    } else {# if $res.exitcode === 0 #
+        "Failed".say;
+        return False;
+    }
+} #`«« sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $description is copy,
+                Str $gettext-domain is copy, Str $settings-schema is copy, Str $template is copy,
+                Bool:D $prefs is copy, Str:D $home, Str:D $xdg_config_home, Bool:D $silent,
+                Str:D $dev-dir --> Bool:D) is export »»

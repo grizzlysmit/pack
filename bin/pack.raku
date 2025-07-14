@@ -63,6 +63,7 @@ Table of Contents
 =head1 key => directory methods
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
+=item1 L<pack.raku plugin new---help|#packraku-plugin-new---help>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
 =item1 L<pack.raku list keys|#packraku-list-keys>
 =item1 L<pack.raku list all|#packraku-list-all>
@@ -96,7 +97,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.0
+=VERSION v0.1.16
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -951,6 +952,68 @@ multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
     }
     return 0;
 }
+
+=begin pod
+
+=head1 pack.raku plugin new --help
+
+=begin code :lang<bash>
+
+pack.raku plugin new --help
+
+Usage:
+  pack.raku plugin new <key>  [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--prefs] [--schema-file] [--podirs] [-f|--force] [-s|--silent] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]
+
+=end code
+
+Make a new plugin/extension for gnome-shell 
+Create a new plugin using C«gnome-extensions create» and move it to a development area and set it up for C«pack.raku alias do» etc.
+
+Where
+=item1 C«<key>»                      A key which will be used to select the extension you wish to work with.
+=item2                                 This is the only mandatory parameter.
+=item3                                    All the following parameters can be left out and the program will prompt for them.
+=item3                                    And it is recommended to leave C«--template» to be prompted for as this can be tricky to do manually.
+=item1 C«[--uuid=<Str>]»             The unique identifier of the new extension.
+=item1 C«[--name=<Str>]»             The user-visible name of the new extension.
+=item1 C«[--description=<Str>]»      A short description of what the extension does.
+=item1 C«[--gettext-domain=<Str>]»   The gettext domain used by the extension.
+=item1 C«[--settings-schema=<Str>]»  The GSettings schema used by the extension.
+=item1 C«[--template=<Str>]»         The template to use for the new extension.
+=item2                               The following parameters will not be prompted for.
+=item1 C«[--prefs]»                  Include prefs.js template.
+=item1 C«[--schema-file]»            Add a schema file by name of C«schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml».
+=item1 C«[--podirs]»                 Add a po directory with gettext files preloaded; plus a C«compile.sh» script to build and update the gettext files.
+=item1 C«[-f|--force]»               Add the force parameter to the C«.pack_args.json» file.
+=item1 C«[-s|--silent]»              Don't print out the steps taken defaults to C«False».
+=item1 C«[-l|--dev-lang=<Str>]»      The language of the default C«*.po» file to generate this should be the language the strings are in in the original source defaults to B«en».
+=item1 C«[-o|--output|--development-dir|--dev-dir=<Str>]»  The directory to develop the plugin from; defaults to the current dir.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('plugin', 'new', Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str,
+                Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str,
+                Bool:D :$prefs = False, Bool:D :$schema-file = False, Bool:D :$podirs = False,
+                Bool:D :f(:$force) = False, Bool:D :s(:$silent) = False,
+                Str:D :l(:$dev-lang) = ((%*ENV«DEV_LANG»:exists) ?? (~%*ENV«DEV_LANG») !! 'en'), 
+                Str:D :o(:output(:development-dir(:$dev-dir))) = '.' --> int) {
+    my Str:D $home = ~%*ENV«HOME»;
+    my Str:D $xdg_config_home = (%*ENV«XDG_CONFIG_HOME»:exists ?? ~%*ENV«XDG_CONFIG_HOME» !! "$home/.local/share" );
+    unless new-plugin($key, $uuid, $name, $description, $gettext-domain, $settings-schema, $template,
+                      $prefs, $schema-file, $podirs, $force, $home, $xdg_config_home, $silent,
+                      $dev-lang, ($dev-dir.IO.resolve.absolute.Str)) {
+        die "run exited with a bad value {exitcode}";
+    }
+    return 0;
+} #`«« multi sub MAIN('plugin', 'new', Str:D $key, Str :$uuid is copy = Str, Str :$name is copy = Str,
+                Str :$description is copy = Str, Str :$gettext-domain is copy = Str,
+                Str :$settings-schema is copy = Str, Str :$template is copy = Str,
+                Bool:D :$prefs is copy = False, Bool:D :i(:$interactive) is copy = False,
+                Str:D :$xdg_config_home =
+                    ((%*ENV«XDG_CONFIG_HOME»:exists) ?? (~%*ENV«XDG_CONFIG_HOME») !! (~%*ENV«HOME» ~ '/.local/share'))
+                                                                                                                 --> int) »»
 
 =begin pod
 
