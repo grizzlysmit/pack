@@ -157,7 +157,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.17
+v0.1.18
 
 TITLE
 =====
@@ -791,7 +791,7 @@ Where
 
     * This is the only mandatory parameter.
 
-      * All the following parameters can be left out and the program will prompt for them.
+      * **All the following parameters can be left out and the program will prompt for them.**
 
       * And it is recommended to leave `--template` to be prompted for as this can be tricky to do manually.
 
@@ -807,7 +807,7 @@ Where
 
   * `[--template=<Str>]` The template to use for the new extension.
 
-    * The following parameters will not be prompted for.
+    * **The following parameters will not be prompted for.**
 
   * `[--prefs]` Include prefs.js template.
 
