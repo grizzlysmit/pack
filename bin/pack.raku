@@ -64,6 +64,7 @@ Table of Contents
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku plugin new --help|#packraku-plugin-new---help>
+=item2 L<Recommended Usage|#recommended-usage>
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
 =item1 L<pack.raku list keys|#packraku-list-keys>
 =item1 L<pack.raku list all|#packraku-list-all>
@@ -97,7 +98,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.16
+=VERSION v0.1.17
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -990,6 +991,8 @@ Where
 =item1 C«[-o|--output|--development-dir|--dev-dir=<Str>]»  The directory to develop the plugin from; defaults to the current dir.
 
 L<Table of Contents|#table-of-contents>
+
+=head2 Recommended Usage
 
 It is recommended that you use the following command line to get pretty much everything in your start plugin
 

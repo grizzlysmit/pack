@@ -82,6 +82,8 @@ key => directory methods
 
   * [pack.raku plugin new --help](#packraku-plugin-new---help)
 
+    * [Recommended Usage](#recommended-usage)
+
   * [pack.raku edit configs](#packraku-edit-configs)
 
   * [pack.raku list keys](#packraku-list-keys)
@@ -155,7 +157,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.16
+v0.1.17
 
 TITLE
 =====
@@ -822,6 +824,9 @@ Where
   * `[-o|--output|--development-dir|--dev-dir=<Str>]` The directory to develop the plugin from; defaults to the current dir.
 
 [Table of Contents](#table-of-contents)
+
+Recommended Usage
+-----------------
 
 It is recommended that you use the following command line to get pretty much everything in your start plugin
 
