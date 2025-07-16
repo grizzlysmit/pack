@@ -1135,8 +1135,17 @@ multi sub MAIN('plugin', 'add', Str:D $key, Str:D $uuid, Str:D :p(:extension-dir
 
 =begin code :lang<bash>
 
+pack.raku alias add-extra-sources --help
+
+Usage:
+  pack.raku alias add-extra-sources <key> [<extra-sources> ...]
 
 =end code
+
+Add sources to the B«extra-sources» list.
+Where
+=item1 C«<key>»                    The key of the extension to add to.
+=item1 C«[<extra-sources> ...]»    Additional sources to add to the B«extra-sources» list.
 
 L<Table of Contents|#table-of-contents>
 

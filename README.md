@@ -924,8 +924,17 @@ pack.raku alias add-extra-sources
 =================================
 
 ```bash
+pack.raku alias add-extra-sources --help
 
+Usage:
+  pack.raku alias add-extra-sources <key> [<extra-sources> ...]
 ```
+
+Add sources to the **extra-sources** list. Where
+
+  * `<key>` The key of the extension to add to.
+
+  * `[<extra-sources> ...]` Additional sources to add to the **extra-sources** list.
 
 [Table of Contents](#table-of-contents)
 
