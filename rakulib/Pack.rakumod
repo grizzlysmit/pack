@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.20>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.21>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
@@ -2095,7 +2095,7 @@ sub create-config(Str:D $package-dir,
     %data«package-dir»    = $package-dir.IO.basename;
     %data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     %data«force»          = $force;
-    "$package-dir/.pack_args.json".IO.spurt(to-json %data);
+    "$package-dir/.pack_args.json".IO.spurt(to-json(%data, :pretty, :spacing(4), :sorted-keys));
     return True;                                                                                                                                                                                                                                    
 }
 
@@ -2139,7 +2139,7 @@ sub add(Str $dir,
         %$data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     }
     %$data«force»          = $_force;
-    "$dir/.pack_args.json".IO.spurt(to-json $data);
+    "$dir/.pack_args.json".IO.spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
     return True;                                                                                                                                                                                                                                    
 }
 
@@ -2163,7 +2163,7 @@ sub set-package-dir($dir, $package-dir-value) is export {
         %$data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     }
     %$data«force»              = $force-file;
-    "$dir/.pack_args.json".IO.spurt(to-json $data);
+    "$dir/.pack_args.json".IO.spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
     return True;                                                                                                                                                                                                                                    
 }
 
@@ -2178,7 +2178,7 @@ sub remove(Str $package-dir, Str $name --> Bool) is export {
     } else {
         "Error: deleting package-dir is not permitted!".say;
     }
-    "$package-dir/.pack_args.json".IO.spurt(to-json $data);
+    "$package-dir/.pack_args.json".IO.spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
     return True;                                                                                                                                                                                                                                    
 }
 
@@ -2211,10 +2211,96 @@ sub get-multi-line-value(Str:D $prompt --> Str) is export {
     return $result.trim;
 } # sub get-multi-line-value(Str:D $prompt --> Str) is export #
 
+sub make-schema(IO::Path $plugin-location, Str:D $gettext-domain, Str:D $schema,
+                    Bool:D $silent, Bool:D $backtrace --> Bool:D) is export {
+    CATCH {
+        when X::IO::Chmod, X::IO::Mkdir, X::AdHoc {
+            if !$silent {
+                $*ERR.say: .message;
+                if $backtrace {
+                    for .backtrace.reverse {
+                        next if .file.starts-with('SETTING::');
+                        next unless .subname;
+                        $*ERR.say: "  in block {.subname} at {.file} line {.line}";
+                    } # for .backtrace.reverse #
+                } # if $backtrace #
+            }
+            return False;
+        }
+    }
+    $plugin-location.mkdir;
+    my Str:D $data = qq[<schemalist gettext-domain="$gettext-domain">\n    <enum id="org.gnome.shell.extensions.{$gettext-domain}.area">\n        <value value="0" nick="left"/>\n        <value value="1" nick="center"/>\n        <value value="2" nick="right"/>\n    </enum>\n    <schema path="/org/gnome/shell/extensions/$gettext-domain/" id="org.gnome.shell.extensions.$gettext-domain">\n        <key name="area" enum="org.gnome.shell.extensions.{$gettext-domain}.area">\n            <default>'left'</default>\n            <summary>The panel area to place the button.</summary>\n        </key>\n        <key type="i" name="position">\n            <default>0</default>\n            <summary>The position in the area.</summary>\n            <description>The position to place the button in the area 0 to 25.</description>\n        </key>\n    </schema>\n</schemalist>];
+    my IO::Path $sc = $plugin-location.add($schema).resolve;
+    $sc.spurt($data); 
+    return $sc.chmod(0b110_110_100);
+} #`«« sub make-schema(IO::Path $plugin-location, Str:D $gettext-domain,
+                    Bool:D $silent, Bool:D $backtrace --> Bool:D) is export »»
+
+sub make-compile-sh(IO::Path $plugin-location, Str:D $gettext-domain, Str:D $dev-lang, Bool:D $prefs,
+                    @extra-sources, Bool:D $run, Bool:D $silent, Bool:D $backtrace --> Bool:D) is export {
+    CATCH {
+        when X::IO::Chmod, X::AdHoc {
+            if !$silent {
+                $*ERR.say: .message;
+                if $backtrace {
+                    for .backtrace.reverse {
+                        next if .file.starts-with('SETTING::');
+                        next unless .subname;
+                        $*ERR.say: "  in block {.subname} at {.file} line {.line}";
+                    } # for .backtrace.reverse #
+                } # if $backtrace #
+            }
+            return False;
+        }
+    }
+    my Str:D $args = 'extension.js';
+    $args ~= ' prefs.js' if $prefs;
+    $args ~= ' ' ~ @extra-sources.join(' ') if @extra-sources;
+    my Str:D $data = qq«#!/bin/bash
+
+glib-compile-schemas schemas
+
+DIR="po"
+SUFFIX="po"
+
+xgettext --from-code='utf-8' -k_ -kN_ -o \$DIR/{$gettext-domain}.pot $args
+
+if ! [ -x "\$DIR"/{$dev-lang}.\$SUFFIX ]
+then
+    msginit --input=po/{$gettext-domain}.pot --output-file=po/{$dev-lang}.po --no-translator
+else
+    for file in "\$DIR"/*.\$SUFFIX 
+    do
+        msgmerge --previous --update po/\$file po/{$gettext-domain}.pot
+    done
+fi
+
+for file in "\$DIR"/*.\$SUFFIX
+do 
+	lingua=\$\{file%.*\}
+	lingua=\$\{lingua#*/\}
+	msgfmt \$file
+	mkdir locale/\$lingua/LC_MESSAGES -p
+	mv messages.mo locale/\$lingua/LC_MESSAGES/{$gettext-domain}.mo
+done
+»;
+    my IO::Path $path_ = $plugin-location.add('compile.sh');
+    $path_.spurt($data);
+    my Bool:D $result = $path_.chmod(0b111_111_101);
+    if $run {
+        my @rem = qqww[bash -c];
+        push @rem, qq[cd '{$path_.dirname}' && ./compile.sh];
+        my Proc $r = run @rem;
+        return $r.exitcode === 0;
+    }
+    return $result;
+} #`«« sub make-compile-sh(IO::Path $plugin-location, Str:D $gettext-domain, Str:D $dev-lang, Bool:D $prefs,
+                    @extra-sources, Bool:D $run, Bool:D $silent, Bool:D $backtrace --> Bool:D) is export »»
+
 sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $description is copy,
                 Str $gettext-domain is copy, Str $settings-schema is copy, Str $template,
                 Bool:D $prefs is copy, Bool:D $schema-file, Bool:D $podirs, Bool:D $force,
-                Str:D $home, Str:D $xdg_config_home, Bool:D $silent, Str:D $dev-lang,
+                Str:D $home, Str:D $xdg_config_home, Bool:D $silent, Bool:D $backtrace, Str:D $dev-lang,
                 Str:D $dev-dir --> Bool:D) is export {
     my Str:D $extensions = $xdg_config_home ~ '/gnome-shell/extensions';
     without $uuid {
@@ -2318,51 +2404,16 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
                 my Str $schema = Str;
                 if $schema-file {
                     my IO::Path $sc = $dev-dir.IO.add($uuid).add('schemas').resolve;
-                    $sc.mkdir;
                     $schema = "org.gnome.shell.extensions.{$gettext-domain}.gschema.xml";
-                    my Str:D $data = qq[<schemalist gettext-domain="$gettext-domain">\n    <enum id="org.gnome.shell.extensions.{$gettext-domain}.area">\n        <value value="0" nick="left"/>\n        <value value="1" nick="center"/>\n        <value value="2" nick="right"/>\n    </enum>\n    <schema path="/org/gnome/shell/extensions/$gettext-domain/" id="org.gnome.shell.extensions.$gettext-domain">\n        <key name="area" enum="org.gnome.shell.extensions.{$gettext-domain}.area">\n            <default>'left'</default>\n            <summary>The panel area to place the button.</summary>\n        </key>\n        <key type="i" name="position">\n            <default>0</default>\n            <summary>The position in the area.</summary>\n            <description>The position to place the button in the area 0 to 25.</description>\n        </key>\n    </schema>\n</schemalist>];
-                    $sc = $sc.add($schema).resolve;
-                    $sc.spurt($data); 
-                    $sc.chmod(0b110_110_100);
+                    make-schema($sc, $gettext-domain, $schema, $silent, $backtrace);
                 } # if $schema-file #
                 my Str $podir = Str;
                 if $podirs {
                     $podir = 'po';
                     $dev-dir.IO.add($uuid).add($podir).resolve.mkdir;
-                    my Str:D $data = qq«#!/bin/bash
-
-glib-compile-schemas schemas
-
-DIR="po"
-SUFFIX="po"
-
-xgettext --from-code='utf-8' -k_ -kN_ -o \$DIR/{$gettext-domain}.pot prefs.js extension.js
-
-if ! [ -x "\$DIR"/{$dev-lang}.\$SUFFIX ]
-then
-    msginit --input=po/{$gettext-domain}.pot --output-file=po/{$dev-lang}.po --no-translator
-else
-    for file in "\$DIR"/*.\$SUFFIX 
-    do
-        msgmerge --previous --update po/\$file po/{$gettext-domain}.pot
-    done
-fi
-
-for file in "\$DIR"/*.\$SUFFIX
-do 
-	lingua=\$\{file%.*}
-	lingua=\$\{lingua#*/}
-	msgfmt \$file
-	mkdir locale/\$lingua/LC_MESSAGES -p
-	mv messages.mo locale/\$lingua/LC_MESSAGES/{$gettext-domain}.mo
-done
-»;
-                    my IO::Path $path_ = $dev-dir.IO.add($uuid).resolve.add('compile.sh');
-                    $path_.spurt($data);
-                    $path_.chmod(0b111_111_101);
-                    my @rem = qqww[bash -c];
-                    push @rem, qq[cd '{$path_.dirname}' && ./compile.sh];
-                    my Proc $r = run @rem;
+                    my @extra-sources;
+                    make-compile-sh($dev-dir.IO.add($uuid).resolve, $gettext-domain,
+                                                $dev-lang, $prefs, @extra-sources, True, $silent, $backtrace);
                 } # if $podirs #
                 if create-config($dev-dir.IO.add($uuid).resolve.path, $schema, $podir,
                                  $gettext-domain, $dev-dir, $force, @extra-sources) {
@@ -2390,3 +2441,66 @@ done
                 Str $gettext-domain is copy, Str $settings-schema is copy, Str $template is copy,
                 Bool:D $prefs is copy, Str:D $home, Str:D $xdg_config_home, Bool:D $silent,
                 Str:D $dev-dir --> Bool:D) is export »»
+
+sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, Bool:D $force,
+                $home, Str:D $xdg_config_home, Bool:D $silent, Bool:D $backtrace, Str:D $dev-lang,
+                Bool:D $mk-schema, @extra-sources --> Bool:D) is export {
+    CATCH {
+        when X::IO::Chmod, X::IO::Mkdir, X::AdHoc {
+            if !$silent {
+                $*ERR.say: .message;
+                if $backtrace {
+                    for .backtrace.reverse {
+                        next if .file.starts-with('SETTING::');
+                        next unless .subname;
+                        $*ERR.say: "  in block {.subname} at {.file} line {.line}";
+                    } # for .backtrace.reverse #
+                } # if $backtrace #
+            }
+            return False;
+        }
+    }
+    my $plugin-location    = $plugin-dir.IO.add($uuid).resolve;
+    my $file-cont          = $plugin-location.add('metadata.json').slurp(:utf8);
+    my $data               = from-json $file-cont;
+    my Str $gettext-domain = %$data«gettext-domain» // Str; 
+    without $gettext-domain {
+        $*ERR.say: "gettext-domain missing in metadata.json; please fix!";
+        return False;
+    }
+    my Str $schema         = %$data«settings-schema» // Str; 
+    with $schema {
+        if $plugin-location.add('schemas').resolve.add("{$schema}.gschema.xml") ~~ :f {
+            $schema         = "schemas/$schema";
+        } elsif $mk-schema {
+            make-schema($plugin-location.add('schema').resolve, $gettext-domain, $schema, $silent, $backtrace);
+        }
+    } elsif $mk-schema {
+        $schema = "org.gnome.shell.extensions.{$gettext-domain}";
+        make-schema($plugin-location.add('schemas').resolve, $gettext-domain, "$schema.gschema.xml", $silent, $backtrace);
+        %$data«settings-schema» = $schema;
+        $plugin-location.add('metadata.json').spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
+    }
+    $podir = Str unless $plugin-location.add($podir).resolve ~~ :d;
+    with $podir {
+        unless $plugin-location.add('compile.sh') ~~ :f {
+            my Bool:D $prefs = $plugin-location.add('prefs.js') ~~ :f;
+            make-compile-sh($plugin-location, $gettext-domain, $dev-lang,
+                                        $prefs, @extra-sources, True, $silent, $backtrace);
+        }
+    }
+    my Str $description = %$data«description» // Str; 
+    if add-path($key, $plugin-location.Str, False, $description) {
+        qq[key: $key => "$plugin-dir/$uuid" added successfully].say;
+    } else {
+        qq[key: $key => "$plugin-dir/$uuid" Failed to add].say;
+    } 
+    if create-config($plugin-location.path, $schema, $podir,
+                     $gettext-domain, $plugin-dir, $force, @extra-sources) {
+        ".pack_args.json created".say;
+    } else {
+        ".pack_args.json creation Failed".say;
+    }
+} #`«« sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, Bool:D $force,
+                $home, Str:D $xdg_config_home, Bool:D $silent, Str:D $dev-lang, Str:D $dev-dir,
+                @extra-sources --> Bool:D) is export »»

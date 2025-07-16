@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.20" />
+<meta name="version" value="v0.1.21" />
 <style>.comment {
   color: #666; }
 
@@ -578,7 +578,7 @@ footer {
 <h1 class="title">pack</h1></header><div class="pod-content"><nav><div id="TOC"><table>
 <caption>Table of Contents</caption>
 <tr class="toc-level-1"><td class="toc-text"><a href="#App::pack">App::pack</a></td></tr>
- <tr class="toc-level-1"><td class="toc-text"><a href="#Module_Pack">Module Pack</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#app_pack.raku">app pack.raku</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Table_of_Contents">Table of Contents</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#key_=&gt;_directory_methods">key =&gt; directory methods</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Editor_functions/methods">Editor functions/methods</a></td></tr>
@@ -587,6 +587,7 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#Copyright">Copyright</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Introduction">Introduction</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Motivation">Motivation</a></td></tr>
+ <tr class="toc-level-3"><td class="toc-text"><a href="#A_brief_tutorial.">A brief tutorial.</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#pack">pack</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
@@ -615,6 +616,7 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_plugin_new_--help">pack.raku plugin new --help</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Recommended_Usage">Recommended Usage</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_plugin_add">pack.raku plugin add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
@@ -644,7 +646,7 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#multi_sub_GENERATE-USAGE">multi sub GENERATE-USAGE</a></td></tr>
 </table></div>
 </nav><div id="pack_0"></div><div class="subtitle"><p>A Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy.</p></div><div class="pod-body"><section name="___top"><h1 id="App::pack"><a href="#___top" class="u" title="go to top of document">App::pack</a></h1>
-<h1 id="Module_Pack"><a href="#___top" class="u" title="go to top of document">Module Pack</a></h1>
+<h1 id="app_pack.raku"><a href="#___top" class="u" title="go to top of document">app pack.raku</a></h1>
 <h2 id="Table_of_Contents"><a href="#___top" class="u" title="go to top of document">Table of Contents</a></h2>
 <ul>
 <li><p><a href="#name">NAME</a></p></li>
@@ -656,6 +658,9 @@ footer {
 <li><p><a href="#introduction">Introduction</a></p></li>
 <ul>
 <li><p><a href="#motivation">Motivation</a></p></li>
+<ul>
+<li><p><a href="#a-brief-tutorial">A brief tutorial.</a></p></li>
+</ul>
 </ul>
 <li><p><a href="#pack">Pack</a></p></li>
 <li><p><a href="#pack">pack.raku --help</a></p></li>
@@ -688,6 +693,7 @@ footer {
 <li><p><a href="#packraku-alias-add">pack.raku alias add</a></p></li>
 <li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p></li>
 <li><p><a href="#packraku-plugin-new---help">pack.raku plugin new --help</a></p></li>
+<li><p><a href="#packraku-plugin-add">pack.raku plugin add</a></p></li>
 <ul>
 <li><p><a href="#recommended-usage">Recommended Usage</a></p></li>
 </ul>
@@ -734,8 +740,19 @@ footer {
 <p>GPL V3.0+ <a href="https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE">LICENSE</a></p>
 </section>
 <p><a href="#table-of-contents">Top of Document</a></p><h1 id="Introduction"><a href="#pack_0" class="u" title="go to top of document">Introduction</a></h1>
-<p>This is a Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
-<p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><p><a href="#table-of-contents">Table of Contents</a></p><h3 id="pack"><a href="#pack_0" class="u" title="go to top of document">pack</a></h3>
+<p>This is a Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
+<p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><h3 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h3>
+<p>To create a new plugin just call </p><pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --prefs --schema-file --podirs --force
+
+</pre><p>You can leave the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file) you can leave out <code>--schema-file</code> if you do not need a schema file, and you can leave <code>--podirs</code> if you don't want internationalisation and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran <code>pack.raku plugin new</code> from. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. <strong>NB: I use the words &quot;plugin&quot; extension &quot;interchangeably&quot;.</strong></p><ul>
+<li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p></li>
+</ul>
+<p>If you want to manage an existing extension then use:</p><pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
+
+</pre><ul>
+<li><p><a href="#packraku-plugin-add">(See pack.raku plugin add)</a></p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p><h3 id="pack"><a href="#pack_0" class="u" title="go to top of document">pack</a></h3>
 <pre class="pod-block-code">pack.raku --help
 
 Usage:
@@ -1105,10 +1122,42 @@ Usage:
 </pre><ul>
 <li><p><strong>NB:</strong></p></li>
 <ul>
-<li><p>The key <code>&lt;key&gt;</code> must be replaced with a real key; this whole development model assumes that you don't want to develop the plugin/extension live as is <code>gnome-extensions create</code> model so I copy the plugin out line generated by <code>gnome-extensions create</code> to another location I use <code>~/Projects/gnome-shell/extensions/</code> and deleting the original that <code>gnome-extensions create</code> generates. </p></li>
+<li><p>The key <code>&lt;key&gt;</code> must be replaced with a real key.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
+<p>This whole development model assumes that you don't want to develop the plugin/extension live as is <code>gnome-extensions create</code> model so I copy the plugin out line generated by <code>gnome-extensions create</code> to another location I use <code>~/Projects/gnome-shell/extensions/</code> and deleting the original that <code>gnome-extensions create</code> generates. </p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin add</a></h1>
+<pre class="pod-block-code">pack.raku plugin add  --help
+
+Usage:
+  pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources&gt; ...] [-p|--extension-dir=&lt;Str&gt;] [--podir=&lt;Str&gt;] [-f|--force] [-s|--silent] [-b|--backtrace] [-m|--mk-schema] [-l|--dev-lang=&lt;Str&gt;]
+
+</pre><p>Use this to add an existing extension into management by <code>pack.raku</code>.</p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key to reference this extension by (mandatory).</p></li>
+<li><p><code>&lt;uuid&gt;</code> The unique id of the extension (mandatory).</p></li>
+<ul>
+<li><p>The key directory pair will be <code>&lt;key&gt; =&gt; $extension-dir/$uuid.</code></p></li>
+<ul>
+<li><p>The description in the <code>metadata.json</code> file will form the pairs comment.</p></li>
+</ul>
+</ul>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> An arbitrarily long list of additional files to add to the extensions package.</p></li>
+<ul>
+<li><p>can be files other than JavaScript source.</p></li>
+</ul>
+<li><p><code>[-p|--extension-dir=&lt;Str&gt;]</code> The directory the plugin lives in defaults to <code>.</code> the current directory.</p></li>
+<li><p><code>[--podir=&lt;Str&gt;]</code> The name of the directory where the internationalisation source is kept defaults to <code>'po'</code>.</p></li>
+<ul>
+<li><p><strong>NB:</strong> Will generate the <code>compile.sh</code> file if it doesn't already exist.</p></li>
+</ul>
+<li><p><code>[-f|--force]</code> The force parameter for <code>.pack_args.json</code> file.</p></li>
+<li><p><code>[-s|--silent]</code> If True then don't show progress or error messages defaults to False.</p></li>
+<li><p><code>[-b|--backtrace]</code> Show backtrace info on error (only works if not silent).</p></li>
+<li><p><code>[-m|--mk-schema]</code> Make the schema file if it doesn't exist.</p></li>
+<li><p><code>[-l|--dev-lang=&lt;Str&gt;]</code> The language of the default <code>*.po</code> file to generate this should be the language the strings are in in the original source defaults to <strong>en</strong>.</p></li>
+</ul>
+<p>Typical use:</p><pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
+
+</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
 
 Usage:
@@ -1509,7 +1558,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-14T19:50:24Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T02:03:21Z</span></div></footer>
 	</body>
 </html>
 
