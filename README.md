@@ -84,9 +84,11 @@ key => directory methods
 
   * [pack.raku plugin new --help](#packraku-plugin-new---help)
 
+    * [Recommended Usage](#recommended-usage)
+
   * [pack.raku plugin add](#packraku-plugin-add)
 
-    * [Recommended Usage](#recommended-usage)
+  * [pack.raku alias add-extra-sources](#packraku-alias-add-extra-sources)
 
   * [pack.raku edit configs](#packraku-edit-configs)
 
@@ -161,7 +163,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.21
+v0.1.22
 
 TITLE
 =====
@@ -914,6 +916,15 @@ Typical use:
 
 ```bash
 pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --force --mk-schema
+```
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias add-extra-sources
+=================================
+
+```bash
+
 ```
 
 [Table of Contents](#table-of-contents)

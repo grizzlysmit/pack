@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.21>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.22>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
@@ -2104,9 +2104,9 @@ sub add(Str $dir,
         Str $_podir,
         Str $_gettext-domain,
         Str $_out-dir,
-        Bool $_force is copy,
-        Bool $stomp-force,
-        Bool $stomp,
+        Bool:D $_force is copy,
+        Bool:D $stomp-force,
+        Bool:D $stomp,
         @_extra-sources --> Bool) is export {
     read-file($dir);
     push @extra-sources, |@_extra-sources if @_extra-sources;
@@ -2114,28 +2114,28 @@ sub add(Str $dir,
         @extra-sources     = @_extra-sources;
     }
     @extra-sources         = @extra-sources.sort.squish;
-    $package-dir           = $dir.IO.absolute.IO.resolve(:completely).basename unless defined $package-dir;
-    $schema                = $_schema unless $_schema eq 'Null';
-    $podir                 = $_podir unless $_podir eq 'Null';
-    $gettext-domain        = $_gettext-domain unless $_gettext-domain eq 'Null';
-    $out-dir               = $_out-dir.IO.absolute.IO.resolve(:completely).Str unless $_out-dir eq 'Null';
+    $package-dir           = $dir.IO.absolute.IO.resolve(:completely).basename without $package-dir;
+    $schema                = $_schema with $_schema;
+    $podir                 = $_podir with $_podir;
+    $gettext-domain        = $_gettext-domain with $_gettext-domain;
+    $out-dir               = $_out-dir.IO.absolute.IO.resolve(:completely).Str with $_out-dir;
     if !$stomp-force {
         $_force            = $force-file unless $_force;
     }
     my $data               = { extra-sources => [ |@extra-sources ],  };
-    if defined $schema {
+    with $schema {
         %$data«schema»     = $schema;
     }
-    if defined $podir {
+    with $podir {
         %$data«podir»      = $podir;
     }
-    if $gettext-domain {
+    with $gettext-domain {
         %$data«gettext-domain» = $gettext-domain;
     }
-    if $package-dir {
+    with $package-dir {
         %$data«package-dir»    = $package-dir;
     }
-    if defined $out-dir {
+    with $out-dir {
         %$data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     }
     %$data«force»          = $_force;

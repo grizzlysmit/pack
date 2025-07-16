@@ -65,8 +65,10 @@ Table of Contents
 =item1 L<pack.raku alias add|#packraku-alias-add>
 =item1 L<pack.raku alias do --help|#packraku-alias-do---help>
 =item1 L<pack.raku plugin new --help|#packraku-plugin-new---help>
-=item1 L<pack.raku plugin add|#packraku-plugin-add>
 =item2 L<Recommended Usage|#recommended-usage>
+=item1 L<pack.raku plugin add|#packraku-plugin-add>
+=item1 L<pack.raku alias add-extra-sources|#packraku-alias-add-extra-sources>
+
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
 =item1 L<pack.raku list keys|#packraku-list-keys>
 =item1 L<pack.raku list all|#packraku-list-all>
@@ -100,7 +102,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.21
+=VERSION v0.1.22
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -331,13 +333,13 @@ L<Table of Contents|#table-of-contents>
 
 multi sub MAIN('add',
                 Str $package-dir,
-                Str :s(:$schema) = 'Null',
-                Str :p(:$podir) = 'Null',
-                Str :g(:$gettext-domain) = 'Null',
+                Str :s(:$schema) = Str,
+                Str :p(:$podir) = Str,
+                Str :g(:$gettext-domain) = Str,
                 Str :o(:$out-dir) = '.',
-                Bool :f(:$force) = False,
-                Bool :F(:$stomp-force) = False,
-                Bool :S(:$stomp) = False,
+                Bool:D :f(:$force) = False,
+                Bool:D :F(:$stomp-force) = False,
+                Bool:D :S(:$stomp) = False,
                 *@extra-sources --> int){
     die "Error: unkown" unless add($package-dir,
                                    $schema,
@@ -375,7 +377,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'schema', Str $package-dir, Str $schema-value --> int){
-    die "Error: unkown" unless add($package-dir, $schema-value, 'Null', 'Null', 'Null', False, False, False, ());
+    die "Error: unkown" unless add($package-dir, $schema-value, Str, Str, Str, False, False, False, ());
     return 0;
 }
 
@@ -404,7 +406,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'podir', Str $package-dir, Str $podir-value --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', $podir-value, 'Null', 'Null', False, False, False, ());
+    die "Error: unkown" unless add($package-dir, Str, $podir-value, Str, Str, False, False, False, ());
     return 0;
 }
 
@@ -432,7 +434,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'gettext-domain', Str $package-dir, Str $gettext-domain-value --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', $gettext-domain-value, 'Null', False, False, False, ());
+    die "Error: unkown" unless add($package-dir, Str, Str, $gettext-domain-value, Str, False, False, False, ());
     return 0;
 }
 
@@ -460,7 +462,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'out-dir', Str $package-dir, Str $out-dir-value --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', $out-dir-value, False, False, False, ());
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, $out-dir-value, False, False, False, ());
     return 0;
 }
 
@@ -488,7 +490,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'force', Str $package-dir, Bool $force-value --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', $force-value, True, False, ());
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, Str, $force-value, True, False, ());
     return 0;
 }
 
@@ -516,7 +518,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('add-extra-sources', Str $package-dir, *@extra-sources --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, False, @extra-sources);
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
     return 0;
 }
 
@@ -573,7 +575,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('set', 'extra-sources', Str $package-dir, *@extra-sources --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, True, @extra-sources);
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, Str, False, False, True, @extra-sources);
     return 0;
 }
 
@@ -601,7 +603,7 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('append', 'extra-sources', Str $package-dir, *@extra-sources --> int){
-    die "Error: unkown" unless add($package-dir, 'Null', 'Null', 'Null', 'Null', False, False, False, @extra-sources);
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
     return 0;
 }
 
@@ -1126,6 +1128,25 @@ multi sub MAIN('plugin', 'add', Str:D $key, Str:D $uuid, Str:D :p(:extension-dir
                 Bool:D :f(:$force) = False, Bool:D :s(:$silent) = False,
                 Str:D :l(:$dev-lang) = ((%*ENV«DEV_LANG»:exists) ?? (~%*ENV«DEV_LANG») !! 'en'), 
                 Str:D :o(:output(:development-dir(:$dev-dir))) = '.' --> int) »»
+
+=begin pod
+
+=head1 pack.raku alias add-extra-sources
+
+=begin code :lang<bash>
+
+
+=end code
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'add-extra-sources', Str:D $key, *@extra-sources --> int){
+    my Str:D $package-dir = path($key);
+    die "Error: unkown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
+    return 0;
+}
 
 =begin pod
 
