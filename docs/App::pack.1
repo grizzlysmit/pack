@@ -170,6 +170,19 @@ pack\&.raku alias add\-extra\-sources [#packraku-alias-add-extra-sources]
 .RE
 .RS 2n
 .IP \(bu 2m
+pack\&.raku alias set schema [#packraku-alias-set-schema]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku alias set podir [#packraku-alias-set-podir]
+.RE
+.RS 2n
+.IP \(bu 2m
+pack\&.raku alias set gettext\-domain [#packraku-alias-set-gettext-domain]
+.RE
+.SS key => directory management methods
+.RS 2n
+.IP \(bu 2m
 pack\&.raku edit configs [#packraku-edit-configs]
 .RE
 .RS 2n
@@ -283,7 +296,7 @@ App::pack
 .SH "AUTHOR"
 Francis Grizzly Smit (grizzly@smit\&.id\&.au)
 .SH "VERSION"
-v0\&.1\&.22
+v0\&.1\&.23
 .SH "TITLE"
 pack
 .SH "SUBTITLE"
@@ -1319,7 +1332,9 @@ Usage:
 .EE
 .RE
 .P
-Add sources to the \fBextra\-sources\fR list\&. Where
+Add sources to the \fBextra\-sources\fR list\&.
+
+Where
 .RS 2n
 .IP \(bu 2m
 <key> The key of the extension to add to\&.
@@ -1327,6 +1342,88 @@ Add sources to the \fBextra\-sources\fR list\&. Where
 .RS 2n
 .IP \(bu 2m
 [<extra\-sources> \&.\&.\&.] Additional sources to add to the \fBextra\-sources\fR list\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku alias set schema
+
+.RS 4m
+.EX
+pack\&.raku alias set schema \-\-help
+
+Usage:
+  pack\&.raku alias set schema <key> <schema\-value>
+
+
+.EE
+.RE
+.P
+Set the value of the \fBschema\fR\&.
+
+Where
+.RS 2n
+.IP \(bu 2m
+<key> The key of the extension to add to\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+[<extra\-sources> \&.\&.\&.] Additional sources to add to the \fBextra\-sources\fR list\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku alias set podir
+
+.RS 4m
+.EX
+pack\&.raku alias set podir \-\-help
+
+Usage:
+  pack\&.raku alias set podir <key> <podir\-value>
+
+
+.EE
+.RE
+.P
+Set the value of podir in <package\-dir>/\&.pack_args\&.json
+
+Where
+.RS 2n
+.IP \(bu 2m
+<key> The key of the extension\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+<podir\-value> New value of podir\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+podir is the path of the directory containing the po files, relative to the extensions development directory\&.
+.RE
+
+Table of Contents [#table-of-contents]
+.SH pack\&.raku alias set gettext\-domain
+
+.RS 4m
+.EX
+pack\&.raku alias set gettext\-domain \-\-help
+
+Usage:
+  pack\&.raku alias set gettext\-domain <key> <gettext\-domain\-value>
+
+
+.EE
+.RE
+.P
+Set the value of gettext\-domain in <package\-dir>/\&.pack_args\&.json
+
+Where
+.RS 2n
+.IP \(bu 2m
+<key> The key of the extension\&.
+.RE
+.RS 2n
+.IP \(bu 2m
+<gettext\-domain\-value> New value of gettext\-domain\&.
 .RE
 
 Table of Contents [#table-of-contents]

@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.22>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.23>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
@@ -2147,10 +2147,10 @@ sub set-package-dir($dir, $package-dir-value) is export {
     read-file($dir);
     $package-dir               = $package-dir-value.IO.basename;
     my $data                   = { extra-sources => [ |@extra-sources ],  };
-    if defined $schema {
+    with $schema {
         %$data«schema»         = $schema;
     }
-    if defined $podir {
+    with $podir {
         %$data«podir»          = $podir;
     }
     if $gettext-domain {
@@ -2159,7 +2159,7 @@ sub set-package-dir($dir, $package-dir-value) is export {
     if $package-dir {
         %$data«package-dir»    = $package-dir;
     }
-    if defined $out-dir {
+    with $out-dir {
         %$data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     }
     %$data«force»              = $force-file;

@@ -90,6 +90,15 @@ key => directory methods
 
   * [pack.raku alias add-extra-sources](#packraku-alias-add-extra-sources)
 
+  * [pack.raku alias set schema](#packraku-alias-set-schema)
+
+  * [pack.raku alias set podir](#packraku-alias-set-podir)
+
+  * [pack.raku alias set gettext-domain](#packraku-alias-set-gettext-domain)
+
+key => directory management methods
+-----------------------------------
+
   * [pack.raku edit configs](#packraku-edit-configs)
 
   * [pack.raku list keys](#packraku-list-keys)
@@ -163,7 +172,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.22
+v0.1.23
 
 TITLE
 =====
@@ -930,11 +939,75 @@ Usage:
   pack.raku alias add-extra-sources <key> [<extra-sources> ...]
 ```
 
-Add sources to the **extra-sources** list. Where
+Add sources to the **extra-sources** list.
+
+Where
 
   * `<key>` The key of the extension to add to.
 
   * `[<extra-sources> ...]` Additional sources to add to the **extra-sources** list.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set schema
+==========================
+
+```bash
+pack.raku alias set schema --help
+
+Usage:
+  pack.raku alias set schema <key> <schema-value>
+```
+
+Set the value of the **schema**.
+
+Where
+
+  * `<key>` The key of the extension to add to.
+
+  * `[<extra-sources> ...]` Additional sources to add to the **extra-sources** list.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set podir
+=========================
+
+```bash
+pack.raku alias set podir --help
+
+Usage:
+  pack.raku alias set podir <key> <podir-value>
+```
+
+Set the value of podir in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `<podir-value>` New value of podir.
+
+    * podir is the path of the directory containing the po files, relative to the extensions development directory.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set gettext-domain
+==================================
+
+```bash
+pack.raku alias set gettext-domain --help
+
+Usage:
+  pack.raku alias set gettext-domain <key> <gettext-domain-value>
+```
+
+Set the value of `gettext-domain` in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `<gettext-domain-value>` New value of gettext-domain.
 
 [Table of Contents](#table-of-contents)
 

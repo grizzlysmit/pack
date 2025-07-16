@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.22" />
+<meta name="version" value="v0.1.23" />
 <style>.comment {
   color: #666; }
 
@@ -581,6 +581,7 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#app_pack.raku">app pack.raku</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Table_of_Contents">Table of Contents</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#key_=&gt;_directory_methods">key =&gt; directory methods</a></td></tr>
+ <tr class="toc-level-2"><td class="toc-text"><a href="#key_=&gt;_directory_management_methods">key =&gt; directory management methods</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Editor_functions/methods">Editor functions/methods</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#USAGE_stuff">USAGE stuff</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Name">Name</a></td></tr>
@@ -618,6 +619,9 @@ footer {
  <tr class="toc-level-2"><td class="toc-text"><a href="#Recommended_Usage">Recommended Usage</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_plugin_add">pack.raku plugin add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add-extra-sources">pack.raku alias add-extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_schema">pack.raku alias set schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_podir">pack.raku alias set podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_gettext-domain">pack.raku alias set gettext-domain</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
@@ -699,6 +703,12 @@ footer {
 </ul>
 <li><p><a href="#packraku-plugin-add">pack.raku plugin add</a></p></li>
 <li><p><a href="#packraku-alias-add-extra-sources">pack.raku alias add-extra-sources</a></p></li>
+<li><p><a href="#packraku-alias-set-schema">pack.raku alias set schema</a></p></li>
+<li><p><a href="#packraku-alias-set-podir">pack.raku alias set podir</a></p></li>
+<li><p><a href="#packraku-alias-set-gettext-domain">pack.raku alias set gettext-domain</a></p></li>
+</ul>
+<h2 id="key_=&gt;_directory_management_methods"><a href="#___top" class="u" title="go to top of document">key =&gt; directory management methods</a></h2>
+<ul>
 <li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p></li>
 <li><p><a href="#packraku-list-keys">pack.raku list keys</a></p></li>
 <li><p><a href="#packraku-list-all">pack.raku list all</a></p></li>
@@ -1165,9 +1175,42 @@ Usage:
 Usage:
   pack.raku alias add-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
 
-</pre><p>Add sources to the <strong>extra-sources</strong> list. Where</p><ul>
+</pre><p>Add sources to the <strong>extra-sources</strong> list.</p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set schema</a></h1>
+<pre class="pod-block-code">pack.raku alias set schema --help
+
+Usage:
+  pack.raku alias set schema &lt;key&gt; &lt;schema-value&gt;
+
+</pre><p>Set the value of the <strong>schema</strong>.</p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set podir</a></h1>
+<pre class="pod-block-code">pack.raku alias set podir --help
+
+Usage:
+  pack.raku alias set podir &lt;key&gt; &lt;podir-value&gt;
+
+</pre><p>Set the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>&lt;podir-value&gt;</code> New value of podir.</p></li>
+<ul>
+<li><p>podir is the path of the directory containing the po files, relative to the extensions development directory.</p></li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias set gettext-domain --help
+
+Usage:
+  pack.raku alias set gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
+
+</pre><p>Set the value of <code>gettext-domain</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>&lt;gettext-domain-value&gt;</code> New value of gettext-domain.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
@@ -1570,7 +1613,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T07:27:47Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T10:37:42Z</span></div></footer>
 	</body>
 </html>
 
