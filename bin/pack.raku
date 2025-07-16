@@ -71,6 +71,13 @@ Table of Contents
 =item1 L<pack.raku alias set schema|#packraku-alias-set-schema>
 =item1 L<pack.raku alias set podir|#packraku-alias-set-podir>
 =item1 L<pack.raku alias set gettext-domain|#packraku-alias-set-gettext-domain>
+=item1 L<pack.raku alias set out-dir|#packraku-alias-set-out-dir>
+=item1 L<pack.raku alias set force|#packraku-alias-set-force>
+=item1 L<pack.raku alias set package-dir|#packraku-alias-set-package-dir>
+=item1 L<pack.raku alias set-extra-sources|#packraku-alias-set-extra-sources>
+=item1 L<pack.raku alias append-extra-sources|#packraku-alias-append-extra-sources>
+=item1 L<pack.raku alias remove-schema|#packraku-alias-remove-schema>
+=item1 L<pack.raku alias remove-podir|#packraku-alias-remove-podir>
 
 =head2 key => directory management methods
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
@@ -106,7 +113,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.23
+=VERSION v0.1.24
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -1165,28 +1172,28 @@ multi sub MAIN('alias', 'add-extra-sources', Str:D $key, *@extra-sources --> int
 
 =begin pod
 
-=head1 pack.raku alias set schema
+=head1 pack.raku alias set-schema
 
 =begin code :lang<bash>
 
-pack.raku alias set schema --help
+pack.raku alias set-schema --help
 
 Usage:
-  pack.raku alias set schema <key> <schema-value>
+  pack.raku alias set-schema <key> <schema-value>
 
 =end code
 
 Set the value of the B«schema».
 
 Where
-=item1 C«<key>»                    The key of the extension to add to.
-=item1 C«[<extra-sources> ...]»    Additional sources to add to the B«extra-sources» list.
+=item1 C«<key>»           The key of the extension to add to.
+=item1 C«<schema-value>»  New value of schema.
 
 L<Table of Contents|#table-of-contents>
 
 =end pod
 
-multi sub MAIN('alias', 'set', 'schema', Str $key, Str $schema-value --> int){
+multi sub MAIN('alias', 'set-schema', Str $key, Str $schema-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
     die "Error: unknown" unless add($package-dir, $schema-value, Str, Str, Str, False, False, False, ());
@@ -1195,14 +1202,14 @@ multi sub MAIN('alias', 'set', 'schema', Str $key, Str $schema-value --> int){
 
 =begin pod
 
-=head1 pack.raku alias set podir
+=head1 pack.raku alias set-podir
 
 =begin code :lang<bash>
 
-pack.raku alias set podir --help
+pack.raku alias set-podir --help
 
 Usage:
-  pack.raku alias set podir <key> <podir-value>
+  pack.raku alias set-podir <key> <podir-value>
 
 =end code
 
@@ -1217,7 +1224,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
-multi sub MAIN('alias', 'set', 'podir', Str $key, Str $podir-value --> int){
+multi sub MAIN('alias', 'set-podir', Str $key, Str $podir-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
     die "Error: unknown" unless add($package-dir, Str, $podir-value, Str, Str, False, False, False, ());
@@ -1226,14 +1233,14 @@ multi sub MAIN('alias', 'set', 'podir', Str $key, Str $podir-value --> int){
 
 =begin pod
 
-=head1 pack.raku alias set gettext-domain
+=head1 pack.raku alias set-gettext-domain
 
 =begin code :lang<bash>
 
-pack.raku alias set gettext-domain --help
+pack.raku alias set-gettext-domain --help
 
 Usage:
-  pack.raku alias set gettext-domain <key> <gettext-domain-value>
+  pack.raku alias set-gettext-domain <key> <gettext-domain-value>
 
 =end code
 
@@ -1247,10 +1254,218 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
-multi sub MAIN('alias', 'set', 'gettext-domain', Str $key, Str $gettext-domain-value --> int){
+multi sub MAIN('alias', 'set-gettext-domain', Str $key, Str $gettext-domain-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
     die "Error: unknown" unless add($package-dir, Str, Str, $gettext-domain-value, Str, False, False, False, ());
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias set-out-dir
+
+=begin code :lang<bash>
+
+pack.raku alias set-out-dir --help
+
+Usage:
+  pack.raku alias set-out-dir <key> <out-dir-value>
+
+=end code
+
+Set the value of out-dir in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+=item1 C«<out-dir-value>»  New value of out-dir.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'set-out-dir', Str $key, Str $out-dir-value --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless add($package-dir, Str, Str, Str, $out-dir-value, False, False, False, ());
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias set-force
+
+=begin code :lang<bash>
+
+pack.raku alias set-force --help
+
+Usage:
+  pack.raku alias set-force <key> <force-value>
+
+=end code
+
+Set the value of force in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»          The key of the extension.
+=item1 C«<force-value>»  New value of force.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'set-force', Str $key, Bool $force-value --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, $force-value, True, False, ());
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias set-package-dir
+
+=begin code :lang<bash>
+
+pack.raku alias set-package-dir --help
+
+Usage:
+  pack.raku alias set-package-dir <key> <package-dir-value>
+
+=end code
+
+Add to the value of extra-sources in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»                  The key of the extension.
+=item1 C«[<extra-sources> ...]»  Additional extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'set-package-dir', Str $key, Str $package-dir-value --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless set-package-dir($package-dir, $package-dir-value);
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias set-extra-sources
+
+=begin code :lang<bash>
+
+pack.raku alias set-extra-sources --help
+
+Usage:
+  pack.raku alias set-extra-sources <key> [<extra-sources> ...]
+
+=end code
+
+Set the value of extra-sources in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»                  The key of the extension.
+=item1 C«[<extra-sources> ...]»  New value of extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'set-extra-sources', Str $key, *@extra-sources --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, False, False, True, @extra-sources);
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias append-extra-sources
+
+=begin code :lang<bash>
+
+pack.raku alias append-extra-sources --help
+
+Usage:
+  pack.raku alias append-extra-sources <key> [<extra-sources> ...]
+
+=end code
+
+Append C«[<extra-sources> ...]» to the value of extra-sources in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»                  The key of the extension.
+=item1 C«[<extra-sources> ...]»  List of values to append to extra-sources.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'append-extra-sources', Str $key, *@extra-sources --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias remove-schema
+
+=begin code :lang<bash>
+
+pack.raku alias remove-schema --help
+
+Usage:
+  pack.raku alias remove-schema <key>
+
+=end code
+
+Remove the value of schema in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'remove-schema', Str $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless remove($package-dir, 'schema');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias remove-podir
+
+=begin code :lang<bash>
+
+pack.raku alias remove-podir --help
+
+Usage:
+  pack.raku alias remove-podir <key>
+
+=end code
+
+Remove the value of C«podir» in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'remove-podir', Str $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless remove($package-dir, 'podir');
     return 0;
 }
 

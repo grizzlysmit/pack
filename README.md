@@ -96,6 +96,20 @@ key => directory methods
 
   * [pack.raku alias set gettext-domain](#packraku-alias-set-gettext-domain)
 
+  * [pack.raku alias set out-dir](#packraku-alias-set-out-dir)
+
+  * [pack.raku alias set force](#packraku-alias-set-force)
+
+  * [pack.raku alias set package-dir](#packraku-alias-set-package-dir)
+
+  * [pack.raku alias set-extra-sources](#packraku-alias-set-extra-sources)
+
+  * [pack.raku alias append-extra-sources](#packraku-alias-append-extra-sources)
+
+  * [pack.raku alias remove-schema](#packraku-alias-remove-schema)
+
+  * [pack.raku alias remove-podir](#packraku-alias-remove-podir)
+
 key => directory management methods
 -----------------------------------
 
@@ -172,7 +186,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.23
+v0.1.24
 
 TITLE
 =====
@@ -949,14 +963,14 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-pack.raku alias set schema
+pack.raku alias set-schema
 ==========================
 
 ```bash
-pack.raku alias set schema --help
+pack.raku alias set-schema --help
 
 Usage:
-  pack.raku alias set schema <key> <schema-value>
+  pack.raku alias set-schema <key> <schema-value>
 ```
 
 Set the value of the **schema**.
@@ -965,18 +979,18 @@ Where
 
   * `<key>` The key of the extension to add to.
 
-  * `[<extra-sources> ...]` Additional sources to add to the **extra-sources** list.
+  * `<schema-value>` New value of schema.
 
 [Table of Contents](#table-of-contents)
 
-pack.raku alias set podir
+pack.raku alias set-podir
 =========================
 
 ```bash
-pack.raku alias set podir --help
+pack.raku alias set-podir --help
 
 Usage:
-  pack.raku alias set podir <key> <podir-value>
+  pack.raku alias set-podir <key> <podir-value>
 ```
 
 Set the value of podir in `<package-dir>/.pack_args.json`
@@ -991,14 +1005,14 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-pack.raku alias set gettext-domain
+pack.raku alias set-gettext-domain
 ==================================
 
 ```bash
-pack.raku alias set gettext-domain --help
+pack.raku alias set-gettext-domain --help
 
 Usage:
-  pack.raku alias set gettext-domain <key> <gettext-domain-value>
+  pack.raku alias set-gettext-domain <key> <gettext-domain-value>
 ```
 
 Set the value of `gettext-domain` in `<package-dir>/.pack_args.json`
@@ -1008,6 +1022,142 @@ Where
   * `<key>` The key of the extension.
 
   * `<gettext-domain-value>` New value of gettext-domain.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set-out-dir
+===========================
+
+```bash
+pack.raku alias set-out-dir --help
+
+Usage:
+  pack.raku alias set-out-dir <key> <out-dir-value>
+```
+
+Set the value of out-dir in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `<out-dir-value>` New value of out-dir.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set-force
+=========================
+
+```bash
+pack.raku alias set-force --help
+
+Usage:
+  pack.raku alias set-force <key> <force-value>
+```
+
+Set the value of force in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `<force-value>` New value of force.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set-package-dir
+===============================
+
+```bash
+pack.raku alias set-package-dir --help
+
+Usage:
+  pack.raku alias set-package-dir <key> <package-dir-value>
+```
+
+Add to the value of extra-sources in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `[<extra-sources> ...]` Additional extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias set-extra-sources
+=================================
+
+```bash
+pack.raku alias set-extra-sources --help
+
+Usage:
+  pack.raku alias set-extra-sources <key> [<extra-sources> ...]
+```
+
+Set the value of extra-sources in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `[<extra-sources> ...]` New value of extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias append-extra-sources
+====================================
+
+```bash
+pack.raku alias append-extra-sources --help
+
+Usage:
+  pack.raku alias append-extra-sources <key> [<extra-sources> ...]
+```
+
+Append `[<extra-sources> ...]` to the value of extra-sources in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+  * `[<extra-sources> ...]` List of values to append to extra-sources.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias remove-schema
+=============================
+
+```bash
+pack.raku alias remove-schema --help
+
+Usage:
+  pack.raku alias remove-schema <key>
+```
+
+Remove the value of schema in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias remove-podir
+============================
+
+```bash
+pack.raku alias remove-podir --help
+
+Usage:
+  pack.raku alias remove-podir <key>
+```
+
+Remove the value of `podir` in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
 

@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.23" />
+<meta name="version" value="v0.1.24" />
 <style>.comment {
   color: #666; }
 
@@ -619,9 +619,16 @@ footer {
  <tr class="toc-level-2"><td class="toc-text"><a href="#Recommended_Usage">Recommended Usage</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_plugin_add">pack.raku plugin add</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_add-extra-sources">pack.raku alias add-extra-sources</a></td></tr>
- <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_schema">pack.raku alias set schema</a></td></tr>
- <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_podir">pack.raku alias set podir</a></td></tr>
- <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set_gettext-domain">pack.raku alias set gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-schema">pack.raku alias set-schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-podir">pack.raku alias set-podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-gettext-domain">pack.raku alias set-gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-out-dir">pack.raku alias set-out-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-force">pack.raku alias set-force</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-package-dir">pack.raku alias set-package-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_set-extra-sources">pack.raku alias set-extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_append-extra-sources">pack.raku alias append-extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-schema">pack.raku alias remove-schema</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-podir">pack.raku alias remove-podir</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
@@ -706,6 +713,13 @@ footer {
 <li><p><a href="#packraku-alias-set-schema">pack.raku alias set schema</a></p></li>
 <li><p><a href="#packraku-alias-set-podir">pack.raku alias set podir</a></p></li>
 <li><p><a href="#packraku-alias-set-gettext-domain">pack.raku alias set gettext-domain</a></p></li>
+<li><p><a href="#packraku-alias-set-out-dir">pack.raku alias set out-dir</a></p></li>
+<li><p><a href="#packraku-alias-set-force">pack.raku alias set force</a></p></li>
+<li><p><a href="#packraku-alias-set-package-dir">pack.raku alias set package-dir</a></p></li>
+<li><p><a href="#packraku-alias-set-extra-sources">pack.raku alias set-extra-sources</a></p></li>
+<li><p><a href="#packraku-alias-append-extra-sources">pack.raku alias append-extra-sources</a></p></li>
+<li><p><a href="#packraku-alias-remove-schema">pack.raku alias remove-schema</a></p></li>
+<li><p><a href="#packraku-alias-remove-podir">pack.raku alias remove-podir</a></p></li>
 </ul>
 <h2 id="key_=&gt;_directory_management_methods"><a href="#___top" class="u" title="go to top of document">key =&gt; directory management methods</a></h2>
 <ul>
@@ -1179,21 +1193,21 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set schema</a></h1>
-<pre class="pod-block-code">pack.raku alias set schema --help
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias set-schema --help
 
 Usage:
-  pack.raku alias set schema &lt;key&gt; &lt;schema-value&gt;
+  pack.raku alias set-schema &lt;key&gt; &lt;schema-value&gt;
 
 </pre><p>Set the value of the <strong>schema</strong>.</p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
-<li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p></li>
+<li><p><code>&lt;schema-value&gt;</code> New value of schema.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set podir</a></h1>
-<pre class="pod-block-code">pack.raku alias set podir --help
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-podir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-podir --help
 
 Usage:
-  pack.raku alias set podir &lt;key&gt; &lt;podir-value&gt;
+  pack.raku alias set-podir &lt;key&gt; &lt;podir-value&gt;
 
 </pre><p>Set the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
@@ -1202,15 +1216,83 @@ Usage:
 <li><p>podir is the path of the directory containing the po files, relative to the extensions development directory.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set gettext-domain</a></h1>
-<pre class="pod-block-code">pack.raku alias set gettext-domain --help
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias set-gettext-domain --help
 
 Usage:
-  pack.raku alias set gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
+  pack.raku alias set-gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
 
 </pre><p>Set the value of <code>gettext-domain</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>&lt;gettext-domain-value&gt;</code> New value of gettext-domain.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-out-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-out-dir --help
+
+Usage:
+  pack.raku alias set-out-dir &lt;key&gt; &lt;out-dir-value&gt;
+
+</pre><p>Set the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>&lt;out-dir-value&gt;</code> New value of out-dir.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-force"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-force</a></h1>
+<pre class="pod-block-code">pack.raku alias set-force --help
+
+Usage:
+  pack.raku alias set-force &lt;key&gt; &lt;force-value&gt;
+
+</pre><p>Set the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>&lt;force-value&gt;</code> New value of force.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-package-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-package-dir --help
+
+Usage:
+  pack.raku alias set-package-dir &lt;key&gt; &lt;package-dir-value&gt;
+
+</pre><p>Add to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> Additional extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias set-extra-sources --help
+
+Usage:
+  pack.raku alias set-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
+
+</pre><p>Set the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> New value of extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_append-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias append-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias append-extra-sources --help
+
+Usage:
+  pack.raku alias append-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
+
+</pre><p>Append <code>[&lt;extra-sources&gt; ...]</code> to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> List of values to append to extra-sources.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-schema --help
+
+Usage:
+  pack.raku alias remove-schema &lt;key&gt;
+
+</pre><p>Remove the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-podir</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-podir --help
+
+Usage:
+  pack.raku alias remove-podir &lt;key&gt;
+
+</pre><p>Remove the value of <code>podir</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
@@ -1613,7 +1695,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T10:37:42Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T23:21:48Z</span></div></footer>
 	</body>
 </html>
 
