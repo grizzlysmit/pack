@@ -2111,23 +2111,23 @@ sub add(Str $dir,
     read-file($dir);
     push @extra-sources, |@_extra-sources if @_extra-sources;
     if $stomp {
-        @extra-sources     = @_extra-sources;
+        @extra-sources         = @_extra-sources;
     }
-    @extra-sources         = @extra-sources.sort.squish;
-    $package-dir           = $dir.IO.absolute.IO.resolve(:completely).basename without $package-dir;
-    $schema                = $_schema with $_schema;
-    $podir                 = $_podir with $_podir;
-    $gettext-domain        = $_gettext-domain with $_gettext-domain;
-    $out-dir               = $_out-dir.IO.absolute.IO.resolve(:completely).Str with $_out-dir;
-    if !$stomp-force {
-        $_force            = $force-file unless $_force;
+    @extra-sources             = @extra-sources.sort.squish;
+    $package-dir               = $dir.IO.absolute.IO.resolve(:completely).basename without $package-dir;
+    $schema                    = $_schema with $_schema;
+    $podir                     = $_podir with $_podir;
+    $gettext-domain            = $_gettext-domain with $_gettext-domain;
+    $out-dir                   = $_out-dir.IO.absolute.IO.resolve(:completely).Str with $_out-dir;
+    unless $stomp-force {
+        $_force                = $force-file unless $_force;
     }
-    my $data               = { extra-sources => [ |@extra-sources ],  };
+    my $data                   = { extra-sources => [ |@extra-sources ],  };
     with $schema {
-        %$data«schema»     = $schema;
+        %$data«schema»         = $schema;
     }
     with $podir {
-        %$data«podir»      = $podir;
+        %$data«podir»          = $podir;
     }
     with $gettext-domain {
         %$data«gettext-domain» = $gettext-domain;
@@ -2138,7 +2138,7 @@ sub add(Str $dir,
     with $out-dir {
         %$data«out-dir»        = "$out-dir".IO.absolute.IO.resolve(:completely).Str;
     }
-    %$data«force»          = $_force;
+    %$data«force»              = $_force;
     "$dir/.pack_args.json".IO.spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
     return True;                                                                                                                                                                                                                                    
 }
