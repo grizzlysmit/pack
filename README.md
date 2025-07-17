@@ -110,6 +110,14 @@ key => directory methods
 
   * [pack.raku alias remove-podir](#packraku-alias-remove-podir)
 
+  * [pack.raku alias remove-gettext-domain](#packraku-alias-remove-gettext-domain)
+
+  * [pack.raku alias remove-out-dir](#packraku-alias-remove-out-dir)
+
+  * [pack.raku alias remove-extra-sources](#packraku-alias-remove-extra-sources)
+
+  * [pack.raku alias get-schema](#packraku-alias-get-schema)
+
 key => directory management methods
 -----------------------------------
 
@@ -186,7 +194,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.24
+v0.1.25
 
 TITLE
 =====
@@ -1154,6 +1162,78 @@ Usage:
 ```
 
 Remove the value of `podir` in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias remove-gettext-domain
+=====================================
+
+```bash
+pack.raku alias remove-gettext-domain --help
+
+Usage:
+  pack.raku alias remove-gettext-domain <key>
+```
+
+Remove the value of gettext-domain in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias remove-out-dir
+==============================
+
+```bash
+pack.raku alias remove-out-dir --help
+
+Usage:
+  pack.raku alias remove-out-dir <key>
+```
+
+Remove the value of out-dir in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias remove-extra-sources
+====================================
+
+```bash
+pack.raku alias remove-extra-sources --help
+
+Usage:
+  pack.raku alias remove-extra-sources <key>
+```
+
+Truncate the `extra-sources` in `<package-dir>/.pack_args.json` list.
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-schema
+==========================
+
+```bash
+pack.raku alias get-schema --help
+
+Usage:
+  pack.raku alias get-schema <key>
+```
+
+Get the value of schema in `<package-dir>/.pack_args.json`
 
 Where
 

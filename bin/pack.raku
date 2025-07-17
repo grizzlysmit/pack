@@ -78,6 +78,10 @@ Table of Contents
 =item1 L<pack.raku alias append-extra-sources|#packraku-alias-append-extra-sources>
 =item1 L<pack.raku alias remove-schema|#packraku-alias-remove-schema>
 =item1 L<pack.raku alias remove-podir|#packraku-alias-remove-podir>
+=item1 L<pack.raku alias remove-gettext-domain|#packraku-alias-remove-gettext-domain>
+=item1 L<pack.raku alias remove-out-dir|#packraku-alias-remove-out-dir>
+=item1 L<pack.raku alias remove-extra-sources|#packraku-alias-remove-extra-sources>
+=item1 L<pack.raku alias get-schema|#packraku-alias-get-schema>
 
 =head2 key => directory management methods
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
@@ -113,7 +117,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.24
+=VERSION v0.1.25
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -1462,10 +1466,126 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
-multi sub MAIN('alias', 'remove-podir', Str $key --> int){
+multi sub MAIN('alias', 'remove-podir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
     die "Error: unknown" unless remove($package-dir, 'podir');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias remove-gettext-domain
+
+=begin code :lang<bash>
+
+pack.raku alias remove-gettext-domain --help
+
+Usage:
+  pack.raku alias remove-gettext-domain <key>
+
+=end code
+
+Remove the value of gettext-domain in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'remove-gettext-domain', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless remove($package-dir, 'gettext-domain');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias remove-out-dir
+
+=begin code :lang<bash>
+
+pack.raku alias remove-out-dir --help
+
+Usage:
+  pack.raku alias remove-out-dir <key>
+
+=end code
+
+Remove the value of out-dir in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'remove-out-dir', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless remove($package-dir, 'out-dir');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias remove-extra-sources
+
+=begin code :lang<bash>
+
+pack.raku alias remove-extra-sources --help
+
+Usage:
+  pack.raku alias remove-extra-sources <key>
+
+=end code
+
+Truncate the C«extra-sources» in C«<package-dir>/.pack_args.json» list.
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'remove-extra-sources', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: unknown" unless remove($package-dir, 'extra-sources');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-schema
+
+=begin code :lang<bash>
+
+pack.raku alias get-schema --help
+
+Usage:
+  pack.raku alias get-schema <key>
+
+=end code
+
+Get the value of schema in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-schema', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'schema');
     return 0;
 }
 

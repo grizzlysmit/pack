@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.24" />
+<meta name="version" value="v0.1.25" />
 <style>.comment {
   color: #666; }
 
@@ -629,6 +629,10 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_append-extra-sources">pack.raku alias append-extra-sources</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-schema">pack.raku alias remove-schema</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-podir">pack.raku alias remove-podir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-gettext-domain">pack.raku alias remove-gettext-domain</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-out-dir">pack.raku alias remove-out-dir</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_remove-extra-sources">pack.raku alias remove-extra-sources</a></td></tr>
+ <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_alias_get-schema">pack.raku alias get-schema</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
@@ -720,6 +724,10 @@ footer {
 <li><p><a href="#packraku-alias-append-extra-sources">pack.raku alias append-extra-sources</a></p></li>
 <li><p><a href="#packraku-alias-remove-schema">pack.raku alias remove-schema</a></p></li>
 <li><p><a href="#packraku-alias-remove-podir">pack.raku alias remove-podir</a></p></li>
+<li><p><a href="#packraku-alias-remove-gettext-domain">pack.raku alias remove-gettext-domain</a></p></li>
+<li><p><a href="#packraku-alias-remove-out-dir">pack.raku alias remove-out-dir</a></p></li>
+<li><p><a href="#packraku-alias-remove-extra-sources">pack.raku alias remove-extra-sources</a></p></li>
+<li><p><a href="#packraku-alias-get-schema">pack.raku alias get-schema</a></p></li>
 </ul>
 <h2 id="key_=&gt;_directory_management_methods"><a href="#___top" class="u" title="go to top of document">key =&gt; directory management methods</a></h2>
 <ul>
@@ -1294,6 +1302,42 @@ Usage:
 </pre><p>Remove the value of <code>podir</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-gettext-domain --help
+
+Usage:
+  pack.raku alias remove-gettext-domain &lt;key&gt;
+
+</pre><p>Remove the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-out-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-out-dir --help
+
+Usage:
+  pack.raku alias remove-out-dir &lt;key&gt;
+
+</pre><p>Remove the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-extra-sources --help
+
+Usage:
+  pack.raku alias remove-extra-sources &lt;key&gt;
+
+</pre><p>Truncate the <code>extra-sources</code> in <code>&lt;package-dir&gt;/.pack_args.json</code> list.</p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias get-schema --help
+
+Usage:
+  pack.raku alias get-schema &lt;key&gt;
+
+</pre><p>Get the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
+<li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
+</ul>
 <p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
 
@@ -1695,7 +1739,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-16T23:21:48Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-17T08:17:00Z</span></div></footer>
 	</body>
 </html>
 
