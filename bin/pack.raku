@@ -65,7 +65,7 @@ Table of Contents
 =item1 L<pack.raku get extra-sources|#packraku-get-extra-sources>
 =item1 L<pack.raku get force|#packraku-get-force>
 
-L<Table of Contents|#table-of-contents>
+L<Top of Table of Contents|#table-of-contents>
 
 =head1 key => directory methods
 =item1 L<pack.raku alias add|#packraku-alias-add>
@@ -89,7 +89,7 @@ L<Table of Contents|#table-of-contents>
 =item1 L<pack.raku alias remove-extra-sources|#packraku-alias-remove-extra-sources>
 =item1 L<pack.raku alias get-schema|#packraku-alias-get-schema>
 
-L<Table of Contents|#table-of-contents>
+L<Top of Table of Contents|#table-of-contents>
 
 =head2 key => directory management methods
 =item1 L<pack.raku edit configs|#packraku-edit-configs>
@@ -110,7 +110,7 @@ L<Table of Contents|#table-of-contents>
 =item1 L<pack.raku menu restore db|#packraku-menu-restore-db>
 =item1 L<pack.raku list db backups|#packraku-list-db-backups>
 
-L<Table of Contents|#table-of-contents>
+L<Top of Table of Contents|#table-of-contents>
 
 =head1 Editor functions/methods
 =item1 L<pack.raku list editors|#packraku-list-editors>
@@ -122,24 +122,24 @@ L<Table of Contents|#table-of-contents>
 =item1 L<pack.raku set override GUI_EDITOR|#packraku-set-override-GUI_EDITOR>
 =item1 L<pack.raku menu restore editors|#packraku-menu-restore-editors>
 
-L<Table of Contents|#table-of-contents>
+L<Top of Table of Contents|#table-of-contents>
 
 =head1 USAGE stuff
 =item1 L<pack.raku USAGE|#packraku-USAGE>
 =item1 L<multi sub GENERATE-USAGE|#multi-sub-GENERATE-USAGE>
 
-L<Table of Contents|#table-of-contents>
+L<Top of Table of Contents|#table-of-contents>
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.30
+=VERSION v0.1.31
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
 =COPYRIGHT
 GPL V3.0+ L<LICENSE|https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE>
 
-L<Top of Document|#table-of-contents>
+L<Top of Top of Document|#table-of-contents>
 
 =head1 Introduction
 

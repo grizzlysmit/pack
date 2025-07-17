@@ -83,7 +83,7 @@ Table of Contents
 
   * [pack.raku get force](#packraku-get-force)
 
-[Table of Contents](#table-of-contents)
+[Top of Table of Contents](#table-of-contents)
 
 key => directory methods
 ========================
@@ -128,7 +128,7 @@ key => directory methods
 
   * [pack.raku alias get-schema](#packraku-alias-get-schema)
 
-[Table of Contents](#table-of-contents)
+[Top of Table of Contents](#table-of-contents)
 
 key => directory management methods
 -----------------------------------
@@ -167,7 +167,7 @@ key => directory management methods
 
   * [pack.raku list db backups](#packraku-list-db-backups)
 
-[Table of Contents](#table-of-contents)
+[Top of Table of Contents](#table-of-contents)
 
 Editor functions/methods
 ========================
@@ -188,7 +188,7 @@ Editor functions/methods
 
   * [pack.raku menu restore editors](#packraku-menu-restore-editors)
 
-[Table of Contents](#table-of-contents)
+[Top of Table of Contents](#table-of-contents)
 
 USAGE stuff
 ===========
@@ -197,7 +197,7 @@ USAGE stuff
 
   * [multi sub GENERATE-USAGE](#multi-sub-GENERATE-USAGE)
 
-[Table of Contents](#table-of-contents)
+[Top of Table of Contents](#table-of-contents)
 
 NAME
 ====
@@ -212,7 +212,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.30
+v0.1.31
 
 TITLE
 =====
@@ -229,7 +229,7 @@ COPYRIGHT
 
 GPL V3.0+ [LICENSE](https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE)
 
-[Top of Document](#table-of-contents)
+[Top of Top of Document](#table-of-contents)
 
 Introduction
 ============
