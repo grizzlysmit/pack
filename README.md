@@ -194,7 +194,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.25
+v0.1.26
 
 TITLE
 =====
@@ -1215,7 +1215,7 @@ Usage:
   pack.raku alias remove-extra-sources <key>
 ```
 
-Truncate the `extra-sources` in `<package-dir>/.pack_args.json` list.
+Truncate the `extra-sources` list in `<package-dir>/.pack_args.json`.
 
 Where
 

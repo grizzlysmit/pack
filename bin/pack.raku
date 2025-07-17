@@ -117,7 +117,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.25
+=VERSION v0.1.26
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -1544,7 +1544,7 @@ Usage:
 
 =end code
 
-Truncate the C«extra-sources» in C«<package-dir>/.pack_args.json» list.
+Truncate the C«extra-sources» list in C«<package-dir>/.pack_args.json».
 
 Where
 =item1 C«<key>»            The key of the extension.
