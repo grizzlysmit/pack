@@ -83,6 +83,8 @@ Table of Contents
 
   * [pack.raku get force](#packraku-get-force)
 
+[Table of Contents](#table-of-contents)
+
 key => directory methods
 ========================
 
@@ -126,6 +128,8 @@ key => directory methods
 
   * [pack.raku alias get-schema](#packraku-alias-get-schema)
 
+[Table of Contents](#table-of-contents)
+
 key => directory management methods
 -----------------------------------
 
@@ -163,6 +167,8 @@ key => directory management methods
 
   * [pack.raku list db backups](#packraku-list-db-backups)
 
+[Table of Contents](#table-of-contents)
+
 Editor functions/methods
 ========================
 
@@ -182,12 +188,16 @@ Editor functions/methods
 
   * [pack.raku menu restore editors](#packraku-menu-restore-editors)
 
+[Table of Contents](#table-of-contents)
+
 USAGE stuff
 ===========
 
   * [pack.raku USAGE](#packraku-USAGE)
 
   * [multi sub GENERATE-USAGE](#multi-sub-GENERATE-USAGE)
+
+[Table of Contents](#table-of-contents)
 
 NAME
 ====
@@ -202,7 +212,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.29
+v0.1.30
 
 TITLE
 =====
@@ -244,6 +254,8 @@ You can leave the `--prefs` out if you don't need settings (i.e. a prefs.js file
 The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran `pack.raku plugin new` from. The underlying program **gnome-extensions create** creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. **NB: I use the words "plugin" extension "interchangeably".**
 
   * [(See pack.raku plugin new)](#packraku-plugin-new---help)
+
+[Table of Contents](#table-of-contents)
 
 If you want to manage an existing extension then use:
 
