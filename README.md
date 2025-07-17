@@ -31,7 +31,7 @@ Table of Contents
 
     * [key => directory management methods](#key--directory-management-methods)
 
-    * [Editor functions/methods](#editor-functions-methods)
+    * [Editor functions/methods](#editor-functionsmethods)
 
     * [USAGE stuff](#usage-stuff)
 
@@ -202,7 +202,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.28
+v0.1.29
 
 TITLE
 =====

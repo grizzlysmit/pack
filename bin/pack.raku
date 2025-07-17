@@ -38,7 +38,7 @@ Table of Contents
 =item1 L<Pack|#pack>
 =item2 L«key => directory methods|#key--directory-methods»
 =item2 L«key => directory management methods|#key--directory-management-methods»
-=item2 L«Editor functions/methods|#editor-functions-methods»
+=item2 L«Editor functions/methods|#editor-functionsmethods»
 =item2 L«USAGE stuff|#usage-stuff»
 =item1 L<pack.raku --help|#pack>
 =item1 L<pack.raku do --help|#packraku-do---help>
@@ -121,7 +121,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.28
+=VERSION v0.1.29
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
