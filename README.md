@@ -90,17 +90,17 @@ key => directory methods
 
   * [pack.raku alias add-extra-sources](#packraku-alias-add-extra-sources)
 
-  * [pack.raku alias set schema](#packraku-alias-set-schema)
+  * [pack.raku alias set-schema](#packraku-alias-set-schema)
 
-  * [pack.raku alias set podir](#packraku-alias-set-podir)
+  * [pack.raku alias set-podir](#packraku-alias-set-podir)
 
-  * [pack.raku alias set gettext-domain](#packraku-alias-set-gettext-domain)
+  * [pack.raku alias set-gettext-domain](#packraku-alias-set-gettext-domain)
 
-  * [pack.raku alias set out-dir](#packraku-alias-set-out-dir)
+  * [pack.raku alias set-out-dir](#packraku-alias-set-out-dir)
 
-  * [pack.raku alias set force](#packraku-alias-set-force)
+  * [pack.raku alias set-force](#packraku-alias-set-force)
 
-  * [pack.raku alias set package-dir](#packraku-alias-set-package-dir)
+  * [pack.raku alias set-package-dir](#packraku-alias-set-package-dir)
 
   * [pack.raku alias set-extra-sources](#packraku-alias-set-extra-sources)
 
@@ -194,7 +194,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.26
+v0.1.27
 
 TITLE
 =====

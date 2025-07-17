@@ -68,12 +68,12 @@ Table of Contents
 =item2 L<Recommended Usage|#recommended-usage>
 =item1 L<pack.raku plugin add|#packraku-plugin-add>
 =item1 L<pack.raku alias add-extra-sources|#packraku-alias-add-extra-sources>
-=item1 L<pack.raku alias set schema|#packraku-alias-set-schema>
-=item1 L<pack.raku alias set podir|#packraku-alias-set-podir>
-=item1 L<pack.raku alias set gettext-domain|#packraku-alias-set-gettext-domain>
-=item1 L<pack.raku alias set out-dir|#packraku-alias-set-out-dir>
-=item1 L<pack.raku alias set force|#packraku-alias-set-force>
-=item1 L<pack.raku alias set package-dir|#packraku-alias-set-package-dir>
+=item1 L<pack.raku alias set-schema|#packraku-alias-set-schema>
+=item1 L<pack.raku alias set-podir|#packraku-alias-set-podir>
+=item1 L<pack.raku alias set-gettext-domain|#packraku-alias-set-gettext-domain>
+=item1 L<pack.raku alias set-out-dir|#packraku-alias-set-out-dir>
+=item1 L<pack.raku alias set-force|#packraku-alias-set-force>
+=item1 L<pack.raku alias set-package-dir|#packraku-alias-set-package-dir>
 =item1 L<pack.raku alias set-extra-sources|#packraku-alias-set-extra-sources>
 =item1 L<pack.raku alias append-extra-sources|#packraku-alias-append-extra-sources>
 =item1 L<pack.raku alias remove-schema|#packraku-alias-remove-schema>
@@ -117,7 +117,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.26
+=VERSION v0.1.27
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
