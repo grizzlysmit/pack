@@ -27,6 +27,14 @@ Table of Contents
 
   * [Pack](#pack)
 
+    * [key => directory methods](#key--directory-methods)
+
+    * [key => directory management methods](#key--directory-management-methods)
+
+    * [Editor functions/methods](#editor-functions-methods)
+
+    * [USAGE stuff](#usage-stuff)
+
   * [pack.raku --help](#pack)
 
   * [pack.raku do --help](#packraku-do---help)
@@ -194,7 +202,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.27
+v0.1.28
 
 TITLE
 =====
