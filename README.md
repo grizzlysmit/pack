@@ -83,6 +83,8 @@ Table of Contents
 
   * [pack.raku get force](#packraku-get-force)
 
+  * [pack.raku get package-dir](#packraku-get-package-dir)
+
   * [Top of Table of Contents](#table-of-contents)
 
 key => directory methods
@@ -127,6 +129,18 @@ key => directory methods
   * [pack.raku alias remove-extra-sources](#packraku-alias-remove-extra-sources)
 
   * [pack.raku alias get-schema](#packraku-alias-get-schema)
+
+  * [pack.raku alias get-podir](#packraku-alias-get-podir)
+
+  * [pack.raku alias get-gettext-domain](#packraku-alias-get-gettext-domain)
+
+  * [pack.raku alias get-out-dir](#packraku-alias-get-out-dir)
+
+  * [pack.raku alias get-extra-sources](#packraku-alias-get-extra-sources)
+
+  * [pack.raku alias get-force](#packraku-alias-get-force)
+
+  * [pack.raku alias get-package-dir](#packraku-alias-get-package-dir)
 
   * [Top of Table of Contents](#table-of-contents)
 
@@ -212,7 +226,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.33
+v0.1.34
 
 TITLE
 =====
@@ -264,6 +278,22 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 ```
 
   * [(See pack.raku plugin add)](#packraku-plugin-add)
+
+[Table of Contents](#table-of-contents)
+
+to package a extension just call 
+
+```bash
+pack.raku alias do <key> --force
+```
+
+or to package many this
+
+```bash
+pack.raku alias do <key0> <key1> <key2> ... <keyn> --force
+```
+
+  * [See pack.raku alias do --help](#packraku-alias-do---help).
 
 [Table of Contents](#table-of-contents)
 
@@ -804,6 +834,26 @@ Where
 
 [Table of Contents](#table-of-contents)
 
+pack.raku get package-dir
+=========================
+
+```bash
+pack.raku get package-dir --help
+
+Usage:
+  pack.raku get package-dir <package-dir>
+```
+
+Get the value of package-dir in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<package-dir>` Directory containing plugin.
+
+    * kind of redundant as it needs `package-dir` to get `package-dir`.
+
+[Table of Contents](#table-of-contents)
+
 pack.raku alias add
 ===================
 
@@ -1254,6 +1304,112 @@ Usage:
 ```
 
 Get the value of schema in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-podir
+=========================
+
+```bash
+pack.raku alias get-podir --help
+
+Usage:
+  pack.raku alias get-podir <key>
+```
+
+Get the value of `podir` in `<package-dir>/.pack_args.json`
+
+  * **NB: `podir` is the path to the directory containing the po files.**
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-gettext-domain
+==================================
+
+```bash
+pack.raku alias get-gettext-domain --help
+
+Usage:
+  pack.raku alias get-gettext-domain <key>
+```
+
+Get the value of `gettext-domain` in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-out-dir
+===========================
+
+```bash
+pack.raku alias get-out-dir --help
+
+Usage:
+  pack.raku alias get-out-dir <key>
+```
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-extra-sources
+=================================
+
+```bash
+pack.raku alias get-extra-sources --help
+
+Usage:
+  pack.raku alias get-extra-sources <key>
+```
+
+Get the value of the `extra-sources` list in `<package-dir>/.pack_args.json`.
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-force
+=========================
+
+```bash
+pack.raku alias get-force --help
+
+Usage:
+  pack.raku alias get-force <key>
+```
+
+Get the value of force in `<package-dir>/.pack_args.json`
+
+Where
+
+  * `<key>` The key of the extension.
+
+[Table of Contents](#table-of-contents)
+
+pack.raku alias get-package-dir
+===============================
+
+```bash
+pack.raku alias get-package-dir --help
+
+Usage:
+  pack.raku alias get-package-dir <key>
+```
+
+Get the value of package-dir in `<package-dir>/.pack_args.json`
 
 Where
 

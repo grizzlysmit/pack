@@ -64,6 +64,7 @@ Table of Contents
 =item1 L<pack.raku get out-dir|#packraku-get-out-dir>
 =item1 L<pack.raku get extra-sources|#packraku-get-extra-sources>
 =item1 L<pack.raku get force|#packraku-get-force>
+=item1 L<pack.raku get package-dir|#packraku-get-package-dir>
 
 =item1 L<Top of Table of Contents|#table-of-contents>
 
@@ -88,6 +89,12 @@ Table of Contents
 =item1 L<pack.raku alias remove-out-dir|#packraku-alias-remove-out-dir>
 =item1 L<pack.raku alias remove-extra-sources|#packraku-alias-remove-extra-sources>
 =item1 L<pack.raku alias get-schema|#packraku-alias-get-schema>
+=item1 L<pack.raku alias get-podir|#packraku-alias-get-podir>
+=item1 L<pack.raku alias get-gettext-domain|#packraku-alias-get-gettext-domain>
+=item1 L<pack.raku alias get-out-dir|#packraku-alias-get-out-dir>
+=item1 L<pack.raku alias get-extra-sources|#packraku-alias-get-extra-sources>
+=item1 L<pack.raku alias get-force|#packraku-alias-get-force>
+=item1 L<pack.raku alias get-package-dir|#packraku-alias-get-package-dir>
 
 =item1 L<Top of Table of Contents|#table-of-contents>
 
@@ -132,7 +139,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.33
+=VERSION v0.1.34
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -179,6 +186,26 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 =end code
 
 =item1 L<(See pack.raku plugin add)|#packraku-plugin-add>
+
+L<Table of Contents|#table-of-contents>
+
+to package a extension just call 
+
+=begin code :lang<bash>
+
+pack.raku alias do <key> --force
+
+=end code
+
+or to package many this
+
+=begin code :lang<bash>
+
+pack.raku alias do <key0> <key1> <key2> ... <keyn> --force
+
+=end code
+
+=item1 L«See pack.raku alias do --help|#packraku-alias-do---help».
 
 L<Table of Contents|#table-of-contents>
 
@@ -937,6 +964,29 @@ multi sub MAIN('get', 'force', Str $package-dir --> int){
     return 0;
 }
 
+=begin pod
+
+=head1 pack.raku get package-dir
+
+=begin code :lang<bash>
+
+pack.raku get package-dir --help
+
+Usage:
+  pack.raku get package-dir <package-dir>
+
+=end code
+
+Get the value of package-dir in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<package-dir>»  Directory containing plugin.
+=item2 kind of redundant as it needs C«package-dir» to get C«package-dir».
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
 multi sub MAIN('get', 'package-dir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'package-dir');
     return 0;
@@ -1603,6 +1653,177 @@ multi sub MAIN('alias', 'get-schema', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
     die "Error: parameter unknown" unless get($package-dir, 'schema');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-podir
+
+=begin code :lang<bash>
+
+pack.raku alias get-podir --help
+
+Usage:
+  pack.raku alias get-podir <key>
+
+=end code
+
+Get the value of C«podir» in C«<package-dir>/.pack_args.json»
+=item1 B«NB: C<podir> is the path to the directory containing the po files.»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-podir', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'podir');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-gettext-domain
+
+=begin code :lang<bash>
+
+pack.raku alias get-gettext-domain --help
+
+Usage:
+  pack.raku alias get-gettext-domain <key>
+
+=end code
+
+Get the value of C«gettext-domain» in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-gettext-domain', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'gettext-domain');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-out-dir
+
+=begin code :lang<bash>
+
+pack.raku alias get-out-dir --help
+
+Usage:
+  pack.raku alias get-out-dir <key>
+
+=end code
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-out-dir', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'out-dir');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-extra-sources
+
+=begin code :lang<bash>
+
+pack.raku alias get-extra-sources --help
+
+Usage:
+  pack.raku alias get-extra-sources <key>
+
+=end code
+
+Get the value of the C«extra-sources» list in C«<package-dir>/.pack_args.json».
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-extra-sources', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'extra-sources');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-force
+
+=begin code :lang<bash>
+
+pack.raku alias get-force --help
+
+Usage:
+  pack.raku alias get-force <key>
+
+=end code
+
+Get the value of force in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-force', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'force');
+    return 0;
+}
+
+=begin pod
+
+=head1 pack.raku alias get-package-dir
+
+=begin code :lang<bash>
+
+pack.raku alias get-package-dir --help
+
+Usage:
+  pack.raku alias get-package-dir <key>
+
+=end code
+
+Get the value of package-dir in C«<package-dir>/.pack_args.json»
+
+Where
+=item1 C«<key>»            The key of the extension.
+
+L<Table of Contents|#table-of-contents>
+
+=end pod
+
+multi sub MAIN('alias', 'get-package-dir', Str:D $key --> int){
+    my Str:D $package-dir = path($key);
+    die "key: $key not found" unless $package-dir;
+    die "Error: parameter unknown" unless get($package-dir, 'package-dir');
     return 0;
 }
 
