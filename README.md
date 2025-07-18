@@ -25,6 +25,12 @@ Table of Contents
 
       * [A brief tutorial.](#a-brief-tutorial)
 
+      * [To create a new plugin just call](#to-create-a-new-plugin-just-call)
+
+      * [If you want to manage an existing extension then use](#if-you-want-to-manage-an-existing-extension-then-use)
+
+      * [To package a extension just call](#to-package-a-extension-just-call)
+
   * [Pack](#pack)
 
     * [key => directory methods](#key--directory-methods)
@@ -226,7 +232,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.34
+v0.1.35
 
 TITLE
 =====
@@ -255,9 +261,10 @@ Motivation
 
 The command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
-### A brief tutorial.
+A brief tutorial.
+-----------------
 
-To create a new plugin just call 
+### To create a new plugin just call 
 
 ```bash
 pack.raku plugin new <key> --prefs --schema-file --podirs --force
@@ -271,7 +278,7 @@ The program will prompt for all the parameters it requires once run it will have
 
 [Table of Contents](#table-of-contents)
 
-If you want to manage an existing extension then use:
+### If you want to manage an existing extension then use
 
 ```bash
 pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --force --mk-schema
@@ -281,13 +288,13 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 
 [Table of Contents](#table-of-contents)
 
-to package a extension just call 
+### To package a extension just call 
 
 ```bash
 pack.raku alias do <key> --force
 ```
 
-or to package many this
+#### Or to package many this
 
 ```bash
 pack.raku alias do <key0> <key1> <key2> ... <keyn> --force

@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.34" />
+<meta name="version" value="v0.1.35" />
 <style>.comment {
   color: #666; }
 
@@ -588,7 +588,11 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#Copyright">Copyright</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#Introduction">Introduction</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#Motivation">Motivation</a></td></tr>
- <tr class="toc-level-3"><td class="toc-text"><a href="#A_brief_tutorial.">A brief tutorial.</a></td></tr>
+ <tr class="toc-level-2"><td class="toc-text"><a href="#A_brief_tutorial.">A brief tutorial.</a></td></tr>
+ <tr class="toc-level-3"><td class="toc-text"><a href="#To_create_a_new_plugin_just_call_">To create a new plugin just call </a></td></tr>
+ <tr class="toc-level-3"><td class="toc-text"><a href="#If_you_want_to_manage_an_existing_extension_then_use">If you want to manage an existing extension then use</a></td></tr>
+ <tr class="toc-level-3"><td class="toc-text"><a href="#To_package_a_extension_just_call_">To package a extension just call </a></td></tr>
+ <tr class="toc-level-4"><td class="toc-text"><a href="#Or_to_package_many_this">Or to package many this</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#pack">pack</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
@@ -683,6 +687,9 @@ footer {
 <li><p><a href="#motivation">Motivation</a></p></li>
 <ul>
 <li><p><a href="#a-brief-tutorial">A brief tutorial.</a></p></li>
+<li><p><a href="#to-create-a-new-plugin-just-call">To create a new plugin just call</a></p></li>
+<li><p><a href="#if-you-want-to-manage-an-existing-extension-then-use">If you want to manage an existing extension then use</a></p></li>
+<li><p><a href="#to-package-a-extension-just-call">To package a extension just call</a></p></li>
 </ul>
 </ul>
 <li><p><a href="#pack">Pack</a></p></li>
@@ -800,20 +807,24 @@ footer {
 </section>
 <p><a href="#table-of-contents">Top of Top of Document</a></p><h1 id="Introduction"><a href="#pack_0" class="u" title="go to top of document">Introduction</a></h1>
 <p>This is a Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
-<p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><h3 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h3>
-<p>To create a new plugin just call </p><pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --prefs --schema-file --podirs --force
+<p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><h2 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h2>
+<h3 id="To_create_a_new_plugin_just_call_"><a href="#pack_0" class="u" title="go to top of document">To create a new plugin just call </a></h3>
+<pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --prefs --schema-file --podirs --force
 
 </pre><p>You can leave the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file) you can leave out <code>--schema-file</code> if you do not need a schema file, and you can leave <code>--podirs</code> if you don't want internationalisation and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran <code>pack.raku plugin new</code> from. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. <strong>NB: I use the words &quot;plugin&quot; extension &quot;interchangeably&quot;.</strong></p><ul>
 <li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p><p>If you want to manage an existing extension then use:</p><pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
+<p><a href="#table-of-contents">Table of Contents</a></p><h3 id="If_you_want_to_manage_an_existing_extension_then_use"><a href="#pack_0" class="u" title="go to top of document">If you want to manage an existing extension then use</a></h3>
+<pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
 
 </pre><ul>
 <li><p><a href="#packraku-plugin-add">(See pack.raku plugin add)</a></p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p><p>to package a extension just call </p><pre class="pod-block-code">pack.raku alias do &lt;key&gt; --force
+<p><a href="#table-of-contents">Table of Contents</a></p><h3 id="To_package_a_extension_just_call_"><a href="#pack_0" class="u" title="go to top of document">To package a extension just call </a></h3>
+<pre class="pod-block-code">pack.raku alias do &lt;key&gt; --force
 
-</pre><p>or to package many this</p><pre class="pod-block-code">pack.raku alias do &lt;key0&gt; &lt;key1&gt; &lt;key2&gt; ... &lt;keyn&gt; --force
+</pre><h4 id="Or_to_package_many_this"><a href="#pack_0" class="u" title="go to top of document">Or to package many this</a></h4>
+<pre class="pod-block-code">pack.raku alias do &lt;key0&gt; &lt;key1&gt; &lt;key2&gt; ... &lt;keyn&gt; --force
 
 </pre><ul>
 <li><p><a href="#packraku-alias-do---help">See pack.raku alias do --help</a>.</p></li>
@@ -1840,7 +1851,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-18T06:28:03Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-18T07:05:44Z</span></div></footer>
 	</body>
 </html>
 

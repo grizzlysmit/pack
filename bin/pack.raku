@@ -35,6 +35,9 @@ Table of Contents
 =item1 L<Introduction|#introduction>
 =item2 L<Motivation|#motivation>
 =item3 L<A brief tutorial.|#a-brief-tutorial>
+=item3 L<To create a new plugin just call|#to-create-a-new-plugin-just-call>
+=item3 L<If you want to manage an existing extension then use|#if-you-want-to-manage-an-existing-extension-then-use>
+=item3 L<To package a extension just call|#to-package-a-extension-just-call>
 =item1 L<Pack|#pack>
 =item2 L«key => directory methods|#key--directory-methods»
 =item2 L«key => directory management methods|#key--directory-management-methods»
@@ -139,7 +142,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.34
+=VERSION v0.1.35
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -157,9 +160,9 @@ This is a Raku program to manage the use of B<gnome-extensions pack>, it has too
 The command B<gnome-extensions pack> has too many arguments this takes care of that making it easier to package
 up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
 
-=head3 A brief tutorial.
+=head2 A brief tutorial.
 
-To create a new plugin just call 
+=head3 To create a new plugin just call 
 
 =begin code :lang<bash>
 
@@ -177,7 +180,7 @@ B«NB: I use the words "plugin" extension "interchangeably".»
 
 L<Table of Contents|#table-of-contents>
 
-If you want to manage an existing extension then use:
+=head3 If you want to manage an existing extension then use
 
 =begin code :lang<bash>
 
@@ -189,7 +192,7 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 
 L<Table of Contents|#table-of-contents>
 
-to package a extension just call 
+=head3 To package a extension just call 
 
 =begin code :lang<bash>
 
@@ -197,7 +200,7 @@ pack.raku alias do <key> --force
 
 =end code
 
-or to package many this
+=head4 Or to package many this
 
 =begin code :lang<bash>
 

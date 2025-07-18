@@ -44,6 +44,24 @@ A brief tutorial\&. [#a-brief-tutorial]
 .RE
 .RE
 .RS 2n
+.RS 2n
+.IP \(bu 2m
+To create a new plugin just call [#to-create-a-new-plugin-just-call]
+.RE
+.RE
+.RS 2n
+.RS 2n
+.IP \(bu 2m
+If you want to manage an existing extension then use [#if-you-want-to-manage-an-existing-extension-then-use]
+.RE
+.RE
+.RS 2n
+.RS 2n
+.IP \(bu 2m
+To package a extension just call [#to-package-a-extension-just-call]
+.RE
+.RE
+.RS 2n
 .IP \(bu 2m
 Pack [#pack]
 .RE
@@ -404,7 +422,7 @@ App::pack
 .SH "AUTHOR"
 Francis Grizzly Smit (grizzly@smit\&.id\&.au)
 .SH "VERSION"
-v0\&.1\&.34
+v0\&.1\&.35
 .SH "TITLE"
 pack
 .SH "SUBTITLE"
@@ -420,8 +438,7 @@ This is a Raku program to manage the use of \fBgnome\-extensions pack\fR, it has
 
 The command \fBgnome\-extensions pack\fR has too many arguments this takes care of that making it easier to package up your gnome\-shell extensions; at the expense of setting up a configuration file once, and there are methods for that\&. 
 .SS A brief tutorial\&.
-
-To create a new plugin just call 
+.SS To create a new plugin just call 
 
 .RS 4m
 .EX
@@ -440,8 +457,7 @@ The program will prompt for all the parameters it requires once run it will have
 .RE
 
 Table of Contents [#table-of-contents]
-
-If you want to manage an existing extension then use:
+.SS If you want to manage an existing extension then use
 
 .RS 4m
 .EX
@@ -456,8 +472,7 @@ pack\&.raku plugin add <key> <uuid> [<extra\-sources1> <extra\-sources2> \&.\&.\
 .RE
 
 Table of Contents [#table-of-contents]
-
-to package a extension just call 
+.SS To package a extension just call 
 
 .RS 4m
 .EX
@@ -466,8 +481,7 @@ pack\&.raku alias do <key> \-\-force
 
 .EE
 .RE
-.P
-or to package many this
+.SS Or to package many this
 
 .RS 4m
 .EX
