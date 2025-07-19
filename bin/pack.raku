@@ -1129,16 +1129,17 @@ L<Table of Contents|#table-of-contents>
 =end pod
 
 multi sub MAIN('plugin', 'new', Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str,
-                Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str,
+                Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str, Str :$credits = Str,
                 Bool:D :$prefs = False, Bool:D :$schema-file = False, Bool:D :$podirs = False,
+                Bool:D :$add-credits = False, Bool:D :a(:all-parmas(:$all)) = False, 
                 Bool:D :f(:$force) = False, Bool:D :s(:$silent) = False, Bool:D :b(:$backtrace) = False,
                 Str:D :l(:$dev-lang) = ((%*ENV«DEV_LANG»:exists) ?? (~%*ENV«DEV_LANG») !! 'en'), 
                 Str:D :o(:output(:development-dir(:$dev-dir))) = '.' --> int) {
     my Str:D $home = ~%*ENV«HOME»;
     my Str:D $xdg_config_home = (%*ENV«XDG_CONFIG_HOME»:exists ?? ~%*ENV«XDG_CONFIG_HOME» !! "$home/.local/share" );
     unless new-plugin($key, $uuid, $name, $description, $gettext-domain, $settings-schema, $template,
-                      $prefs, $schema-file, $podirs, $force, $home, $xdg_config_home, $silent,
-                      $backtrace, $dev-lang, ($dev-dir.IO.resolve.absolute.Str)) {
+                      $credits, $prefs, $schema-file, $podirs, $force, $home, $xdg_config_home, $silent,
+                      $backtrace, $dev-lang, ($dev-dir.IO.resolve.absolute.Str), $add-credits, $all) {
         die "new-plugin exited with a bad value {exitcode}";
     }
     return 0;
@@ -1201,7 +1202,7 @@ multi sub MAIN('plugin', 'add', Str:D $key, Str:D $uuid, Str:D :p(:extension-dir
                 *@extra-sources --> int) {
     my Str:D $home = ~%*ENV«HOME»;
     my Str:D $xdg_config_home = (%*ENV«XDG_CONFIG_HOME»:exists ?? ~%*ENV«XDG_CONFIG_HOME» !! "$home/.local/share" );
-    unless add-plugin($key, ($plugin-dir.resolve.absolute.Str), $uuid, $podir, $force, $home, $xdg_config_home,
+    unless add-plugin($key, ($plugin-dir.IO.resolve.absolute.Str), $uuid, $podir, $force, $home, $xdg_config_home,
                 $silent, $backtrace, $dev-lang, $mk-schema, @extra-sources) {
         die "run exited with a bad value {exitcode}";
     }

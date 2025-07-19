@@ -2298,10 +2298,13 @@ done
                     @extra-sources, Bool:D $run, Bool:D $silent, Bool:D $backtrace --> Bool:D) is export »»
 
 sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $description is copy,
-                Str $gettext-domain is copy, Str $settings-schema is copy, Str $template,
-                Bool:D $prefs is copy, Bool:D $schema-file, Bool:D $podirs, Bool:D $force,
+                Str $gettext-domain is copy, Str $settings-schema is copy, Str $template, Str $credits is copy,
+                Bool:D $prefs is copy, Bool:D $schema-file is copy, Bool:D $podirs is copy, Bool:D $force,
                 Str:D $home, Str:D $xdg_config_home, Bool:D $silent, Bool:D $backtrace, Str:D $dev-lang,
-                Str:D $dev-dir --> Bool:D) is export {
+                Str:D $dev-dir, Bool:D $add-credits is copy, Bool:D $all --> Bool:D) is export {
+    if $all {
+        $prefs = $schema-file = $podirs = $add-credits = True;
+    }
     my Str:D $extensions = $xdg_config_home ~ '/gnome-shell/extensions';
     without $uuid {
         while !$uuid {
@@ -2341,7 +2344,7 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
         }
         my Str $input;
         while !$gettext-domain {
-            $input = prompt "name: $gettext-domain_? hit enter to accept or type in new value followed by enter.";
+            $input = prompt "gettext-domain: $gettext-domain_? hit enter to accept or type in new value followed by enter.";
             with $input {
                 $input = $input.chomp;
                 if $input eq '' {
@@ -2374,12 +2377,21 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
             "Please supply a valid settings-schema".say  unless $settings-schema;
         }
     }
+    if $add-credits {
+        without $credits {
+            while !$credits {
+                $credits = get-multi-line-value("Please enter credits lines!");
+                "Please supply valid credits lines".say  unless $credits;
+            }
+            dd $credits;
+        }
+    }
     my @cmd = qqww[gnome-extensions create];
     push @cmd, "--uuid=$uuid" if $uuid;
     push @cmd, "--name=$name" if $name;
     if $description {
-        $description ~~ s:g/\n/\\n/;
-        push @cmd, qq[--description="$description"];
+        #$description ~~ s:g/\n/\\n/;
+        push @cmd, qq[--description=$description];
     }
     push @cmd, "--gettext-domain=$gettext-domain" if $gettext-domain;
     push @cmd, "--settings-schema=$settings-schema" if $settings-schema;
@@ -2401,12 +2413,24 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
                     qq[key: $key => "$dev-dir/$uuid" Failed to add].say;
                 } 
                 my @extra-sources;
+                my $plugin-location    = $dev-dir.IO.add($uuid).resolve;
+                my $file-cont          = $plugin-location.add('metadata.json').slurp(:utf8);
+                my $data               = from-json $file-cont;
+                my Bool:D $dirty       = False;
+                with $credits {
+                    %$data«credits»    = $credits;
+                    $dirty             = True;
+                }
                 my Str $schema = Str;
                 if $schema-file {
                     my IO::Path $sc = $dev-dir.IO.add($uuid).add('schemas').resolve;
-                    $schema = "org.gnome.shell.extensions.{$gettext-domain}.gschema.xml";
-                    make-schema($sc, $gettext-domain, $schema, $silent, $backtrace);
+                    $schema = "org.gnome.shell.extensions.{$gettext-domain}";
+                    if make-schema($sc, $gettext-domain, "{$schema}.gschema.xml", $silent, $backtrace) {
+                        %$data«settings-schema» = $schema;
+                        $dirty                  = True;
+                    }
                 } # if $schema-file #
+                $plugin-location.add('metadata.json').spurt(to-json($data, :pretty, :spacing(4), :sorted-keys)) if $dirty;
                 my Str $podir = Str;
                 if $podirs {
                     $podir = 'po';
@@ -2415,7 +2439,7 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
                     make-compile-sh($dev-dir.IO.add($uuid).resolve, $gettext-domain,
                                                 $dev-lang, $prefs, @extra-sources, True, $silent, $backtrace);
                 } # if $podirs #
-                if create-config($dev-dir.IO.add($uuid).resolve.path, $schema, $podir,
+                if create-config($dev-dir.IO.add($uuid).resolve.path, "schemas/{$schema}.gschema.xml", $podir,
                                  $gettext-domain, $dev-dir, $force, @extra-sources) {
                     ".pack_args.json created".say;
                 } else {
@@ -2473,13 +2497,15 @@ sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, B
         if $plugin-location.add('schemas').resolve.add("{$schema}.gschema.xml") ~~ :f {
             $schema         = "schemas/$schema";
         } elsif $mk-schema {
-            make-schema($plugin-location.add('schema').resolve, $gettext-domain, $schema, $silent, $backtrace);
+            make-schema($plugin-location.add('schema').resolve, $gettext-domain, "{$schema}.gschema.xml", $silent, $backtrace);
+            $schema         = "schemas/$schema";
         }
     } elsif $mk-schema {
         $schema = "org.gnome.shell.extensions.{$gettext-domain}";
-        make-schema($plugin-location.add('schemas').resolve, $gettext-domain, "$schema.gschema.xml", $silent, $backtrace);
+        make-schema($plugin-location.add('schemas').resolve, $gettext-domain, "{$schema}.gschema.xml", $silent, $backtrace);
         %$data«settings-schema» = $schema;
         $plugin-location.add('metadata.json').spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
+        $schema         = "schemas/$schema";
     }
     $podir = Str unless $plugin-location.add($podir).resolve ~~ :d;
     with $podir {
@@ -2495,7 +2521,7 @@ sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, B
     } else {
         qq[key: $key => "$plugin-dir/$uuid" Failed to add].say;
     } 
-    if create-config($plugin-location.path, $schema, $podir,
+    if create-config($plugin-location.path, "{$schema}.gschema.xml", $podir,
                      $gettext-domain, $plugin-dir, $force, @extra-sources) {
         ".pack_args.json created".say;
     } else {
