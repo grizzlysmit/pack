@@ -142,7 +142,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.35
+=VERSION v0.1.36
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -166,13 +166,13 @@ up your gnome-shell extensions; at the expense of setting up a configuration fil
 
 =begin code :lang<bash>
 
-pack.raku plugin new <key> --prefs --schema-file --podirs --force
+pack.raku plugin new <key> --all --force
 
 =end code
 
-You can leave the C«--prefs» out if you don't need settings (i.e. a prefs.js file) you can leave out C«--schema-file» if you do not need a schema file, and you can leave C«--podirs» if you don't want internationalisation and you can leave off C«--force» if you don't want the force parameter when packaging the extension.
+You can alternately use C«--prefs --schema-file --podirs --add-credits» leave out the C«--prefs» out if you don't need settings (i.e. a prefs.js file), you can leave out C«--schema-file» if you do not need a schema file, you can leave C«--podirs» if you don't want internationalisation, you can leave of C«--add-credits» if you don't want to add credits and you can leave off C«--force» if you don't want the force parameter when packaging the extension.
 
-The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran C«pack.raku plugin new» from.
+The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; B<by default the current directory from which you ran C«pack.raku plugin new» from>.
 The underlying program B«gnome-extensions create» creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. 
 B«NB: I use the words "plugin" extension "interchangeably".»
 
@@ -1080,7 +1080,7 @@ multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
 pack.raku plugin new --help
 
 Usage:
-  pack.raku plugin new <key>  [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--prefs] [--schema-file] [--podirs] [-f|--force] [-s|--silent] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]
+  pack.raku plugin new <key>  [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--credits=<Str>] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]
 
 =end code
 
@@ -1098,10 +1098,13 @@ Where
 =item1 C«[--gettext-domain=<Str>]»   The gettext domain used by the extension.
 =item1 C«[--settings-schema=<Str>]»  The GSettings schema used by the extension.
 =item1 C«[--template=<Str>]»         The template to use for the new extension.
+=item1 C«[--credits=<Str>]»          Set the credits lines If not set and C«--add-credits» or C«--all» is present then will be prompted for.
 =item2                               B«The following parameters will not be prompted for.»
 =item1 C«[--prefs]»                  Include prefs.js template.
 =item1 C«[--schema-file]»            Add a schema file by name of C«schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml».
 =item1 C«[--podirs]»                 Add a po directory with gettext files preloaded; plus a C«compile.sh» script to build and update the gettext files.
+=item1 C«[--add-credits]»            Prompt for credits lines if C«--credits» not set.
+=item1 C«[--add-credits] [-a|--all-parmas|--all]»  If present same as C«--podirs --schema-file --podirs --add-credits».
 =item1 C«[-f|--force]»               Add the force parameter to the C«.pack_args.json» file.
 =item1 C«[-s|--silent]»              Don't print out the steps taken defaults to C«False».
 =item1 C«[-l|--dev-lang=<Str>]»      The language of the default C«*.po» file to generate this should be the language the strings are in in the original source defaults to B«en».
@@ -1115,7 +1118,7 @@ It is recommended that you use the following command line to get pretty much eve
 
 =begin code :lang<bash>
 
-pack.raku plugin new <key> --prefs --schema-file --podirs --force
+pack.raku plugin new <key> --all --force
 
 =end code
 

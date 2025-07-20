@@ -232,7 +232,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.35
+v0.1.36
 
 TITLE
 =====
@@ -267,12 +267,12 @@ A brief tutorial.
 ### To create a new plugin just call 
 
 ```bash
-pack.raku plugin new <key> --prefs --schema-file --podirs --force
+pack.raku plugin new <key> --all --force
 ```
 
-You can leave the `--prefs` out if you don't need settings (i.e. a prefs.js file) you can leave out `--schema-file` if you do not need a schema file, and you can leave `--podirs` if you don't want internationalisation and you can leave off `--force` if you don't want the force parameter when packaging the extension.
+You can alternately use `--prefs --schema-file --podirs --add-credits` leave out the `--prefs` out if you don't need settings (i.e. a prefs.js file), you can leave out `--schema-file` if you do not need a schema file, you can leave `--podirs` if you don't want internationalisation, you can leave of `--add-credits` if you don't want to add credits and you can leave off `--force` if you don't want the force parameter when packaging the extension.
 
-The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran `pack.raku plugin new` from. The underlying program **gnome-extensions create** creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. **NB: I use the words "plugin" extension "interchangeably".**
+The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; **by default the current directory from which you ran `pack.raku plugin new` from**. The underlying program **gnome-extensions create** creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. **NB: I use the words "plugin" extension "interchangeably".**
 
   * [(See pack.raku plugin new)](#packraku-plugin-new---help)
 
@@ -916,7 +916,7 @@ pack.raku plugin new --help
 pack.raku plugin new --help
 
 Usage:
-  pack.raku plugin new <key>  [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--prefs] [--schema-file] [--podirs] [-f|--force] [-s|--silent] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]
+  pack.raku plugin new <key>  [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--credits=<Str>] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]
 ```
 
 Make a new plugin/extension for gnome-shell Create a new plugin using `gnome-extensions create` and move it to a development area and set it up for `pack.raku alias do` etc.
@@ -943,6 +943,8 @@ Where
 
   * `[--template=<Str>]` The template to use for the new extension.
 
+  * `[--credits=<Str>]` Set the credits lines If not set and `--add-credits` or `--all` is present then will be prompted for.
+
     * **The following parameters will not be prompted for.**
 
   * `[--prefs]` Include prefs.js template.
@@ -950,6 +952,10 @@ Where
   * `[--schema-file]` Add a schema file by name of `schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml`.
 
   * `[--podirs]` Add a po directory with gettext files preloaded; plus a `compile.sh` script to build and update the gettext files.
+
+  * `[--add-credits]` Prompt for credits lines if `--credits` not set.
+
+  * `[--add-credits] [-a|--all-parmas|--all]` If present same as `--podirs --schema-file --podirs --add-credits`.
 
   * `[-f|--force]` Add the force parameter to the `.pack_args.json` file.
 
@@ -967,7 +973,7 @@ Recommended Usage
 It is recommended that you use the following command line to get pretty much everything in you could desire in the starting point of your plugin/extension.
 
 ```bash
-pack.raku plugin new <key> --prefs --schema-file --podirs --force
+pack.raku plugin new <key> --all --force
 ```
 
   * **NB:**

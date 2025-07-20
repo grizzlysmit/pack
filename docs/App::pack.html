@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.35" />
+<meta name="version" value="v0.1.36" />
 <style>.comment {
   color: #666; }
 
@@ -809,9 +809,9 @@ footer {
 <p>This is a Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
 <p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><h2 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h2>
 <h3 id="To_create_a_new_plugin_just_call_"><a href="#pack_0" class="u" title="go to top of document">To create a new plugin just call </a></h3>
-<pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --prefs --schema-file --podirs --force
+<pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
 
-</pre><p>You can leave the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file) you can leave out <code>--schema-file</code> if you do not need a schema file, and you can leave <code>--podirs</code> if you don't want internationalisation and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; by default the current directory from which you ran <code>pack.raku plugin new</code> from. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. <strong>NB: I use the words &quot;plugin&quot; extension &quot;interchangeably&quot;.</strong></p><ul>
+</pre><p>You can alternately use <code>--prefs --schema-file --podirs --add-credits</code> leave out the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file), you can leave out <code>--schema-file</code> if you do not need a schema file, you can leave <code>--podirs</code> if you don't want internationalisation, you can leave of <code>--add-credits</code> if you don't want to add credits and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; <strong>by default the current directory from which you ran <code>pack.raku plugin new</code> from</strong>. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. <strong>NB: I use the words &quot;plugin&quot; extension &quot;interchangeably&quot;.</strong></p><ul>
 <li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p><h3 id="If_you_want_to_manage_an_existing_extension_then_use"><a href="#pack_0" class="u" title="go to top of document">If you want to manage an existing extension then use</a></h3>
@@ -1177,7 +1177,7 @@ Usage:
 <pre class="pod-block-code">pack.raku plugin new --help
 
 Usage:
-  pack.raku plugin new &lt;key&gt;  [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [-f|--force] [-s|--silent] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]
+  pack.raku plugin new &lt;key&gt;  [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--credits=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]
 
 </pre><p>Make a new plugin/extension for gnome-shell Create a new plugin using <code>gnome-extensions create</code> and move it to a development area and set it up for <code>pack.raku alias do</code> etc.</p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> A key which will be used to select the extension you wish to work with.</p></li>
@@ -1194,19 +1194,22 @@ Usage:
 <li><p><code>[--gettext-domain=&lt;Str&gt;]</code> The gettext domain used by the extension.</p></li>
 <li><p><code>[--settings-schema=&lt;Str&gt;]</code> The GSettings schema used by the extension.</p></li>
 <li><p><code>[--template=&lt;Str&gt;]</code> The template to use for the new extension.</p></li>
+<li><p><code>[--credits=&lt;Str&gt;]</code> Set the credits lines If not set and <code>--add-credits</code> or <code>--all</code> is present then will be prompted for.</p></li>
 <ul>
 <li><p><strong>The following parameters will not be prompted for.</strong></p></li>
 </ul>
 <li><p><code>[--prefs]</code> Include prefs.js template.</p></li>
 <li><p><code>[--schema-file]</code> Add a schema file by name of <code>schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml</code>.</p></li>
 <li><p><code>[--podirs]</code> Add a po directory with gettext files preloaded; plus a <code>compile.sh</code> script to build and update the gettext files.</p></li>
+<li><p><code>[--add-credits]</code> Prompt for credits lines if <code>--credits</code> not set.</p></li>
+<li><p><code>[--add-credits] [-a|--all-parmas|--all]</code> If present same as <code>--podirs --schema-file --podirs --add-credits</code>.</p></li>
 <li><p><code>[-f|--force]</code> Add the force parameter to the <code>.pack_args.json</code> file.</p></li>
 <li><p><code>[-s|--silent]</code> Don't print out the steps taken defaults to <code>False</code>.</p></li>
 <li><p><code>[-l|--dev-lang=&lt;Str&gt;]</code> The language of the default <code>*.po</code> file to generate this should be the language the strings are in in the original source defaults to <strong>en</strong>.</p></li>
 <li><p><code>[-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]</code> The directory to develop the plugin from; defaults to the current dir.</p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p><h2 id="Recommended_Usage"><a href="#pack_0" class="u" title="go to top of document">Recommended Usage</a></h2>
-<p>It is recommended that you use the following command line to get pretty much everything in you could desire in the starting point of your plugin/extension.</p><pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --prefs --schema-file --podirs --force
+<p>It is recommended that you use the following command line to get pretty much everything in you could desire in the starting point of your plugin/extension.</p><pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
 
 </pre><ul>
 <li><p><strong>NB:</strong></p></li>
@@ -1851,7 +1854,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-19T08:34:34Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-20T23:22:12Z</span></div></footer>
 	</body>
 </html>
 
