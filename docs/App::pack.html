@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.37" />
+<meta name="version" value="v0.1.38" />
 <style>.comment {
   color: #666; }
 
@@ -859,6 +859,29 @@ Usage:
   pack.raku get package-dir &lt;package-dir&gt;
   pack.raku alias add &lt;key&gt; &lt;target&gt;   [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
   pack.raku alias do &lt;key&gt;  [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+  pack.raku plugin new &lt;key&gt;   [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--credits=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]  
+  pack.raku plugin add &lt;key&gt; &lt;uuid&gt;  [&lt;extra-sources&gt; ...] [-p|--extension-dir=&lt;Str&gt;] [--podir=&lt;Str&gt;] [-f|--force] [-s|--silent] [-b|--backtrace] [-m|--mk-schema] [-l|--dev-lang=&lt;Str&gt;]
+  pack.raku alias add-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias set-schema &lt;key&gt; &lt;schema-value&gt;
+  pack.raku alias set-podir &lt;key&gt; &lt;podir-value&gt;
+  pack.raku alias set-gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
+  pack.raku alias set-out-dir &lt;key&gt; &lt;out-dir-value&gt;
+  pack.raku alias set-force &lt;key&gt; &lt;force-value&gt;
+  pack.raku alias set-package-dir &lt;key&gt; &lt;package-dir-value&gt;
+  pack.raku alias set-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias append-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias remove-schema &lt;key&gt;
+  pack.raku alias remove-podir &lt;key&gt;
+  pack.raku alias remove-gettext-domain &lt;key&gt;
+  pack.raku alias remove-out-dir &lt;key&gt;
+  pack.raku alias remove-extra-sources &lt;key&gt;
+  pack.raku alias get-schema &lt;key&gt;
+  pack.raku alias get-podir &lt;key&gt;
+  pack.raku alias get-gettext-domain &lt;key&gt;
+  pack.raku alias get-out-dir &lt;key&gt;
+  pack.raku alias get-extra-sources &lt;key&gt;
+  pack.raku alias get-force &lt;key&gt;
+  pack.raku alias get-package-dir &lt;key&gt;
   pack.raku edit configs
   pack.raku list keys  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
   pack.raku list all  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
@@ -1854,7 +1877,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-21T02:10:08Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-21T19:41:36Z</span></div></footer>
 	</body>
 </html>
 

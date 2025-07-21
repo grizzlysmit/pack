@@ -232,7 +232,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.37
+v0.1.38
 
 TITLE
 =====
@@ -336,6 +336,29 @@ Usage:
   pack.raku get package-dir <package-dir>
   pack.raku alias add <key> <target>   [-s|--set|--force] [-c|--comment=<Str>]
   pack.raku alias do <key>  [<keys> ...] [-f|--force] [-c|--command=<Str>] [-q|--quiet|--silent]
+  pack.raku plugin new <key>   [--uuid=<Str>] [--name=<Str>] [--description=<Str>] [--gettext-domain=<Str>] [--settings-schema=<Str>] [--template=<Str>] [--credits=<Str>] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=<Str>] [-o|--output|--development-dir|--dev-dir=<Str>]  
+  pack.raku plugin add <key> <uuid>  [<extra-sources> ...] [-p|--extension-dir=<Str>] [--podir=<Str>] [-f|--force] [-s|--silent] [-b|--backtrace] [-m|--mk-schema] [-l|--dev-lang=<Str>]
+  pack.raku alias add-extra-sources <key>  [<extra-sources> ...]
+  pack.raku alias set-schema <key> <schema-value>
+  pack.raku alias set-podir <key> <podir-value>
+  pack.raku alias set-gettext-domain <key> <gettext-domain-value>
+  pack.raku alias set-out-dir <key> <out-dir-value>
+  pack.raku alias set-force <key> <force-value>
+  pack.raku alias set-package-dir <key> <package-dir-value>
+  pack.raku alias set-extra-sources <key>  [<extra-sources> ...]
+  pack.raku alias append-extra-sources <key>  [<extra-sources> ...]
+  pack.raku alias remove-schema <key>
+  pack.raku alias remove-podir <key>
+  pack.raku alias remove-gettext-domain <key>
+  pack.raku alias remove-out-dir <key>
+  pack.raku alias remove-extra-sources <key>
+  pack.raku alias get-schema <key>
+  pack.raku alias get-podir <key>
+  pack.raku alias get-gettext-domain <key>
+  pack.raku alias get-out-dir <key>
+  pack.raku alias get-extra-sources <key>
+  pack.raku alias get-force <key>
+  pack.raku alias get-package-dir <key>
   pack.raku edit configs
   pack.raku list keys  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
   pack.raku list all  [<prefix>]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=<Str>] [-e|--ecma-pattern=<Str>]
