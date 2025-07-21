@@ -232,7 +232,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.36
+v0.1.37
 
 TITLE
 =====
@@ -955,7 +955,7 @@ Where
 
   * `[--add-credits]` Prompt for credits lines if `--credits` not set.
 
-  * `[--add-credits] [-a|--all-parmas|--all]` If present same as `--podirs --schema-file --podirs --add-credits`.
+  * `[-a|--all-parmas|--all]` Same as `--podirs --schema-file --podirs --add-credits`.
 
   * `[-f|--force]` Add the force parameter to the `.pack_args.json` file.
 

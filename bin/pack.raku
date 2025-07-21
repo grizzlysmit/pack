@@ -142,7 +142,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.36
+=VERSION v0.1.37
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -1104,7 +1104,7 @@ Where
 =item1 C«[--schema-file]»            Add a schema file by name of C«schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml».
 =item1 C«[--podirs]»                 Add a po directory with gettext files preloaded; plus a C«compile.sh» script to build and update the gettext files.
 =item1 C«[--add-credits]»            Prompt for credits lines if C«--credits» not set.
-=item1 C«[--add-credits] [-a|--all-parmas|--all]»  If present same as C«--podirs --schema-file --podirs --add-credits».
+=item1 C«[-a|--all-parmas|--all]»    Same as C«--podirs --schema-file --podirs --add-credits».
 =item1 C«[-f|--force]»               Add the force parameter to the C«.pack_args.json» file.
 =item1 C«[-s|--silent]»              Don't print out the steps taken defaults to C«False».
 =item1 C«[-l|--dev-lang=<Str>]»      The language of the default C«*.po» file to generate this should be the language the strings are in in the original source defaults to B«en».
