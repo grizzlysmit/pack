@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.42>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.43>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
@@ -2383,7 +2383,7 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
                 $credits = get-multi-line-value("Please enter credits lines!");
                 "Please supply valid credits lines".say  unless $credits;
             }
-            dd $credits;
+            #dd $credits;
         }
     }
     my @cmd = qqww[gnome-extensions create];

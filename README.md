@@ -232,7 +232,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.42
+v0.1.43
 
 TITLE
 =====
@@ -302,7 +302,6 @@ terminate with two empty lines.
 2> Licence GPL v3+
 3> 
 4> 
-Str $credits = "Francis Grizzly Smit ©2025\nLicence GPL v3+"
 gnome-extensions create --uuid=fred@grizzlysmit.smit.id.au --name=fred --description=This is a dummy plugin\n\nIt is just a test --gettext-domain=fred --prefs --interactive --quiet
 Choose one of the available templates:
 1) Plain       –  An empty extension
