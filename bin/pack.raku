@@ -36,6 +36,7 @@ Table of Contents
 =item2 L<Motivation|#motivation>
 =item3 L<A brief tutorial.|#a-brief-tutorial>
 =item3 L<To create a new plugin just call|#to-create-a-new-plugin-just-call>
+=item3 L<example of using pack.raku plugin new fred --all --force|#example-of-using-packraku-plugin-new-fred---all---force>
 =item3 L<If you want to manage an existing extension then use|#if-you-want-to-manage-an-existing-extension-then-use>
 =item3 L<To package a extension just call|#to-package-a-extension-just-call>
 =item1 L<Pack|#pack>
@@ -142,7 +143,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.43
+=VERSION v0.1.44
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -182,7 +183,7 @@ B«NB: I use the words "plugin" and "extension" interchangeably.»
 
 L<Table of Contents|#table-of-contents>
 
-=head4 example
+=head4 example of using pack.raku plugin new fred --all --force
 
 =begin code :lang<bash>
 

@@ -27,6 +27,8 @@ Table of Contents
 
       * [To create a new plugin just call](#to-create-a-new-plugin-just-call)
 
+      * [example of using pack.raku plugin new fred --all --force](#example-of-using-packraku-plugin-new-fred---all---force)
+
       * [If you want to manage an existing extension then use](#if-you-want-to-manage-an-existing-extension-then-use)
 
       * [To package a extension just call](#to-package-a-extension-just-call)
@@ -232,7 +234,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.43
+v0.1.44
 
 TITLE
 =====
@@ -282,7 +284,7 @@ The program will prompt for all the parameters it requires once run it will have
 
 [Table of Contents](#table-of-contents)
 
-#### example
+#### example of using pack.raku plugin new fred --all --force
 
 ```bash
 05:03:07 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 7s $ pack.raku plugin new fred --all --force
