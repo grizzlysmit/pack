@@ -153,12 +153,13 @@ L<Top of Top of Document|#table-of-contents>
 
 =head1 Introduction
 
-This is a Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy,  as it puts all the arguments in a configuration file. 
+This is a Raku program to manage the use of B<gnome-extensions>, originally B<gnome-extensions pack>, it has too many arguments this makes it easy,  as it puts all the arguments in a configuration file. 
 
 =head2 Motivation
 
-The command B<gnome-extensions pack> has too many arguments this takes care of that making it easier to package
-up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
+The original motivation was that the command B<gnome-extensions pack> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
+
+Now in addition I wrap B<gnome-extensions create> as well, plus I create extra stuff like the schema file, the credits field in the C«metadata.json» file; it also creates the po dir and creates B<compile.sh> to populate it with the gettext stuff, and to process the schema file into it's binary form.
 
 =head2 A brief tutorial.
 

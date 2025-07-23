@@ -2267,11 +2267,11 @@ xgettext --from-code='utf-8' -k_ -kN_ -o \$DIR/{$gettext-domain}.pot $args
 
 if ! [ -x "\$DIR"/{$dev-lang}.\$SUFFIX ]
 then
-    msginit --input=po/{$gettext-domain}.pot --output-file=po/{$dev-lang}.po --no-translator
+    msginit --input="\$DIR"/{$gettext-domain}.pot --output-file="\$DIR"/{$dev-lang}.po --no-translator
 else
     for file in "\$DIR"/*.\$SUFFIX 
     do
-        msgmerge --previous --update po/\$file po/{$gettext-domain}.pot
+        msgmerge --previous --update "\$DIR"/\$file "\$DIR"/{$gettext-domain}.pot
     done
 fi
 
@@ -2390,8 +2390,9 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
     push @cmd, "--uuid=$uuid" if $uuid;
     push @cmd, "--name=$name" if $name;
     if $description {
-        #$description ~~ s:g/\n/\\n/;
-        push @cmd, qq[--description=$description];
+        my Str:D $description_ = $description;
+        $description_ ~~ s:g/\n/\\n/;
+        push @cmd, "--description=$description_";
     }
     push @cmd, "--gettext-domain=$gettext-domain" if $gettext-domain;
     push @cmd, "--settings-schema=$settings-schema" if $settings-schema;
@@ -2407,19 +2408,25 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
         if $path.IO ~~ :d {
             if copypath($path.IO, $dev-dir.IO) {
                 "copypath Success".say;
-                if add-path($key, "$dev-dir/$uuid", False, $description) {
+                my Str:D $description_ = $description;
+                $description_ ~~ s:g/\n/\\n/;
+                if add-path($key, "$dev-dir/$uuid", False, $description_) {
                     qq[key: $key => "$dev-dir/$uuid" added successfully].say;
                 } else {
                     qq[key: $key => "$dev-dir/$uuid" Failed to add].say;
                 } 
                 my @extra-sources;
-                my $plugin-location    = $dev-dir.IO.add($uuid).resolve;
-                my $file-cont          = $plugin-location.add('metadata.json').slurp(:utf8);
-                my $data               = from-json $file-cont;
-                my Bool:D $dirty       = False;
+                my $plugin-location     = $dev-dir.IO.add($uuid).resolve;
+                my $file-cont           = $plugin-location.add('metadata.json').slurp(:utf8);
+                my $data                = from-json $file-cont;
+                my Bool:D $dirty        = False;
+                with $description { # fixing a bug  with double quoting \ to \\ #
+                    %$data«description» = $description;
+                    $dirty              = True;
+                }
                 with $credits {
-                    %$data«credits»    = $credits;
-                    $dirty             = True;
+                    %$data«credits»     = $credits;
+                    $dirty              = True;
                 }
                 my Str $schema = Str;
                 if $schema-file {
