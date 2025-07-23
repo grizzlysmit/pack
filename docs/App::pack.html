@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.41" />
+<meta name="version" value="v0.1.42" />
 <style>.comment {
   color: #666; }
 
@@ -590,6 +590,7 @@ footer {
  <tr class="toc-level-2"><td class="toc-text"><a href="#Motivation">Motivation</a></td></tr>
  <tr class="toc-level-2"><td class="toc-text"><a href="#A_brief_tutorial.">A brief tutorial.</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#To_create_a_new_plugin_just_call_">To create a new plugin just call </a></td></tr>
+ <tr class="toc-level-4"><td class="toc-text"><a href="#example">example</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#If_you_want_to_manage_an_existing_extension_then_use">If you want to manage an existing extension then use</a></td></tr>
  <tr class="toc-level-3"><td class="toc-text"><a href="#To_package_a_extension_just_call_">To package a extension just call </a></td></tr>
  <tr class="toc-level-4"><td class="toc-text"><a href="#Or_to_package_many_this">Or to package many this</a></td></tr>
@@ -814,7 +815,104 @@ footer {
 </pre><p>You can alternately use <code>--prefs --schema-file --podirs --add-credits</code> leave out the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file), you can leave out <code>--schema-file</code> if you do not need a schema file, you can leave <code>--podirs</code> if you don't want internationalisation, you can leave of <code>--add-credits</code> if you don't want to add credits and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; <strong>by default the current directory from which you ran <code>pack.raku plugin new</code> from</strong>. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. </p><p><strong>NB: I use the words &quot;plugin&quot; and &quot;extension&quot; interchangeably.</strong></p><ul>
 <li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p><h3 id="If_you_want_to_manage_an_existing_extension_then_use"><a href="#pack_0" class="u" title="go to top of document">If you want to manage an existing extension then use</a></h3>
+<p><a href="#table-of-contents">Table of Contents</a></p><h4 id="example"><a href="#pack_0" class="u" title="go to top of document">example</a></h4>
+<pre class="pod-block-code">05:03:07 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 7s $ pack.raku plugin new fred --all --force
+uuid: fred@grizzlysmit.smit.id.au
+name: fred? hit enter to accept or type in new value followed by enter.
+Please enter a multi line description!
+terminate with two empty lines.
+1&gt; This is a dummy plugin
+2&gt; 
+3&gt; It is just a test
+4&gt; 
+5&gt; 
+gettext-domain: fred? hit enter to accept or type in new value followed by enter.
+Please enter credits lines!
+terminate with two empty lines.
+1&gt; Francis Grizzly Smit ©2025
+2&gt; Licence GPL v3+
+3&gt; 
+4&gt; 
+Str $credits = &quot;Francis Grizzly Smit ©2025\nLicence GPL v3+&quot;
+gnome-extensions create --uuid=fred@grizzlysmit.smit.id.au --name=fred --description=This is a dummy plugin\n\nIt is just a test --gettext-domain=fred --prefs --interactive --quiet
+Choose one of the available templates:
+1) Plain       –  An empty extension
+2) Indicator   –  Add an icon to the top bar
+3) Quick Settings Item  –  Add an item to quick settings
+Template [1-3]: 2
+
+The new extension was successfully created in /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au.
+copypath Success
+key: fred =&gt; &quot;/home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au&quot; added successfully
+Created po/en.po.
+.pack_args.json created
+removed directory
+05:55:14 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 2m14s $ exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000  ./
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.943446718 +1000  ../
+27559273 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 05:55:14.053521905 +1000  .pack_args.json
+27559265 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 05:55:13.959032921 +1000  compile.sh*
+27559254 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945257913 +1000  extension.js
+27559270 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000  locale/
+27559256 .rw-rw-r--      1   325 grizzlysmit grizzlysmit 2025-07-24 05:55:13.957659027 +1000  metadata.json
+27559264 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.041449384 +1000  po/
+27559255 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945612838 +1000  prefs.js
+27559258 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000  schemas/
+27559257 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 05:55:13.946068846 +1000  stylesheet.css
+05:56:03 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ exa -F -lahigHTb  --colour-scale --time-style=full-iso fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000 fred@grizzlysmit.smit.id.au/
+27559273 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 05:55:14.053521905 +1000 ├── .pack_args.json
+27559265 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 05:55:13.959032921 +1000 ├── compile.sh*
+27559254 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945257913 +1000 ├── extension.js
+27559270 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000 ├── locale/
+27559271 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000 │   └── en/
+27559272 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.046449521 +1000 │       └── LC_MESSAGES/
+27559269 .rw-rw-r--      1   653 grizzlysmit grizzlysmit 2025-07-24 05:55:14.044584280 +1000 │           └── fred.mo
+27559256 .rw-rw-r--      1   325 grizzlysmit grizzlysmit 2025-07-24 05:55:13.957659027 +1000 ├── metadata.json
+27559264 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.041449384 +1000 ├── po/
+27559268 .rw-rw-r--      1   986 grizzlysmit grizzlysmit 2025-07-24 05:55:14.042015222 +1000 │   ├── en.po
+27559267 .rw-rw-r--      1   875 grizzlysmit grizzlysmit 2025-07-24 05:55:13.991375405 +1000 │   └── fred.pot
+27559255 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945612838 +1000 ├── prefs.js
+27559258 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000 ├── schemas/
+27559266 .rw-rw-r--      1   380 grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000 │   ├── gschemas.compiled
+27559263 .rw-rw-r--      1   765 grizzlysmit grizzlysmit 2025-07-24 05:55:13.956259755 +1000 │   └── org.gnome.shell.extensions.fred.gschema.xml
+27559257 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 05:55:13.946068846 +1000 └── stylesheet.css
+05:56:53 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;credits&quot;: &quot;Francis Grizzly Smit ©2025\nLicence GPL v3+&quot;,
+   3   │     &quot;description&quot;: &quot;This is a dummy plugin\n\nIt is just a test&quot;,
+   4   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   5   │     &quot;name&quot;: &quot;fred&quot;,
+   6   │     &quot;settings-schema&quot;: &quot;org.gnome.shell.extensions.fred&quot;,
+   7   │     &quot;shell-version&quot;: [
+   8   │         &quot;48&quot;
+   9   │     ],
+  10   │     &quot;uuid&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;
+  11   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────
+05:57:32 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/.pack_args.json 
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/.pack_args.json
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;extra-sources&quot;: [
+   3   │     ],
+   4   │     &quot;force&quot;: true,
+   5   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   6   │     &quot;out-dir&quot;: &quot;/home/grizzlysmit/Projects/gnome-shell/extensions&quot;,
+   7   │     &quot;package-dir&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;,
+   8   │     &quot;podir&quot;: &quot;po&quot;,
+   9   │     &quot;schema&quot;: &quot;schemas/org.gnome.shell.extensions.fred.gschema.xml&quot;
+  10   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+</pre><p><a href="#table-of-contents">Table of Contents</a></p><h3 id="If_you_want_to_manage_an_existing_extension_then_use"><a href="#pack_0" class="u" title="go to top of document">If you want to manage an existing extension then use</a></h3>
 <pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
 
 </pre><ul>
@@ -1877,7 +1975,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-23T18:55:30Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-23T20:02:42Z</span></div></footer>
 	</body>
 </html>
 
