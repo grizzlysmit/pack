@@ -254,12 +254,14 @@ GPL V3.0+ [LICENSE](https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE
 Introduction
 ============
 
-This is a Raku program to manage the use of **gnome-extensions pack**, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. 
+This is a Raku program to manage the use of **gnome-extensions**, originally **gnome-extensions pack**, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. 
 
 Motivation
 ----------
 
-The command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
+The original motivation was that the command **gnome-extensions pack** has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. 
+
+Now in addition I wrap **gnome-extensions create** as well, plus I create extra stuff like the schema file, the credits field in the `metadata.json` file; it also creates the po dir and creates **compile.sh** to populate it with the gettext stuff, and to process the schema file into it's binary form.
 
 A brief tutorial.
 -----------------

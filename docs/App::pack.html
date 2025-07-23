@@ -806,8 +806,8 @@ footer {
 <p>GPL V3.0+ <a href="https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE">LICENSE</a></p>
 </section>
 <p><a href="#table-of-contents">Top of Top of Document</a></p><h1 id="Introduction"><a href="#pack_0" class="u" title="go to top of document">Introduction</a></h1>
-<p>This is a Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
-<p>The command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><h2 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h2>
+<p>This is a Raku program to manage the use of <strong>gnome-extensions</strong>, originally <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p><h2 id="Motivation"><a href="#pack_0" class="u" title="go to top of document">Motivation</a></h2>
+<p>The original motivation was that the command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p><p>Now in addition I wrap <strong>gnome-extensions create</strong> as well, plus I create extra stuff like the schema file, the credits field in the <code>metadata.json</code> file; it also creates the po dir and creates <strong>compile.sh</strong> to populate it with the gettext stuff, and to process the schema file into it's binary form.</p><h2 id="A_brief_tutorial."><a href="#pack_0" class="u" title="go to top of document">A brief tutorial.</a></h2>
 <h3 id="To_create_a_new_plugin_just_call_"><a href="#pack_0" class="u" title="go to top of document">To create a new plugin just call </a></h3>
 <pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
 
@@ -1877,7 +1877,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-21T19:41:36Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-23T04:45:34Z</span></div></footer>
 	</body>
 </html>
 
