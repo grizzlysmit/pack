@@ -142,7 +142,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.40
+=VERSION v0.1.41
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -175,6 +175,7 @@ You can alternately use C«--prefs --schema-file --podirs --add-credits» leave 
 
 The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; B<by default the current directory from which you ran C«pack.raku plugin new» from>.
 The underlying program B«gnome-extensions create» creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. 
+
 B«NB: I use the words "plugin" and "extension" interchangeably.»
 
 =item1 L<(See pack.raku plugin new)|#packraku-plugin-new---help>
