@@ -38,7 +38,9 @@ Table of Contents
 =item3 L<To create a new plugin just call|#to-create-a-new-plugin-just-call>
 =item3 L<example of using pack.raku plugin new key --all --force|#example-of-using-packraku-plugin-new-key---all---force>
 =item3 L<If you want to manage an existing extension then use|#if-you-want-to-manage-an-existing-extension-then-use>
+=item3 L<example of using pack.raku plugin add|#example-of-using-packraku-plugin-add>
 =item3 L<To package a extension just call|#to-package-a-extension-just-call>
+=item3 L<example of creating packages|#example-of-creating-packages>
 =item1 L<Pack|#pack>
 =item2 L«key => directory methods|#key--directory-methods»
 =item2 L«key => directory management methods|#key--directory-management-methods»
@@ -143,7 +145,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.45
+=VERSION v0.1.46
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -428,6 +430,134 @@ pack.raku alias do <key0> <key1> <key2> ... <keyn> --force
 =end code
 
 =item1 L«See pack.raku alias do --help|#packraku-alias-do---help».
+
+L<Table of Contents|#table-of-contents>
+
+=head4 example of creating packages 
+
+=begin code :lang<bash>
+
+15:44:31 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ eb
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 15:44:31.840926805 +1000  ./
+26217632 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.734959839 +1000  ../
+26349968 .rw-rw-r--      1  21Ki grizzlysmit grizzlysmit 2024-05-03 11:27:55.484319299 +1000  .shell-extension.zip
+26353752 .rw-rw-r--      1  24Ki grizzlysmit grizzlysmit 2021-11-25 19:26:19.479090060 +1000  alternate-hplips-menu.zip
+26352042 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-26 03:32:33.908540232 +1000  apps-menu@gnome-shell-extensions.gcampax.github.com/
+26353753 .rw-rw-r--      1  17Ki grizzlysmit grizzlysmit 2021-12-28 04:37:44.146266285 +1000  big-avatar@gustavoperedo.org.shell-extension.zip
+26352038 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  Bottom_Panel@rmy.pobox.com/
+26512363 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:38:59.863644931 +1000  files-launcher@grizzlysmit.smit.id.au/
+26349973 .rw-rw-r--      1  54Ki grizzlysmit grizzlysmit 2025-07-24 15:44:00.465134918 +1000  files-launcher@grizzlysmit.smit.id.au.shell-extension.zip
+27559274 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 15:42:56.782255700 +1000  fred@grizzlysmit.smit.id.au/
+26352043 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-extension-taskbar/
+26352044 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2022-01-07 09:09:40.302644534 +1000  gnome-shell-extensions-gravatar/
+26352045 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-tw/
+26353754 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-06 23:56:20.182307575 +1000  gravatar@gnome-shell-extensions.rouleau.io.shell-extension.zip
+26352046 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@grizzlysmit.id.au/
+26353755 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2022-07-01 10:34:55.758925396 +1000  gravatar@grizzlysmit.id.au.shell-extension.zip
+26352048 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@jr.rlabs.io/
+26353756 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-07 19:47:05.364419415 +1000  gravatar@jr.rlabs.io.shell-extension.zip
+26352049 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gsconnect@andyholmes.github.io/
+26352051 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:31:22.859671275 +1000  hplip-menu2@grizzlysmit.smit.id.au/
+26346496 .rw-rw-r--      1  28Ki grizzlysmit grizzlysmit 2025-07-02 20:36:31.684875818 +1000  hplip-menu2@grizzlysmit.smit.id.au.shell-extension.zip
+26352054 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  messagingmenu@lauinger-clan.de/
+26352056 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2020-11-07 22:39:21.087614053 +1000  multi-monitors-add-on/
+46561771 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2025-07-23 14:26:07.832210160 +1000  notes-with-history@grizzlysmit.smit.id.au/
+26349665 .rw-rw-r--      1  53Ki grizzlysmit grizzlysmit 2025-07-24 15:44:00.409133267 +1000  notes-with-history@grizzlysmit.smit.id.au.shell-extension.zip
+51393341 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2025-03-15 16:42:15.414543423 +1000  old/
+26352059 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-04-29 17:31:02.281104910 +1000  openweather/
+26352057 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  openweather-extension@jenslody.de/
+26352060 drwxrwxr-x      9     - grizzlysmit grizzlysmit 2025-07-24 15:33:13.862750943 +1000  pack/
+26352062 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2022-01-05 22:49:47.185676938 +1000  pixel-saver/
+26352064 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-07-27 18:54:47.363559805 +1000  popupMenu/
+26352065 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  quick-settings-avatar@d-go/
+26352039 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SettingsCenter@lauinger-clan.de/
+26352067 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  ssh-connect-menu@edavidf/
+26352040 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SystemMenu@jonnius.github.com/
+26352068 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-06 16:52:51.078240764 +1000  tabstesting/
+26352070 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  taskbar@grizzlysmit.smit.id.au/
+26352041 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  TaskBar@zpydr/
+26352071 drwxr-xr-x      2     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.794960310 +1000  testing/
+26352073 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2023-09-27 15:27:06.024458938 +1000  tmp/
+26352074 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  unite@hardpixel.eu/
+26352075 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  weeks-start-on-monday@extensions.gnome-shell.fifi.org/
+26352076 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  workspace-switch-wraparound@theychx.org/
+15:44:36 θ67° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ type eb
+eb is a function
+eb () 
+{ 
+    if type exa >> /dev/null 2>&1; then
+        exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always "$@";
+    else
+        ls --color=auto -Flaghi --color "$@";
+    fi
+}
+15:44:55 θ72° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ pack.raku list all
+                                                                                                                           
+key   sep path                                                                        # comment                            
+===========================================================================================================================
+files  => ~/Projects/gnome-shell/extensions/files-launcher@grizzlysmit.smit.id.au     #                                    
+fred   => ~/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au               # Testing\n\nthis is a Dummy plugin  
+hp     => ~/Projects/gnome-shell/extensions/hplip-menu2@grizzlysmit.smit.id.au        # The hplip-menu2 plugin    #        
+notes  => ~/Projects/gnome-shell/extensions/notes-with-history@grizzlysmit.smit.id.au # notes-with-history plugin #        
+===========================================================================================================================
+15:45:56 θ74° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 3s $ pack.raku alias do fred notes files hp --force
+gnome-extensions pack --schema=schemas/org.gnome.shell.extensions.fred.gschema.xml --podir=po --gettext-domain=fred --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=gzz.js --extra-source=select.js --extra-source=button.js --extra-source=log_message.js --extra-source=icon_constants.js --schema=schemas/org.gnome.shell.extensions.notes-with-history.gschema.xml --podir=po --gettext-domain=notes-with-history --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/notes-with-history@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=button.js --extra-source=gzz.js --extra-source=icon_constants.js --extra-source=log_message.js --extra-source=select.js --schema=schemas/org.gnome.shell.extensions.files-launcher.gschema.xml --podir=po --gettext-domain=files-launcher --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/files-launcher@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=gzzDialog.js --extra-source=CompactMenu.js --extra-source=log_message.js --schema=schemas/org.gnome.shell.extensions.hplip-menu2.gschema.xml --podir=po --gettext-domain=hplip-menu2 --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/hplip-menu2@grizzlysmit.smit.id.au
+
+exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 15:46:39.996826303 +1000  ./
+26217632 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.734959839 +1000  ../
+26349968 .rw-rw-r--      1  21Ki grizzlysmit grizzlysmit 2024-05-03 11:27:55.484319299 +1000  .shell-extension.zip
+26353752 .rw-rw-r--      1  24Ki grizzlysmit grizzlysmit 2021-11-25 19:26:19.479090060 +1000  alternate-hplips-menu.zip
+26352042 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-26 03:32:33.908540232 +1000  apps-menu@gnome-shell-extensions.gcampax.github.com/
+26353753 .rw-rw-r--      1  17Ki grizzlysmit grizzlysmit 2021-12-28 04:37:44.146266285 +1000  big-avatar@gustavoperedo.org.shell-extension.zip
+26352038 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  Bottom_Panel@rmy.pobox.com/
+26512363 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:38:59.863644931 +1000  files-launcher@grizzlysmit.smit.id.au/
+26349973 .rw-rw-r--      1  54Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.949824924 +1000  files-launcher@grizzlysmit.smit.id.au.shell-extension.zip
+27559274 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 15:42:56.782255700 +1000  fred@grizzlysmit.smit.id.au/
+26387376 .rw-rw-r--      1 4.2Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.839821696 +1000  fred@grizzlysmit.smit.id.au.shell-extension.zip
+26352043 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-extension-taskbar/
+26352044 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2022-01-07 09:09:40.302644534 +1000  gnome-shell-extensions-gravatar/
+26352045 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-tw/
+26353754 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-06 23:56:20.182307575 +1000  gravatar@gnome-shell-extensions.rouleau.io.shell-extension.zip
+26352046 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@grizzlysmit.id.au/
+26353755 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2022-07-01 10:34:55.758925396 +1000  gravatar@grizzlysmit.id.au.shell-extension.zip
+26352048 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@jr.rlabs.io/
+26353756 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-07 19:47:05.364419415 +1000  gravatar@jr.rlabs.io.shell-extension.zip
+26352049 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gsconnect@andyholmes.github.io/
+26352051 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:31:22.859671275 +1000  hplip-menu2@grizzlysmit.smit.id.au/
+26346496 .rw-rw-r--      1  28Ki grizzlysmit grizzlysmit 2025-07-24 15:46:40.012826773 +1000  hplip-menu2@grizzlysmit.smit.id.au.shell-extension.zip
+26352054 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  messagingmenu@lauinger-clan.de/
+26352056 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2020-11-07 22:39:21.087614053 +1000  multi-monitors-add-on/
+46561771 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2025-07-23 14:26:07.832210160 +1000  notes-with-history@grizzlysmit.smit.id.au/
+26349665 .rw-rw-r--      1  53Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.894823310 +1000  notes-with-history@grizzlysmit.smit.id.au.shell-extension.zip
+51393341 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2025-03-15 16:42:15.414543423 +1000  old/
+26352059 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-04-29 17:31:02.281104910 +1000  openweather/
+26352057 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  openweather-extension@jenslody.de/
+26352060 drwxrwxr-x      9     - grizzlysmit grizzlysmit 2025-07-24 15:33:13.862750943 +1000  pack/
+26352062 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2022-01-05 22:49:47.185676938 +1000  pixel-saver/
+26352064 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-07-27 18:54:47.363559805 +1000  popupMenu/
+26352065 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  quick-settings-avatar@d-go/
+26352039 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SettingsCenter@lauinger-clan.de/
+26352067 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  ssh-connect-menu@edavidf/
+26352040 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SystemMenu@jonnius.github.com/
+26352068 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-06 16:52:51.078240764 +1000  tabstesting/
+26352070 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  taskbar@grizzlysmit.smit.id.au/
+26352041 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  TaskBar@zpydr/
+26352071 drwxr-xr-x      2     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.794960310 +1000  testing/
+26352073 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2023-09-27 15:27:06.024458938 +1000  tmp/
+26352074 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  unite@hardpixel.eu/
+26352075 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  weeks-start-on-monday@extensions.gnome-shell.fifi.org/
+26352076 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  workspace-switch-wraparound@theychx.org/
+
+=end code
 
 L<Table of Contents|#table-of-contents>
 
@@ -1281,11 +1411,11 @@ Usage:
 
 Where
 =item1 key   is a key pointing to a directory in the directory database containing a B<gnome-shell> plugin
-=item2 assumes that the directory contains a C<.pack_args.json> file which containes all the arguments for B<gnome-extensions pack>.
-=item1 C«[keys ...]»  a list of aditional keys pointing to directories in the directory database containing B<gnome-shell> plugins same as key.
+=item2 assumes that the directory contains a C<.pack_args.json> file which contains all the arguments for B<gnome-extensions pack>.
+=item1 C«[keys ...]»  a list of additional keys pointing to directories in the directory database containing B<gnome-shell> plugins same as key.
 =item1 C«[-f|--force]»   overrides the force parameter in every C<.pack_args.json>.
-=item1 C«[-c|--command=<Str>]»  overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.
-=item2 the default is B<ls -Flaghi --color=always> this can be overriden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
+=item1 C«[-c|--command=<Str>]»  overrides the command to list the current directory it is assumed this is the same as the output directory for all the plugins.
+=item2 the default is B<ls -Flaghi --color=always> this can be overridden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
 =item1 C«[-q|--quiet|--silent]»   if  present then all non-error output is suppressed.
 
 L<Table of Contents|#table-of-contents>

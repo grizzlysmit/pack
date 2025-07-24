@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.45>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.46>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
