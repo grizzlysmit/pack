@@ -1,4 +1,4 @@
-unit module Pack:ver<0.1.44>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
+unit module Pack:ver<0.1.45>:auth<Francis Grizzly Smit (grizzlysmit@smit.id.au)>;
 
 use JSON::Fast;
 
@@ -2077,7 +2077,7 @@ sub pack(Str $dir, Bool $silent, Bool $force is copy = False --> Bool) is export
     return $res.exitcode == 0;
 }
 
-sub exitcode(--> int) is export {
+sub exitcode(--> Int) is export {
     return $exitcode-val;
 }
 
@@ -2475,7 +2475,7 @@ sub new-plugin(Str:D $key, Str $uuid is copy, Str $name is copy, Str $descriptio
 
 sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, Bool:D $force,
                 $home, Str:D $xdg_config_home, Bool:D $silent, Bool:D $backtrace, Str:D $dev-lang,
-                Bool:D $mk-schema, @extra-sources --> Bool:D) is export {
+                Bool:D $mk-schema, Bool:D $mk-podir, @extra-sources --> Bool:D) is export {
     CATCH {
         when X::IO::Chmod, X::IO::Mkdir, X::AdHoc {
             if !$silent {
@@ -2494,10 +2494,30 @@ sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, B
     my $plugin-location    = $plugin-dir.IO.add($uuid).resolve;
     my $file-cont          = $plugin-location.add('metadata.json').slurp(:utf8);
     my $data               = from-json $file-cont;
+    my Bool:D $dirty       = False;
     my Str $gettext-domain = %$data«gettext-domain» // Str; 
     without $gettext-domain {
-        $*ERR.say: "gettext-domain missing in metadata.json; please fix!";
-        return False;
+        my Str $name = %$data«name» // Str;
+        my Str $gettext-domain_;
+        with $name {
+            $gettext-domain_ = $name;
+            $gettext-domain_ ~~ s:g/\s/-/;
+        }
+        my Str $input;
+        while !$gettext-domain {
+            $input = prompt "gettext-domain: $gettext-domain_? hit enter to accept or type in new value followed by enter.";
+            with $input {
+                $input = $input.chomp;
+                if $input eq '' {
+                    $gettext-domain = $gettext-domain_;
+                } elsif $input {
+                    $gettext-domain = $input;
+                }
+            }
+            "Please supply a valid gettext-domain".say  unless $gettext-domain;
+        }
+        %$data«gettext-domain» = $gettext-domain;
+        $dirty                 = True;
     }
     my Str $schema         = %$data«settings-schema» // Str; 
     with $schema {
@@ -2511,8 +2531,12 @@ sub add-plugin(Str:D $key, Str:D $plugin-dir, Str:D $uuid, Str $podir is copy, B
         $schema = "org.gnome.shell.extensions.{$gettext-domain}";
         make-schema($plugin-location.add('schemas').resolve, $gettext-domain, "{$schema}.gschema.xml", $silent, $backtrace);
         %$data«settings-schema» = $schema;
-        $plugin-location.add('metadata.json').spurt(to-json($data, :pretty, :spacing(4), :sorted-keys));
+        $dirty                  = True;
         $schema         = "schemas/$schema";
+    }
+    $plugin-location.add('metadata.json').spurt(to-json($data, :pretty, :spacing(4), :sorted-keys)) if $dirty;
+    if $mk-podir {
+        $plugin-location.add($podir).resolve.mkdir;
     }
     $podir = Str unless $plugin-location.add($podir).resolve ~~ :d;
     with $podir {

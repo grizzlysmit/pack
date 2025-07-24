@@ -27,7 +27,7 @@ Table of Contents
 
       * [To create a new plugin just call](#to-create-a-new-plugin-just-call)
 
-      * [example of using pack.raku plugin new fred --all --force](#example-of-using-packraku-plugin-new-fred---all---force)
+      * [example of using pack.raku plugin new key --all --force](#example-of-using-packraku-plugin-new-key---all---force)
 
       * [If you want to manage an existing extension then use](#if-you-want-to-manage-an-existing-extension-then-use)
 
@@ -234,7 +234,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.44
+v0.1.45
 
 TITLE
 =====
@@ -284,7 +284,7 @@ The program will prompt for all the parameters it requires once run it will have
 
 [Table of Contents](#table-of-contents)
 
-#### example of using pack.raku plugin new fred --all --force
+#### example of using pack.raku plugin new key --all --force
 
 ```bash
 05:03:07 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 7s $ pack.raku plugin new fred --all --force
@@ -391,6 +391,116 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 ```
 
   * [(See pack.raku plugin add)](#packraku-plugin-add)
+
+[Table of Contents](#table-of-contents)
+
+#### example of using pack.raku plugin add
+
+```bash
+10:41:54 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ gnome-extensions create --prefs --interactive
+Name should be a very short (ideally descriptive) string.
+Examples are: “Click To Focus”, “Adblock”, “Shell Window Shrinker”
+Name: fred
+
+Description is a single-sentence explanation of what your extension does.
+Examples are: “Make windows visible on click”, “Block advertisement popups”, “Animate windows shrinking on minimize”
+Description: Dummy plugin
+
+UUID is a globally-unique identifier for your extension.
+This should be in the format of an email address (clicktofocus@janedoe.example.com)
+UUID: fred@grizzlysmit.smit.id.au
+
+Choose one of the available templates:
+1) Plain       –  An empty extension
+2) Indicator   –  Add an icon to the top bar
+3) Quick Settings Item  –  Add an item to quick settings
+Template [1-3]: 2
+
+The new extension was successfully created in /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au.
+10:43:23 θ72° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 1m8s $ mv /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au/ .
+renamed '/home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au/' -> './fred@grizzlysmit.smit.id.au'
+10:43:49 θ69° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ tb fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+53501399 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 fred@grizzlysmit.smit.id.au/
+53501572 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── extension.js
+53501494 .rw-rw-r--      1   130 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── metadata.json
+53501574 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── prefs.js
+53501573 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 └── stylesheet.css
+
+10:44:07 θ66° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 127 $ type tb
+tb is aliased to `exa -F -lahigHTb  --colour-scale --time-style=full-iso'
+
+10:44:14 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │   "name": "fred",
+   3   │   "description": "Dummy plugin",
+   4   │   "uuid": "fred@grizzlysmit.smit.id.au",
+   5   │   "shell-version": [
+   6   │     "48"
+   7   │   ]
+   8   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+10:44:37 θ68° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ pack.raku plugin add fred fred@grizzlysmit.smit.id.au  --force --mk-schema --mk-podir
+gettext-domain: fred? hit enter to accept or type in new value followed by enter.
+Created po/en.po.
+key: fred => "/home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au" added successfully
+.pack_args.json created
+10:45:50 θ64° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 13s $ pack.raku alias get-gettext-domain fred
+fred
+10:46:13 θ77° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 3s $ # it worked
+10:46:26 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ tb fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+53501399 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.817144241 +1000 fred@grizzlysmit.smit.id.au/
+53501634 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 10:45:50.817730377 +1000 ├── .pack_args.json
+53501578 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 10:45:50.709030905 +1000 ├── compile.sh*
+53501572 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── extension.js
+53501584 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.798143691 +1000 ├── locale/
+53501616 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.798143691 +1000 │   └── en/
+53501633 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.800143748 +1000 │       └── LC_MESSAGES/
+53501582 .rw-rw-r--      1   653 grizzlysmit grizzlysmit 2025-07-24 10:45:50.797109428 +1000 │           └── fred.mo
+53501494 .rw-rw-r--      1   231 grizzlysmit grizzlysmit 2025-07-24 10:45:50.706926618 +1000 ├── metadata.json
+53501577 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.793143546 +1000 ├── po/
+53501581 .rw-rw-r--      1   986 grizzlysmit grizzlysmit 2025-07-24 10:45:50.794635436 +1000 │   ├── en.po
+53501580 .rw-rw-r--      1   875 grizzlysmit grizzlysmit 2025-07-24 10:45:50.743762978 +1000 │   └── fred.pot
+53501574 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── prefs.js
+53501575 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.739141981 +1000 ├── schemas/
+53501579 .rw-rw-r--      1   380 grizzlysmit grizzlysmit 2025-07-24 10:45:50.739141981 +1000 │   ├── gschemas.compiled
+53501576 .rw-rw-r--      1   765 grizzlysmit grizzlysmit 2025-07-24 10:45:50.705111892 +1000 │   └── org.gnome.shell.extensions.fred.gschema.xml
+53501573 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 └── stylesheet.css
+10:46:38 θ64° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     "description": "Dummy plugin",
+   3   │     "gettext-domain": "fred",
+   4   │     "name": "fred",
+   5   │     "settings-schema": "org.gnome.shell.extensions.fred",
+   6   │     "shell-version": [
+   7   │         "48"
+   8   │     ],
+   9   │     "uuid": "fred@grizzlysmit.smit.id.au"
+  10   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+10:47:13 θ76° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/.pack_args.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/.pack_args.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     "extra-sources": [
+   3   │     ],
+   4   │     "force": true,
+   5   │     "gettext-domain": "fred",
+   6   │     "out-dir": "/home/grizzlysmit/Projects/gnome-shell/extensions",
+   7   │     "package-dir": "fred@grizzlysmit.smit.id.au",
+   8   │     "podir": "po",
+   9   │     "schema": "schemas/org.gnome.shell.extensions.fred.gschema.xml"
+  10   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+```
 
 [Table of Contents](#table-of-contents)
 
