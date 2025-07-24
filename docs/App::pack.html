@@ -24,7 +24,7 @@ Av8AAAD/AAAAAAAAAEAAAAAAAAAAGQAAAP/RAACR/35+/wAAAP8A+wL/AAAA2gAAAGX/AADa/35+
 AAAAZQAAAP8AAAD/AAAAAAAAAAAAAABlAAAA/4WFhQEAAAD/AAAAQAAAAAAAAAD/AAAA2gAAAGUA
 AAAAj/kAAAZgAAADgAAAgAEAAOAHAADgBwAAwAMAAIABAACAAQAAAAEAAAAAAAAAAAAAAAAAAAPA
 AACH4QAAzrMAAA==" rel="icon" type="image/x-icon" /><meta name="author" value="Francis Grizzly Smit (grizzly@smit.id.au)" />
-<meta name="version" value="v0.1.46" />
+<meta name="version" value="v0.1.47" />
 <style>.comment {
   color: #666; }
 
@@ -817,7 +817,7 @@ footer {
 <h3 id="To_create_a_new_plugin_just_call_"><a href="#pack_0" class="u" title="go to top of document">To create a new plugin just call </a></h3>
 <pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
 
-</pre><p>You can alternately use <code>--prefs --schema-file --podirs --add-credits</code> leave out the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file), you can leave out <code>--schema-file</code> if you do not need a schema file, you can leave <code>--podirs</code> if you don't want internationalisation, you can leave of <code>--add-credits</code> if you don't want to add credits and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; <strong>by default the current directory from which you ran <code>pack.raku plugin new</code> from</strong>. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. </p><p><strong>NB: I use the words &quot;plugin&quot; and &quot;extension&quot; interchangeably.</strong></p><ul>
+</pre><p>You can alternately use <code>--prefs --schema-file --podirs --add-credits</code> leave out the <code>--prefs</code> out if you don't need settings (i.e. a prefs.js file), you can leave out <code>--schema-file</code> if you do not need a schema file, you can leave <code>--podirs</code> if you don't want internationalisation, you can leave of <code>--add-credits</code> if you don't want to add credits and you can leave off <code>--force</code> if you don't want the force parameter when packaging the extension.</p><p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; <strong>by default the current directory from which you ran <code>pack.raku plugin new</code> from</strong>. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. </p><p><strong>NB: I use the words &quot;plugin&quot; and &quot;extension&quot; interchangeably.</strong></p><p><strong>The commands <code>pack.raku plugin add</code> and <code>pack.raku alias do</code> assume you are in the directory in which the plugin(s) reside for now this is a fetcher, later I may change that.</strong></p><ul>
 <li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p></li>
 </ul>
 <p><a href="#table-of-contents">Table of Contents</a></p><h4 id="example_of_using_pack.raku_plugin_new_key_--all_--force"><a href="#pack_0" class="u" title="go to top of document">example of using pack.raku plugin new key --all --force</a></h4>
@@ -1508,7 +1508,7 @@ Usage:
 <li><p><code>[-s|--set|--force]</code> if present then add the key directory pair even if it requires overwriting an existing entry.</p></li>
 <li><p><code>[-c|--comment=&lt;Str&gt;]</code> A comment to describe the key directory pair.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
 <pre class="pod-block-code">Usage:
   pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
 
@@ -1525,7 +1525,7 @@ Usage:
 </ul>
 <li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_new_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin new --help</a></h1>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_new_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin new --help</a></h1>
 <pre class="pod-block-code">pack.raku plugin new --help
 
 Usage:
@@ -2206,7 +2206,7 @@ Usage:
 }
 
 </pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-24T05:53:44Z</span></div></footer>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-24T06:05:28Z</span></div></footer>
 	</body>
 </html>
 

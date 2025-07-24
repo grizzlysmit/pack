@@ -238,7 +238,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.46
+v0.1.47
 
 TITLE
 =====
@@ -283,6 +283,8 @@ You can alternately use `--prefs --schema-file --podirs --add-credits` leave out
 The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; **by default the current directory from which you ran `pack.raku plugin new` from**. The underlying program **gnome-extensions create** creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. 
 
 **NB: I use the words "plugin" and "extension" interchangeably.**
+
+**The commands `pack.raku plugin add` and `pack.raku alias do` assume you are in the directory in which the plugin(s) reside for now this is a fetcher, later I may change that.**
 
   * [(See pack.raku plugin new)](#packraku-plugin-new---help)
 
@@ -1250,6 +1252,8 @@ Where
 
   * `[-c|--comment=<Str>]` A comment to describe the key directory pair.
 
+**NB: This command assumes it is being run from the directory in which the plugin resides.**
+
 [Table of Contents](#table-of-contents)
 
 pack.raku alias do --help
@@ -1275,6 +1279,8 @@ Where
     * the default is **ls -Flaghi --color=always** this can be overridden by the value of the **LS_CMD** environment variable but the command-line value overrides both.
 
   * `[-q|--quiet|--silent]` if present then all non-error output is suppressed.
+
+**NB: This command assumes it is being run from the directory in which the plugin resides.**
 
 [Table of Contents](#table-of-contents)
 

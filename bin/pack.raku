@@ -145,7 +145,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.46
+=VERSION v0.1.47
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -180,6 +180,8 @@ The program will prompt for all the parameters it requires once run it will have
 The underlying program B«gnome-extensions create» creates the extension in the directory of the live extensions I move it to the specified development area so you don't mess up your development computer while working, I recommend testing on a VM or at least a less important computer. 
 
 B«NB: I use the words "plugin" and "extension" interchangeably.»
+
+B«The commands C<pack.raku plugin add> and C<pack.raku alias do> assume you are in the directory in which the plugin(s) reside for now this is a fetcher, later I may change that.»
 
 =item1 L<(See pack.raku plugin new)|#packraku-plugin-new---help>
 
@@ -1386,6 +1388,8 @@ Where
 =item1 C«[-s|--set|--force]»     if present then add the key directory pair even if it requires overwriting an existing entry.
 =item1 C«[-c|--comment=<Str>]»   A comment to describe the key directory pair.
 
+B«NB: This command assumes it is being run from the directory in which the plugin resides.»
+
 L<Table of Contents|#table-of-contents>
 
 =end pod
@@ -1417,6 +1421,8 @@ Where
 =item1 C«[-c|--command=<Str>]»  overrides the command to list the current directory it is assumed this is the same as the output directory for all the plugins.
 =item2 the default is B<ls -Flaghi --color=always> this can be overridden by the value of the B<LS_CMD> environment variable but the command-line value overrides both.
 =item1 C«[-q|--quiet|--silent]»   if  present then all non-error output is suppressed.
+
+B«NB: This command assumes it is being run from the directory in which the plugin resides.»
 
 L<Table of Contents|#table-of-contents>
 
