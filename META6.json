@@ -12,7 +12,7 @@
   "authors": [
     "Francis Grizzly Smit <grizzly@smit.id.au>"
   ],
-  "version": "0.1.49",
+  "version": "0.1.50",
   "description": "A Raku program to manage the use of gnome-extensions pack, it has too many arguments this makes it easy.",
   "test-depends": [
     ""
