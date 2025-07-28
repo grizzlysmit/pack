@@ -145,11 +145,11 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.50
+=VERSION v0.1.51
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
-=COPYRIGHT ©2025 Francis Grizzly Smit GPL V3.0+ L<LICENSE|https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE>
+=COPYRIGHT ©2025 Francis Grizzly Smit GPL V3.0+ L<LICENSE|https://github.com/grizzlysmit/pack/blob/main/LICENSE>
 
 L<Top of Top of Document|#table-of-contents>
 

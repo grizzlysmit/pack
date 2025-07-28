@@ -238,7 +238,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.50
+v0.1.51
 
 TITLE
 =====
@@ -253,7 +253,7 @@ A Raku program to manage the use of **gnome-extensions pack**, it has too many a
 COPYRIGHT
 =========
 
-©2025 Francis Grizzly Smit GPL V3.0+ [LICENSE](https://github.com/grizzlysmit/Usage-Utils/blob/main/LICENSE)
+©2025 Francis Grizzly Smit GPL V3.0+ [LICENSE](https://github.com/grizzlysmit/pack/blob/main/LICENSE)
 
 [Top of Top of Document](#table-of-contents)
 
