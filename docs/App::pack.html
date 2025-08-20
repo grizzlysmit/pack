@@ -675,6 +675,83 @@ footer {
  <tr class="toc-level-1"><td class="toc-text"><a href="#pack.raku_USAGE">pack.raku USAGE</a></td></tr>
  <tr class="toc-level-1"><td class="toc-text"><a href="#multi_sub_GENERATE-USAGE">multi sub GENERATE-USAGE</a></td></tr>
 </table></div>
+<div id="Glossary" class="glossary">
+<div class="glossary-caption">Glossary</div>
+<div class="glossary-defn header">Term explained</div><div class="header glossary-place">In section</div><div class="glossary-defn">multi sub MAIN ("add", Str $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str :o(:$out-dir) = ".", Bool:D :f(:$force) = Bool::False, Bool:D :F(:$stomp-force) = Bool::False, Bool:D :S(:$stomp) = Bool::False, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;add&quot;,_Str_$package-dir,_Str_:s(:$schema)_=_Str,_Str_:p(:$podir)_=_Str,_Str_:g(:$gettext-domain)_=_Str,_Str_:o(:$out-dir)_=_&quot;.&quot;,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:F(:$stomp-force)_=_Bool::False,_Bool:D_:S(:$stomp)_=_Bool::False,_*@extra-sources_--&gt;_int)_">pack.raku add</a></div>
+ <div class="glossary-defn">multi sub MAIN ("add-extra-sources", Str $package-dir, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;add-extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_">pack.raku add-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "add", Str $key, Str $target, Bool:D :s(:set(:$force)) = Bool::False, Str :c(:$comment) = Str --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;add&quot;,_Str_$key,_Str_$target,_Bool:D_:s(:set(:$force))_=_Bool::False,_Str_:c(:$comment)_=_Str_--&gt;_int)_">pack.raku alias add</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "add-extra-sources", Str:D $key, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;add-extra-sources&quot;,_Str:D_$key,_*@extra-sources_--&gt;_int)_">pack.raku alias add-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "append-extra-sources", Str $key, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;append-extra-sources&quot;,_Str_$key,_*@extra-sources_--&gt;_int)_">pack.raku alias append-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "do", Str $key, Bool:D :f(:$force) = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@keys is copy --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;do&quot;,_Str_$key,_Bool:D_:f(:$force)_=_Bool::False,_Str:D_:c(:$command)_=_Code.new,_Bool_:q(:quiet(:$silent))_=_Bool::False,_*@keys_is_copy_--&gt;_int)_">pack.raku alias do --help</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-extra-sources", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-extra-sources&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-force", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-force&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-force</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-gettext-domain", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-gettext-domain&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-out-dir", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-out-dir&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-package-dir", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-package-dir&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-package-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-podir", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-podir&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "get-schema", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-schema&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias get-schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "remove-extra-sources", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-extra-sources&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias remove-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "remove-gettext-domain", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-gettext-domain&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias remove-gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "remove-out-dir", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-out-dir&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias remove-out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "remove-podir", Str:D $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-podir&quot;,_Str:D_$key_--&gt;_int)_">pack.raku alias remove-podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "remove-schema", Str $key --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-schema&quot;,_Str_$key_--&gt;_int)_">pack.raku alias remove-schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-extra-sources", Str $key, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-extra-sources&quot;,_Str_$key,_*@extra-sources_--&gt;_int)_">pack.raku alias set-extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-force", Str $key, Bool $force-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-force&quot;,_Str_$key,_Bool_$force-value_--&gt;_int)_">pack.raku alias set-force</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-gettext-domain", Str $key, Str $gettext-domain-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-gettext-domain&quot;,_Str_$key,_Str_$gettext-domain-value_--&gt;_int)_">pack.raku alias set-gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-out-dir", Str $key, Str $out-dir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-out-dir&quot;,_Str_$key,_Str_$out-dir-value_--&gt;_int)_">pack.raku alias set-out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-package-dir", Str $key, Str $package-dir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-package-dir&quot;,_Str_$key,_Str_$package-dir-value_--&gt;_int)_">pack.raku alias set-package-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-podir", Str $key, Str $podir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-podir&quot;,_Str_$key,_Str_$podir-value_--&gt;_int)_">pack.raku alias set-podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("alias", "set-schema", Str $key, Str $schema-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-schema&quot;,_Str_$key,_Str_$schema-value_--&gt;_int)_">pack.raku alias set-schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("append", "extra-sources", Str $package-dir, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;append&quot;,_&quot;extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_">pack.raku append extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("backup", "db", Bool:D :w(:win-format(:$use-windows-formatting)) = Bool::False --> Bool) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;backup&quot;,_&quot;db&quot;,_Bool:D_:w(:win-format(:$use-windows-formatting))_=_Bool::False_--&gt;_Bool)_">pack.raku backup db</a></div>
+ <div class="glossary-defn">multi sub MAIN ("backup", "editors", Bool:D :w(:$use-windows-formatting) = Bool::False --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;backup&quot;,_&quot;editors&quot;,_Bool:D_:w(:$use-windows-formatting)_=_Bool::False_--&gt;_Int)_">pack.raku backup editors</a></div>
+ <div class="glossary-defn">multi sub MAIN ("comment", Str:D $key, Str:D $comment, Str:D :k(:$kind) where </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;comment&quot;,_Str:D_$key,_Str:D_$comment,_Str:D_:k(:$kind)_where_">pack.raku comment</a></div>
+ <div class="glossary-defn">multi sub MAIN ("create", Str:D $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str:D :o(:$out-dir) = ".", Bool:D :f(:$force) = Bool::False, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;create&quot;,_Str:D_$package-dir,_Str_:s(:$schema)_=_Str,_Str_:p(:$podir)_=_Str,_Str_:g(:$gettext-domain)_=_Str,_Str:D_:o(:$out-dir)_=_&quot;.&quot;,_Bool:D_:f(:$force)_=_Bool::False,_*@extra-sources_--&gt;_int)_">pack.raku create --help</a></div>
+ <div class="glossary-defn">multi sub MAIN ("del", Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;del&quot;,_Bool:D_:d(:delete(:$do-not-trash))_=_Bool::False,_*@keys_--&gt;_Int)_">pack.raku del</a></div>
+ <div class="glossary-defn">multi sub MAIN ("delete", Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;delete&quot;,_Bool:D_:d(:delete(:$do-not-trash))_=_Bool::False,_*@keys_--&gt;_Int)_">pack.raku delete</a></div>
+ <div class="glossary-defn">multi sub MAIN ("do", Str:D $dir, Bool:D :f(:$force) is copy = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@dirs is copy --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;do&quot;,_Str:D_$dir,_Bool:D_:f(:$force)_is_copy_=_Bool::False,_Str:D_:c(:$command)_=_Code.new,_Bool_:q(:quiet(:$silent))_=_Bool::False,_*@dirs_is_copy_--&gt;_int)_">pack.raku do --help</a></div>
+ <div class="glossary-defn">multi sub MAIN ("edit", "configs" --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;edit&quot;,_&quot;configs&quot;_--&gt;_Int)_">pack.raku edit configs</a></div>
+ <div class="glossary-defn">multi sub MAIN ("editors", "stats", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;editors&quot;,_&quot;stats&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku editors stats</a></div>
+ <div class="glossary-defn">multi sub MAIN ("empty", "trash" --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;empty&quot;,_&quot;trash&quot;_--&gt;_Int)_">pack.raku empty trash</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "extra-sources", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;extra-sources&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "force", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;force&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get force</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "gettext-domain", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "out-dir", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;out-dir&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "package-dir", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;package-dir&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get package-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "podir", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;podir&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("get", "schema", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;schema&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku get schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "all", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;all&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_50,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list all</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "db", "backups", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;db&quot;,_&quot;backups&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list db backups</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "editors", "backups", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;editors&quot;,_&quot;backups&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list editors backups</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "editors", Str:D :f(:$prefix) = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;editors&quot;,_Str:D_:f(:$prefix)_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list editors</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "keys", Str $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;keys&quot;,_Str_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_50,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list keys</a></div>
+ <div class="glossary-defn">multi sub MAIN ("list", "trash", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;trash&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku list trash</a></div>
+ <div class="glossary-defn">multi sub MAIN ("menu", "restore", "db", Str:D $message = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;menu&quot;,_&quot;restore&quot;,_&quot;db&quot;,_Str:D_$message_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False_--&gt;_Int)_">pack.raku menu restore db</a></div>
+ <div class="glossary-defn">multi sub MAIN ("menu", "restore", "editors", Str:D $message = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;menu&quot;,_&quot;restore&quot;,_&quot;editors&quot;,_Str:D_$message_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False_--&gt;_Int)_">pack.raku menu restore editors</a></div>
+ <div class="glossary-defn">multi sub MAIN ("plugin", "add", Str:D $key, Str:D $uuid, Str:D :p(:extension-dir($plugin-dir)) = ".", Str:D :$podir = "po", Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Bool:D :m(:$mk-schema) = Bool::False, Bool:D :$mk-podir = Bool::False, Str:D :l(:$dev-lang) = Code.new, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;plugin&quot;,_&quot;add&quot;,_Str:D_$key,_Str:D_$uuid,_Str:D_:p(:extension-dir($plugin-dir))_=_&quot;.&quot;,_Str:D_:$podir_=_&quot;po&quot;,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:s(:$silent)_=_Bool::False,_Bool:D_:b(:$backtrace)_=_Bool::False,_Bool:D_:m(:$mk-schema)_=_Bool::False,_Bool:D_:$mk-podir_=_Bool::False,_Str:D_:l(:$dev-lang)_=_Code.new,_*@extra-sources_--&gt;_int)_">pack.raku plugin add</a></div>
+ <div class="glossary-defn">multi sub MAIN ("plugin", "new", Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str, Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str, Str :$credits = Str, Bool:D :$prefs = Bool::False, Bool:D :$schema-file = Bool::False, Bool:D :$podirs = Bool::False, Bool:D :$add-credits = Bool::False, Bool:D :a(:all-parmas(:$all)) = Bool::False, Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Str:D :l(:$dev-lang) = Code.new, Str:D :o(:output(:development-dir(:$dev-dir))) = "." --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;plugin&quot;,_&quot;new&quot;,_Str:D_$key,_Str_:$uuid_=_Str,_Str_:$name_=_Str,_Str_:$description_=_Str,_Str_:$gettext-domain_=_Str,_Str_:$settings-schema_=_Str,_Str_:$template_=_Str,_Str_:$credits_=_Str,_Bool:D_:$prefs_=_Bool::False,_Bool:D_:$schema-file_=_Bool::False,_Bool:D_:$podirs_=_Bool::False,_Bool:D_:$add-credits_=_Bool::False,_Bool:D_:a(:all-parmas(:$all))_=_Bool::False,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:s(:$silent)_=_Bool::False,_Bool:D_:b(:$backtrace)_=_Bool::False,_Str:D_:l(:$dev-lang)_=_Code.new,_Str:D_:o(:output(:development-dir(:$dev-dir)))_=_&quot;.&quot;_--&gt;_int)_">Recommended Usage</a></div>
+ <div class="glossary-defn">multi sub MAIN ("remove", "extra-sources", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;extra-sources&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku remove extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("remove", "gettext-domain", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku remove gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("remove", "out-dir", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;out-dir&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku remove out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("remove", "podir", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;podir&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku remove podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("remove", "schema", Str $package-dir --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;schema&quot;,_Str_$package-dir_--&gt;_int)_">pack.raku remove schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("restore", "db", Str $restore-from = Str --> Bool) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;restore&quot;,_&quot;db&quot;,_Str_$restore-from_=_Str_--&gt;_Bool)_">pack.raku restore db</a></div>
+ <div class="glossary-defn">multi sub MAIN ("restore", "editors", Str:D $restore-from --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;restore&quot;,_&quot;editors&quot;,_Str:D_$restore-from_--&gt;_Int)_">pack.raku restore editors</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "editor", Str:D $editor, Str $comment = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;editor&quot;,_Str:D_$editor,_Str_$comment_=_Str_--&gt;_Int)_">pack.raku set editor</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "extra-sources", Str $package-dir, *@extra-sources --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_">pack.raku set extra-sources</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "force", Str $package-dir, Bool $force-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;force&quot;,_Str_$package-dir,_Bool_$force-value_--&gt;_int)_">pack.raku set force</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "gettext-domain", Str $package-dir, Str $gettext-domain-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir,_Str_$gettext-domain-value_--&gt;_int)_">pack.raku set gettext-domain</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "out-dir", Str $package-dir, Str $out-dir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;out-dir&quot;,_Str_$package-dir,_Str_$out-dir-value_--&gt;_int)_">pack.raku set out-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "override", "GUI_EDITOR", Bool:D $value, Str $comment = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;override&quot;,_&quot;GUI__EDITOR&quot;,_Bool:D_$value,_Str_$comment_=_Str_--&gt;_Int)_">pack.raku set override GUI_EDITOR</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "package-dir", Str $package-dir, Str $package-dir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;package-dir&quot;,_Str_$package-dir,_Str_$package-dir-value_--&gt;_int)_">pack.raku set package-dir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "podir", Str $package-dir, Str $podir-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;podir&quot;,_Str_$package-dir,_Str_$podir-value_--&gt;_int)_">pack.raku set podir</a></div>
+ <div class="glossary-defn">multi sub MAIN ("set", "schema", Str $package-dir, Str $schema-value --> int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;schema&quot;,_Str_$package-dir,_Str_$schema-value_--&gt;_int)_">pack.raku set schema</a></div>
+ <div class="glossary-defn">multi sub MAIN ("show", "statistics", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;show&quot;,_&quot;statistics&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku show statistics</a></div>
+ <div class="glossary-defn">multi sub MAIN ("show", "stats", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;show&quot;,_&quot;stats&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_">pack.raku show stats</a></div>
+ <div class="glossary-defn">multi sub MAIN ("tidy", "file" --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;tidy&quot;,_&quot;file&quot;_--&gt;_Int)_">pack.raku tidy file</a></div>
+ <div class="glossary-defn">multi sub MAIN ("trash", *@keys --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;trash&quot;,_*@keys_--&gt;_Int)_">pack.raku trash</a></div>
+ <div class="glossary-defn">multi sub MAIN ("undelete", *@keys --> Int) </div><div class="glossary-place"><a href="#index-entry-multi_sub_MAIN_(&quot;undelete&quot;,_*@keys_--&gt;_Int)_">pack.raku undelete</a></div>
+</div>
 </nav><div id="pack_0"></div><div class="subtitle"><p>A Raku program to manage the use of <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy.</p></div><div class="pod-body"><section name="___top"><h1 id="App::pack"><a href="#___top" class="u" title="go to top of document">App::pack</a></h1>
 <h1 id="app_pack.raku"><a href="#___top" class="u" title="go to top of document">app pack.raku</a></h1>
 <h2 id="Table_of_Contents"><a href="#___top" class="u" title="go to top of document">Table of Contents</a></h2>
@@ -1256,7 +1333,7 @@ Usage:
 </ul>
 <li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_create_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku create --help</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;do&quot;,_Str:D_$dir,_Bool:D_:f(:$force)_is_copy_=_Bool::False,_Str:D_:c(:$command)_=_Code.new,_Bool_:q(:quiet(:$silent))_=_Bool::False,_*@dirs_is_copy_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("do", Str:D $dir, Bool:D :f(:$force) is copy = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@dirs is copy --> int) </code>Package the plugin at $dir and any plugin's in @dirs</article><section name="pod"><h1 id="pack.raku_create_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku create --help</a></h1>
 <pre class="pod-block-code">Usage:
   pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
 
@@ -1269,7 +1346,7 @@ Usage:
 <li><p><code>[-o|--out-dir=&lt;Str&gt;]</code> The directory to place the package file in.</p></li>
 <li><p><code>[-f|--force]</code> set the force option.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku add</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;create&quot;,_Str:D_$package-dir,_Str_:s(:$schema)_=_Str,_Str_:p(:$podir)_=_Str,_Str_:g(:$gettext-domain)_=_Str,_Str:D_:o(:$out-dir)_=_&quot;.&quot;,_Bool:D_:f(:$force)_=_Bool::False,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("create", Str:D $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str:D :o(:$out-dir) = ".", Bool:D :f(:$force) = Bool::False, *@extra-sources --> int) </code>Create the .pack_args.json file for the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku add</a></h1>
 <pre class="pod-block-code">pack.raku add --help
 
 Usage:
@@ -1286,7 +1363,7 @@ Usage:
 <li><p><code>[-F|--stomp-force]</code> If present then the value of --force wins regradless.</p></li>
 <li><p><code>[-S|--stomp]</code> If present then @extra-sources stomps on whatever was before otherwise they are spliced together.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku set schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;add&quot;,_Str_$package-dir,_Str_:s(:$schema)_=_Str,_Str_:p(:$podir)_=_Str,_Str_:g(:$gettext-domain)_=_Str,_Str_:o(:$out-dir)_=_&quot;.&quot;,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:F(:$stomp-force)_=_Bool::False,_Bool:D_:S(:$stomp)_=_Bool::False,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("add", Str $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str :o(:$out-dir) = ".", Bool:D :f(:$force) = Bool::False, Bool:D :F(:$stomp-force) = Bool::False, Bool:D :S(:$stomp) = Bool::False, *@extra-sources --> int) </code>add or set parameters in the .pack_args.json file in $package-dir.</article><section name="pod"><h1 id="pack.raku_set_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku set schema</a></h1>
 <pre class="pod-block-code">pack.raku set schema --help
 
 Usage:
@@ -1296,7 +1373,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>&lt;schema-value&gt;</code> new value of schema.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;schema&quot;,_Str_$package-dir,_Str_$schema-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "schema", Str $package-dir, Str $schema-value --> int) </code>set the value of schema in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set podir</a></h1>
 <pre class="pod-block-code">pack.raku set podir --help
 
 Usage:
@@ -1309,7 +1386,7 @@ Usage:
 <li><p>podir is the path of the directory containing the po files.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku set gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;podir&quot;,_Str_$package-dir,_Str_$podir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "podir", Str $package-dir, Str $podir-value --> int) </code>set the value of podir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku set gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku set gettext-domain --help
 
 Usage:
@@ -1319,7 +1396,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>&lt;gettext-domain-value&gt;</code> new value of gettext-domain.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir,_Str_$gettext-domain-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "gettext-domain", Str $package-dir, Str $gettext-domain-value --> int) </code>set the value of gettext-domain in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set out-dir</a></h1>
 <pre class="pod-block-code">pack.raku set out-dir --help
 
 Usage:
@@ -1329,7 +1406,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>&lt;out-dir-value&gt;</code> new value of out-dir.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_force"><a href="#pack_0" class="u" title="go to top of document">pack.raku set force</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;out-dir&quot;,_Str_$package-dir,_Str_$out-dir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "out-dir", Str $package-dir, Str $out-dir-value --> int) </code>set the value of out-dir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_force"><a href="#pack_0" class="u" title="go to top of document">pack.raku set force</a></h1>
 <pre class="pod-block-code">pack.raku set force --help
 
 Usage:
@@ -1339,7 +1416,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>&lt;force-value&gt;</code> new value of force.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_add-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku add-extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;force&quot;,_Str_$package-dir,_Bool_$force-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "force", Str $package-dir, Bool $force-value --> int) </code>set the value of force in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_add-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku add-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku add-extra-sources --help
 
 Usage:
@@ -1349,7 +1426,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> additional extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set package-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;add-extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("add-extra-sources", Str $package-dir, *@extra-sources --> int) </code>add to the value of extra-sources in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku set package-dir</a></h1>
 <pre class="pod-block-code">pack.raku set package-dir --help
 
 Usage:
@@ -1362,7 +1439,7 @@ Usage:
 <li><p>probably useless as <code>&lt;package-dir&gt;</code> and <code>&lt;package-dir-value&gt;</code> are to be expected to be the same generally, but if needed it's here.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku set extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;package-dir&quot;,_Str_$package-dir,_Str_$package-dir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "package-dir", Str $package-dir, Str $package-dir-value --> int) </code>set the value of package-dir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_set_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku set extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku set extra-sources --help
 
 Usage:
@@ -1372,7 +1449,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> new value of extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_append_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku append extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "extra-sources", Str $package-dir, *@extra-sources --> int) </code>set the value of extra-sources in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_append_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku append extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku append extra-sources --help
 
 Usage:
@@ -1382,7 +1459,7 @@ Usage:
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> value to append to extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;append&quot;,_&quot;extra-sources&quot;,_Str_$package-dir,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("append", "extra-sources", Str $package-dir, *@extra-sources --> int) </code>append to the value of extra-sources in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_remove_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove schema</a></h1>
 <pre class="pod-block-code">pack.raku remove schema --help
 
 Usage:
@@ -1391,7 +1468,7 @@ Usage:
 </pre><p>Remove the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;schema&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("remove", "schema", Str $package-dir --> int) </code>remove the value of schema in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_remove_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove podir</a></h1>
 <pre class="pod-block-code">pack.raku remove podir --help
 
 Usage:
@@ -1400,7 +1477,7 @@ Usage:
 </pre><p>Remove the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;podir&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("remove", "podir", Str $package-dir --> int) </code>remove the value of podir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_remove_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku remove gettext-domain --help
 
 Usage:
@@ -1409,7 +1486,7 @@ Usage:
 </pre><p>Remove the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("remove", "gettext-domain", Str $package-dir --> int) </code>remove the value of gettext-domain in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_remove_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove out-dir</a></h1>
 <pre class="pod-block-code">pack.raku remove out-dir --help
 
 Usage:
@@ -1418,7 +1495,7 @@ Usage:
 </pre><p>Remove the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_remove_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;out-dir&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("remove", "out-dir", Str $package-dir --> int) </code>remove the value of out-dir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_remove_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku remove extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku remove extra-sources --help
 
 Usage:
@@ -1427,7 +1504,7 @@ Usage:
 </pre><p>Truncate the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku get schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;remove&quot;,_&quot;extra-sources&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("remove", "extra-sources", Str $package-dir --> int) </code>remove/truncate the value of extra-sources in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku get schema</a></h1>
 <pre class="pod-block-code">pack.raku get schema --help
 
 Usage:
@@ -1436,7 +1513,7 @@ Usage:
 </pre><p>Get the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;schema&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "schema", Str $package-dir --> int) </code>get the value of schema in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get podir</a></h1>
 <pre class="pod-block-code">pack.raku get podir --help
 
 Usage:
@@ -1448,7 +1525,7 @@ Usage:
 <p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku get gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;podir&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "podir", Str $package-dir --> int) </code>get the value of podir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku get gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku get gettext-domain --help
 
 Usage:
@@ -1457,7 +1534,7 @@ Usage:
 </pre><p>Get the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;gettext-domain&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "gettext-domain", Str $package-dir --> int) </code>get the value of gettext-domain in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get out-dir</a></h1>
 <pre class="pod-block-code">pack.raku get out-dir --help
 
 Usage:
@@ -1466,7 +1543,7 @@ Usage:
 </pre><p>Get the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku get extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;out-dir&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "out-dir", Str $package-dir --> int) </code>get the value of out-dir in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku get extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku get extra-sources --help
 
 Usage:
@@ -1475,7 +1552,7 @@ Usage:
 </pre><p>Get the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_force"><a href="#pack_0" class="u" title="go to top of document">pack.raku get force</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;extra-sources&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "extra-sources", Str $package-dir --> int) </code>get the value of extra-sources in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_force"><a href="#pack_0" class="u" title="go to top of document">pack.raku get force</a></h1>
 <pre class="pod-block-code">pack.raku get force --help
 
 Usage:
@@ -1484,7 +1561,7 @@ Usage:
 </pre><p>Get the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_get_package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get package-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;force&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "force", Str $package-dir --> int) </code>get the value of force in .pack_args.json of the plugin at $package-dir.</article><section name="pod"><h1 id="pack.raku_get_package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku get package-dir</a></h1>
 <pre class="pod-block-code">pack.raku get package-dir --help
 
 Usage:
@@ -1496,7 +1573,7 @@ Usage:
 <li><p>kind of redundant as it needs <code>package-dir</code> to get <code>package-dir</code>.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias add</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;get&quot;,_&quot;package-dir&quot;,_Str_$package-dir_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("get", "package-dir", Str $package-dir --> int) </code>get the value of package-dir in .pack_args.json of the plugin at $package-dir, redundant.</article><section name="pod"><h1 id="pack.raku_alias_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias add</a></h1>
 <pre class="pod-block-code">pack.raku alias add --help
 
 Usage:
@@ -1508,7 +1585,7 @@ Usage:
 <li><p><code>[-s|--set|--force]</code> if present then add the key directory pair even if it requires overwriting an existing entry.</p></li>
 <li><p><code>[-c|--comment=&lt;Str&gt;]</code> A comment to describe the key directory pair.</p></li>
 </ul>
-<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;add&quot;,_Str_$key,_Str_$target,_Bool:D_:s(:set(:$force))_=_Bool::False,_Str_:c(:$comment)_=_Str_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "add", Str $key, Str $target, Bool:D :s(:set(:$force)) = Bool::False, Str :c(:$comment) = Str --> int) </code>add $key => $target to the store.</article><section name="pod"><h1 id="pack.raku_alias_do_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias do --help</a></h1>
 <pre class="pod-block-code">Usage:
   pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
 
@@ -1525,7 +1602,7 @@ Usage:
 </ul>
 <li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p></li>
 </ul>
-<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_new_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin new --help</a></h1>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;do&quot;,_Str_$key,_Bool:D_:f(:$force)_=_Bool::False,_Str:D_:c(:$command)_=_Code.new,_Bool_:q(:quiet(:$silent))_=_Bool::False,_*@keys_is_copy_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "do", Str $key, Bool:D :f(:$force) = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@keys is copy --> int) </code>Package the plugin represented by $key and any plugin's in @keys</article><section name="pod"><h1 id="pack.raku_plugin_new_--help"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin new --help</a></h1>
 <pre class="pod-block-code">pack.raku plugin new --help
 
 Usage:
@@ -1569,7 +1646,7 @@ Usage:
 <li><p>The key <code>&lt;key&gt;</code> must be replaced with a real key.</p></li>
 </ul>
 </ul>
-<p>This whole development model assumes that you don't want to develop the plugin/extension live as is <code>gnome-extensions create</code> model so I copy the plugin out line generated by <code>gnome-extensions create</code> to another location I use <code>~/Projects/gnome-shell/extensions/</code> and deleting the original that <code>gnome-extensions create</code> generates. </p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_plugin_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin add</a></h1>
+<p>This whole development model assumes that you don't want to develop the plugin/extension live as is <code>gnome-extensions create</code> model so I copy the plugin out line generated by <code>gnome-extensions create</code> to another location I use <code>~/Projects/gnome-shell/extensions/</code> and deleting the original that <code>gnome-extensions create</code> generates. </p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;plugin&quot;,_&quot;new&quot;,_Str:D_$key,_Str_:$uuid_=_Str,_Str_:$name_=_Str,_Str_:$description_=_Str,_Str_:$gettext-domain_=_Str,_Str_:$settings-schema_=_Str,_Str_:$template_=_Str,_Str_:$credits_=_Str,_Bool:D_:$prefs_=_Bool::False,_Bool:D_:$schema-file_=_Bool::False,_Bool:D_:$podirs_=_Bool::False,_Bool:D_:$add-credits_=_Bool::False,_Bool:D_:a(:all-parmas(:$all))_=_Bool::False,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:s(:$silent)_=_Bool::False,_Bool:D_:b(:$backtrace)_=_Bool::False,_Str:D_:l(:$dev-lang)_=_Code.new,_Str:D_:o(:output(:development-dir(:$dev-dir)))_=_&quot;.&quot;_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("plugin", "new", Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str, Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str, Str :$credits = Str, Bool:D :$prefs = Bool::False, Bool:D :$schema-file = Bool::False, Bool:D :$podirs = Bool::False, Bool:D :$add-credits = Bool::False, Bool:D :a(:all-parmas(:$all)) = Bool::False, Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Str:D :l(:$dev-lang) = Code.new, Str:D :o(:output(:development-dir(:$dev-dir))) = "." --> int) </code>Create a new plugin $uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters.</article><section name="pod"><h1 id="pack.raku_plugin_add"><a href="#pack_0" class="u" title="go to top of document">pack.raku plugin add</a></h1>
 <pre class="pod-block-code">pack.raku plugin add  --help
 
 Usage:
@@ -1601,7 +1678,7 @@ Usage:
 </ul>
 <p>Typical use:</p><pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
 
-</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_add-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias add-extra-sources</a></h1>
+</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;plugin&quot;,_&quot;add&quot;,_Str:D_$key,_Str:D_$uuid,_Str:D_:p(:extension-dir($plugin-dir))_=_&quot;.&quot;,_Str:D_:$podir_=_&quot;po&quot;,_Bool:D_:f(:$force)_=_Bool::False,_Bool:D_:s(:$silent)_=_Bool::False,_Bool:D_:b(:$backtrace)_=_Bool::False,_Bool:D_:m(:$mk-schema)_=_Bool::False,_Bool:D_:$mk-podir_=_Bool::False,_Str:D_:l(:$dev-lang)_=_Code.new,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("plugin", "add", Str:D $key, Str:D $uuid, Str:D :p(:extension-dir($plugin-dir)) = ".", Str:D :$podir = "po", Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Bool:D :m(:$mk-schema) = Bool::False, Bool:D :$mk-podir = Bool::False, Str:D :l(:$dev-lang) = Code.new, *@extra-sources --> int) </code>Add a existing plugin $plugin-dir/$uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters.</article><section name="pod"><h1 id="pack.raku_alias_add-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias add-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku alias add-extra-sources --help
 
 Usage:
@@ -1611,7 +1688,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;add-extra-sources&quot;,_Str:D_$key,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "add-extra-sources", Str:D $key, *@extra-sources --> int) </code>Add or append extra-sources in the .pack_args.json file pointed to by $key in the store.</article><section name="pod"><h1 id="pack.raku_alias_set-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-schema</a></h1>
 <pre class="pod-block-code">pack.raku alias set-schema --help
 
 Usage:
@@ -1621,7 +1698,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p></li>
 <li><p><code>&lt;schema-value&gt;</code> New value of schema.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-schema&quot;,_Str_$key,_Str_$schema-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-schema", Str $key, Str $schema-value --> int) </code>Set schema in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-podir</a></h1>
 <pre class="pod-block-code">pack.raku alias set-podir --help
 
 Usage:
@@ -1634,7 +1711,7 @@ Usage:
 <li><p>podir is the path of the directory containing the po files, relative to the extensions development directory.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-podir&quot;,_Str_$key,_Str_$podir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-podir", Str $key, Str $podir-value --> int) </code>Set podir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku alias set-gettext-domain --help
 
 Usage:
@@ -1644,7 +1721,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>&lt;gettext-domain-value&gt;</code> New value of gettext-domain.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-gettext-domain&quot;,_Str_$key,_Str_$gettext-domain-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-gettext-domain", Str $key, Str $gettext-domain-value --> int) </code>Set gettext-domain in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-out-dir</a></h1>
 <pre class="pod-block-code">pack.raku alias set-out-dir --help
 
 Usage:
@@ -1654,7 +1731,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>&lt;out-dir-value&gt;</code> New value of out-dir.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-force"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-force</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-out-dir&quot;,_Str_$key,_Str_$out-dir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-out-dir", Str $key, Str $out-dir-value --> int) </code>Set out-dir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-force"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-force</a></h1>
 <pre class="pod-block-code">pack.raku alias set-force --help
 
 Usage:
@@ -1664,7 +1741,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>&lt;force-value&gt;</code> New value of force.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-package-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-force&quot;,_Str_$key,_Bool_$force-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-force", Str $key, Bool $force-value --> int) </code>Set force in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-package-dir</a></h1>
 <pre class="pod-block-code">pack.raku alias set-package-dir --help
 
 Usage:
@@ -1674,7 +1751,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> Additional extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_set-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-package-dir&quot;,_Str_$key,_Str_$package-dir-value_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-package-dir", Str $key, Str $package-dir-value --> int) </code>Set package-dir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_set-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias set-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku alias set-extra-sources --help
 
 Usage:
@@ -1684,7 +1761,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> New value of extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_append-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias append-extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;set-extra-sources&quot;,_Str_$key,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "set-extra-sources", Str $key, *@extra-sources --> int) </code>Set extra-sources in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_append-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias append-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku alias append-extra-sources --help
 
 Usage:
@@ -1694,7 +1771,7 @@ Usage:
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 <li><p><code>[&lt;extra-sources&gt; ...]</code> List of values to append to extra-sources.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;append-extra-sources&quot;,_Str_$key,_*@extra-sources_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "append-extra-sources", Str $key, *@extra-sources --> int) </code>Append *@extra-sources to extra-sources in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_remove-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-schema</a></h1>
 <pre class="pod-block-code">pack.raku alias remove-schema --help
 
 Usage:
@@ -1703,7 +1780,7 @@ Usage:
 </pre><p>Remove the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-schema&quot;,_Str_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "remove-schema", Str $key --> int) </code>Remove schema in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_remove-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-podir</a></h1>
 <pre class="pod-block-code">pack.raku alias remove-podir --help
 
 Usage:
@@ -1712,7 +1789,7 @@ Usage:
 </pre><p>Remove the value of <code>podir</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-podir&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "remove-podir", Str:D $key --> int) </code>Remove podir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_remove-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku alias remove-gettext-domain --help
 
 Usage:
@@ -1721,7 +1798,7 @@ Usage:
 </pre><p>Remove the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-gettext-domain&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "remove-gettext-domain", Str:D $key --> int) </code>Remove gettext-domain in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_remove-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-out-dir</a></h1>
 <pre class="pod-block-code">pack.raku alias remove-out-dir --help
 
 Usage:
@@ -1730,7 +1807,7 @@ Usage:
 </pre><p>Remove the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_remove-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-out-dir&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "remove-out-dir", Str:D $key --> int) </code>Remove out-dir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_remove-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias remove-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku alias remove-extra-sources --help
 
 Usage:
@@ -1739,7 +1816,7 @@ Usage:
 </pre><p>Truncate the <code>extra-sources</code> list in <code>&lt;package-dir&gt;/.pack_args.json</code>.</p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-schema</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;remove-extra-sources&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "remove-extra-sources", Str:D $key --> int) </code>Remove extra-sources in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-schema"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-schema</a></h1>
 <pre class="pod-block-code">pack.raku alias get-schema --help
 
 Usage:
@@ -1748,7 +1825,7 @@ Usage:
 </pre><p>Get the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-podir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-schema&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-schema", Str:D $key --> int) </code>Get schema in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-podir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-podir</a></h1>
 <pre class="pod-block-code">pack.raku alias get-podir --help
 
 Usage:
@@ -1760,7 +1837,7 @@ Usage:
 <p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-gettext-domain</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-podir&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-podir", Str:D $key --> int) </code>Get podir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-gettext-domain"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-gettext-domain</a></h1>
 <pre class="pod-block-code">pack.raku alias get-gettext-domain --help
 
 Usage:
@@ -1769,7 +1846,7 @@ Usage:
 </pre><p>Get the value of <code>gettext-domain</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-out-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-gettext-domain&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-gettext-domain", Str:D $key --> int) </code>Get gettext-domain in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-out-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-out-dir</a></h1>
 <pre class="pod-block-code">pack.raku alias get-out-dir --help
 
 Usage:
@@ -1778,7 +1855,7 @@ Usage:
 </pre><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-extra-sources</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-out-dir&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-out-dir", Str:D $key --> int) </code>Get out-dir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-extra-sources"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-extra-sources</a></h1>
 <pre class="pod-block-code">pack.raku alias get-extra-sources --help
 
 Usage:
@@ -1787,7 +1864,7 @@ Usage:
 </pre><p>Get the value of the <code>extra-sources</code> list in <code>&lt;package-dir&gt;/.pack_args.json</code>.</p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-force"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-force</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-extra-sources&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-extra-sources", Str:D $key --> int) </code>Get extra-sources in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-force"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-force</a></h1>
 <pre class="pod-block-code">pack.raku alias get-force --help
 
 Usage:
@@ -1796,7 +1873,7 @@ Usage:
 </pre><p>Get the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_alias_get-package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-package-dir</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-force&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-force", Str:D $key --> int) </code>Get force in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_alias_get-package-dir"><a href="#pack_0" class="u" title="go to top of document">pack.raku alias get-package-dir</a></h1>
 <pre class="pod-block-code">pack.raku alias get-package-dir --help
 
 Usage:
@@ -1805,13 +1882,13 @@ Usage:
 </pre><p>Get the value of package-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p><p>Where</p><ul>
 <li><p><code>&lt;key&gt;</code> The key of the extension.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;alias&quot;,_&quot;get-package-dir&quot;,_Str:D_$key_--&gt;_int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("alias", "get-package-dir", Str:D $key --> int) </code>Get package-dir in the .pack_args.json file pointed to by $key in store.</article><section name="pod"><h1 id="pack.raku_edit_configs"><a href="#pack_0" class="u" title="go to top of document">pack.raku edit configs</a></h1>
 <pre class="pod-block-code">pack.raku edit configs --help
 
 Usage:
   pack.raku edit configs
 
-</pre><p>Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.</p><p><a href="#Table-of-Contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_keys"><a href="#pack_0" class="u" title="go to top of document">pack.raku list keys</a></h1>
+</pre><p>Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.</p><p><a href="#Table-of-Contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;edit&quot;,_&quot;configs&quot;_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("edit", "configs" --> Int) </code>Open the configuration files in your GUI_EDITOR.</article><section name="pod"><h1 id="pack.raku_list_keys"><a href="#pack_0" class="u" title="go to top of document">pack.raku list keys</a></h1>
 <pre class="pod-block-code">pack.raku list keys --help
 
 Usage:
@@ -1828,7 +1905,7 @@ Usage:
 <li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong> </p></li>
 </ul>
 </ul>
-<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_all"><a href="#pack_0" class="u" title="go to top of document">pack.raku list all</a></h1>
+<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;keys&quot;,_Str_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_50,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "keys", Str $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List all the matching keys in the store.</article><section name="pod"><h1 id="pack.raku_list_all"><a href="#pack_0" class="u" title="go to top of document">pack.raku list all</a></h1>
 <pre class="pod-block-code">pack.raku list all --help
 
 Usage:
@@ -1845,7 +1922,7 @@ Usage:
 <li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
 </ul>
 </ul>
-<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_delete"><a href="#pack_0" class="u" title="go to top of document">pack.raku delete</a></h1>
+<p>List all or a subset of the keys avaiable.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;all&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_50,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "all", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List all matching key target pairs in the store.</article><section name="pod"><h1 id="pack.raku_delete"><a href="#pack_0" class="u" title="go to top of document">pack.raku delete</a></h1>
 <pre class="pod-block-code">pack.raku delete --help
 
 Usage:
@@ -1858,7 +1935,7 @@ Usage:
 <li><p>Trash means keep record but commented out.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_del"><a href="#pack_0" class="u" title="go to top of document">pack.raku del</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;delete&quot;,_Bool:D_:d(:delete(:$do-not-trash))_=_Bool::False,_*@keys_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("delete", Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --> Int) </code>Remove @keys from the store.</article><section name="pod"><h1 id="pack.raku_del"><a href="#pack_0" class="u" title="go to top of document">pack.raku del</a></h1>
 <pre class="pod-block-code">pack.raku delete --help
 
 Usage:
@@ -1874,7 +1951,7 @@ Usage:
 <li><p>Trash means keep record but commented out.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku trash</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;del&quot;,_Bool:D_:d(:delete(:$do-not-trash))_=_Bool::False,_*@keys_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("del", Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --> Int) </code>Remove @keys from the store.</article><section name="pod"><h1 id="pack.raku_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku trash</a></h1>
 <pre class="pod-block-code">pack.raku delete --help
 
 Usage:
@@ -1883,7 +1960,7 @@ Usage:
 </pre><p>Trash the specified key/directory paths from the database.</p><p>Where</p><ul>
 <li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to trash.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_tidy_file"><a href="#pack_0" class="u" title="go to top of document">pack.raku tidy file</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;trash&quot;,_*@keys_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("trash", *@keys --> Int) </code>Trash @keys in the store.</article><section name="pod"><h1 id="pack.raku_tidy_file"><a href="#pack_0" class="u" title="go to top of document">pack.raku tidy file</a></h1>
 <pre class="pod-block-code">pack.raku tidy file --help
 
 Usage:
@@ -1892,7 +1969,7 @@ Usage:
 </pre><p>Tidy up the database file.</p><ul>
 <li><p>Pointless really just for when your feeling OCD.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_comment"><a href="#pack_0" class="u" title="go to top of document">pack.raku comment</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;tidy&quot;,_&quot;file&quot;_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("tidy", "file" --> Int) </code>tidy store file.</article><section name="pod"><h1 id="pack.raku_comment"><a href="#pack_0" class="u" title="go to top of document">pack.raku comment</a></h1>
 <pre class="pod-block-code">pack.raku comment --help
 
 Usage:
@@ -1907,7 +1984,7 @@ Usage:
 <li><p>default value is 'normal'.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku list trash</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;comment&quot;,_Str:D_$key,_Str:D_$comment,_Str:D_:k(:$kind)_where_"></a><article><code class="pod-code-inline">multi sub MAIN ("comment", Str:D $key, Str:D $comment, Str:D :k(:$kind) where </code>Add/Set a comment to $key.</article><section name="pod"><h1 id="pack.raku_list_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku list trash</a></h1>
 <pre class="pod-block-code">pack.raku list trash --help
 
 Usage:
@@ -1924,13 +2001,13 @@ Usage:
 <li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_empty_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku empty trash</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;trash&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "trash", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List the key => target pairs in the stores trash.</article><section name="pod"><h1 id="pack.raku_empty_trash"><a href="#pack_0" class="u" title="go to top of document">pack.raku empty trash</a></h1>
 <pre class="pod-block-code">pack.raku empty trash --help
 
 Usage:
   pack.raku empty trash
 
-</pre><p>Delete all trashed/commented records.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_undelete"><a href="#pack_0" class="u" title="go to top of document">pack.raku undelete</a></h1>
+</pre><p>Delete all trashed/commented records.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;empty&quot;,_&quot;trash&quot;_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("empty", "trash" --> Int) </code>empty the trash in Store.</article><section name="pod"><h1 id="pack.raku_undelete"><a href="#pack_0" class="u" title="go to top of document">pack.raku undelete</a></h1>
 <pre class="pod-block-code">pack.raku undelete --help
 
 Usage:
@@ -1939,7 +2016,7 @@ Usage:
 </pre><p>Undelete the specified keys.</p><ul>
 <li><p><code>[&lt;keys&gt; ...]</code> The keys of the records to undelete.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_show_stats"><a href="#pack_0" class="u" title="go to top of document">pack.raku show stats</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;undelete&quot;,_*@keys_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("undelete", *@keys --> Int) </code>Undelete *@keys in the store.</article><section name="pod"><h1 id="pack.raku_show_stats"><a href="#pack_0" class="u" title="go to top of document">pack.raku show stats</a></h1>
 <pre class="pod-block-code">pack.raku show stats --help
 
 Usage:
@@ -1956,7 +2033,7 @@ Usage:
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_show_statistics"><a href="#pack_0" class="u" title="go to top of document">pack.raku show statistics</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;show&quot;,_&quot;stats&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("show", "stats", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>show the stats for the store.</article><section name="pod"><h1 id="pack.raku_show_statistics"><a href="#pack_0" class="u" title="go to top of document">pack.raku show statistics</a></h1>
 <pre class="pod-block-code">pack.raku show stats --help
 
 Usage:
@@ -1976,7 +2053,7 @@ Usage:
 <li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_backup_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku backup db</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;show&quot;,_&quot;statistics&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("show", "statistics", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>show the stats for the store.</article><section name="pod"><h1 id="pack.raku_backup_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku backup db</a></h1>
 <pre class="pod-block-code">pack.raku backup db --help
 
 Usage:
@@ -1988,7 +2065,7 @@ Usage:
 <li><p><strong>NB:</strong> The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_restore_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku restore db</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;backup&quot;,_&quot;db&quot;,_Bool:D_:w(:win-format(:$use-windows-formatting))_=_Bool::False_--&gt;_Bool)_"></a><article><code class="pod-code-inline">multi sub MAIN ("backup", "db", Bool:D :w(:win-format(:$use-windows-formatting)) = Bool::False --> Bool) </code>Backup the store.</article><section name="pod"><h1 id="pack.raku_restore_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku restore db</a></h1>
 <pre class="pod-block-code">pack.raku restore db --help
 
 Usage:
@@ -1997,7 +2074,7 @@ Usage:
 </pre><p>Restore the db file from restore-from.</p><p>Where</p><ul>
 <li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_menu_restore_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku menu restore db</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;restore&quot;,_&quot;db&quot;,_Str_$restore-from_=_Str_--&gt;_Bool)_"></a><article><code class="pod-code-inline">multi sub MAIN ("restore", "db", Str $restore-from = Str --> Bool) </code>Restore the Store.</article><section name="pod"><h1 id="pack.raku_menu_restore_db"><a href="#pack_0" class="u" title="go to top of document">pack.raku menu restore db</a></h1>
 <pre class="pod-block-code">pack.raku menu restore db --help
 
 Usage:
@@ -2019,7 +2096,7 @@ testing one two three
 use cancel, bye, bye bye, quit, q, or 2 to quit
 choose a candidate 0..2 =:&gt; q
 
-</pre><p>in ascii/UTF-8 mode.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_db_backups"><a href="#pack_0" class="u" title="go to top of document">pack.raku list db backups</a></h1>
+</pre><p>in ascii/UTF-8 mode.</p><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;menu&quot;,_&quot;restore&quot;,_&quot;db&quot;,_Str:D_$message_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("menu", "restore", "db", Str:D $message = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --> Int) </code>Present a menu to restore the store.</article><section name="pod"><h1 id="pack.raku_list_db_backups"><a href="#pack_0" class="u" title="go to top of document">pack.raku list db backups</a></h1>
 <pre class="pod-block-code">pack.raku list db backups --help
 
 Usage:
@@ -2034,7 +2111,7 @@ Usage:
 <li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> List only those matching this EMCA262Regex regex.</p></li>
 <li><p><code>The EMCA262Regex library doesn't support ignore case well.</code> .</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku list editors</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;db&quot;,_&quot;backups&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "db", "backups", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List matching backups of the store.</article><section name="pod"><h1 id="pack.raku_list_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku list editors</a></h1>
 <pre class="pod-block-code">pack.raku list editors --help
 
 Usage:
@@ -2059,7 +2136,7 @@ kate    |
 xemacs  |                
 =========================
 
-</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_editors_stats"><a href="#pack_0" class="u" title="go to top of document">pack.raku editors stats</a></h1>
+</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;editors&quot;,_Str:D_:f(:$prefix)_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "editors", Str:D :f(:$prefix) = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List known GUI editors.</article><section name="pod"><h1 id="pack.raku_editors_stats"><a href="#pack_0" class="u" title="go to top of document">pack.raku editors stats</a></h1>
 <pre class="pod-block-code">pack.raku editors stats --help
 
 Usage:
@@ -2089,7 +2166,7 @@ $override-GUI_EDITOR   |            True
 @override-gui_editor   |          [True]  
 ==========================================
 
-</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_list_editors_backups"><a href="#pack_0" class="u" title="go to top of document">pack.raku list editors backups</a></h1>
+</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;editors&quot;,_&quot;stats&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("editors", "stats", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>Show Editor stats</article><section name="pod"><h1 id="pack.raku_list_editors_backups"><a href="#pack_0" class="u" title="go to top of document">pack.raku list editors backups</a></h1>
 <pre class="pod-block-code">pack.raku list editors backups --help
 
 Usage:
@@ -2127,7 +2204,7 @@ Permissions Size   User        Group       Date Modified                    Back
 .rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:47:47.097922+10:00 editors.2024-01-04T03:48:24.025215+11:00 
 =====================================================================================================================
 
-</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_backup_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku backup editors</a></h1>
+</pre><p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;list&quot;,_&quot;editors&quot;,_&quot;backups&quot;,_Str:D_$prefix_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False,_Int:D_:l(:$page-length)_=_30,_Str_:p(:$pattern)_=_Str,_Str_:e(:$ecma-pattern)_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("list", "editors", "backups", Str:D $prefix = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --> Int) </code>List editors backup files.</article><section name="pod"><h1 id="pack.raku_backup_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku backup editors</a></h1>
 <pre class="pod-block-code">pack.raku backup editors --help
 
 Usage:
@@ -2139,7 +2216,7 @@ Usage:
 <li><p><strong>NB:</strong> The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p></li>
 </ul>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_restore_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku restore editors</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;backup&quot;,_&quot;editors&quot;,_Bool:D_:w(:$use-windows-formatting)_=_Bool::False_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("backup", "editors", Bool:D :w(:$use-windows-formatting) = Bool::False --> Int) </code>Backup editors file.</article><section name="pod"><h1 id="pack.raku_restore_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku restore editors</a></h1>
 <pre class="pod-block-code">pack.raku restore editors --help
 
 Usage:
@@ -2148,7 +2225,7 @@ Usage:
 </pre><p>Restore the editors db file from restore-from.</p><p>Where</p><ul>
 <li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_editor"><a href="#pack_0" class="u" title="go to top of document">pack.raku set editor</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;restore&quot;,_&quot;editors&quot;,_Str:D_$restore-from_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("restore", "editors", Str:D $restore-from --> Int) </code>Restore editors file from backup.</article><section name="pod"><h1 id="pack.raku_set_editor"><a href="#pack_0" class="u" title="go to top of document">pack.raku set editor</a></h1>
 <pre class="pod-block-code">pack.raku set editor --help
 
 Usage:
@@ -2158,7 +2235,7 @@ Usage:
 <li><p><code>&lt;editor&gt;</code> The editor to make default.</p></li>
 <li><p><code>[&lt;comment&gt;]</code> A comment to put against the editor.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_set_override_GUI_EDITOR"><a href="#pack_0" class="u" title="go to top of document">pack.raku set override GUI_EDITOR</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;editor&quot;,_Str:D_$editor,_Str_$comment_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "editor", Str:D $editor, Str $comment = Str --> Int) </code>Set default GUI editor.</article><section name="pod"><h1 id="pack.raku_set_override_GUI_EDITOR"><a href="#pack_0" class="u" title="go to top of document">pack.raku set override GUI_EDITOR</a></h1>
 <pre class="pod-block-code">pack.raku set override GUI_EDITOR --help
 
 Usage:
@@ -2168,7 +2245,7 @@ Usage:
 <li><p><code>&lt;value&gt;</code> The value of the parameter (True or False).</p></li>
 <li><p><code>[&lt;comment&gt;]</code> A comment to place against the parameter.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_menu_restore_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku menu restore editors</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;set&quot;,_&quot;override&quot;,_&quot;GUI__EDITOR&quot;,_Bool:D_$value,_Str_$comment_=_Str_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("set", "override", "GUI_EDITOR", Bool:D $value, Str $comment = Str --> Int) </code>Set the override_GUI_EDITOR parameter.</article><section name="pod"><h1 id="pack.raku_menu_restore_editors"><a href="#pack_0" class="u" title="go to top of document">pack.raku menu restore editors</a></h1>
 <pre class="pod-block-code">pack.raku menu restore editors --help
 
 Usage:
@@ -2179,7 +2256,7 @@ Usage:
 <li><p><code>[-c|--color|--colour]</code> Use ANSI colour mode.</p></li>
 <li><p><code>[-s|--syntax]</code> Use ANSI colour mode and syntax highlighting.</p></li>
 </ul>
-<p><a href="#table-of-contents">Table of Contents</a></p></section><section name="pod"><h1 id="pack.raku_USAGE"><a href="#pack_0" class="u" title="go to top of document">pack.raku USAGE</a></h1>
+<p><a href="#table-of-contents">Table of Contents</a></p></section><a name="index-entry-multi_sub_MAIN_(&quot;menu&quot;,_&quot;restore&quot;,_&quot;editors&quot;,_Str:D_$message_=_&quot;&quot;,_Bool:D_:c(:color(:$colour))_=_Bool::False,_Bool:D_:s(:$syntax)_=_Bool::False_--&gt;_Int)_"></a><article><code class="pod-code-inline">multi sub MAIN ("menu", "restore", "editors", Str:D $message = "", Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --> Int) </code>Display menu to allow restore editors from the backup.</article><section name="pod"><h1 id="pack.raku_USAGE"><a href="#pack_0" class="u" title="go to top of document">pack.raku USAGE</a></h1>
 <pre class="pod-block-code">pack.raku USAGE [-n|--nocolor|--nocolour]
 
 </pre><p>Shows the USAGE without this method purpose is to implement the coloured usage.</p><p>Where</p><ul>
@@ -2205,8 +2282,8 @@ Usage:
     exit 0;
 }
 
-</pre><p>Does the real work generating the colored usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
-</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-07-28T07:01:56Z</span></div></footer>
+</pre><p>Does the real work generating the coloured usage.</p><p><a href="#table-of-contents">Table of Contents</a></p></section>		</div>
+</div><footer><div>Rendered from <span class="path">UNNAMED</span></div><div>at <span class="time">2025-08-20T22:05:07Z</span></div></footer>
 	</body>
 </html>
 

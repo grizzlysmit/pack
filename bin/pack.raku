@@ -675,9 +675,17 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#`««« Package the plugin at $dir and any at @dirs 
+        * Directory where plugin resides 
+        * If set then set force regardless of it's value in .pack_args.json 
+        * Command to display current directory assumes that this is where the packages are written to. 
+        * Don't display messages. 
+        * Extra directories containing packages with plugins. 
+»»»
+#| Package the plugin at $dir and any plugin's in @dirs 
 multi sub MAIN('do', Str:D $dir, Bool:D :f(:$force) is copy = False,
                     Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
-                            Bool :q(:quiet(:$silent)) = False, *@dirs is copy --> int){
+                    Bool :q(:quiet(:$silent)) = False, *@dirs is copy --> int){
     @dirs.prepend($dir);
     for @dirs -> $dir_ {
         read-file($dir_);
@@ -720,6 +728,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Create the .pack_args.json file for the plugin at $package-dir. 
 multi sub MAIN('create',
                 Str:D $package-dir,
                 Str :s(:$schema) = Str,
@@ -766,6 +775,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| add or set parameters in the .pack_args.json file in $package-dir. 
 multi sub MAIN('add',
                 Str $package-dir,
                 Str :s(:$schema) = Str,
@@ -811,6 +821,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of schema in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'schema', Str $package-dir, Str $schema-value --> int){
     die "Error: unknown" unless add($package-dir, $schema-value, Str, Str, Str, False, False, False, ());
     return 0;
@@ -840,6 +851,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of podir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'podir', Str $package-dir, Str $podir-value --> int){
     die "Error: unknown" unless add($package-dir, Str, $podir-value, Str, Str, False, False, False, ());
     return 0;
@@ -868,6 +880,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'gettext-domain', Str $package-dir, Str $gettext-domain-value --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, $gettext-domain-value, Str, False, False, False, ());
     return 0;
@@ -896,6 +909,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of out-dir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'out-dir', Str $package-dir, Str $out-dir-value --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, Str, $out-dir-value, False, False, False, ());
     return 0;
@@ -924,6 +938,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of force in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'force', Str $package-dir, Bool $force-value --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, $force-value, True, False, ());
     return 0;
@@ -952,6 +967,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| add to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('add-extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
     return 0;
@@ -981,6 +997,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of package-dir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'package-dir', Str $package-dir, Str $package-dir-value --> int){
     die "Error: unknown" unless set-package-dir($package-dir, $package-dir-value);
     return 0;
@@ -1009,6 +1026,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| set the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('set', 'extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, False, False, True, @extra-sources);
     return 0;
@@ -1037,6 +1055,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| append to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('append', 'extra-sources', Str $package-dir, *@extra-sources --> int){
     die "Error: unknown" unless add($package-dir, Str, Str, Str, Str, False, False, False, @extra-sources);
     return 0;
@@ -1064,6 +1083,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| remove the value of schema in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('remove', 'schema', Str $package-dir --> int){
     die "Error: unknown" unless remove($package-dir, 'schema');
     return 0;
@@ -1091,6 +1111,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| remove the value of podir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('remove', 'podir', Str $package-dir --> int){
     die "Error: unknown" unless remove($package-dir, 'podir');
     return 0;
@@ -1118,6 +1139,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| remove the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('remove', 'gettext-domain', Str $package-dir --> int){
     die "Error: unknown" unless remove($package-dir, 'gettext-domain');
     return 0;
@@ -1145,6 +1167,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| remove the value of out-dir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('remove', 'out-dir', Str $package-dir --> int){
     die "Error: unknown" unless remove($package-dir, 'out-dir');
     return 0;
@@ -1172,6 +1195,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| remove/truncate the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('remove', 'extra-sources', Str $package-dir --> int){
     die "Error: unknown" unless remove($package-dir, 'extra-sources');
     return 0;
@@ -1199,6 +1223,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of schema in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'schema', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'schema');
     return 0;
@@ -1227,6 +1252,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of podir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'podir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'podir');
     return 0;
@@ -1254,6 +1280,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'gettext-domain', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'gettext-domain');
     return 0;
@@ -1281,6 +1308,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of out-dir in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'out-dir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'out-dir');
     return 0;
@@ -1308,6 +1336,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'extra-sources', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'extra-sources');
     return 0;
@@ -1335,6 +1364,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of force in .pack_args.json of the plugin at $package-dir.
 multi sub MAIN('get', 'force', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'force');
     return 0;
@@ -1363,6 +1393,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| get the value of package-dir in .pack_args.json of the plugin at $package-dir,  redundant.
 multi sub MAIN('get', 'package-dir', Str $package-dir --> int){
     die "Error: parameter unknown" unless get($package-dir, 'package-dir');
     return 0;
@@ -1393,6 +1424,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| add $key => $target to the store.
 multi sub MAIN('alias', 'add', Str $key, Str $target, Bool:D :s(:set(:$force)) = False, Str :c(:$comment) = Str --> int){
     if add-path($key, $target, $force, $comment) {
        exit 0;
@@ -1427,6 +1459,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Package the plugin represented by $key and any plugin's in @keys 
 multi sub MAIN('alias', 'do', Str $key, Bool:D :f(:$force) = False,
                     Str:D :c(:$command) = ((%*ENV«LS_CMD»:exists) ?? (~%*ENV«LS_CMD») !! 'ls -Flaghi --color=always'),
                                                         Bool :q(:quiet(:$silent)) = False, *@keys is copy --> int){
@@ -1508,6 +1541,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Create a new plugin $uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters. 
 multi sub MAIN('plugin', 'new', Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str,
                 Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str, Str :$credits = Str,
                 Bool:D :$prefs = False, Bool:D :$schema-file = False, Bool:D :$podirs = False,
@@ -1575,6 +1609,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Add a existing plugin $plugin-dir/$uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters. 
 multi sub MAIN('plugin', 'add', Str:D $key, Str:D $uuid, Str:D :p(:extension-dir($plugin-dir)) = '.',
                 Str:D :$podir = 'po', Bool:D :f(:$force) = False, Bool:D :s(:$silent) = False,
                 Bool:D :b(:$backtrace) = False, Bool:D :m(:$mk-schema) = False, Bool:D :$mk-podir = False,
@@ -1618,6 +1653,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Add or append extra-sources in the .pack_args.json file pointed to by $key in the store. 
 multi sub MAIN('alias', 'add-extra-sources', Str:D $key, *@extra-sources --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1648,6 +1684,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set schema in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-schema', Str $key, Str $schema-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1679,6 +1716,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set podir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-podir', Str $key, Str $podir-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1709,6 +1747,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set gettext-domain in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-gettext-domain', Str $key, Str $gettext-domain-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1739,6 +1778,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set out-dir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-out-dir', Str $key, Str $out-dir-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1769,6 +1809,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set force in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-force', Str $key, Bool $force-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1799,6 +1840,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set package-dir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-package-dir', Str $key, Str $package-dir-value --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1829,6 +1871,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set extra-sources in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'set-extra-sources', Str $key, *@extra-sources --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1859,6 +1902,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Append *@extra-sources to extra-sources in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'append-extra-sources', Str $key, *@extra-sources --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1888,6 +1932,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove schema in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'remove-schema', Str $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1917,6 +1962,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove podir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'remove-podir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1946,6 +1992,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove gettext-domain in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'remove-gettext-domain', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -1975,6 +2022,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove out-dir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'remove-out-dir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2004,6 +2052,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove extra-sources in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'remove-extra-sources', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2033,6 +2082,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get schema in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-schema', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2063,6 +2113,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get podir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-podir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2092,6 +2143,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get gettext-domain in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-gettext-domain', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2117,6 +2169,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get out-dir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-out-dir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2146,6 +2199,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get extra-sources in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-extra-sources', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2175,6 +2229,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get force in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-force', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2204,6 +2259,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Get package-dir in the .pack_args.json file pointed to by $key in store. 
 multi sub MAIN('alias', 'get-package-dir', Str:D $key --> int){
     my Str:D $package-dir = path($key);
     die "key: $key not found" unless $package-dir;
@@ -2230,6 +2286,7 @@ L<Table of Contents|#Table-of-Contents>
 
 =end pod
 
+#| Open the configuration files in your GUI_EDITOR. 
 multi sub MAIN('edit', 'configs') returns Int {
    if edit-configs() {
        exit 0;
@@ -2266,6 +2323,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List all the matching keys in the store. 
 multi sub MAIN('list', 'keys', Str $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2317,6 +2375,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List all matching key target pairs in the store.
 multi sub MAIN('list', 'all', Str:D $prefix = '', Bool:D :c(:color(:$colour)) = False,
                     Bool:D :s(:$syntax) = False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str,
                                                                 Str :e(:$ecma-pattern) = Str) returns Int {
@@ -2361,6 +2420,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove @keys from the store.
 multi sub MAIN('delete', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -2396,6 +2456,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Remove @keys from the store.
 multi sub MAIN('del', Bool:D :d(:delete(:$do-not-trash)) = False, *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -2428,6 +2489,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Trash @keys in the store.
 multi sub MAIN('trash', *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -2458,6 +2520,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| tidy store file.
 multi sub MAIN('tidy', 'file') returns Int {
    if tidy-file() {
        exit 0;
@@ -2490,6 +2553,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Add/Set a comment to $key.
 multi sub MAIN('comment',
                     Str:D $key,
                         Str:D $comment,
@@ -2531,6 +2595,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List the key => target pairs in the stores trash.
 multi sub MAIN('list', 'trash', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2571,6 +2636,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| empty the trash in Store.
 multi sub MAIN('empty', 'trash') returns Int {
    if empty-trash() {
        exit 0;
@@ -2599,6 +2665,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Undelete *@keys in the store.
 multi sub MAIN('undelete', *@keys) returns Int {
     my Int:D $result = 0;
     for @keys -> $key {
@@ -2637,6 +2704,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| show the stats for the store.
 multi sub MAIN('show', 'stats', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2686,6 +2754,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| show the stats for the store.
 multi sub MAIN('show', 'statistics', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2727,6 +2796,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Backup the store.
 multi sub MAIN('backup', 'db', Bool:D :w(:win-format(:$use-windows-formatting)) = False --> Bool) {
     if backup-db-file($use-windows-formatting) {
         exit 0;
@@ -2757,6 +2827,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Restore the Store.
 multi sub MAIN('restore', 'db', Str $restore-from = Str --> Bool) {
     my IO::Path $_restore-from;
     with $restore-from {
@@ -2807,6 +2878,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Present a menu to restore the store.
 multi sub MAIN('menu', 'restore', 'db',
                 Str:D $message = '',
                 Bool:D :c(:color(:$colour)) = False,
@@ -2846,6 +2918,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List matching backups of the store.
 multi sub MAIN('list', 'db', 'backups', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2919,6 +2992,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List known GUI editors.
 multi sub MAIN('list', 'editors', Str:D :f(:$prefix) = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -2985,6 +3059,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Show Editor stats
 multi sub MAIN('editors', 'stats', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -3059,6 +3134,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| List editors backup files.
 multi sub MAIN('list', 'editors', 'backups', Str:D $prefix = '',
                                Bool:D :c(:color(:$colour)) = False,
                                Bool:D :s(:$syntax) = False,
@@ -3101,6 +3177,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Backup editors file.
 multi sub MAIN('backup', 'editors', Bool:D :w(:$use-windows-formatting) = False) returns Int {
    if backup-editors($use-windows-formatting) {
        exit 0;
@@ -3131,6 +3208,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Restore editors file from backup.
 multi sub MAIN('restore', 'editors', Str:D $restore-from) returns Int {
    if restore-editors($restore-from.IO) {
        exit 0;
@@ -3162,6 +3240,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set default GUI editor.
 multi sub MAIN('set', 'editor', Str:D $editor, Str $comment = Str) returns Int {
    if set-editor($editor, $comment) {
        exit 0;
@@ -3193,6 +3272,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Set the override_GUI_EDITOR parameter.
 multi sub MAIN('set', 'override', 'GUI_EDITOR', Bool:D $value, Str $comment = Str) returns Int {
    if set-override-GUI_EDITOR($value, $comment) {
        exit 0;
@@ -3225,6 +3305,7 @@ L<Table of Contents|#table-of-contents>
 
 =end pod
 
+#| Display menu to allow restore editors from the backup.
 multi sub MAIN('menu', 'restore', 'editors', Str:D $message = '', Bool:D :c(:color(:$colour)) = False, Bool:D :s(:$syntax) = False) returns Int {
    if backups-menu-restore-editors($colour, $syntax, $message) {
        exit 0;
@@ -3292,7 +3373,7 @@ multi sub GENERATE-USAGE(&main, |capture --> Int) {
 
 =end code
 
-Does the real work generating the colored usage.
+Does the real work generating the coloured usage.
 
 L<Table of Contents|#table-of-contents>
 
