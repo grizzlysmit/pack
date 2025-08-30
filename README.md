@@ -766,21 +766,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "do",
-    Str:D $dir,
-    Bool:D :f(:$force) is copy = Bool::False,
-    Str:D :c(:$command) = Code.new,
-    Bool :q(:quiet(:$silent)) = Bool::False,
-    *@dirs is copy
-) returns int
-```
-
-Package the plugin at $dir and any plugin's in @dirs
-
 pack.raku create --help
 =======================
 
@@ -808,23 +793,6 @@ Where
   * `[-f|--force]` set the force option.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "create",
-    Str:D $package-dir,
-    Str :s(:$schema) = Str,
-    Str :p(:$podir) = Str,
-    Str :g(:$gettext-domain) = Str,
-    Str:D :o(:$out-dir) = ".",
-    Bool:D :f(:$force) = Bool::False,
-    *@extra-sources
-) returns int
-```
-
-Create the .pack_args.json file for the plugin at $package-dir.
 
 pack.raku add
 =============
@@ -860,25 +828,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "add",
-    Str $package-dir,
-    Str :s(:$schema) = Str,
-    Str :p(:$podir) = Str,
-    Str :g(:$gettext-domain) = Str,
-    Str :o(:$out-dir) = ".",
-    Bool:D :f(:$force) = Bool::False,
-    Bool:D :F(:$stomp-force) = Bool::False,
-    Bool:D :S(:$stomp) = Bool::False,
-    *@extra-sources
-) returns int
-```
-
-add or set parameters in the .pack_args.json file in $package-dir.
-
 pack.raku set schema
 ====================
 
@@ -898,19 +847,6 @@ Where
   * `<schema-value>` new value of schema.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "schema",
-    Str $package-dir,
-    Str $schema-value
-) returns int
-```
-
-set the value of schema in .pack_args.json of the plugin at $package-dir.
 
 pack.raku set podir
 ===================
@@ -934,19 +870,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "podir",
-    Str $package-dir,
-    Str $podir-value
-) returns int
-```
-
-set the value of podir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku set gettext-domain
 ============================
 
@@ -966,19 +889,6 @@ Where
   * `<gettext-domain-value>` new value of gettext-domain.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "gettext-domain",
-    Str $package-dir,
-    Str $gettext-domain-value
-) returns int
-```
-
-set the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 
 pack.raku set out-dir
 =====================
@@ -1000,19 +910,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "out-dir",
-    Str $package-dir,
-    Str $out-dir-value
-) returns int
-```
-
-set the value of out-dir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku set force
 ===================
 
@@ -1033,19 +930,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "force",
-    Str $package-dir,
-    Bool $force-value
-) returns int
-```
-
-set the value of force in .pack_args.json of the plugin at $package-dir.
-
 pack.raku add-extra-sources
 ===========================
 
@@ -1065,18 +949,6 @@ Where
   * `[<extra-sources> ...]` additional extra-sources.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "add-extra-sources",
-    Str $package-dir,
-    *@extra-sources
-) returns int
-```
-
-add to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 
 pack.raku set package-dir
 =========================
@@ -1100,19 +972,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "package-dir",
-    Str $package-dir,
-    Str $package-dir-value
-) returns int
-```
-
-set the value of package-dir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku set extra-sources
 ===========================
 
@@ -1132,19 +991,6 @@ Where
   * `[<extra-sources> ...]` new value of extra-sources.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "extra-sources",
-    Str $package-dir,
-    *@extra-sources
-) returns int
-```
-
-set the value of extra-sources in .pack_args.json of the plugin at $package-dir.
 
 pack.raku append extra-sources
 ==============================
@@ -1166,19 +1012,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "append",
-    "extra-sources",
-    Str $package-dir,
-    *@extra-sources
-) returns int
-```
-
-append to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
-
 pack.raku remove schema
 =======================
 
@@ -1196,18 +1029,6 @@ Where
   * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "remove",
-    "schema",
-    Str $package-dir
-) returns int
-```
-
-remove the value of schema in .pack_args.json of the plugin at $package-dir.
 
 pack.raku remove podir
 ======================
@@ -1227,18 +1048,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "remove",
-    "podir",
-    Str $package-dir
-) returns int
-```
-
-remove the value of podir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku remove gettext-domain
 ===============================
 
@@ -1256,18 +1065,6 @@ Where
   * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "remove",
-    "gettext-domain",
-    Str $package-dir
-) returns int
-```
-
-remove the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 
 pack.raku remove out-dir
 ========================
@@ -1287,18 +1084,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "remove",
-    "out-dir",
-    Str $package-dir
-) returns int
-```
-
-remove the value of out-dir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku remove extra-sources
 ==============================
 
@@ -1317,18 +1102,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "remove",
-    "extra-sources",
-    Str $package-dir
-) returns int
-```
-
-remove/truncate the value of extra-sources in .pack_args.json of the plugin at $package-dir.
-
 pack.raku get schema
 ====================
 
@@ -1346,18 +1119,6 @@ Where
   * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "schema",
-    Str $package-dir
-) returns int
-```
-
-get the value of schema in .pack_args.json of the plugin at $package-dir.
 
 pack.raku get podir
 ===================
@@ -1379,18 +1140,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "podir",
-    Str $package-dir
-) returns int
-```
-
-get the value of podir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku get gettext-domain
 ============================
 
@@ -1408,18 +1157,6 @@ Where
   * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "gettext-domain",
-    Str $package-dir
-) returns int
-```
-
-get the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
 
 pack.raku get out-dir
 =====================
@@ -1439,18 +1176,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "out-dir",
-    Str $package-dir
-) returns int
-```
-
-get the value of out-dir in .pack_args.json of the plugin at $package-dir.
-
 pack.raku get extra-sources
 ===========================
 
@@ -1469,18 +1194,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "extra-sources",
-    Str $package-dir
-) returns int
-```
-
-get the value of extra-sources in .pack_args.json of the plugin at $package-dir.
-
 pack.raku get force
 ===================
 
@@ -1498,18 +1211,6 @@ Where
   * `<package-dir>` Directory containing plugin.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "force",
-    Str $package-dir
-) returns int
-```
-
-get the value of force in .pack_args.json of the plugin at $package-dir.
 
 pack.raku get package-dir
 =========================
@@ -1530,18 +1231,6 @@ Where
     * kind of redundant as it needs `package-dir` to get `package-dir`.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "get",
-    "package-dir",
-    Str $package-dir
-) returns int
-```
-
-get the value of package-dir in .pack_args.json of the plugin at $package-dir, redundant.
 
 pack.raku alias add
 ===================
@@ -1566,21 +1255,6 @@ Where
 **NB: This command assumes it is being run from the directory in which the plugin resides.**
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "add",
-    Str $key,
-    Str $target,
-    Bool:D :s(:set(:$force)) = Bool::False,
-    Str :c(:$comment) = Str
-) returns int
-```
-
-add $key => $target to the store.
 
 pack.raku alias do --help
 =========================
@@ -1609,22 +1283,6 @@ Where
 **NB: This command assumes it is being run from the directory in which the plugin resides.**
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "do",
-    Str $key,
-    Bool:D :f(:$force) = Bool::False,
-    Str:D :c(:$command) = Code.new,
-    Bool :q(:quiet(:$silent)) = Bool::False,
-    *@keys is copy
-) returns int
-```
-
-Package the plugin represented by $key and any plugin's in @keys
 
 pack.raku plugin new --help
 ===========================
@@ -1701,35 +1359,6 @@ This whole development model assumes that you don't want to develop the plugin/e
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "plugin",
-    "new",
-    Str:D $key,
-    Str :$uuid = Str,
-    Str :$name = Str,
-    Str :$description = Str,
-    Str :$gettext-domain = Str,
-    Str :$settings-schema = Str,
-    Str :$template = Str,
-    Str :$credits = Str,
-    Bool:D :$prefs = Bool::False,
-    Bool:D :$schema-file = Bool::False,
-    Bool:D :$podirs = Bool::False,
-    Bool:D :$add-credits = Bool::False,
-    Bool:D :a(:all-parmas(:$all)) = Bool::False,
-    Bool:D :f(:$force) = Bool::False,
-    Bool:D :s(:$silent) = Bool::False,
-    Bool:D :b(:$backtrace) = Bool::False,
-    Str:D :l(:$dev-lang) = Code.new,
-    Str:D :o(:output(:development-dir(:$dev-dir))) = "."
-) returns int
-```
-
-Create a new plugin $uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters.
-
 pack.raku plugin add
 ====================
 
@@ -1780,28 +1409,6 @@ pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --forc
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "plugin",
-    "add",
-    Str:D $key,
-    Str:D $uuid,
-    Str:D :p(:extension-dir($plugin-dir)) = ".",
-    Str:D :$podir = "po",
-    Bool:D :f(:$force) = Bool::False,
-    Bool:D :s(:$silent) = Bool::False,
-    Bool:D :b(:$backtrace) = Bool::False,
-    Bool:D :m(:$mk-schema) = Bool::False,
-    Bool:D :$mk-podir = Bool::False,
-    Str:D :l(:$dev-lang) = Code.new,
-    *@extra-sources
-) returns int
-```
-
-Add a existing plugin $plugin-dir/$uuid and add it to the store as $key => $uuid will prompt for many unspecified parameters.
-
 pack.raku alias add-extra-sources
 =================================
 
@@ -1822,19 +1429,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "add-extra-sources",
-    Str:D $key,
-    *@extra-sources
-) returns int
-```
-
-Add or append extra-sources in the .pack_args.json file pointed to by $key in the store.
-
 pack.raku alias set-schema
 ==========================
 
@@ -1854,19 +1448,6 @@ Where
   * `<schema-value>` New value of schema.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-schema",
-    Str $key,
-    Str $schema-value
-) returns int
-```
-
-Set schema in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias set-podir
 =========================
@@ -1890,19 +1471,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-podir",
-    Str $key,
-    Str $podir-value
-) returns int
-```
-
-Set podir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias set-gettext-domain
 ==================================
 
@@ -1922,19 +1490,6 @@ Where
   * `<gettext-domain-value>` New value of gettext-domain.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-gettext-domain",
-    Str $key,
-    Str $gettext-domain-value
-) returns int
-```
-
-Set gettext-domain in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias set-out-dir
 ===========================
@@ -1956,19 +1511,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-out-dir",
-    Str $key,
-    Str $out-dir-value
-) returns int
-```
-
-Set out-dir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias set-force
 =========================
 
@@ -1988,19 +1530,6 @@ Where
   * `<force-value>` New value of force.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-force",
-    Str $key,
-    Bool $force-value
-) returns int
-```
-
-Set force in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias set-package-dir
 ===============================
@@ -2022,19 +1551,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-package-dir",
-    Str $key,
-    Str $package-dir-value
-) returns int
-```
-
-Set package-dir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias set-extra-sources
 =================================
 
@@ -2054,19 +1570,6 @@ Where
   * `[<extra-sources> ...]` New value of extra-sources.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "set-extra-sources",
-    Str $key,
-    *@extra-sources
-) returns int
-```
-
-Set extra-sources in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias append-extra-sources
 ====================================
@@ -2088,19 +1591,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "append-extra-sources",
-    Str $key,
-    *@extra-sources
-) returns int
-```
-
-Append *@extra-sources to extra-sources in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias remove-schema
 =============================
 
@@ -2118,18 +1608,6 @@ Where
   * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "remove-schema",
-    Str $key
-) returns int
-```
-
-Remove schema in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias remove-podir
 ============================
@@ -2149,18 +1627,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "remove-podir",
-    Str:D $key
-) returns int
-```
-
-Remove podir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias remove-gettext-domain
 =====================================
 
@@ -2178,18 +1644,6 @@ Where
   * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "remove-gettext-domain",
-    Str:D $key
-) returns int
-```
-
-Remove gettext-domain in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias remove-out-dir
 ==============================
@@ -2209,18 +1663,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "remove-out-dir",
-    Str:D $key
-) returns int
-```
-
-Remove out-dir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias remove-extra-sources
 ====================================
 
@@ -2239,18 +1681,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "remove-extra-sources",
-    Str:D $key
-) returns int
-```
-
-Remove extra-sources in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias get-schema
 ==========================
 
@@ -2268,18 +1698,6 @@ Where
   * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-schema",
-    Str:D $key
-) returns int
-```
-
-Get schema in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias get-podir
 =========================
@@ -2301,18 +1719,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-podir",
-    Str:D $key
-) returns int
-```
-
-Get podir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias get-gettext-domain
 ==================================
 
@@ -2331,18 +1737,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-gettext-domain",
-    Str:D $key
-) returns int
-```
-
-Get gettext-domain in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias get-out-dir
 ===========================
 
@@ -2356,18 +1750,6 @@ Usage:
   * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-out-dir",
-    Str:D $key
-) returns int
-```
-
-Get out-dir in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias get-extra-sources
 =================================
@@ -2387,18 +1769,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-extra-sources",
-    Str:D $key
-) returns int
-```
-
-Get extra-sources in the .pack_args.json file pointed to by $key in store.
-
 pack.raku alias get-force
 =========================
 
@@ -2416,18 +1786,6 @@ Where
   * `<key>` The key of the extension.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-force",
-    Str:D $key
-) returns int
-```
-
-Get force in the .pack_args.json file pointed to by $key in store.
 
 pack.raku alias get-package-dir
 ===============================
@@ -2447,18 +1805,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "alias",
-    "get-package-dir",
-    Str:D $key
-) returns int
-```
-
-Get package-dir in the .pack_args.json file pointed to by $key in store.
-
 pack.raku edit configs
 ======================
 
@@ -2470,17 +1816,6 @@ pack.raku edit configs
 Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.
 
 [Table of Contents](#Table-of-Contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "edit",
-    "configs"
-) returns Int
-```
-
-Open the configuration files in your GUI_EDITOR.
 
 pack.raku list keys
 ===================
@@ -2511,23 +1846,6 @@ Where
 List all or a subset of the keys avaiable.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "keys",
-    Str $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 50,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List all the matching keys in the store.
 
 pack.raku list all
 ==================
@@ -2561,23 +1879,6 @@ List all or a subset of the keys avaiable.
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "all",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 50,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List all matching key target pairs in the store.
-
 pack.raku delete
 ================
 
@@ -2599,18 +1900,6 @@ Where
     * Trash means keep record but commented out.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "delete",
-    Bool:D :d(:delete(:$do-not-trash)) = Bool::False,
-    *@keys
-) returns Int
-```
-
-Remove @keys from the store.
 
 pack.raku del
 =============
@@ -2636,18 +1925,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "del",
-    Bool:D :d(:delete(:$do-not-trash)) = Bool::False,
-    *@keys
-) returns Int
-```
-
-Remove @keys from the store.
-
 pack.raku trash
 ===============
 
@@ -2666,17 +1943,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "trash",
-    *@keys
-) returns Int
-```
-
-Trash @keys in the store.
-
 pack.raku tidy file
 ===================
 
@@ -2692,17 +1958,6 @@ Tidy up the database file.
   * Pointless really just for when your feeling OCD.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "tidy",
-    "file"
-) returns Int
-```
-
-tidy store file.
 
 pack.raku comment
 =================
@@ -2727,19 +1982,6 @@ Add a comment to an entry.
     * default value is 'normal'.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "comment",
-    Str:D $key,
-    Str:D $comment,
-    Str:D :k(:$kind) where { ... } = "normal"
-) returns Int
-```
-
-Add/Set a comment to $key.
 
 pack.raku list trash
 ====================
@@ -2771,23 +2013,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "trash",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 30,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List the key => target pairs in the stores trash.
-
 pack.raku empty trash
 =====================
 
@@ -2801,17 +2026,6 @@ Usage:
 Delete all trashed/commented records.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "empty",
-    "trash"
-) returns Int
-```
-
-empty the trash in Store.
 
 pack.raku undelete
 ==================
@@ -2828,17 +2042,6 @@ Undelete the specified keys.
   * `[<keys> ...]` The keys of the records to undelete.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "undelete",
-    *@keys
-) returns Int
-```
-
-Undelete *@keys in the store.
 
 pack.raku show stats
 ====================
@@ -2869,22 +2072,6 @@ Where
     * **NB: pattern and ecma-pattern search by the quantity keys, note the values.**
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "show",
-    "stats",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-show the stats for the store.
 
 pack.raku show statistics
 =========================
@@ -2918,22 +2105,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "show",
-    "statistics",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-show the stats for the store.
-
 pack.raku backup db
 ===================
 
@@ -2952,18 +2123,6 @@ Backup the db file.
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "backup",
-    "db",
-    Bool:D :w(:win-format(:$use-windows-formatting)) = Bool::False
-) returns Bool
-```
-
-Backup the store.
-
 pack.raku restore db
 ====================
 
@@ -2981,18 +2140,6 @@ Where
   * `[<restore-from>]` A path to a restore file.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "restore",
-    "db",
-    Str $restore-from = Str
-) returns Bool
-```
-
-Restore the Store.
 
 pack.raku menu restore db
 =========================
@@ -3028,21 +2175,6 @@ in ascii/UTF-8 mode.
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "menu",
-    "restore",
-    "db",
-    Str:D $message = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False
-) returns Int
-```
-
-Present a menu to restore the store.
-
 pack.raku list db backups
 =========================
 
@@ -3072,24 +2204,6 @@ Where
   * `The EMCA262Regex library doesn't support ignore case well.` .
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "db",
-    "backups",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 30,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List matching backups of the store.
 
 pack.raku list editors
 ======================
@@ -3132,23 +2246,6 @@ xemacs  |
 ```
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "editors",
-    Str:D :f(:$prefix) = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 30,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List known GUI editors.
 
 pack.raku editors stats
 =======================
@@ -3194,23 +2291,6 @@ $override-GUI_EDITOR   |            True
 ```
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "editors",
-    "stats",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 30,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-Show Editor stats
 
 pack.raku list editors backups
 ==============================
@@ -3265,24 +2345,6 @@ Permissions Size   User        Group       Date Modified                    Back
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "list",
-    "editors",
-    "backups",
-    Str:D $prefix = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False,
-    Int:D :l(:$page-length) = 30,
-    Str :p(:$pattern) = Str,
-    Str :e(:$ecma-pattern) = Str
-) returns Int
-```
-
-List editors backup files.
-
 pack.raku backup editors
 ========================
 
@@ -3301,18 +2363,6 @@ Backup the editors db file.
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "backup",
-    "editors",
-    Bool:D :w(:$use-windows-formatting) = Bool::False
-) returns Int
-```
-
-Backup editors file.
-
 pack.raku restore editors
 =========================
 
@@ -3330,18 +2380,6 @@ Where
   * `[<restore-from>]` A path to a restore file.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "restore",
-    "editors",
-    Str:D $restore-from
-) returns Int
-```
-
-Restore editors file from backup.
 
 pack.raku set editor
 ====================
@@ -3363,19 +2401,6 @@ Where
 
 [Table of Contents](#table-of-contents)
 
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "editor",
-    Str:D $editor,
-    Str $comment = Str
-) returns Int
-```
-
-Set default GUI editor.
-
 pack.raku set override GUI_EDITOR
 =================================
 
@@ -3395,20 +2420,6 @@ Where
   * `[<comment>]` A comment to place against the parameter.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "set",
-    "override",
-    "GUI_EDITOR",
-    Bool:D $value,
-    Str $comment = Str
-) returns Int
-```
-
-Set the override_GUI_EDITOR parameter.
 
 pack.raku menu restore editors
 ==============================
@@ -3431,21 +2442,6 @@ Where
   * `[-s|--syntax]` Use ANSI colour mode and syntax highlighting.
 
 [Table of Contents](#table-of-contents)
-
-### multi sub MAIN
-
-```raku
-multi sub MAIN(
-    "menu",
-    "restore",
-    "editors",
-    Str:D $message = "",
-    Bool:D :c(:color(:$colour)) = Bool::False,
-    Bool:D :s(:$syntax) = Bool::False
-) returns Int
-```
-
-Display menu to allow restore editors from the backup.
 
 pack.raku USAGE
 ===============
