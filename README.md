@@ -238,7 +238,7 @@ Francis Grizzly Smit (grizzly@smit.id.au)
 VERSION
 =======
 
-v0.1.53
+v0.1.54
 
 TITLE
 =====
@@ -390,7 +390,7 @@ removed directory
 
 [Table of Contents](#table-of-contents)
 
-### If you want to manage an existing extension then use
+### If you want to manage an existing extension then usu
 
 ```bash
 pack.raku plugin add <key> <uuid> [<extra-sources1> <extra-sources2> ...] --force --mk-schema

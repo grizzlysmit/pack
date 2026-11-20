@@ -145,7 +145,7 @@ Table of Contents
 
 =NAME App::pack 
 =AUTHOR Francis Grizzly Smit (grizzly@smit.id.au)
-=VERSION v0.1.53
+=VERSION v0.1.54
 =TITLE pack
 =SUBTITLE A Raku program to manage the use of B<gnome-extensions pack>, it has too many arguments this makes it easy.
 
@@ -289,7 +289,7 @@ removed directory
 
 L<Table of Contents|#table-of-contents>
 
-=head3 If you want to manage an existing extension then use
+=head3 If you want to manage an existing extension then usu
 
 =begin code :lang<bash>
 
