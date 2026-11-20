@@ -1,0 +1,2754 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>pack</title>
+    <meta charset="UTF-8"/>
+    <style>hr,
+img {
+    box-sizing: content-box
+}
+body::after,
+body::before,
+hr::after,
+hr::before {
+    display: table;
+    content: ""
+}
+a,
+a:not([href]) {
+    text-decoration: none
+}
+
+hr,
+svg:not(:root) {
+    overflow: hidden
+}
+
+img,
+table tr {
+    background-color: #fff
+}
+
+pre,
+table {
+    overflow: auto
+}
+
+dl,
+dl dt,
+hr,
+pre code,
+pre>code,
+td,
+th {
+    padding: 0
+}
+
+input,
+pre code {
+    overflow: visible
+}
+
+pre,
+pre code {
+    word-wrap: normal
+}
+
+body {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #333;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    width: 820px;
+    margin: 2em auto;
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    color: #4078c0
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+    text-decoration: underline
+}
+
+h1 {
+    margin: .67em 0
+}
+
+img {
+    border-style: none;
+    max-width: 100%
+}
+
+h1,
+h2 {
+    padding-bottom: .3em;
+    border-bottom: 1px solid #eee
+}
+
+input {
+    font: inherit;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+
+* {
+    box-sizing: border-box
+}
+
+strong {
+    font-weight: 600
+}
+
+body::after,
+hr::after {
+    clear: both
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: block;
+    width: 100%
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 1em;
+    color: #777;
+    border-left: .25em solid #ddd
+}
+
+ol ol,
+ul ol {
+    list-style-type: lower-roman
+}
+
+ol ol ol,
+ol ul ol,
+ul ol ol,
+ul ul ol {
+    list-style-type: lower-alpha
+}
+
+dd {
+    margin-left: 0
+}
+
+code {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace
+}
+
+input {
+    -webkit-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0
+}
+
+body>:first-child {
+    margin-top: 0!important
+}
+
+body>:last-child {
+    margin-bottom: 0!important
+}
+
+a:not([href]) {
+    color: inherit
+}
+
+blockquote,
+dl,
+ol,
+p,
+pre,
+table,
+ul {
+    margin-top: 0;
+    margin-bottom: 16px
+}
+
+hr {
+    background: #e7e7e7;
+    height: .25em;
+    margin: 24px 0;
+    border: 0
+}
+
+blockquote>:first-child {
+    margin-top: 0
+}
+
+blockquote>:last-child {
+    margin-bottom: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25
+}
+
+dl dt,
+table th {
+    font-weight: 700
+}
+
+h1 code,
+h1 tt,
+h2 code,
+h2 tt,
+h3 code,
+h3 tt,
+h4 code,
+h4 tt,
+h5 code,
+h5 tt,
+h6 code,
+h6 tt {
+    font-size: inherit
+}
+
+h1 {
+    font-size: 2em
+}
+
+h2 {
+    font-size: 1.5em
+}
+
+h3 {
+    font-size: 1.25em
+}
+
+h4 {
+    font-size: 1em
+}
+
+h5 {
+    font-size: .875em
+}
+
+h6 {
+    font-size: .85em;
+    color: #777
+}
+
+ol,
+ul {
+    padding-left: 2em
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+li>p {
+    margin-top: 16px
+}
+
+li+li {
+    margin-top: .25em
+}
+
+dl dt {
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic
+}
+
+dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px
+}
+
+table td,
+table th {
+    padding: 6px 13px;
+    border: 1px solid #ddd
+}
+
+table tr {
+    border-top: 1px solid #ccc
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8
+}
+
+code {
+    padding: .2em 0;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 3px
+}
+
+code::after,
+code::before {
+    letter-spacing: -.2em;
+    content: "\00a0"
+}
+
+pre>code {
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: 0 0;
+    border: 0
+}
+
+pre {
+    padding: 16px;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px
+}
+
+pre code {
+    display: inline;
+    max-width: auto;
+    margin: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: 0
+}
+
+pre code::after,
+pre code::before {
+    content: normal
+}
+
+kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb
+}
+
+hr {
+    border-bottom-color: #eee
+}
+</style>
+
+    
+</head>
+
+<body class="pod">
+    <div id="___top"></div>
+    <nav class="indexgroup">
+<table id="TOC">
+<caption><h2 id="TOC_Title">Table of Contents</h2></caption>
+<tr class="toc-level-1"><td class="toc-number">1</td><td class="toc-text"><a href="#App::pack">App::pack</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">2</td><td class="toc-text"><a href="#app_pack.raku">app pack.raku</a></td></tr>
+<tr class="toc-level-2"><td class="toc-number">2.1</td><td class="toc-text"><a href="#Table_of_Contents">Table of Contents</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">3</td><td class="toc-text"><a href="#key_=&gt;_directory_methods">key =&gt; directory methods</a></td></tr>
+<tr class="toc-level-2"><td class="toc-number">3.1</td><td class="toc-text"><a href="#key_=&gt;_directory_management_methods">key =&gt; directory management methods</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">4</td><td class="toc-text"><a href="#Editor_functions/methods">Editor functions/methods</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">5</td><td class="toc-text"><a href="#USAGE_stuff">USAGE stuff</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">6</td><td class="toc-text"><a href="#Introduction">Introduction</a></td></tr>
+<tr class="toc-level-2"><td class="toc-number">6.1</td><td class="toc-text"><a href="#Motivation">Motivation</a></td></tr>
+<tr class="toc-level-2"><td class="toc-number">6.2</td><td class="toc-text"><a href="#A_brief_tutorial.">A brief tutorial.</a></td></tr>
+<tr class="toc-level-3"><td class="toc-number">6.2.1</td><td class="toc-text"><a href="#To_create_a_new_plugin_just_call">To create a new plugin just call </a></td></tr>
+<tr class="toc-level-4"><td class="toc-number">6.2.1.1</td><td class="toc-text"><a href="#example_of_using_pack.raku_plugin_new_key_--all_--force">example of using pack.raku plugin new key --all --force</a></td></tr>
+<tr class="toc-level-3"><td class="toc-number">6.2.2</td><td class="toc-text"><a href="#If_you_want_to_manage_an_existing_extension_then_use">If you want to manage an existing extension then use</a></td></tr>
+<tr class="toc-level-4"><td class="toc-number">6.2.2.1</td><td class="toc-text"><a href="#example_of_using_pack.raku_plugin_add">example of using pack.raku plugin add</a></td></tr>
+<tr class="toc-level-3"><td class="toc-number">6.2.3</td><td class="toc-text"><a href="#To_package_a_extension_just_call">To package a extension just call </a></td></tr>
+<tr class="toc-level-4"><td class="toc-number">6.2.3.1</td><td class="toc-text"><a href="#Or_to_package_many_this">Or to package many this</a></td></tr>
+<tr class="toc-level-4"><td class="toc-number">6.2.3.2</td><td class="toc-text"><a href="#example_of_creating_packages">example of creating packages </a></td></tr>
+<tr class="toc-level-3"><td class="toc-number">6.2.4</td><td class="toc-text"><a href="#pack">pack</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">7</td><td class="toc-text"><a href="#pack.raku_do_--help">pack.raku do --help</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">8</td><td class="toc-text"><a href="#pack.raku_create_--help">pack.raku create --help</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">9</td><td class="toc-text"><a href="#pack.raku_add">pack.raku add</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">10</td><td class="toc-text"><a href="#pack.raku_set_schema">pack.raku set schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">11</td><td class="toc-text"><a href="#pack.raku_set_podir">pack.raku set podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">12</td><td class="toc-text"><a href="#pack.raku_set_gettext-domain">pack.raku set gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">13</td><td class="toc-text"><a href="#pack.raku_set_out-dir">pack.raku set out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">14</td><td class="toc-text"><a href="#pack.raku_set_force">pack.raku set force</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">15</td><td class="toc-text"><a href="#pack.raku_add-extra-sources">pack.raku add-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">16</td><td class="toc-text"><a href="#pack.raku_set_package-dir">pack.raku set package-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">17</td><td class="toc-text"><a href="#pack.raku_set_extra-sources">pack.raku set extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">18</td><td class="toc-text"><a href="#pack.raku_append_extra-sources">pack.raku append extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">19</td><td class="toc-text"><a href="#pack.raku_remove_schema">pack.raku remove schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">20</td><td class="toc-text"><a href="#pack.raku_remove_podir">pack.raku remove podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">21</td><td class="toc-text"><a href="#pack.raku_remove_gettext-domain">pack.raku remove gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">22</td><td class="toc-text"><a href="#pack.raku_remove_out-dir">pack.raku remove out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">23</td><td class="toc-text"><a href="#pack.raku_remove_extra-sources">pack.raku remove extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">24</td><td class="toc-text"><a href="#pack.raku_get_schema">pack.raku get schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">25</td><td class="toc-text"><a href="#pack.raku_get_podir">pack.raku get podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">26</td><td class="toc-text"><a href="#pack.raku_get_gettext-domain">pack.raku get gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">27</td><td class="toc-text"><a href="#pack.raku_get_out-dir">pack.raku get out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">28</td><td class="toc-text"><a href="#pack.raku_get_extra-sources">pack.raku get extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">29</td><td class="toc-text"><a href="#pack.raku_get_force">pack.raku get force</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">30</td><td class="toc-text"><a href="#pack.raku_get_package-dir">pack.raku get package-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">31</td><td class="toc-text"><a href="#pack.raku_alias_add">pack.raku alias add</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">32</td><td class="toc-text"><a href="#pack.raku_alias_do_--help">pack.raku alias do --help</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">33</td><td class="toc-text"><a href="#pack.raku_plugin_new_--help">pack.raku plugin new --help</a></td></tr>
+<tr class="toc-level-2"><td class="toc-number">33.1</td><td class="toc-text"><a href="#Recommended_Usage">Recommended Usage</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">34</td><td class="toc-text"><a href="#pack.raku_plugin_add">pack.raku plugin add</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">35</td><td class="toc-text"><a href="#pack.raku_alias_add-extra-sources">pack.raku alias add-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">36</td><td class="toc-text"><a href="#pack.raku_alias_set-schema">pack.raku alias set-schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">37</td><td class="toc-text"><a href="#pack.raku_alias_set-podir">pack.raku alias set-podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">38</td><td class="toc-text"><a href="#pack.raku_alias_set-gettext-domain">pack.raku alias set-gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">39</td><td class="toc-text"><a href="#pack.raku_alias_set-out-dir">pack.raku alias set-out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">40</td><td class="toc-text"><a href="#pack.raku_alias_set-force">pack.raku alias set-force</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">41</td><td class="toc-text"><a href="#pack.raku_alias_set-package-dir">pack.raku alias set-package-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">42</td><td class="toc-text"><a href="#pack.raku_alias_set-extra-sources">pack.raku alias set-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">43</td><td class="toc-text"><a href="#pack.raku_alias_append-extra-sources">pack.raku alias append-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">44</td><td class="toc-text"><a href="#pack.raku_alias_remove-schema">pack.raku alias remove-schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">45</td><td class="toc-text"><a href="#pack.raku_alias_remove-podir">pack.raku alias remove-podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">46</td><td class="toc-text"><a href="#pack.raku_alias_remove-gettext-domain">pack.raku alias remove-gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">47</td><td class="toc-text"><a href="#pack.raku_alias_remove-out-dir">pack.raku alias remove-out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">48</td><td class="toc-text"><a href="#pack.raku_alias_remove-extra-sources">pack.raku alias remove-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">49</td><td class="toc-text"><a href="#pack.raku_alias_get-schema">pack.raku alias get-schema</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">50</td><td class="toc-text"><a href="#pack.raku_alias_get-podir">pack.raku alias get-podir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">51</td><td class="toc-text"><a href="#pack.raku_alias_get-gettext-domain">pack.raku alias get-gettext-domain</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">52</td><td class="toc-text"><a href="#pack.raku_alias_get-out-dir">pack.raku alias get-out-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">53</td><td class="toc-text"><a href="#pack.raku_alias_get-extra-sources">pack.raku alias get-extra-sources</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">54</td><td class="toc-text"><a href="#pack.raku_alias_get-force">pack.raku alias get-force</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">55</td><td class="toc-text"><a href="#pack.raku_alias_get-package-dir">pack.raku alias get-package-dir</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">56</td><td class="toc-text"><a href="#pack.raku_edit_configs">pack.raku edit configs</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">57</td><td class="toc-text"><a href="#pack.raku_list_keys">pack.raku list keys</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">58</td><td class="toc-text"><a href="#pack.raku_list_all">pack.raku list all</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">59</td><td class="toc-text"><a href="#pack.raku_delete">pack.raku delete</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">60</td><td class="toc-text"><a href="#pack.raku_del">pack.raku del</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">61</td><td class="toc-text"><a href="#pack.raku_trash">pack.raku trash</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">62</td><td class="toc-text"><a href="#pack.raku_tidy_file">pack.raku tidy file</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">63</td><td class="toc-text"><a href="#pack.raku_comment">pack.raku comment</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">64</td><td class="toc-text"><a href="#pack.raku_list_trash">pack.raku list trash</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">65</td><td class="toc-text"><a href="#pack.raku_empty_trash">pack.raku empty trash</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">66</td><td class="toc-text"><a href="#pack.raku_undelete">pack.raku undelete</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">67</td><td class="toc-text"><a href="#pack.raku_show_stats">pack.raku show stats</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">68</td><td class="toc-text"><a href="#pack.raku_show_statistics">pack.raku show statistics</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">69</td><td class="toc-text"><a href="#pack.raku_backup_db">pack.raku backup db</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">70</td><td class="toc-text"><a href="#pack.raku_restore_db">pack.raku restore db</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">71</td><td class="toc-text"><a href="#pack.raku_menu_restore_db">pack.raku menu restore db</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">72</td><td class="toc-text"><a href="#pack.raku_list_db_backups">pack.raku list db backups</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">73</td><td class="toc-text"><a href="#pack.raku_list_editors">pack.raku list editors</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">74</td><td class="toc-text"><a href="#pack.raku_editors_stats">pack.raku editors stats</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">75</td><td class="toc-text"><a href="#pack.raku_list_editors_backups">pack.raku list editors backups</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">76</td><td class="toc-text"><a href="#pack.raku_backup_editors">pack.raku backup editors</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">77</td><td class="toc-text"><a href="#pack.raku_restore_editors">pack.raku restore editors</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">78</td><td class="toc-text"><a href="#pack.raku_set_editor">pack.raku set editor</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">79</td><td class="toc-text"><a href="#pack.raku_set_override_GUI_EDITOR">pack.raku set override GUI_EDITOR</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">80</td><td class="toc-text"><a href="#pack.raku_menu_restore_editors">pack.raku menu restore editors</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">81</td><td class="toc-text"><a href="#pack.raku_USAGE">pack.raku USAGE</a></td></tr>
+<tr class="toc-level-1"><td class="toc-number">82</td><td class="toc-text"><a href="#multi_sub_GENERATE-USAGE">multi sub GENERATE-USAGE</a></td></tr>
+</table>
+</nav>
+
+
+    <div class="pod-body">
+    <h1 id="App::pack"><a class="u" href="#___top" title="go to top of document">App::pack</a></h1>
+<h1 id="app_pack.raku"><a class="u" href="#___top" title="go to top of document">app pack.raku</a></h1>
+<h2 id="Table_of_Contents"><a class="u" href="#___top" title="go to top of document">Table of Contents</a></h2>
+<ul><li><p><a href="#name">NAME</a></p>
+</li>
+<li><p><a href="#author">AUTHOR</a></p>
+</li>
+<li><p><a href="#version">VERSION</a></p>
+</li>
+<li><p><a href="#title">TITLE</a></p>
+</li>
+<li><p><a href="#subtitle">SUBTITLE</a></p>
+</li>
+<li><p><a href="#copyright">COPYRIGHT</a></p>
+</li>
+<li><p><a href="#introduction">Introduction</a></p>
+</li>
+<ul><li><p><a href="#motivation">Motivation</a></p>
+</li>
+<ul><li><p><a href="#a-brief-tutorial">A brief tutorial.</a></p>
+</li>
+<li><p><a href="#to-create-a-new-plugin-just-call">To create a new plugin just call</a></p>
+</li>
+<li><p><a href="#example-of-using-packraku-plugin-new-key---all---force">example of using pack.raku plugin new key --all --force</a></p>
+</li>
+<li><p><a href="#if-you-want-to-manage-an-existing-extension-then-use">If you want to manage an existing extension then use</a></p>
+</li>
+<li><p><a href="#example-of-using-packraku-plugin-add">example of using pack.raku plugin add</a></p>
+</li>
+<li><p><a href="#to-package-a-extension-just-call">To package a extension just call</a></p>
+</li>
+<li><p><a href="#example-of-creating-packages">example of creating packages</a></p>
+</li>
+</ul>
+</ul>
+<li><p><a href="#pack">Pack</a></p>
+</li>
+<ul><li><p><a href="#key--directory-methods">key =&gt; directory methods</a></p>
+</li>
+<li><p><a href="#key--directory-management-methods">key =&gt; directory management methods</a></p>
+</li>
+<li><p><a href="#editor-functionsmethods">Editor functions/methods</a></p>
+</li>
+<li><p><a href="#usage-stuff">USAGE stuff</a></p>
+</li>
+</ul>
+<li><p><a href="#pack">pack.raku --help</a></p>
+</li>
+<li><p><a href="#packraku-do---help">pack.raku do --help</a></p>
+</li>
+<li><p><a href="#packraku-create---help">pack.raku create --help</a></p>
+</li>
+<li><p><a href="#packraku-add">pack.raku add</a></p>
+</li>
+<li><p><a href="#packraku-set-schema">pack.raku set schema</a></p>
+</li>
+<li><p><a href="#packraku-set-podir">pack.raku set podir</a></p>
+</li>
+<li><p><a href="#packraku-set-gettext-domain">pack.raku set gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-set-out-dir">pack.raku set out-dir</a></p>
+</li>
+<li><p><a href="#packraku-set-force">pack.raku set force</a></p>
+</li>
+<li><p><a href="#packraku-add-extra-sources">pack.raku add-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-set-package-dir">pack.raku set package-dir</a></p>
+</li>
+<li><p><a href="#packraku-set-extra-sources">pack.raku set extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-append-extra-sources">pack.raku append extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-remove-schema">pack.raku remove schema</a></p>
+</li>
+<li><p><a href="#packraku-remove-podir">pack.raku remove podir</a></p>
+</li>
+<li><p><a href="#packraku-remove-gettext-domain">pack.raku remove gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-remove-out-dir">pack.raku remove out-dir</a></p>
+</li>
+<li><p><a href="#packraku-remove-extra-sources">pack.raku remove extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-get-schema">pack.raku get schema</a></p>
+</li>
+<li><p><a href="#packraku-get-podir">pack.raku get podir</a></p>
+</li>
+<li><p><a href="#packraku-get-gettext-domain">pack.raku get gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-get-out-dir">pack.raku get out-dir</a></p>
+</li>
+<li><p><a href="#packraku-get-extra-sources">pack.raku get extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-get-force">pack.raku get force</a></p>
+</li>
+<li><p><a href="#packraku-get-package-dir">pack.raku get package-dir</a></p>
+</li>
+<li><p><a href="#table-of-contents">Top of Table of Contents</a></p>
+</li>
+</ul>
+<h1 id="key_=>_directory_methods"><a class="u" href="#___top" title="go to top of document">key =&gt; directory methods</a></h1>
+<ul><li><p><a href="#packraku-alias-add">pack.raku alias add</a></p>
+</li>
+<li><p><a href="#packraku-alias-do---help">pack.raku alias do --help</a></p>
+</li>
+<li><p><a href="#packraku-plugin-new---help">pack.raku plugin new --help</a></p>
+</li>
+<ul><li><p><a href="#recommended-usage">Recommended Usage</a></p>
+</li>
+</ul>
+<li><p><a href="#packraku-plugin-add">pack.raku plugin add</a></p>
+</li>
+<li><p><a href="#packraku-alias-add-extra-sources">pack.raku alias add-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-schema">pack.raku alias set-schema</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-podir">pack.raku alias set-podir</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-gettext-domain">pack.raku alias set-gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-out-dir">pack.raku alias set-out-dir</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-force">pack.raku alias set-force</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-package-dir">pack.raku alias set-package-dir</a></p>
+</li>
+<li><p><a href="#packraku-alias-set-extra-sources">pack.raku alias set-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-alias-append-extra-sources">pack.raku alias append-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-alias-remove-schema">pack.raku alias remove-schema</a></p>
+</li>
+<li><p><a href="#packraku-alias-remove-podir">pack.raku alias remove-podir</a></p>
+</li>
+<li><p><a href="#packraku-alias-remove-gettext-domain">pack.raku alias remove-gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-alias-remove-out-dir">pack.raku alias remove-out-dir</a></p>
+</li>
+<li><p><a href="#packraku-alias-remove-extra-sources">pack.raku alias remove-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-schema">pack.raku alias get-schema</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-podir">pack.raku alias get-podir</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-gettext-domain">pack.raku alias get-gettext-domain</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-out-dir">pack.raku alias get-out-dir</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-extra-sources">pack.raku alias get-extra-sources</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-force">pack.raku alias get-force</a></p>
+</li>
+<li><p><a href="#packraku-alias-get-package-dir">pack.raku alias get-package-dir</a></p>
+</li>
+<li><p><a href="#table-of-contents">Top of Table of Contents</a></p>
+</li>
+</ul>
+<h2 id="key_=>_directory_management_methods"><a class="u" href="#___top" title="go to top of document">key =&gt; directory management methods</a></h2>
+<ul><li><p><a href="#packraku-edit-configs">pack.raku edit configs</a></p>
+</li>
+<li><p><a href="#packraku-list-keys">pack.raku list keys</a></p>
+</li>
+<li><p><a href="#packraku-list-all">pack.raku list all</a></p>
+</li>
+<li><p><a href="#packraku-delete">pack.raku delete</a></p>
+</li>
+<li><p><a href="#packraku-del">pack.raku del</a></p>
+</li>
+<li><p><a href="#packraku-trash">pack.raku trash</a></p>
+</li>
+<li><p><a href="#packraku-tidy-file">pack.raku tidy file</a></p>
+</li>
+<li><p><a href="#packraku-comment">pack.raku comment</a></p>
+</li>
+<li><p><a href="#packraku-list-trash">pack.raku list trash</a></p>
+</li>
+<li><p><a href="#packraku-empty-trash">pack.raku empty trash</a></p>
+</li>
+<li><p><a href="#packraku-undelete">pack.raku undelete</a></p>
+</li>
+<li><p><a href="#packraku-show-stats">pack.raku show stats</a></p>
+</li>
+<li><p><a href="#packraku-show-statistics">pack.raku show statistics</a></p>
+</li>
+<li><p><a href="#packraku-backup-db">pack.raku backup db</a></p>
+</li>
+<li><p><a href="#packraku-restore-db">pack.raku restore db</a></p>
+</li>
+<li><p><a href="#packraku-menu-restore-db">pack.raku menu restore db</a></p>
+</li>
+<li><p><a href="#packraku-list-db-backups">pack.raku list db backups</a></p>
+</li>
+<li><p><a href="#table-of-contents">Top of Table of Contents</a></p>
+</li>
+</ul>
+<h1 id="Editor_functions/methods"><a class="u" href="#___top" title="go to top of document">Editor functions/methods</a></h1>
+<ul><li><p><a href="#packraku-list-editors">pack.raku list editors</a></p>
+</li>
+<li><p><a href="#packraku-editors-stats">pack.raku editors stats</a></p>
+</li>
+<li><p><a href="#packraku-list-editors-backups">pack.raku list editors backups</a></p>
+</li>
+<li><p><a href="#packraku-backup-editors">pack.raku backup editors</a></p>
+</li>
+<li><p><a href="#packraku-restore-editors">pack.raku restore editors</a></p>
+</li>
+<li><p><a href="#packraku-set-editor">pack.raku set editor</a></p>
+</li>
+<li><p><a href="#packraku-set-override-GUI_EDITOR">pack.raku set override GUI_EDITOR</a></p>
+</li>
+<li><p><a href="#packraku-menu-restore-editors">pack.raku menu restore editors</a></p>
+</li>
+<li><p><a href="#table-of-contents">Top of Table of Contents</a></p>
+</li>
+</ul>
+<h1 id="USAGE_stuff"><a class="u" href="#___top" title="go to top of document">USAGE stuff</a></h1>
+<ul><li><p><a href="#packraku-USAGE">pack.raku USAGE</a></p>
+</li>
+<li><p><a href="#multi-sub-GENERATE-USAGE">multi sub GENERATE-USAGE</a></p>
+</li>
+<li><p><a href="#table-of-contents">Top of Table of Contents</a></p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Top of Top of Document</a></p>
+<h1 id="Introduction"><a class="u" href="#___top" title="go to top of document">Introduction</a></h1>
+<p>This is a Raku program to manage the use of <strong>gnome-extensions</strong>, originally <strong>gnome-extensions pack</strong>, it has too many arguments this makes it easy, as it puts all the arguments in a configuration file. </p>
+<h2 id="Motivation"><a class="u" href="#___top" title="go to top of document">Motivation</a></h2>
+<p>The original motivation was that the command <strong>gnome-extensions pack</strong> has too many arguments this takes care of that making it easier to package up your gnome-shell extensions; at the expense of setting up a configuration file once, and there are methods for that. </p>
+<p>Now in addition I wrap <strong>gnome-extensions create</strong> as well, plus I create extra stuff like the schema file, the credits field in the <code>metadata.json</code> file; it also creates the po dir and creates <strong>compile.sh</strong> to populate it with the gettext stuff, and to process the schema file into it&#39;s binary form.</p>
+<h2 id="A_brief_tutorial."><a class="u" href="#___top" title="go to top of document">A brief tutorial.</a></h2>
+<h3 id="To_create_a_new_plugin_just_call"><a class="u" href="#___top" title="go to top of document">To create a new plugin just call </a></h3>
+<pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
+</pre>
+<p>You can alternately use <code>--prefs --schema-file --podirs --add-credits</code> leave out the <code>--prefs</code> out if you don&#39;t need settings (i.e. a prefs.js file), you can leave out <code>--schema-file</code> if you do not need a schema file, you can leave <code>--podirs</code> if you don&#39;t want internationalisation, you can leave of <code>--add-credits</code> if you don&#39;t want to add credits and you can leave off <code>--force</code> if you don&#39;t want the force parameter when packaging the extension.</p>
+<p>The program will prompt for all the parameters it requires once run it will have created a basic extension and moved it into a development location; <strong>by default the current directory from which you ran <code>pack.raku plugin new</code> from</strong>. The underlying program <strong>gnome-extensions create</strong> creates the extension in the directory of the live extensions I move it to the specified development area so you don&#39;t mess up your development computer while working, I recommend testing on a VM or at least a less important computer. </p>
+<p><strong>NB: I use the words &quot;plugin&quot; and &quot;extension&quot; interchangeably.</strong></p>
+<p><strong>The commands <code>pack.raku plugin add</code> and <code>pack.raku alias do</code> assume you are in the directory in which the plugin(s) reside for now this is a fetcher, later I may change that.</strong></p>
+<ul><li><p><a href="#packraku-plugin-new---help">(See pack.raku plugin new)</a></p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h4 id="example_of_using_pack.raku_plugin_new_key_--all_--force"><a class="u" href="#___top" title="go to top of document">example of using pack.raku plugin new key --all --force</a></h4>
+<pre class="pod-block-code">05:03:07 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 7s $ pack.raku plugin new fred --all --force
+uuid: fred@grizzlysmit.smit.id.au
+name: fred? hit enter to accept or type in new value followed by enter.
+Please enter a multi line description!
+terminate with two empty lines.
+1&gt; This is a dummy plugin
+2&gt; 
+3&gt; It is just a test
+4&gt; 
+5&gt; 
+gettext-domain: fred? hit enter to accept or type in new value followed by enter.
+Please enter credits lines!
+terminate with two empty lines.
+1&gt; Francis Grizzly Smit ©2025
+2&gt; Licence GPL v3+
+3&gt; 
+4&gt; 
+gnome-extensions create --uuid=fred@grizzlysmit.smit.id.au --name=fred --description=This is a dummy plugin\n\nIt is just a test --gettext-domain=fred --prefs --interactive --quiet
+Choose one of the available templates:
+1) Plain       –  An empty extension
+2) Indicator   –  Add an icon to the top bar
+3) Quick Settings Item  –  Add an item to quick settings
+Template [1-3]: 2
+
+The new extension was successfully created in /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au.
+copypath Success
+key: fred =&gt; &quot;/home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au&quot; added successfully
+Created po/en.po.
+.pack_args.json created
+removed directory
+05:55:14 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 2m14s $ exa -F -laahigHb --color-scale --time-style=full-iso --icons=always fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000  ./
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.943446718 +1000  ../
+27559273 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 05:55:14.053521905 +1000  .pack_args.json
+27559265 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 05:55:13.959032921 +1000  compile.sh*
+27559254 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945257913 +1000  extension.js
+27559270 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000  locale/
+27559256 .rw-rw-r--      1   325 grizzlysmit grizzlysmit 2025-07-24 05:55:13.957659027 +1000  metadata.json
+27559264 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.041449384 +1000  po/
+27559255 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945612838 +1000  prefs.js
+27559258 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000  schemas/
+27559257 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 05:55:13.946068846 +1000  stylesheet.css
+05:56:03 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ exa -F -lahigHTb  --color-scale --time-style=full-iso fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000 fred@grizzlysmit.smit.id.au/
+27559273 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 05:55:14.053521905 +1000 ├── .pack_args.json
+27559265 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 05:55:13.959032921 +1000 ├── compile.sh*
+27559254 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945257913 +1000 ├── extension.js
+27559270 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000 ├── locale/
+27559271 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.045449493 +1000 │   └── en/
+27559272 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.046449521 +1000 │       └── LC_MESSAGES/
+27559269 .rw-rw-r--      1   653 grizzlysmit grizzlysmit 2025-07-24 05:55:14.044584280 +1000 │           └── fred.mo
+27559256 .rw-rw-r--      1   325 grizzlysmit grizzlysmit 2025-07-24 05:55:13.957659027 +1000 ├── metadata.json
+27559264 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.041449384 +1000 ├── po/
+27559268 .rw-rw-r--      1   986 grizzlysmit grizzlysmit 2025-07-24 05:55:14.042015222 +1000 │   ├── en.po
+27559267 .rw-rw-r--      1   875 grizzlysmit grizzlysmit 2025-07-24 05:55:13.991375405 +1000 │   └── fred.pot
+27559255 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945612838 +1000 ├── prefs.js
+27559258 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000 ├── schemas/
+27559266 .rw-rw-r--      1   380 grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000 │   ├── gschemas.compiled
+27559263 .rw-rw-r--      1   765 grizzlysmit grizzlysmit 2025-07-24 05:55:13.956259755 +1000 │   └── org.gnome.shell.extensions.fred.gschema.xml
+27559257 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 05:55:13.946068846 +1000 └── stylesheet.css
+05:56:53 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;credits&quot;: &quot;Francis Grizzly Smit ©2025\nLicence GPL v3+&quot;,
+   3   │     &quot;description&quot;: &quot;This is a dummy plugin\n\nIt is just a test&quot;,
+   4   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   5   │     &quot;name&quot;: &quot;fred&quot;,
+   6   │     &quot;settings-schema&quot;: &quot;org.gnome.shell.extensions.fred&quot;,
+   7   │     &quot;shell-version&quot;: [
+   8   │         &quot;48&quot;
+   9   │     ],
+  10   │     &quot;uuid&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;
+  11   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────
+05:57:32 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/.pack_args.json 
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/.pack_args.json
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;extra-sources&quot;: [
+   3   │     ],
+   4   │     &quot;force&quot;: true,
+   5   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   6   │     &quot;out-dir&quot;: &quot;/home/grizzlysmit/Projects/gnome-shell/extensions&quot;,
+   7   │     &quot;package-dir&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;,
+   8   │     &quot;podir&quot;: &quot;po&quot;,
+   9   │     &quot;schema&quot;: &quot;schemas/org.gnome.shell.extensions.fred.gschema.xml&quot;
+  10   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h3 id="If_you_want_to_manage_an_existing_extension_then_use"><a class="u" href="#___top" title="go to top of document">If you want to manage an existing extension then use</a></h3>
+<pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
+</pre>
+<ul><li><p><a href="#packraku-plugin-add">(See pack.raku plugin add)</a></p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h4 id="example_of_using_pack.raku_plugin_add"><a class="u" href="#___top" title="go to top of document">example of using pack.raku plugin add</a></h4>
+<pre class="pod-block-code">10:41:54 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ gnome-extensions create --prefs --interactive
+Name should be a very short (ideally descriptive) string.
+Examples are: “Click To Focus”, “Adblock”, “Shell Window Shrinker”
+Name: fred
+
+Description is a single-sentence explanation of what your extension does.
+Examples are: “Make windows visible on click”, “Block advertisement popups”, “Animate windows shrinking on minimize”
+Description: Dummy plugin
+
+UUID is a globally-unique identifier for your extension.
+This should be in the format of an email address (clicktofocus@janedoe.example.com)
+UUID: fred@grizzlysmit.smit.id.au
+
+Choose one of the available templates:
+1) Plain       –  An empty extension
+2) Indicator   –  Add an icon to the top bar
+3) Quick Settings Item  –  Add an item to quick settings
+Template [1-3]: 2
+
+The new extension was successfully created in /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au.
+10:43:23 θ72° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 1m8s $ mv /home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au/ .
+renamed &#39;/home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.id.au/&#39; -&gt; &#39;./fred@grizzlysmit.smit.id.au&#39;
+10:43:49 θ69° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ tb fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+53501399 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 fred@grizzlysmit.smit.id.au/
+53501572 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── extension.js
+53501494 .rw-rw-r--      1   130 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── metadata.json
+53501574 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── prefs.js
+53501573 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 └── stylesheet.css
+
+10:44:07 θ66° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 127 $ type tb
+tb is aliased to `exa -F -lahigHTb  --color-scale --time-style=full-iso&#39;
+
+10:44:14 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │   &quot;name&quot;: &quot;fred&quot;,
+   3   │   &quot;description&quot;: &quot;Dummy plugin&quot;,
+   4   │   &quot;uuid&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;,
+   5   │   &quot;shell-version&quot;: [
+   6   │     &quot;48&quot;
+   7   │   ]
+   8   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+10:44:37 θ68° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ pack.raku plugin add fred fred@grizzlysmit.smit.id.au  --force --mk-schema --mk-podir
+gettext-domain: fred? hit enter to accept or type in new value followed by enter.
+Created po/en.po.
+key: fred =&gt; &quot;/home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au&quot; added successfully
+.pack_args.json created
+10:45:50 θ64° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 13s $ pack.raku alias get-gettext-domain fred
+fred
+10:46:13 θ77° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 3s $ # it worked
+10:46:26 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ tb fred@grizzlysmit.smit.id.au/
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+53501399 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.817144241 +1000 fred@grizzlysmit.smit.id.au/
+53501634 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 10:45:50.817730377 +1000 ├── .pack_args.json
+53501578 .rwxrwxr-x      1   562 grizzlysmit grizzlysmit 2025-07-24 10:45:50.709030905 +1000 ├── compile.sh*
+53501572 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── extension.js
+53501584 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.798143691 +1000 ├── locale/
+53501616 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.798143691 +1000 │   └── en/
+53501633 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.800143748 +1000 │       └── LC_MESSAGES/
+53501582 .rw-rw-r--      1   653 grizzlysmit grizzlysmit 2025-07-24 10:45:50.797109428 +1000 │           └── fred.mo
+53501494 .rw-rw-r--      1   231 grizzlysmit grizzlysmit 2025-07-24 10:45:50.706926618 +1000 ├── metadata.json
+53501577 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.793143546 +1000 ├── po/
+53501581 .rw-rw-r--      1   986 grizzlysmit grizzlysmit 2025-07-24 10:45:50.794635436 +1000 │   ├── en.po
+53501580 .rw-rw-r--      1   875 grizzlysmit grizzlysmit 2025-07-24 10:45:50.743762978 +1000 │   └── fred.pot
+53501574 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 ├── prefs.js
+53501575 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 10:45:50.739141981 +1000 ├── schemas/
+53501579 .rw-rw-r--      1   380 grizzlysmit grizzlysmit 2025-07-24 10:45:50.739141981 +1000 │   ├── gschemas.compiled
+53501576 .rw-rw-r--      1   765 grizzlysmit grizzlysmit 2025-07-24 10:45:50.705111892 +1000 │   └── org.gnome.shell.extensions.fred.gschema.xml
+53501573 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 └── stylesheet.css
+10:46:38 θ64° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/metadata.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;description&quot;: &quot;Dummy plugin&quot;,
+   3   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   4   │     &quot;name&quot;: &quot;fred&quot;,
+   5   │     &quot;settings-schema&quot;: &quot;org.gnome.shell.extensions.fred&quot;,
+   6   │     &quot;shell-version&quot;: [
+   7   │         &quot;48&quot;
+   8   │     ],
+   9   │     &quot;uuid&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;
+  10   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+10:47:13 θ76° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/.pack_args.json 
+───────┬───────────────────────────────────────────────────────────────────────────
+       │ File: fred@grizzlysmit.smit.id.au/.pack_args.json
+───────┼───────────────────────────────────────────────────────────────────────────
+   1   │ {
+   2   │     &quot;extra-sources&quot;: [
+   3   │     ],
+   4   │     &quot;force&quot;: true,
+   5   │     &quot;gettext-domain&quot;: &quot;fred&quot;,
+   6   │     &quot;out-dir&quot;: &quot;/home/grizzlysmit/Projects/gnome-shell/extensions&quot;,
+   7   │     &quot;package-dir&quot;: &quot;fred@grizzlysmit.smit.id.au&quot;,
+   8   │     &quot;podir&quot;: &quot;po&quot;,
+   9   │     &quot;schema&quot;: &quot;schemas/org.gnome.shell.extensions.fred.gschema.xml&quot;
+  10   │ }
+───────┴───────────────────────────────────────────────────────────────────────────
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h3 id="To_package_a_extension_just_call"><a class="u" href="#___top" title="go to top of document">To package a extension just call </a></h3>
+<pre class="pod-block-code">pack.raku alias do &lt;key&gt; --force
+</pre>
+<h4 id="Or_to_package_many_this"><a class="u" href="#___top" title="go to top of document">Or to package many this</a></h4>
+<pre class="pod-block-code">pack.raku alias do &lt;key0&gt; &lt;key1&gt; &lt;key2&gt; ... &lt;keyn&gt; --force
+</pre>
+<ul><li><p><a href="#packraku-alias-do---help">See pack.raku alias do --help</a>.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h4 id="example_of_creating_packages"><a class="u" href="#___top" title="go to top of document">example of creating packages </a></h4>
+<pre class="pod-block-code">15:44:31 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ eb
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 15:44:31.840926805 +1000  ./
+26217632 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.734959839 +1000  ../
+26349968 .rw-rw-r--      1  21Ki grizzlysmit grizzlysmit 2024-05-03 11:27:55.484319299 +1000  .shell-extension.zip
+26353752 .rw-rw-r--      1  24Ki grizzlysmit grizzlysmit 2021-11-25 19:26:19.479090060 +1000  alternate-hplips-menu.zip
+26352042 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-26 03:32:33.908540232 +1000  apps-menu@gnome-shell-extensions.gcampax.github.com/
+26353753 .rw-rw-r--      1  17Ki grizzlysmit grizzlysmit 2021-12-28 04:37:44.146266285 +1000  big-avatar@gustavoperedo.org.shell-extension.zip
+26352038 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  Bottom_Panel@rmy.pobox.com/
+26512363 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:38:59.863644931 +1000  files-launcher@grizzlysmit.smit.id.au/
+26349973 .rw-rw-r--      1  54Ki grizzlysmit grizzlysmit 2025-07-24 15:44:00.465134918 +1000  files-launcher@grizzlysmit.smit.id.au.shell-extension.zip
+27559274 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 15:42:56.782255700 +1000  fred@grizzlysmit.smit.id.au/
+26352043 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-extension-taskbar/
+26352044 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2022-01-07 09:09:40.302644534 +1000  gnome-shell-extensions-gravatar/
+26352045 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-tw/
+26353754 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-06 23:56:20.182307575 +1000  gravatar@gnome-shell-extensions.rouleau.io.shell-extension.zip
+26352046 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@grizzlysmit.id.au/
+26353755 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2022-07-01 10:34:55.758925396 +1000  gravatar@grizzlysmit.id.au.shell-extension.zip
+26352048 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@jr.rlabs.io/
+26353756 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-07 19:47:05.364419415 +1000  gravatar@jr.rlabs.io.shell-extension.zip
+26352049 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gsconnect@andyholmes.github.io/
+26352051 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:31:22.859671275 +1000  hplip-menu2@grizzlysmit.smit.id.au/
+26346496 .rw-rw-r--      1  28Ki grizzlysmit grizzlysmit 2025-07-02 20:36:31.684875818 +1000  hplip-menu2@grizzlysmit.smit.id.au.shell-extension.zip
+26352054 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  messagingmenu@lauinger-clan.de/
+26352056 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2020-11-07 22:39:21.087614053 +1000  multi-monitors-add-on/
+46561771 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2025-07-23 14:26:07.832210160 +1000  notes-with-history@grizzlysmit.smit.id.au/
+26349665 .rw-rw-r--      1  53Ki grizzlysmit grizzlysmit 2025-07-24 15:44:00.409133267 +1000  notes-with-history@grizzlysmit.smit.id.au.shell-extension.zip
+51393341 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2025-03-15 16:42:15.414543423 +1000  old/
+26352059 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-04-29 17:31:02.281104910 +1000  openweather/
+26352057 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  openweather-extension@jenslody.de/
+26352060 drwxrwxr-x      9     - grizzlysmit grizzlysmit 2025-07-24 15:33:13.862750943 +1000  pack/
+26352062 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2022-01-05 22:49:47.185676938 +1000  pixel-saver/
+26352064 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-07-27 18:54:47.363559805 +1000  popupMenu/
+26352065 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  quick-settings-avatar@d-go/
+26352039 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SettingsCenter@lauinger-clan.de/
+26352067 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  ssh-connect-menu@edavidf/
+26352040 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SystemMenu@jonnius.github.com/
+26352068 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-06 16:52:51.078240764 +1000  tabstesting/
+26352070 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  taskbar@grizzlysmit.smit.id.au/
+26352041 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  TaskBar@zpydr/
+26352071 drwxr-xr-x      2     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.794960310 +1000  testing/
+26352073 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2023-09-27 15:27:06.024458938 +1000  tmp/
+26352074 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  unite@hardpixel.eu/
+26352075 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  weeks-start-on-monday@extensions.gnome-shell.fifi.org/
+26352076 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  workspace-switch-wraparound@theychx.org/
+15:44:36 θ67° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ type eb
+eb is a function
+eb () 
+{ 
+    if type exa &gt;&gt; /dev/null 2&gt;&amp;1; then
+        exa -F -laahigHb --color-scale --time-style=full-iso --icons=always &quot;$@&quot;;
+    else
+        ls --color=auto -Flaghi --color &quot;$@&quot;;
+    fi
+}
+15:44:55 θ72° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ pack.raku list all
+                                                                                                                           
+key   sep path                                                                        # comment                            
+===========================================================================================================================
+files  =&gt; ~/Projects/gnome-shell/extensions/files-launcher@grizzlysmit.smit.id.au     #                                    
+fred   =&gt; ~/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au               # Testing\n\nthis is a Dummy plugin  
+hp     =&gt; ~/Projects/gnome-shell/extensions/hplip-menu2@grizzlysmit.smit.id.au        # The hplip-menu2 plugin    #        
+notes  =&gt; ~/Projects/gnome-shell/extensions/notes-with-history@grizzlysmit.smit.id.au # notes-with-history plugin #        
+===========================================================================================================================
+15:45:56 θ74° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 3s $ pack.raku alias do fred notes files hp --force
+gnome-extensions pack --schema=schemas/org.gnome.shell.extensions.fred.gschema.xml --podir=po --gettext-domain=fred --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=gzz.js --extra-source=select.js --extra-source=button.js --extra-source=log_message.js --extra-source=icon_constants.js --schema=schemas/org.gnome.shell.extensions.notes-with-history.gschema.xml --podir=po --gettext-domain=notes-with-history --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/notes-with-history@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=button.js --extra-source=gzz.js --extra-source=icon_constants.js --extra-source=log_message.js --extra-source=select.js --schema=schemas/org.gnome.shell.extensions.files-launcher.gschema.xml --podir=po --gettext-domain=files-launcher --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/files-launcher@grizzlysmit.smit.id.au
+
+gnome-extensions pack --extra-source=gzzDialog.js --extra-source=CompactMenu.js --extra-source=log_message.js --schema=schemas/org.gnome.shell.extensions.hplip-menu2.gschema.xml --podir=po --gettext-domain=hplip-menu2 --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/hplip-menu2@grizzlysmit.smit.id.au
+
+exa -F -laahigHb --color-scale --time-style=full-iso --icons=always
+   inode Permissions Links  Size User        Group       Date Modified                       Name
+26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 15:46:39.996826303 +1000  ./
+26217632 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.734959839 +1000  ../
+26349968 .rw-rw-r--      1  21Ki grizzlysmit grizzlysmit 2024-05-03 11:27:55.484319299 +1000  .shell-extension.zip
+26353752 .rw-rw-r--      1  24Ki grizzlysmit grizzlysmit 2021-11-25 19:26:19.479090060 +1000  alternate-hplips-menu.zip
+26352042 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-26 03:32:33.908540232 +1000  apps-menu@gnome-shell-extensions.gcampax.github.com/
+26353753 .rw-rw-r--      1  17Ki grizzlysmit grizzlysmit 2021-12-28 04:37:44.146266285 +1000  big-avatar@gustavoperedo.org.shell-extension.zip
+26352038 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  Bottom_Panel@rmy.pobox.com/
+26512363 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:38:59.863644931 +1000  files-launcher@grizzlysmit.smit.id.au/
+26349973 .rw-rw-r--      1  54Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.949824924 +1000  files-launcher@grizzlysmit.smit.id.au.shell-extension.zip
+27559274 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 15:42:56.782255700 +1000  fred@grizzlysmit.smit.id.au/
+26387376 .rw-rw-r--      1 4.2Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.839821696 +1000  fred@grizzlysmit.smit.id.au.shell-extension.zip
+26352043 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-extension-taskbar/
+26352044 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2022-01-07 09:09:40.302644534 +1000  gnome-shell-extensions-gravatar/
+26352045 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gnome-shell-tw/
+26353754 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-06 23:56:20.182307575 +1000  gravatar@gnome-shell-extensions.rouleau.io.shell-extension.zip
+26352046 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@grizzlysmit.id.au/
+26353755 .rw-rw-r--      1 1.8Ki grizzlysmit grizzlysmit 2022-07-01 10:34:55.758925396 +1000  gravatar@grizzlysmit.id.au.shell-extension.zip
+26352048 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gravatar@jr.rlabs.io/
+26353756 .rw-rw-r--      1 6.6Ki grizzlysmit grizzlysmit 2022-01-07 19:47:05.364419415 +1000  gravatar@jr.rlabs.io.shell-extension.zip
+26352049 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  gsconnect@andyholmes.github.io/
+26352051 drwxrwxr-x      8     - grizzlysmit grizzlysmit 2025-07-23 14:31:22.859671275 +1000  hplip-menu2@grizzlysmit.smit.id.au/
+26346496 .rw-rw-r--      1  28Ki grizzlysmit grizzlysmit 2025-07-24 15:46:40.012826773 +1000  hplip-menu2@grizzlysmit.smit.id.au.shell-extension.zip
+26352054 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  messagingmenu@lauinger-clan.de/
+26352056 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2020-11-07 22:39:21.087614053 +1000  multi-monitors-add-on/
+46561771 drwxrwxr-x      7     - grizzlysmit grizzlysmit 2025-07-23 14:26:07.832210160 +1000  notes-with-history@grizzlysmit.smit.id.au/
+26349665 .rw-rw-r--      1  53Ki grizzlysmit grizzlysmit 2025-07-24 15:46:39.894823310 +1000  notes-with-history@grizzlysmit.smit.id.au.shell-extension.zip
+51393341 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2025-03-15 16:42:15.414543423 +1000  old/
+26352059 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-04-29 17:31:02.281104910 +1000  openweather/
+26352057 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  openweather-extension@jenslody.de/
+26352060 drwxrwxr-x      9     - grizzlysmit grizzlysmit 2025-07-24 15:33:13.862750943 +1000  pack/
+26352062 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2022-01-05 22:49:47.185676938 +1000  pixel-saver/
+26352064 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-07-27 18:54:47.363559805 +1000  popupMenu/
+26352065 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  quick-settings-avatar@d-go/
+26352039 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SettingsCenter@lauinger-clan.de/
+26352067 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  ssh-connect-menu@edavidf/
+26352040 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  SystemMenu@jonnius.github.com/
+26352068 drwxrwxr-x      3     - grizzlysmit grizzlysmit 2024-05-06 16:52:51.078240764 +1000  tabstesting/
+26352070 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  taskbar@grizzlysmit.smit.id.au/
+26352041 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  TaskBar@zpydr/
+26352071 drwxr-xr-x      2     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.794960310 +1000  testing/
+26352073 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2023-09-27 15:27:06.024458938 +1000  tmp/
+26352074 drwxrwxr-x      6     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  unite@hardpixel.eu/
+26352075 drwxrwxr-x      4     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  weeks-start-on-monday@extensions.gnome-shell.fifi.org/
+26352076 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2024-05-12 07:02:26.268351182 +1000  workspace-switch-wraparound@theychx.org/
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h3 id="pack"><a class="u" href="#___top" title="go to top of document">pack</a></h3>
+<pre class="pod-block-code">pack.raku --help
+                                                                                                                                                                                           
+Usage:
+  pack.raku do &lt;dir&gt;  [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+  pack.raku create &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
+  pack.raku add &lt;package-dir&gt;  [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
+  pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
+  pack.raku set podir &lt;package-dir&gt; &lt;podir-value&gt;
+  pack.raku set gettext-domain &lt;package-dir&gt; &lt;gettext-domain-value&gt;
+  pack.raku set out-dir &lt;package-dir&gt; &lt;out-dir-value&gt;
+  pack.raku set force &lt;package-dir&gt; &lt;force-value&gt;
+  pack.raku add-extra-sources &lt;package-dir&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku set package-dir &lt;package-dir&gt; &lt;package-dir-value&gt;
+  pack.raku set extra-sources &lt;package-dir&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku append extra-sources &lt;package-dir&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku remove schema &lt;package-dir&gt;
+  pack.raku remove podir &lt;package-dir&gt;
+  pack.raku remove gettext-domain &lt;package-dir&gt;
+  pack.raku remove out-dir &lt;package-dir&gt;
+  pack.raku remove extra-sources &lt;package-dir&gt;
+  pack.raku get schema &lt;package-dir&gt;
+  pack.raku get podir &lt;package-dir&gt;
+  pack.raku get gettext-domain &lt;package-dir&gt;
+  pack.raku get out-dir &lt;package-dir&gt;
+  pack.raku get extra-sources &lt;package-dir&gt;
+  pack.raku get force &lt;package-dir&gt;
+  pack.raku get package-dir &lt;package-dir&gt;
+  pack.raku alias add &lt;key&gt; &lt;target&gt;   [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
+  pack.raku alias do &lt;key&gt;  [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+  pack.raku plugin new &lt;key&gt;   [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--credits=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]  
+  pack.raku plugin add &lt;key&gt; &lt;uuid&gt;  [&lt;extra-sources&gt; ...] [-p|--extension-dir=&lt;Str&gt;] [--podir=&lt;Str&gt;] [-f|--force] [-s|--silent] [-b|--backtrace] [-m|--mk-schema] [-l|--dev-lang=&lt;Str&gt;]
+  pack.raku alias add-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias set-schema &lt;key&gt; &lt;schema-value&gt;
+  pack.raku alias set-podir &lt;key&gt; &lt;podir-value&gt;
+  pack.raku alias set-gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
+  pack.raku alias set-out-dir &lt;key&gt; &lt;out-dir-value&gt;
+  pack.raku alias set-force &lt;key&gt; &lt;force-value&gt;
+  pack.raku alias set-package-dir &lt;key&gt; &lt;package-dir-value&gt;
+  pack.raku alias set-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias append-extra-sources &lt;key&gt;  [&lt;extra-sources&gt; ...]
+  pack.raku alias remove-schema &lt;key&gt;
+  pack.raku alias remove-podir &lt;key&gt;
+  pack.raku alias remove-gettext-domain &lt;key&gt;
+  pack.raku alias remove-out-dir &lt;key&gt;
+  pack.raku alias remove-extra-sources &lt;key&gt;
+  pack.raku alias get-schema &lt;key&gt;
+  pack.raku alias get-podir &lt;key&gt;
+  pack.raku alias get-gettext-domain &lt;key&gt;
+  pack.raku alias get-out-dir &lt;key&gt;
+  pack.raku alias get-extra-sources &lt;key&gt;
+  pack.raku alias get-force &lt;key&gt;
+  pack.raku alias get-package-dir &lt;key&gt;
+  pack.raku edit configs
+  pack.raku list keys  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku list all  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku delete   [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+  pack.raku del   [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+  pack.raku trash   [&lt;keys&gt; ...]
+  pack.raku tidy file
+  pack.raku comment &lt;key&gt; &lt;comment&gt;   [-k|--kind=&lt;Str where \{ ... } &gt;]
+  pack.raku list trash  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku empty trash
+  pack.raku undelete   [&lt;keys&gt; ...]
+  pack.raku show stats  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku show statistics  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku backup db    [-w|--win-format|--use-windows-formatting]
+  pack.raku restore db  [&lt;restore-from&gt;]
+  pack.raku menu restore db  [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
+  pack.raku list db backups  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku list editors    [-f|--prefix=&lt;Str&gt;] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku editors stats  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku list editors backups  [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+  pack.raku backup editors    [-w|--use-windows-formatting]
+  pack.raku restore editors &lt;restore-from&gt;
+  pack.raku set editor &lt;editor&gt; [&lt;comment&gt;]
+  pack.raku set override GUI_EDITOR &lt;value&gt; [&lt;comment&gt;]
+  pack.raku menu restore editors  [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h1 id="pack.raku_do_--help"><a class="u" href="#___top" title="go to top of document">pack.raku do --help</a></h1>
+<pre class="pod-block-code">pack.raku do --help
+                                                                                                                                                                                           
+Usage:
+  pack.raku do &lt;dir&gt; [&lt;dirs&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<p>Where</p>
+<ul><li><p>dir is a directory containing a <strong>gnome-shell</strong> plugin</p>
+</li>
+<ul><li><p>assumes that the directory contains a <code>.pack_args.json</code> file which containes all the arguments for <strong>gnome-extensions pack</strong>.</p>
+</li>
+</ul>
+<li><p><code>[dirs ...]</code> a list of aditional directories containing <strong>gnome-shell</strong> plugins same as dir.</p>
+</li>
+<li><p><code>[-f|--force]</code> overrides the force parameter in every <code>.pack_args.json</code>.</p>
+</li>
+<li><p><code>[-c|--command=&lt;Str&gt;]</code> overrides the command to list the current directory it is asummed this is the same as the output directory for all the plugins.</p>
+</li>
+<ul><li><p>the default is <strong>ls -Flaghi --color=always</strong> this can be overriden by the value of the <strong>LS_CMD</strong> environment variable but the command-line value overrides both.</p>
+</li>
+</ul>
+<li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;do&quot;, Str:D $dir, Bool:D :f(:$force) is copy = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@dirs is copy --&gt; int)</code>:
+Package the plugin at $dir and any plugin&#39;s in @dirs
+</article>
+<h1 id="pack.raku_create_--help"><a class="u" href="#___top" title="go to top of document">pack.raku create --help</a></h1>
+<pre class="pod-block-code">Usage:
+  pack.raku create &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force]
+</pre>
+<p>Create the <code>.pack_args.json</code> file.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> A list of extra files to add to the package.</p>
+</li>
+<li><p><code>[-s|--schema=&lt;Str&gt;]</code> The path to the schema file.</p>
+</li>
+<li><p><code>[-p|--podir=&lt;Str&gt;]</code> The path to the po files.</p>
+</li>
+<li><p><code>[-g|--gettext-domain=&lt;Str&gt;]</code> The gettext domain.</p>
+</li>
+<li><p><code>[-o|--out-dir=&lt;Str&gt;]</code> The directory to place the package file in.</p>
+</li>
+<li><p><code>[-f|--force]</code> set the force option.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;create&quot;, Str:D $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str:D :o(:$out-dir) = &quot;.&quot;, Bool:D :f(:$force) = Bool::False, *@extra-sources --&gt; int)</code>:
+Create the .pack_args.json file for the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_add"><a class="u" href="#___top" title="go to top of document">pack.raku add</a></h1>
+<pre class="pod-block-code">pack.raku add --help
+
+Usage:
+  pack.raku add &lt;package-dir&gt; [&lt;extra-sources&gt; ...] [-s|--schema=&lt;Str&gt;] [-p|--podir=&lt;Str&gt;] [-g|--gettext-domain=&lt;Str&gt;] [-o|--out-dir=&lt;Str&gt;] [-f|--force] [-F|--stomp-force] [-S|--stomp]
+</pre>
+<p>Modifiy add to the <code>.pack_args.json</code> file.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> A list of extra files to add to the package.</p>
+</li>
+<li><p><code>[-s|--schema=&lt;Str&gt;]</code> The path to the schema file.</p>
+</li>
+<li><p><code>[-p|--podir=&lt;Str&gt;]</code> The path to the po files.</p>
+</li>
+<li><p><code>[-g|--gettext-domain=&lt;Str&gt;]</code> The gettext domain.</p>
+</li>
+<li><p><code>[-o|--out-dir=&lt;Str&gt;]</code> The directory to place the package file in.</p>
+</li>
+<li><p><code>[-f|--force]</code> set the force option.</p>
+</li>
+<li><p><code>[-F|--stomp-force]</code> If present then the value of --force wins regradless.</p>
+</li>
+<li><p><code>[-S|--stomp]</code> If present then @extra-sources stomps on whatever was before otherwise they are spliced together.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;add&quot;, Str $package-dir, Str :s(:$schema) = Str, Str :p(:$podir) = Str, Str :g(:$gettext-domain) = Str, Str :o(:$out-dir) = &quot;.&quot;, Bool:D :f(:$force) = Bool::False, Bool:D :F(:$stomp-force) = Bool::False, Bool:D :S(:$stomp) = Bool::False, *@extra-sources --&gt; int)</code>:
+add or set parameters in the .pack_args.json file in $package-dir.
+</article>
+<h1 id="pack.raku_set_schema"><a class="u" href="#___top" title="go to top of document">pack.raku set schema</a></h1>
+<pre class="pod-block-code">pack.raku set schema --help
+
+Usage:
+  pack.raku set schema &lt;package-dir&gt; &lt;schema-value&gt;
+</pre>
+<p>Set the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;schema-value&gt;</code> new value of schema.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;schema&quot;, Str $package-dir, Str $schema-value --&gt; int)</code>:
+set the value of schema in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_podir"><a class="u" href="#___top" title="go to top of document">pack.raku set podir</a></h1>
+<pre class="pod-block-code">pack.raku set podir --help
+
+Usage:
+  pack.raku set podir &lt;package-dir&gt; &lt;podir-value&gt;
+</pre>
+<p>Set the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;podir-value&gt;</code> new value of podir.</p>
+</li>
+<ul><li><p>podir is the path of the directory containing the po files.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;podir&quot;, Str $package-dir, Str $podir-value --&gt; int)</code>:
+set the value of podir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku set gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku set gettext-domain --help
+
+Usage:
+  pack.raku set gettext-domain &lt;package-dir&gt; &lt;gettext-domain-value&gt;
+</pre>
+<p>Set the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;gettext-domain-value&gt;</code> new value of gettext-domain.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;gettext-domain&quot;, Str $package-dir, Str $gettext-domain-value --&gt; int)</code>:
+set the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku set out-dir</a></h1>
+<pre class="pod-block-code">pack.raku set out-dir --help
+
+Usage:
+  pack.raku set out-dir &lt;package-dir&gt; &lt;out-dir-value&gt;
+</pre>
+<p>Set the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;out-dir-value&gt;</code> new value of out-dir.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;out-dir&quot;, Str $package-dir, Str $out-dir-value --&gt; int)</code>:
+set the value of out-dir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_force"><a class="u" href="#___top" title="go to top of document">pack.raku set force</a></h1>
+<pre class="pod-block-code">pack.raku set force --help
+
+Usage:
+  pack.raku set force &lt;package-dir&gt; &lt;force-value&gt;
+</pre>
+<p>Set the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;force-value&gt;</code> new value of force.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;force&quot;, Str $package-dir, Bool $force-value --&gt; int)</code>:
+set the value of force in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_add-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku add-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku add-extra-sources --help
+
+Usage:
+  pack.raku add-extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Add to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> additional extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;add-extra-sources&quot;, Str $package-dir, *@extra-sources --&gt; int)</code>:
+add to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_package-dir"><a class="u" href="#___top" title="go to top of document">pack.raku set package-dir</a></h1>
+<pre class="pod-block-code">pack.raku set package-dir --help
+
+Usage:
+  pack.raku set package-dir &lt;package-dir&gt; &lt;package-dir-value&gt;
+</pre>
+<p>Set the value of package-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>&lt;package-dir-value&gt;</code> new value of package-dir.</p>
+</li>
+<ul><li><p>probably useless as <code>&lt;package-dir&gt;</code> and <code>&lt;package-dir-value&gt;</code> are to be expected to be the same generally, but if needed it&#39;s here.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;package-dir&quot;, Str $package-dir, Str $package-dir-value --&gt; int)</code>:
+set the value of package-dir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_set_extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku set extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku set extra-sources --help
+
+Usage:
+  pack.raku set extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Set the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> new value of extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;extra-sources&quot;, Str $package-dir, *@extra-sources --&gt; int)</code>:
+set the value of extra-sources in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_append_extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku append extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku append extra-sources --help
+
+Usage:
+  pack.raku append extra-sources &lt;package-dir&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Append <code>[&lt;extra-sources&gt; ...]</code> to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> value to append to extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;append&quot;, &quot;extra-sources&quot;, Str $package-dir, *@extra-sources --&gt; int)</code>:
+append to the value of extra-sources in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_remove_schema"><a class="u" href="#___top" title="go to top of document">pack.raku remove schema</a></h1>
+<pre class="pod-block-code">pack.raku remove schema --help
+
+Usage:
+  pack.raku remove schema &lt;package-dir&gt;
+</pre>
+<p>Remove the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;remove&quot;, &quot;schema&quot;, Str $package-dir --&gt; int)</code>:
+remove the value of schema in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_remove_podir"><a class="u" href="#___top" title="go to top of document">pack.raku remove podir</a></h1>
+<pre class="pod-block-code">pack.raku remove podir --help
+
+Usage:
+  pack.raku remove podir &lt;package-dir&gt;
+</pre>
+<p>Remove the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;remove&quot;, &quot;podir&quot;, Str $package-dir --&gt; int)</code>:
+remove the value of podir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_remove_gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku remove gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku remove gettext-domain --help
+
+Usage:
+  pack.raku remove gettext-domain &lt;package-dir&gt;
+</pre>
+<p>Remove the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;remove&quot;, &quot;gettext-domain&quot;, Str $package-dir --&gt; int)</code>:
+remove the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_remove_out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku remove out-dir</a></h1>
+<pre class="pod-block-code">pack.raku remove out-dir --help
+
+Usage:
+  pack.raku remove out-dir &lt;package-dir&gt;
+</pre>
+<p>Remove the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;remove&quot;, &quot;out-dir&quot;, Str $package-dir --&gt; int)</code>:
+remove the value of out-dir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_remove_extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku remove extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku remove extra-sources --help
+
+Usage:
+  pack.raku remove extra-sources &lt;package-dir&gt;
+</pre>
+<p>Truncate the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;remove&quot;, &quot;extra-sources&quot;, Str $package-dir --&gt; int)</code>:
+remove/truncate the value of extra-sources in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_schema"><a class="u" href="#___top" title="go to top of document">pack.raku get schema</a></h1>
+<pre class="pod-block-code">pack.raku get schema --help
+
+Usage:
+  pack.raku get schema &lt;package-dir&gt;
+</pre>
+<p>Get the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;schema&quot;, Str $package-dir --&gt; int)</code>:
+get the value of schema in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_podir"><a class="u" href="#___top" title="go to top of document">pack.raku get podir</a></h1>
+<pre class="pod-block-code">pack.raku get podir --help
+
+Usage:
+  pack.raku get podir &lt;package-dir&gt;
+</pre>
+<p>Get the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<ul><li><p><code>NB: podir is the path to the directory containing the po files.</code></p>
+</li>
+</ul>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;podir&quot;, Str $package-dir --&gt; int)</code>:
+get the value of podir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku get gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku get gettext-domain --help
+
+Usage:
+  pack.raku get gettext-domain &lt;package-dir&gt;
+</pre>
+<p>Get the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;gettext-domain&quot;, Str $package-dir --&gt; int)</code>:
+get the value of gettext-domain in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku get out-dir</a></h1>
+<pre class="pod-block-code">pack.raku get out-dir --help
+
+Usage:
+  pack.raku get out-dir &lt;package-dir&gt;
+</pre>
+<p>Get the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;out-dir&quot;, Str $package-dir --&gt; int)</code>:
+get the value of out-dir in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku get extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku get extra-sources --help
+
+Usage:
+  pack.raku get extra-sources &lt;package-dir&gt;
+</pre>
+<p>Get the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;extra-sources&quot;, Str $package-dir --&gt; int)</code>:
+get the value of extra-sources in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_force"><a class="u" href="#___top" title="go to top of document">pack.raku get force</a></h1>
+<pre class="pod-block-code">pack.raku get force --help
+
+Usage:
+  pack.raku get force &lt;package-dir&gt;
+</pre>
+<p>Get the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;force&quot;, Str $package-dir --&gt; int)</code>:
+get the value of force in .pack_args.json of the plugin at $package-dir.
+</article>
+<h1 id="pack.raku_get_package-dir"><a class="u" href="#___top" title="go to top of document">pack.raku get package-dir</a></h1>
+<pre class="pod-block-code">pack.raku get package-dir --help
+
+Usage:
+  pack.raku get package-dir &lt;package-dir&gt;
+</pre>
+<p>Get the value of package-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;package-dir&gt;</code> Directory containing plugin.</p>
+</li>
+<ul><li><p>kind of redundant as it needs <code>package-dir</code> to get <code>package-dir</code>.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;get&quot;, &quot;package-dir&quot;, Str $package-dir --&gt; int)</code>:
+get the value of package-dir in .pack_args.json of the plugin at $package-dir,  redundant.
+</article>
+<h1 id="pack.raku_alias_add"><a class="u" href="#___top" title="go to top of document">pack.raku alias add</a></h1>
+<pre class="pod-block-code">pack.raku alias add --help
+
+Usage:
+  pack.raku alias add &lt;key&gt; &lt;target&gt;  [-s|--set|--force] [-c|--comment=&lt;Str&gt;]
+</pre>
+<p>Where </p>
+<ul><li><p><code>&lt;key&gt;</code> is a faily arbitray key.</p>
+</li>
+<li><p><code>&lt;target&gt;</code> is a path to a directory containing a <strong>gnome-shell</strong> plugin.</p>
+</li>
+<li><p><code>[-s|--set|--force]</code> if present then add the key directory pair even if it requires overwriting an existing entry.</p>
+</li>
+<li><p><code>[-c|--comment=&lt;Str&gt;]</code> A comment to describe the key directory pair.</p>
+</li>
+</ul>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;add&quot;, Str $key, Str $target, Bool:D :s(:set(:$force)) = Bool::False, Str :c(:$comment) = Str --&gt; int)</code>:
+add $key =&gt; $target to the store.
+</article>
+<h1 id="pack.raku_alias_do_--help"><a class="u" href="#___top" title="go to top of document">pack.raku alias do --help</a></h1>
+<pre class="pod-block-code">Usage:
+  pack.raku alias do &lt;key&gt; [&lt;keys&gt; ...] [-f|--force] [-c|--command=&lt;Str&gt;] [-q|--quiet|--silent]
+</pre>
+<p>Where</p>
+<ul><li><p>key is a key pointing to a directory in the directory database containing a <strong>gnome-shell</strong> plugin</p>
+</li>
+<ul><li><p>assumes that the directory contains a <code>.pack_args.json</code> file which contains all the arguments for <strong>gnome-extensions pack</strong>.</p>
+</li>
+</ul>
+<li><p><code>[keys ...]</code> a list of additional keys pointing to directories in the directory database containing <strong>gnome-shell</strong> plugins same as key.</p>
+</li>
+<li><p><code>[-f|--force]</code> overrides the force parameter in every <code>.pack_args.json</code>.</p>
+</li>
+<li><p><code>[-c|--command=&lt;Str&gt;]</code> overrides the command to list the current directory it is assumed this is the same as the output directory for all the plugins.</p>
+</li>
+<ul><li><p>the default is <strong>ls -Flaghi --color=always</strong> this can be overridden by the value of the <strong>LS_CMD</strong> environment variable but the command-line value overrides both.</p>
+</li>
+</ul>
+<li><p><code>[-q|--quiet|--silent]</code> if present then all non-error output is suppressed.</p>
+</li>
+</ul>
+<p><strong>NB: This command assumes it is being run from the directory in which the plugin resides.</strong></p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;do&quot;, Str $key, Bool:D :f(:$force) = Bool::False, Str:D :c(:$command) = Code.new, Bool :q(:quiet(:$silent)) = Bool::False, *@keys is copy --&gt; int)</code>:
+Package the plugin represented by $key and any plugin&#39;s in @keys
+</article>
+<h1 id="pack.raku_plugin_new_--help"><a class="u" href="#___top" title="go to top of document">pack.raku plugin new --help</a></h1>
+<pre class="pod-block-code">pack.raku plugin new --help
+
+Usage:
+  pack.raku plugin new &lt;key&gt;  [--uuid=&lt;Str&gt;] [--name=&lt;Str&gt;] [--description=&lt;Str&gt;] [--gettext-domain=&lt;Str&gt;] [--settings-schema=&lt;Str&gt;] [--template=&lt;Str&gt;] [--credits=&lt;Str&gt;] [--prefs] [--schema-file] [--podirs] [--add-credits] [-a|--all-parmas|--all] [-f|--force] [-s|--silent] [-b|--backtrace] [-l|--dev-lang=&lt;Str&gt;] [-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]
+</pre>
+<p>Make a new plugin/extension for gnome-shell Create a new plugin using <code>gnome-extensions create</code> and move it to a development area and set it up for <code>pack.raku alias do</code> etc.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> A key which will be used to select the extension you wish to work with.</p>
+</li>
+<ul><li><p>This is the only mandatory parameter.</p>
+</li>
+<ul><li><p><strong>All the following 6 parameters can be left out and the program will prompt for them.</strong></p>
+</li>
+<li><p>And it is recommended to leave <code>--template</code> to be prompted for as this can be tricky to do manually.</p>
+</li>
+</ul>
+</ul>
+<li><p><code>[--uuid=&lt;Str&gt;]</code> The unique identifier of the new extension.</p>
+</li>
+<li><p><code>[--name=&lt;Str&gt;]</code> The user-visible name of the new extension.</p>
+</li>
+<li><p><code>[--description=&lt;Str&gt;]</code> A short description of what the extension does.</p>
+</li>
+<li><p><code>[--gettext-domain=&lt;Str&gt;]</code> The gettext domain used by the extension.</p>
+</li>
+<li><p><code>[--settings-schema=&lt;Str&gt;]</code> The GSettings schema used by the extension.</p>
+</li>
+<li><p><code>[--template=&lt;Str&gt;]</code> The template to use for the new extension.</p>
+</li>
+<li><p><code>[--credits=&lt;Str&gt;]</code> Set the credits lines If not set and <code>--add-credits</code> or <code>--all</code> is present then will be prompted for.</p>
+</li>
+<ul><li><p><strong>The following parameters will not be prompted for.</strong></p>
+</li>
+</ul>
+<li><p><code>[--prefs]</code> Include prefs.js template.</p>
+</li>
+<li><p><code>[--schema-file]</code> Add a schema file by name of <code>schemas/org.gnome.shell.extensions.{$gettext-domain}.gschema.xml</code>.</p>
+</li>
+<li><p><code>[--podirs]</code> Add a po directory with gettext files preloaded; plus a <code>compile.sh</code> script to build and update the gettext files.</p>
+</li>
+<li><p><code>[--add-credits]</code> Prompt for credits lines if <code>--credits</code> not set.</p>
+</li>
+<li><p><code>[-a|--all-parmas|--all]</code> Same as <code>--podirs --schema-file --podirs --add-credits</code>.</p>
+</li>
+<li><p><code>[-f|--force]</code> Add the force parameter to the <code>.pack_args.json</code> file.</p>
+</li>
+<li><p><code>[-s|--silent]</code> Don&#39;t print out the steps taken defaults to <code>False</code>.</p>
+</li>
+<li><p><code>[-l|--dev-lang=&lt;Str&gt;]</code> The language of the default <code>*.po</code> file to generate this should be the language the strings are in in the original source defaults to <strong>en</strong>.</p>
+</li>
+<li><p><code>[-o|--output|--development-dir|--dev-dir=&lt;Str&gt;]</code> The directory to develop the plugin from; defaults to the current dir.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h2 id="Recommended_Usage"><a class="u" href="#___top" title="go to top of document">Recommended Usage</a></h2>
+<p>It is recommended that you use the following command line to get pretty much everything in you could desire in the starting point of your plugin/extension.</p>
+<pre class="pod-block-code">pack.raku plugin new &lt;key&gt; --all --force
+</pre>
+<ul><li><p><strong>NB:</strong></p>
+</li>
+<ul><li><p>The key <code>&lt;key&gt;</code> must be replaced with a real key.</p>
+</li>
+</ul>
+</ul>
+<p>This whole development model assumes that you don&#39;t want to develop the plugin/extension live as is <code>gnome-extensions create</code> model so I copy the plugin out line generated by <code>gnome-extensions create</code> to another location I use <code>~/Projects/gnome-shell/extensions/</code> and deleting the original that <code>gnome-extensions create</code> generates. </p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;plugin&quot;, &quot;new&quot;, Str:D $key, Str :$uuid = Str, Str :$name = Str, Str :$description = Str, Str :$gettext-domain = Str, Str :$settings-schema = Str, Str :$template = Str, Str :$credits = Str, Bool:D :$prefs = Bool::False, Bool:D :$schema-file = Bool::False, Bool:D :$podirs = Bool::False, Bool:D :$add-credits = Bool::False, Bool:D :a(:all-parmas(:$all)) = Bool::False, Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Str:D :l(:$dev-lang) = Code.new, Str:D :o(:output(:development-dir(:$dev-dir))) = &quot;.&quot; --&gt; int)</code>:
+Create a new plugin $uuid and add it to the store as $key =&gt; $uuid will prompt for many unspecified parameters.
+</article>
+<h1 id="pack.raku_plugin_add"><a class="u" href="#___top" title="go to top of document">pack.raku plugin add</a></h1>
+<pre class="pod-block-code">pack.raku plugin add  --help
+
+Usage:
+  pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources&gt; ...] [-p|--extension-dir=&lt;Str&gt;] [--podir=&lt;Str&gt;] [-f|--force] [-s|--silent] [-b|--backtrace] [-m|--mk-schema] [-l|--dev-lang=&lt;Str&gt;]
+</pre>
+<p>Use this to add an existing extension into management by <code>pack.raku</code>.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key to reference this extension by (mandatory).</p>
+</li>
+<li><p><code>&lt;uuid&gt;</code> The unique id of the extension (mandatory).</p>
+</li>
+<ul><li><p>The key directory pair will be <code>&lt;key&gt; =&gt; $extension-dir/$uuid.</code></p>
+</li>
+<ul><li><p>The description in the <code>metadata.json</code> file will form the pairs comment.</p>
+</li>
+</ul>
+</ul>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> An arbitrarily long list of additional files to add to the extensions package.</p>
+</li>
+<ul><li><p>can be files other than JavaScript source.</p>
+</li>
+</ul>
+<li><p><code>[-p|--extension-dir=&lt;Str&gt;]</code> The directory the plugin lives in defaults to <code>.</code> the current directory.</p>
+</li>
+<li><p><code>[--podir=&lt;Str&gt;]</code> The name of the directory where the internationalisation source is kept defaults to <code>&#39;po&#39;</code>.</p>
+</li>
+<ul><li><p><strong>NB:</strong> Will generate the <code>compile.sh</code> file if it doesn&#39;t already exist.</p>
+</li>
+</ul>
+<li><p><code>[-f|--force]</code> The force parameter for <code>.pack_args.json</code> file.</p>
+</li>
+<li><p><code>[-s|--silent]</code> If True then don&#39;t show progress or error messages defaults to False.</p>
+</li>
+<li><p><code>[-b|--backtrace]</code> Show backtrace info on error (only works if not silent).</p>
+</li>
+<li><p><code>[-m|--mk-schema]</code> Make the schema file if it doesn&#39;t exist.</p>
+</li>
+<li><p><code>[-l|--dev-lang=&lt;Str&gt;]</code> The language of the default <code>*.po</code> file to generate this should be the language the strings are in in the original source defaults to <strong>en</strong>.</p>
+</li>
+</ul>
+<p>Typical use:</p>
+<pre class="pod-block-code">pack.raku plugin add &lt;key&gt; &lt;uuid&gt; [&lt;extra-sources1&gt; &lt;extra-sources2&gt; ...] --force --mk-schema
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;plugin&quot;, &quot;add&quot;, Str:D $key, Str:D $uuid, Str:D :p(:extension-dir($plugin-dir)) = &quot;.&quot;, Str:D :$podir = &quot;po&quot;, Bool:D :f(:$force) = Bool::False, Bool:D :s(:$silent) = Bool::False, Bool:D :b(:$backtrace) = Bool::False, Bool:D :m(:$mk-schema) = Bool::False, Bool:D :$mk-podir = Bool::False, Str:D :l(:$dev-lang) = Code.new, *@extra-sources --&gt; int)</code>:
+Add a existing plugin $plugin-dir/$uuid and add it to the store as $key =&gt; $uuid will prompt for many unspecified parameters.
+</article>
+<h1 id="pack.raku_alias_add-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku alias add-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias add-extra-sources --help
+
+Usage:
+  pack.raku alias add-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Add sources to the <strong>extra-sources</strong> list.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> Additional sources to add to the <strong>extra-sources</strong> list.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;add-extra-sources&quot;, Str:D $key, *@extra-sources --&gt; int)</code>:
+Add or append extra-sources in the .pack_args.json file pointed to by $key in the store.
+</article>
+<h1 id="pack.raku_alias_set-schema"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias set-schema --help
+
+Usage:
+  pack.raku alias set-schema &lt;key&gt; &lt;schema-value&gt;
+</pre>
+<p>Set the value of the <strong>schema</strong>.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension to add to.</p>
+</li>
+<li><p><code>&lt;schema-value&gt;</code> New value of schema.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-schema&quot;, Str $key, Str $schema-value --&gt; int)</code>:
+Set schema in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-podir"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-podir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-podir --help
+
+Usage:
+  pack.raku alias set-podir &lt;key&gt; &lt;podir-value&gt;
+</pre>
+<p>Set the value of podir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>&lt;podir-value&gt;</code> New value of podir.</p>
+</li>
+<ul><li><p>podir is the path of the directory containing the po files, relative to the extensions development directory.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-podir&quot;, Str $key, Str $podir-value --&gt; int)</code>:
+Set podir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias set-gettext-domain --help
+
+Usage:
+  pack.raku alias set-gettext-domain &lt;key&gt; &lt;gettext-domain-value&gt;
+</pre>
+<p>Set the value of <code>gettext-domain</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>&lt;gettext-domain-value&gt;</code> New value of gettext-domain.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-gettext-domain&quot;, Str $key, Str $gettext-domain-value --&gt; int)</code>:
+Set gettext-domain in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-out-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-out-dir --help
+
+Usage:
+  pack.raku alias set-out-dir &lt;key&gt; &lt;out-dir-value&gt;
+</pre>
+<p>Set the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>&lt;out-dir-value&gt;</code> New value of out-dir.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-out-dir&quot;, Str $key, Str $out-dir-value --&gt; int)</code>:
+Set out-dir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-force"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-force</a></h1>
+<pre class="pod-block-code">pack.raku alias set-force --help
+
+Usage:
+  pack.raku alias set-force &lt;key&gt; &lt;force-value&gt;
+</pre>
+<p>Set the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>&lt;force-value&gt;</code> New value of force.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-force&quot;, Str $key, Bool $force-value --&gt; int)</code>:
+Set force in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-package-dir"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-package-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias set-package-dir --help
+
+Usage:
+  pack.raku alias set-package-dir &lt;key&gt; &lt;package-dir-value&gt;
+</pre>
+<p>Add to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> Additional extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-package-dir&quot;, Str $key, Str $package-dir-value --&gt; int)</code>:
+Set package-dir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_set-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku alias set-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias set-extra-sources --help
+
+Usage:
+  pack.raku alias set-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Set the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> New value of extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;set-extra-sources&quot;, Str $key, *@extra-sources --&gt; int)</code>:
+Set extra-sources in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_append-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku alias append-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias append-extra-sources --help
+
+Usage:
+  pack.raku alias append-extra-sources &lt;key&gt; [&lt;extra-sources&gt; ...]
+</pre>
+<p>Append <code>[&lt;extra-sources&gt; ...]</code> to the value of extra-sources in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+<li><p><code>[&lt;extra-sources&gt; ...]</code> List of values to append to extra-sources.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;append-extra-sources&quot;, Str $key, *@extra-sources --&gt; int)</code>:
+Append *@extra-sources to extra-sources in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_remove-schema"><a class="u" href="#___top" title="go to top of document">pack.raku alias remove-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-schema --help
+
+Usage:
+  pack.raku alias remove-schema &lt;key&gt;
+</pre>
+<p>Remove the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;remove-schema&quot;, Str $key --&gt; int)</code>:
+Remove schema in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_remove-podir"><a class="u" href="#___top" title="go to top of document">pack.raku alias remove-podir</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-podir --help
+
+Usage:
+  pack.raku alias remove-podir &lt;key&gt;
+</pre>
+<p>Remove the value of <code>podir</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;remove-podir&quot;, Str:D $key --&gt; int)</code>:
+Remove podir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_remove-gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku alias remove-gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-gettext-domain --help
+
+Usage:
+  pack.raku alias remove-gettext-domain &lt;key&gt;
+</pre>
+<p>Remove the value of gettext-domain in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;remove-gettext-domain&quot;, Str:D $key --&gt; int)</code>:
+Remove gettext-domain in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_remove-out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku alias remove-out-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-out-dir --help
+
+Usage:
+  pack.raku alias remove-out-dir &lt;key&gt;
+</pre>
+<p>Remove the value of out-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;remove-out-dir&quot;, Str:D $key --&gt; int)</code>:
+Remove out-dir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_remove-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku alias remove-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias remove-extra-sources --help
+
+Usage:
+  pack.raku alias remove-extra-sources &lt;key&gt;
+</pre>
+<p>Truncate the <code>extra-sources</code> list in <code>&lt;package-dir&gt;/.pack_args.json</code>.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;remove-extra-sources&quot;, Str:D $key --&gt; int)</code>:
+Remove extra-sources in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-schema"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-schema</a></h1>
+<pre class="pod-block-code">pack.raku alias get-schema --help
+
+Usage:
+  pack.raku alias get-schema &lt;key&gt;
+</pre>
+<p>Get the value of schema in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-schema&quot;, Str:D $key --&gt; int)</code>:
+Get schema in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-podir"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-podir</a></h1>
+<pre class="pod-block-code">pack.raku alias get-podir --help
+
+Usage:
+  pack.raku alias get-podir &lt;key&gt;
+</pre>
+<p>Get the value of <code>podir</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<ul><li><p><strong>NB: <code>podir</code> is the path to the directory containing the po files.</strong></p>
+</li>
+</ul>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-podir&quot;, Str:D $key --&gt; int)</code>:
+Get podir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-gettext-domain"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-gettext-domain</a></h1>
+<pre class="pod-block-code">pack.raku alias get-gettext-domain --help
+
+Usage:
+  pack.raku alias get-gettext-domain &lt;key&gt;
+</pre>
+<p>Get the value of <code>gettext-domain</code> in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-gettext-domain&quot;, Str:D $key --&gt; int)</code>:
+Get gettext-domain in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-out-dir"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-out-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias get-out-dir --help
+
+Usage:
+  pack.raku alias get-out-dir &lt;key&gt;
+</pre>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-out-dir&quot;, Str:D $key --&gt; int)</code>:
+Get out-dir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-extra-sources"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-extra-sources</a></h1>
+<pre class="pod-block-code">pack.raku alias get-extra-sources --help
+
+Usage:
+  pack.raku alias get-extra-sources &lt;key&gt;
+</pre>
+<p>Get the value of the <code>extra-sources</code> list in <code>&lt;package-dir&gt;/.pack_args.json</code>.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-extra-sources&quot;, Str:D $key --&gt; int)</code>:
+Get extra-sources in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-force"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-force</a></h1>
+<pre class="pod-block-code">pack.raku alias get-force --help
+
+Usage:
+  pack.raku alias get-force &lt;key&gt;
+</pre>
+<p>Get the value of force in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-force&quot;, Str:D $key --&gt; int)</code>:
+Get force in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_alias_get-package-dir"><a class="u" href="#___top" title="go to top of document">pack.raku alias get-package-dir</a></h1>
+<pre class="pod-block-code">pack.raku alias get-package-dir --help
+
+Usage:
+  pack.raku alias get-package-dir &lt;key&gt;
+</pre>
+<p>Get the value of package-dir in <code>&lt;package-dir&gt;/.pack_args.json</code></p>
+<p>Where</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the extension.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;alias&quot;, &quot;get-package-dir&quot;, Str:D $key --&gt; int)</code>:
+Get package-dir in the .pack_args.json file pointed to by $key in store.
+</article>
+<h1 id="pack.raku_edit_configs"><a class="u" href="#___top" title="go to top of document">pack.raku edit configs</a></h1>
+<pre class="pod-block-code">pack.raku edit configs --help
+                                                                                                                                                                                           
+Usage:
+  pack.raku edit configs
+</pre>
+<p>Open all configuration files for editing, avoid for expert use only and there are better ways, mostly.</p>
+<p><a href="#Table-of-Contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;edit&quot;, &quot;configs&quot; --&gt; Int)</code>:
+Open the configuration files in your GUI_EDITOR.
+</article>
+<h1 id="pack.raku_list_keys"><a class="u" href="#___top" title="go to top of document">pack.raku list keys</a></h1>
+<pre class="pod-block-code">pack.raku list keys --help
+
+Usage:
+  pack.raku list keys [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys.</p>
+</li>
+<ul><li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong> </p>
+</li>
+</ul>
+</ul>
+<p>List all or a subset of the keys avaiable.</p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;keys&quot;, Str $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List all the matching keys in the store.
+</article>
+<h1 id="pack.raku_list_all"><a class="u" href="#___top" title="go to top of document">pack.raku list all</a></h1>
+<pre class="pod-block-code">pack.raku list all --help
+
+Usage:
+  pack.raku list all [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>List the keys in the database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys, directories or comments starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A raku regex to use to search for the matching keys, directories or comments.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p>
+</li>
+<ul><li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p>
+</li>
+</ul>
+</ul>
+<p>List all or a subset of the keys avaiable.</p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;all&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 50, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List all matching key target pairs in the store.
+</article>
+<h1 id="pack.raku_delete"><a class="u" href="#___top" title="go to top of document">pack.raku delete</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku delete [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+</pre>
+<p>Delete the specified key/directory paths from the database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to delete.</p>
+</li>
+<li><p><code>[-d|--delete|--do-not-trash]</code> If true then actually delete otherwise trash.</p>
+</li>
+<ul><li><p>Trash means keep record but commented out.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;delete&quot;, Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --&gt; Int)</code>:
+Remove @keys from the store.
+</article>
+<h1 id="pack.raku_del"><a class="u" href="#___top" title="go to top of document">pack.raku del</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku del [&lt;keys&gt; ...] [-d|--delete|--do-not-trash]
+</pre>
+<p>Delete the specified key/directory paths from the database.</p>
+<ul><li><p><code>NB: alias for delete</code></p>
+</li>
+</ul>
+<p>Where</p>
+<ul><li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to delete.</p>
+</li>
+<li><p><code>[-d|--delete|--do-not-trash]</code> If true then actually delete otherwise trash.</p>
+</li>
+<ul><li><p>Trash means keep record but commented out.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;del&quot;, Bool:D :d(:delete(:$do-not-trash)) = Bool::False, *@keys --&gt; Int)</code>:
+Remove @keys from the store.
+</article>
+<h1 id="pack.raku_trash"><a class="u" href="#___top" title="go to top of document">pack.raku trash</a></h1>
+<pre class="pod-block-code">pack.raku delete --help
+
+Usage:
+  pack.raku delete [&lt;keys&gt; ...]
+</pre>
+<p>Trash the specified key/directory paths from the database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;keys&gt; ...]</code> the keys of the key/directory pairs that you want to trash.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;trash&quot;, *@keys --&gt; Int)</code>:
+Trash @keys in the store.
+</article>
+<h1 id="pack.raku_tidy_file"><a class="u" href="#___top" title="go to top of document">pack.raku tidy file</a></h1>
+<pre class="pod-block-code">pack.raku tidy file --help
+
+Usage:
+  pack.raku tidy file
+</pre>
+<p>Tidy up the database file.</p>
+<ul><li><p>Pointless really just for when your feeling OCD.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;tidy&quot;, &quot;file&quot; --&gt; Int)</code>:
+tidy store file.
+</article>
+<h1 id="pack.raku_comment"><a class="u" href="#___top" title="go to top of document">pack.raku comment</a></h1>
+<pre class="pod-block-code">pack.raku comment --help
+
+Usage:
+  pack.raku comment &lt;key&gt; &lt;comment&gt;  [-k|--kind=&lt;Str where \{ ... } &gt;]
+</pre>
+<p>Add a comment to an entry.</p>
+<ul><li><p><code>&lt;key&gt;</code> The key of the record to add the comment to.</p>
+</li>
+<li><p><code>&lt;comment&gt;</code> The comment.</p>
+</li>
+<li><p><code>[-k|--kind=&lt;Str where \{ ... } &gt;]</code> The kind of record to add the comment to.</p>
+</li>
+<ul><li><p>the possible values of $kind are one of (&#39;neither&#39;, &#39;normal&#39;, &#39;commented&#39;, &#39;both&#39;).</p>
+</li>
+<li><p>default value is &#39;normal&#39;.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;comment&quot;, Str:D $key, Str:D $comment, Str:D :k(:$kind) where { ... } = &quot;normal&quot; --&gt; Int)</code>:
+Add/Set a comment to $key.
+</article>
+<h1 id="pack.raku_list_trash"><a class="u" href="#___top" title="go to top of document">pack.raku list trash</a></h1>
+<pre class="pod-block-code">pack.raku list trash --help
+
+Usage:
+  pack.raku list trash [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>List the trashed keys in the database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys, directories or comments starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-l|--page-length[=Int]]</code> Set the page length before headers are re-shown.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A raku regex to use to search for the matching keys, directories or comments.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys, directories or comments.</p>
+</li>
+<ul><li><p><strong>NB:</strong> uses a imperfect library to convert the EMCA262Regex to a raku one.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;trash&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List the key =&gt; target pairs in the stores trash.
+</article>
+<h1 id="pack.raku_empty_trash"><a class="u" href="#___top" title="go to top of document">pack.raku empty trash</a></h1>
+<pre class="pod-block-code">pack.raku empty trash --help
+
+Usage:
+  pack.raku empty trash
+</pre>
+<p>Delete all trashed/commented records.</p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;empty&quot;, &quot;trash&quot; --&gt; Int)</code>:
+empty the trash in Store.
+</article>
+<h1 id="pack.raku_undelete"><a class="u" href="#___top" title="go to top of document">pack.raku undelete</a></h1>
+<pre class="pod-block-code">pack.raku undelete --help
+
+Usage:
+  pack.raku undelete [&lt;keys&gt; ...]
+</pre>
+<p>Undelete the specified keys.</p>
+<ul><li><p><code>[&lt;keys&gt; ...]</code> The keys of the records to undelete.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;undelete&quot;, *@keys --&gt; Int)</code>:
+Undelete *@keys in the store.
+</article>
+<h1 id="pack.raku_show_stats"><a class="u" href="#___top" title="go to top of document">pack.raku show stats</a></h1>
+<pre class="pod-block-code">pack.raku show stats --help
+
+Usage:
+  pack.raku show stats [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>Show the stats for the database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p>
+</li>
+<ul><li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p>
+</li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;show&quot;, &quot;stats&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+show the stats for the store.
+</article>
+<h1 id="pack.raku_show_statistics"><a class="u" href="#___top" title="go to top of document">pack.raku show statistics</a></h1>
+<pre class="pod-block-code">pack.raku show stats --help
+
+Usage:
+  pack.raku show statistics [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>Show the statistics for the database.</p>
+<ul><li><p><code>alias for show stats.</code></p>
+</li>
+</ul>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p>
+</li>
+<ul><li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p>
+</li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;show&quot;, &quot;statistics&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+show the stats for the store.
+</article>
+<h1 id="pack.raku_backup_db"><a class="u" href="#___top" title="go to top of document">pack.raku backup db</a></h1>
+<pre class="pod-block-code">pack.raku backup db --help
+
+Usage:
+  pack.raku backup db  [-w|--win-format|--use-windows-formatting]
+</pre>
+<p>Backup the db file.</p>
+<ul><li><p><code>[-w|--win-format|--use-windows-formatting]</code> Use windows compatible file names for the backup file.</p>
+</li>
+<ul><li><p><strong>NB:</strong> The backup file looks like pack.p_ck.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like pack.p_ck.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;backup&quot;, &quot;db&quot;, Bool:D :w(:win-format(:$use-windows-formatting)) = Bool::False --&gt; Bool)</code>:
+Backup the store.
+</article>
+<h1 id="pack.raku_restore_db"><a class="u" href="#___top" title="go to top of document">pack.raku restore db</a></h1>
+<pre class="pod-block-code">pack.raku restore db --help
+
+Usage:
+  pack.raku restore db [&lt;restore-from&gt;]
+</pre>
+<p>Restore the db file from restore-from.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;restore&quot;, &quot;db&quot;, Str $restore-from = Str --&gt; Bool)</code>:
+Restore the Store.
+</article>
+<h1 id="pack.raku_menu_restore_db"><a class="u" href="#___top" title="go to top of document">pack.raku menu restore db</a></h1>
+<pre class="pod-block-code">pack.raku menu restore db --help
+
+Usage:
+  pack.raku menu restore db [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
+</pre>
+<p>Use a text menu to present options for database file restore</p>
+<ul><li><p><code>[&lt;message&gt;]</code> A message to display above the menu (currently not used in colour and syntax modes).</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> Use ANSI colour mode.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> Use ANSI colour mode with syntax highlighting.</p>
+</li>
+<ul><li><p><strong>NB:</strong> looks like:</p>
+</li>
+</ul>
+</ul>
+<pre class="pod-block-code">pack.raku menu restore db &quot;testing one two three&quot; 
+testing one two three
+         0	.rw-rw-r-- 394.0B grizzlysmit grizzlysmit 2025-06-02T07:49:56.429315+10:00 pack.p_ck.2025-06-02T00:02:07.886302+10:00
+         1	.rw-rw-r-- 495.0B grizzlysmit grizzlysmit 2025-07-05T09:30:11.002659+10:00 pack.p_ck.2025-07-05T09:30:47.997666+10:00
+         2	cancel
+use cancel, bye, bye bye, quit, q, or 2 to quit
+choose a candidate 0..2 =:&gt; q
+</pre>
+<p>in ascii/UTF-8 mode.</p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;menu&quot;, &quot;restore&quot;, &quot;db&quot;, Str:D $message = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --&gt; Int)</code>:
+Present a menu to restore the store.
+</article>
+<h1 id="pack.raku_list_db_backups"><a class="u" href="#___top" title="go to top of document">pack.raku list db backups</a></h1>
+<pre class="pod-block-code">pack.raku list db backups --help
+
+Usage:
+  pack.raku list db backups [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>List the db backups in the standard directory.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> List only those whose name starts with prefix (case insensitive).</p>
+</li>
+<li><p><code>[-c|--color|--colour] [-s|--syntax]</code> List in colour..</p>
+</li>
+<li><p><code>[-s|--syntax]</code> List in syntax highlighted colour.</p>
+</li>
+<li><p><code>[-l|--page-length[=Int]]</code> List in pages of length $page-length.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> List only those matching this Raku regex.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> List only those matching this EMCA262Regex regex.</p>
+</li>
+<li><p><code>The EMCA262Regex library doesn&#39;t support ignore case well.</code> .</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;db&quot;, &quot;backups&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List matching backups of the store.
+</article>
+<h1 id="pack.raku_list_editors"><a class="u" href="#___top" title="go to top of document">pack.raku list editors</a></h1>
+<pre class="pod-block-code">pack.raku list editors --help
+
+Usage:
+  pack.raku list editors  [-f|--prefix=&lt;Str&gt;] [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>List the contents of the db file.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> List only those whose name starts with prefix (case insensitive).</p>
+</li>
+<li><p><code>[-c|--color|--colour] [-s|--syntax]</code> List in colour..</p>
+</li>
+<li><p><code>[-s|--syntax]</code> List in syntax highlighted colour.</p>
+</li>
+<li><p><code>[-l|--page-length[=Int]]</code> List in pages of length $page-length.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> List only those matching this Raku regex.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> List only those matching this EMCA262Regex regex.</p>
+</li>
+<li><p><code>The EMCA262Regex library doesn&#39;t support ignore case well.</code> .</p>
+</li>
+</ul>
+<pre class="pod-block-code">pack.raku list editors
+                         
+Editors | Actual Editor  
+=========================
+gedit   |                
+gvim    |             *  
+kate    |                
+xemacs  |                
+=========================
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;editors&quot;, Str:D :f(:$prefix) = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List known GUI editors.
+</article>
+<h1 id="pack.raku_editors_stats"><a class="u" href="#___top" title="go to top of document">pack.raku editors stats</a></h1>
+<pre class="pod-block-code">pack.raku editors stats --help
+
+Usage:
+  pack.raku editors stats [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>Show the statistics for the editors database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p>
+</li>
+<ul><li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p>
+</li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p>
+</li>
+</ul>
+</ul>
+<pre class="pod-block-code">pack.raku editors stats
+                                          
+Variable               |   Value          
+==========================================
+$editor                |            gvim  
+$override-GUI_EDITOR   |            True  
+%*ENV&lt;EDITOR&gt;          |    /usr/bin/vim  
+%*ENV&lt;VISUAL&gt;          |    /usr/bin/vim  
+%*ENV«GUI_EDITOR»      |   /usr/bin/gvim  
+@default-editors       |      [ &quot;gvim&quot; ]  
+@override-gui_editor   |          [True]  
+==========================================
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;editors&quot;, &quot;stats&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+Show Editor stats
+</article>
+<h1 id="pack.raku_list_editors_backups"><a class="u" href="#___top" title="go to top of document">pack.raku list editors backups</a></h1>
+<pre class="pod-block-code">pack.raku list editors backups --help
+
+Usage:
+  pack.raku list editors backups [&lt;prefix&gt;]  [-c|--color|--colour] [-s|--syntax] [-l|--page-length[=Int]] [-p|--pattern=&lt;Str&gt;] [-e|--ecma-pattern=&lt;Str&gt;]
+</pre>
+<p>Show the statistics for the editors database.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;prefix&gt;]</code> If present then search for keys starting with the string value.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> If present then show with ANSI colours.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> If present will override colour setting and display with syntax highlighted colours.</p>
+</li>
+<li><p><code>[-p|--pattern=&lt;Str&gt;]</code> A Raku regex to use to search for the matching keys.</p>
+</li>
+<li><p><code>[-e|--ecma-pattern=&lt;Str&gt;]</code> A ECMA262Regex regex to use to search for the matching keys..</p>
+</li>
+<ul><li><p><strong>NB: uses a imperfect library to convert the EMCA262Regex to a Raku one.</strong></p>
+</li>
+<li><p><strong>NB: pattern and ecma-pattern search by the quantity keys, note the values.</strong></p>
+</li>
+</ul>
+</ul>
+<pre class="pod-block-code">pack.raku list editors backups
+                                                                                                                     
+Permissions Size   User        Group       Date Modified                    Backup                                   
+=====================================================================================================================
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T00:23:41.634625+10:00 editors.2023-12-11T01:24:20              
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:15:51.038790+10:00 editors.2023-12-11T21:16:28.034522+11:00 
+.rw-rw-r--  802.0B grizzlysmit grizzlysmit 2023-12-11T20:58:20.835630+10:00 editors.2023-12-11T21:58:57.832862+11:00 
+.rw-rw-r--  833.0B grizzlysmit grizzlysmit 2023-12-11T22:21:21.450694+10:00 editors.2023-12-11T23:21:58.449520+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-11T22:31:34.183842+10:00 editors.2023-12-11T23:32:11.181779+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-12T20:59:45.479111+10:00 editors.2023-12-12T22:00:22.468348+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T07:25:06.941870+10:00 editors.2023-12-30T08:25:43.939760+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-30T12:36:10.532847+10:00 editors.2023-12-30T13:36:47.532341+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T15:36:43.791920+10:00 editors.2023-12-31T16:37:20.781525+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T16:59:08.910346+10:00 editors.2023-12-31T17:59:45.906433+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2023-12-31T17:10:53.742754+10:00 editors.2023-12-31T18:11:30.735343+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-02T22:56:24.817173+10:00 editors.2024-01-02T23:57:01.808884+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:40:03.140891+10:00 editors.2024-01-04T03:40:40.002896+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:41:03.757027+10:00 editors.2024-01-04T03:41:40.749044+11:00 
+.rw-rw-r--  820.0B grizzlysmit grizzlysmit 2024-01-04T02:47:47.097922+10:00 editors.2024-01-04T03:48:24.025215+11:00 
+=====================================================================================================================
+</pre>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;list&quot;, &quot;editors&quot;, &quot;backups&quot;, Str:D $prefix = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False, Int:D :l(:$page-length) = 30, Str :p(:$pattern) = Str, Str :e(:$ecma-pattern) = Str --&gt; Int)</code>:
+List editors backup files.
+</article>
+<h1 id="pack.raku_backup_editors"><a class="u" href="#___top" title="go to top of document">pack.raku backup editors</a></h1>
+<pre class="pod-block-code">pack.raku backup editors --help
+
+Usage:
+  pack.raku backup editors  [-w|--use-windows-formatting]
+</pre>
+<p>Backup the editors db file.</p>
+<ul><li><p><code>[-w|--win-format|--use-windows-formatting]</code> Use windows compatible file names for the backup file.</p>
+</li>
+<ul><li><p><strong>NB:</strong> The backup file looks like editors.2025-06-02T00:02:07.886302+10:00 normally but if you use this option then it will be like editors.2025-07-05T09.29.03·560644+10.00 as : is a special char in windows filename names.</p>
+</li>
+</ul>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;backup&quot;, &quot;editors&quot;, Bool:D :w(:$use-windows-formatting) = Bool::False --&gt; Int)</code>:
+Backup editors file.
+</article>
+<h1 id="pack.raku_restore_editors"><a class="u" href="#___top" title="go to top of document">pack.raku restore editors</a></h1>
+<pre class="pod-block-code">pack.raku restore editors --help
+
+Usage:
+  pack.raku restore editors &lt;restore-from&gt;
+</pre>
+<p>Restore the editors db file from restore-from.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;restore-from&gt;]</code> A path to a restore file.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;restore&quot;, &quot;editors&quot;, Str:D $restore-from --&gt; Int)</code>:
+Restore editors file from backup.
+</article>
+<h1 id="pack.raku_set_editor"><a class="u" href="#___top" title="go to top of document">pack.raku set editor</a></h1>
+<pre class="pod-block-code">pack.raku set editor --help
+
+Usage:
+  pack.raku set editor &lt;editor&gt; [&lt;comment&gt;]
+</pre>
+<p>Set the default editor to use.</p>
+<p>Where</p>
+<ul><li><p><code>&lt;editor&gt;</code> The editor to make default.</p>
+</li>
+<li><p><code>[&lt;comment&gt;]</code> A comment to put against the editor.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;editor&quot;, Str:D $editor, Str $comment = Str --&gt; Int)</code>:
+Set default GUI editor.
+</article>
+<h1 id="pack.raku_set_override_GUI_EDITOR"><a class="u" href="#___top" title="go to top of document">pack.raku set override GUI_EDITOR</a></h1>
+<pre class="pod-block-code">pack.raku set override GUI_EDITOR --help
+
+Usage:
+  pack.raku set override GUI_EDITOR &lt;value&gt; [&lt;comment&gt;]
+</pre>
+<p>Set the value of the override-GUI_EDITOR parameter </p>
+<p>Where</p>
+<ul><li><p><code>&lt;value&gt;</code> The value of the parameter (True or False).</p>
+</li>
+<li><p><code>[&lt;comment&gt;]</code> A comment to place against the parameter.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;set&quot;, &quot;override&quot;, &quot;GUI_EDITOR&quot;, Bool:D $value, Str $comment = Str --&gt; Int)</code>:
+Set the override_GUI_EDITOR parameter.
+</article>
+<h1 id="pack.raku_menu_restore_editors"><a class="u" href="#___top" title="go to top of document">pack.raku menu restore editors</a></h1>
+<pre class="pod-block-code">pack.raku menu restore editors --help
+
+Usage:
+  pack.raku menu restore editors [&lt;message&gt;]  [-c|--color|--colour] [-s|--syntax]
+</pre>
+<p>Restore the editors db using a menu of backups from the standard directory.</p>
+<p>Where</p>
+<ul><li><p><code>[&lt;message&gt;]</code> A message to display above the menu only works in monochrome version.</p>
+</li>
+<li><p><code>[-c|--color|--colour]</code> Use ANSI colour mode.</p>
+</li>
+<li><p><code>[-s|--syntax]</code> Use ANSI colour mode and syntax highlighting.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<article>
+<code class="pod-code-inline">MAIN:(&quot;menu&quot;, &quot;restore&quot;, &quot;editors&quot;, Str:D $message = &quot;&quot;, Bool:D :c(:color(:$colour)) = Bool::False, Bool:D :s(:$syntax) = Bool::False --&gt; Int)</code>:
+Display menu to allow restore editors from the backup.
+</article>
+<h1 id="pack.raku_USAGE"><a class="u" href="#___top" title="go to top of document">pack.raku USAGE</a></h1>
+<pre class="pod-block-code">pack.raku USAGE [-n|--nocolor|--nocolour]
+</pre>
+<p>Shows the USAGE without this method purpose is to implement the coloured usage.</p>
+<p>Where</p>
+<ul><li><p><code>[-n|--nocolor|--nocolour]</code> Show the usage in monochrome.</p>
+</li>
+</ul>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+<h1 id="multi_sub_GENERATE-USAGE"><a class="u" href="#___top" title="go to top of document">multi sub GENERATE-USAGE</a></h1>
+<pre class="pod-block-code">multi sub GENERATE-USAGE(&amp;main, |capture --&gt; Int) {
+    my @capture = |(capture.list);
+    my @_capture;
+    if @capture &amp;&amp; @capture[0] eq &#39;help&#39; {
+        @_capture = |@capture[1 .. *];
+    } else {
+        @_capture = |@capture;
+    }
+    my %capture = |(capture.hash);
+    if %capture«nocolour» || %capture«nocolor» || %capture«n» {
+        say-coloured($*USAGE, True, |%capture, |@_capture);
+    } else {
+        #dd @capture;
+        say-coloured($*USAGE, False, |%capture, |@_capture);
+        #&amp;*GENERATE-USAGE(&amp;main, |capture)
+    }
+    exit 0;
+}
+</pre>
+<p>Does the real work generating the coloured usage.</p>
+<p><a href="#table-of-contents">Table of Contents</a></p>
+
+    </div>
+
+    
+</body>
+</html>
+
