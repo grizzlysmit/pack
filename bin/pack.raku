@@ -220,7 +220,7 @@ key: fred => "/home/grizzlysmit/Projects/gnome-shell/extensions/fred@grizzlysmit
 Created po/en.po.
 .pack_args.json created
 removed directory
-05:55:14 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 2m14s $ exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always fred@grizzlysmit.smit.id.au/
+05:55:14 θ70° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 2m14s $ exa -F -laahigHb --color-scale --time-style=full-iso --icons=always fred@grizzlysmit.smit.id.au/
    inode Permissions Links  Size User        Group       Date Modified                       Name
 27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000  ./
 26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.943446718 +1000  ../
@@ -233,7 +233,7 @@ removed directory
 27559255 .rw-rw-r--      1 1.4Ki grizzlysmit grizzlysmit 2025-07-24 05:55:13.945612838 +1000  prefs.js
 27559258 drwxrwxr-x      2     - grizzlysmit grizzlysmit 2025-07-24 05:55:13.986447888 +1000  schemas/
 27559257 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 05:55:13.946068846 +1000  stylesheet.css
-05:56:03 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ exa -F -lahigHTb  --colour-scale --time-style=full-iso fred@grizzlysmit.smit.id.au/
+05:56:03 θ65° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ exa -F -lahigHTb  --color-scale --time-style=full-iso fred@grizzlysmit.smit.id.au/
    inode Permissions Links  Size User        Group       Date Modified                       Name
 27559253 drwxrwxr-x      5     - grizzlysmit grizzlysmit 2025-07-24 05:55:14.052449684 +1000 fred@grizzlysmit.smit.id.au/
 27559273 .rw-rw-r--      1   287 grizzlysmit grizzlysmit 2025-07-24 05:55:14.053521905 +1000 ├── .pack_args.json
@@ -336,7 +336,7 @@ renamed '/home/grizzlysmit/.config/gnome-shell/extensions/fred@grizzlysmit.smit.
 53501573 .rw-rw-r--      1    45 grizzlysmit grizzlysmit 2025-07-24 10:43:23.448872836 +1000 └── stylesheet.css
 
 10:44:07 θ66° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions 127 $ type tb
-tb is aliased to `exa -F -lahigHTb  --colour-scale --time-style=full-iso'
+tb is aliased to `exa -F -lahigHTb  --color-scale --time-style=full-iso'
 
 10:44:14 θ71° grizzlysmit@pern.local:~/Projects/gnome-shell/extensions $ batcat fred@grizzlysmit.smit.id.au/metadata.json 
 ───────┬───────────────────────────────────────────────────────────────────────────
@@ -488,7 +488,7 @@ eb is a function
 eb () 
 { 
     if type exa >> /dev/null 2>&1; then
-        exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always "$@";
+        exa -F -laahigHb --color-scale --time-style=full-iso --icons=always "$@";
     else
         ls --color=auto -Flaghi --color "$@";
     fi
@@ -511,7 +511,7 @@ gnome-extensions pack --extra-source=button.js --extra-source=gzz.js --extra-sou
 
 gnome-extensions pack --extra-source=gzzDialog.js --extra-source=CompactMenu.js --extra-source=log_message.js --schema=schemas/org.gnome.shell.extensions.hplip-menu2.gschema.xml --podir=po --gettext-domain=hplip-menu2 --force --out-dir=/home/grizzlysmit/Projects/gnome-shell/extensions /home/grizzlysmit/Projects/gnome-shell/extensions/hplip-menu2@grizzlysmit.smit.id.au
 
-exa -F -laahigHb --colour-scale --time-style=full-iso --icons=always
+exa -F -laahigHb --color-scale --time-style=full-iso --icons=always
    inode Permissions Links  Size User        Group       Date Modified                       Name
 26352037 drwxr-xr-x     34     - grizzlysmit grizzlysmit 2025-07-24 15:46:39.996826303 +1000  ./
 26217632 drwxr-xr-x      3     - grizzlysmit grizzlysmit 2018-03-06 18:20:02.734959839 +1000  ../

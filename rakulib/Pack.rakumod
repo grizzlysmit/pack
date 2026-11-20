@@ -326,21 +326,21 @@ grammar CommentedLine is CommentedLineStuff {
 
 class CommentedLineActions does CommentedLineStuffActions {
     method TOP($match) {
-        my %top;
+        my %TOP;
         if $match<dir-line> {
-            %top = $match<dir-line>.made;
+            %TOP = $match<dir-line>.made;
         } elsif $match<commeted-dir-alias> {
-            %top = $match<commeted-dir-alias>.made;
+            %TOP = $match<commeted-dir-alias>.made;
         } elsif $match<row-of-hashes> {
-            %top = $match<row-of-hashes>.made;
+            %TOP = $match<row-of-hashes>.made;
         } elsif $match<header-line> {
-            %top = $match<header-line>.made;
+            %TOP = $match<header-line>.made;
         } elsif $match<comment-line> {
-            %top = $match<comment-line>.made;
+            %TOP = $match<comment-line>.made;
         } elsif $match<empty-str> {
-            %top = $match<empty-str>.made;
+            %TOP = $match<empty-str>.made;
         }
-        $match.make: %top;
+        $match.make: %TOP;
     }
 } # class CommentedLineActions does CommentedLineStuffActions #
 
@@ -370,16 +370,16 @@ class StatsActions does CommentedLineStuffActions {
     }
     method TOP($made) {
         my @lines = $made<line>».made;
-        my %top = lines-total => @lines.elems,
-        lines => @lines.values.grep( -> %val { %val«value»«type» eq 'dir' } ).elems,
-        commented => @lines.values.grep( -> %val { %val«value»«type» eq 'commeted-dir' || %val«value»«type» eq 'commeted-alias' } ).elems,
-        commented-dirs => @lines.values.grep( -> %val { %val«value»«type» eq 'commeted-dir' } ).elems,
-        rows-of-hashes => @lines.values.grep( -> %val { %val«value»«type» eq 'row-of-hashes' } ).elems,
-        header-lines => @lines.values.grep( -> %val { %val«value»«type» eq 'header-line' } ).elems,
-        comment-lines => @lines.values.grep( -> %val { %val«value»«type» eq 'comment-line' } ).elems,
-        empty-strs => @lines.values.grep( -> %val { %val«value»«type» eq 'empty-str' } ).elems,
-        dirs => @lines.values.grep( -> %val { %val«value»«type» eq 'dir' } ).elems,
-        $made.make:  %top;
+        my %TOP = lines-total => @lines.elems,
+                        lines => @lines.values.grep( -> %val { %val«value»«type» eq 'dir' } ).elems,
+                        commented => @lines.values.grep( -> %val { %val«value»«type» eq 'commeted-dir' || %val«value»«type» eq 'commeted-alias' } ).elems,
+                        commented-dirs => @lines.values.grep( -> %val { %val«value»«type» eq 'commeted-dir' } ).elems,
+                        rows-of-hashes => @lines.values.grep( -> %val { %val«value»«type» eq 'row-of-hashes' } ).elems,
+                        header-lines => @lines.values.grep( -> %val { %val«value»«type» eq 'header-line' } ).elems,
+                        comment-lines => @lines.values.grep( -> %val { %val«value»«type» eq 'comment-line' } ).elems,
+                        empty-strs => @lines.values.grep( -> %val { %val«value»«type» eq 'empty-str' } ).elems,
+                        dirs => @lines.values.grep( -> %val { %val«value»«type» eq 'dir' } ).elems;
+        $made.make:  %TOP;
     }
 } # class StatsActions does CommentedLineStuffActions #
 
